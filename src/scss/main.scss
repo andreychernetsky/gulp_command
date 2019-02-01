@@ -1,6 +1,6 @@
+@import "partials/normalize";
 @import "partials/params";
 @import "partials/mixins";
-
 
 @import "block/wrap";
 @import "block/wrapper";
@@ -12,4 +12,5 @@
 @import "block/main-footer";
 @import "block/nav";
 
+@import "partials/media";
 
