@@ -2,6 +2,7 @@
 @import "../partials/mixins";
 
 .sitebar-right {
-    @include outline;
-    @include right;
+   outline: 1px solid black;
+    height: 600px;
+    width: 20%;
 }

@@ -2,9 +2,9 @@
 @import "../partials/mixins";
 
 .wrapper {
-    width: 1100px;//ширина обвертки всего сайта
+    width: 1200px;//ширина обвертки всего сайта
     outline: 1px solid $red;
-    margin: 0 auto;
+    margin: 30px auto;
     display: flex;
     flex-wrap: wrap;//flex-wrap задает многострочную расстановку блоков по главной оси
 }
