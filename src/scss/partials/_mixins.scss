@@ -2,9 +2,13 @@
   outline:1px solid $red;
 }
 @mixin right {
-    height: 400px;
-    flex-grow: 1;
+    height: 600px;
+    width:20%;
+
 }
 @mixin left {
-    height: 400px;
-    flex-grow: 1;
+    height:600px;
+     width:20%;
+
+}
+
