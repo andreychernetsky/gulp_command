@@ -4,5 +4,6 @@
 .main-header {
     width: 100%;
     height: 70px;
-    outline: 1px solid black;
+    @include outline;
+    background: $red;
 }
