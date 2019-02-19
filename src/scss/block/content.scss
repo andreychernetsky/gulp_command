@@ -1,7 +1,6 @@
 @import "../partials/params";
 @import "../partials/mixins";
 
-.wrap {
-    max-width: $desktop;
-    margin: 0 auto;
+.content {
+    @include outline;
 }
