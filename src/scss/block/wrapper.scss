@@ -7,4 +7,12 @@
     margin: 30px auto;
     display: flex;
     flex-wrap: wrap;//flex-wrap задает многострочную расстановку блоков по главной оси
+
+    /* Large Devices, Wide Screens */
+    @media only screen and (max-width :992px){
+        .wrapper{
+            max-width: 100%;
+
+        }
+    }
 }

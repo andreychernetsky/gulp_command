@@ -3,6 +3,11 @@
 
 .sitebar-left {
     outline: 1px solid black;
-    height: 600px;
-    width: 20%;
+    @include left;
+
+}
+@media only screen and (max-width : 992px) {
+    .sitebar-left {
+        width: 100%;
+    }
 }

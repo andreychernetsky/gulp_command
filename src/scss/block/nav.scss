@@ -1,0 +1,19 @@
+@import "../partials/params";
+@import "../partials/mixins";
+
+.nav {
+    position: static;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    top: 0;
+    &__title {
+        margin: 0 30px;
+
+    }
+    &__item {
+        display:inline-block;
+        margin: 0 30px;
+    }
+}
