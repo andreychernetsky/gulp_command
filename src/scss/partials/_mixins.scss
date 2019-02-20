@@ -1,11 +1,16 @@
-@mixin outline {
-  outline:1px solid $red;
+@mixin clear {
+  padding: 0;
+  margin: 0;
 }
-@mixin right {
-    height: 600px;
-    flex-grow: 1;
+
+@mixin clear-list {
+  @include clear;
+  list-style: none;
 }
-@mixin left {
-    height: 600px;
-    flex-grow: 1;
+
+@mixin flex-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }

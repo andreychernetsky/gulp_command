@@ -1,19 +1,60 @@
 @import "../partials/params";
 @import "../partials/mixins";
 
-.nav {
-    position: static;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 60px;
-    top: 0;
-    &__title {
-        margin: 0 30px;
 
+$font-color: #fff;
+
+.nav{
+    width: 100%;
+    max-width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex: 0 0 $nav-height;
+    color: $font-color;
+    background: $black;
+
+
+    &__brand {
+        font-weight: bold;
+        font-size: 1.4rem;
     }
+
+    &__menu {
+        @include clear-list;
+        display: flex;
+        height: $nav-height;
+    }
+
     &__item {
-        display:inline-block;
-        margin: 0 30px;
+        position: relative;
+        margin: 22px 15px 5px;
+        font-size: 1rem;
+        &:hover {
+            .nav__menu-border {
+                opacity: 1;
+
+            }
+        }
     }
+
+    &__link {
+        color: $font-color;
+        font-size: 1.3rem;
+    }
+
+    &__menu-border {
+        position: absolute;
+        bottom: 0;
+        display: block;
+        height: 1px;
+        width: 100%;
+        opacity: 0;
+        background-color: $font-color;
+        transition: .3s opacity;
+    }
+
 }
