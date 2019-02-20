@@ -1,0 +1,108 @@
+@import "../partials/params";
+@import "../partials/mixins";
+
+/*==========  Desktop First  ==========*/
+
+/* Large Devices, Wide Screens */
+@media only screen and (max-width: 1200px) {
+
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (max-width: 992px) {
+
+}
+
+/* Small Devices, Tablets */
+@media only screen and (max-width: 768px) {
+    .wrapper {
+        max-width: 100%;
+        margin: 20px auto;
+    }
+    .nav {
+        display: none;
+        &__brand {
+            font-size: 0.9rem;
+        }
+        &__link {
+            display: block;
+            font-size: 0.9rem;
+        }
+    }
+    .header {
+        padding: 20px;
+        max-width: 100%;
+        display: flex;
+        flex-direction: column;
+        &__title {
+            font-size: 1.1rem;
+        }
+        &__subtitle {
+            text-align: center;
+            font-size: 1.1rem;
+        }
+
+    }
+    .auth {
+        max-width: 100%;
+        display: flex;
+        justify-content: space-around;
+        &__link {
+            display: block;
+            font-size: 0.9rem;
+            font-weight: normal;
+        }
+
+    }
+    .m-news__content {
+        max-width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .m-news__title {
+        font-size: 1.2rem;
+    }
+    .footer {
+        &__content {
+            max-width: 100%;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        &__brand {
+
+        }
+        &__block {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+        }
+        &__text {
+            text-align: center;
+        }
+
+        &__list {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+
+}
+
+/* Extra Small Devices, Phones */
+@media only screen and (max-width: 480px) {
+
+.nav {
+    display: none;
+}
+}
+
+/* Custom, iPhone Retina */
+@media only screen and (max-width: 320px) {
+
+}
+
+/**/
