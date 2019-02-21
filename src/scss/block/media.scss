@@ -15,33 +15,23 @@
 
 /* Small Devices, Tablets */
 @media only screen and (max-width: 768px) {
-    .wrapper {
+    .wrap-site {
         max-width: 100%;
         margin: 20px auto;
     }
-    .nav {
-        display: none;
-        &__brand {
-            font-size: 0.9rem;
-        }
-        &__link {
-            display: block;
-            font-size: 0.9rem;
-        }
-    }
-    .header {
+
+    .main-header {
         padding: 20px;
         max-width: 100%;
         display: flex;
         flex-direction: column;
-        &__title {
-            font-size: 1.1rem;
-        }
-        &__subtitle {
-            text-align: center;
-            font-size: 1.1rem;
-        }
 
+    }
+    .main-menu {
+        display: none;
+    }
+    .btn-menu {
+        display: block;
     }
     .auth {
         max-width: 100%;

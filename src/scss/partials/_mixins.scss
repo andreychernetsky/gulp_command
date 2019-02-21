@@ -14,3 +14,47 @@
   justify-content: center;
   align-items: center;
 }
+@mixin flex {
+     display: flex;
+    justify-content: space-between;
+    align-items: center;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+}
+@mixin box-shadow($x, $y, $blur, $color) {
+    -moz-box-shadow: $x $y $blur $color;
+    -webkit-box-shadow: $x $y $blur $color;
+    box-shadow: $x $y $blur $color;
+}
+
+@mixin transition($property, $duration, $timing, $delay) {
+    -moz-transition: $property $duration $timing $delay;
+    -o-transition: $property $duration $timing $delay;
+    -webkit-transition: $property $duration $timing $delay;
+    transition: $property $duration $timing $delay;
+}
+
+@mixin border-radius($radius) {
+    -moz-border-radius: $radius;
+    -ms-border-radius: $radius;
+    -webkit-border-radius: $radius;
+    border-radius: $radius;
+}
+@mixin outline {
+ outline:1px solid $black;
+}
+
+@mixin link {
+    text-decoration: none;
+    outline: 0;
+    &:active,
+    &:focus,
+    &:hover {
+    color:#2A4C3B;
+        text-decoration: none;
+        outline: 0;
+
+ }
+}

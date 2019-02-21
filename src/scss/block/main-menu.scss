@@ -1,0 +1,47 @@
+@import "../partials/params";
+@import "../partials/mixins";
+
+.main-menu {
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    list-style-type: none;
+    height:$nav-height;
+    width: 560px;
+    text-align: center;
+    font-family: 'Open Sans';
+    &__item {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 25%;
+        border-left: solid 1px #1d1d1d;
+        font-weight: bold;
+        height:$auth-height;
+        border-bottom: 5px solid #1e1e1e;
+        &__item:last-child {
+            border-right: solid 1px #1d1d1d;
+        }
+
+        &__item:first-child {
+            border-bottom: 5px solid rgb(88, 201, 58);
+            z-index: 2;
+        }
+        &__item:hover {
+            border-bottom: 5px solid rgb(88, 201, 58);
+            z-index: 2;
+        }
+    }
+    &__link {
+        text-decoration: none;
+        color: #fff;
+        &__link:first-child{
+            color: rgb(88, 201, 58);
+        }
+        &__link:hover {
+            color: rgb(88, 201, 58);
+        }
+    }
+}

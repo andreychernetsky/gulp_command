@@ -1,24 +1,32 @@
 @import "../partials/params";
 @import "../partials/mixins";
 
-
-.header {
-    @include flex-center;
-    flex: 1 0 auto;
-    background: #fff;
-
-    //background: url('') no-repeat;
-    //background-size: cover;
-    color: $black;
-
-    &__title {
-        font-size: 72px;
-        font-weight: bold;
-        margin-bottom: 15px;
+.main-header {
+    background-color: #292929;
+    width: 100%;
+    height:$nav-height;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: relative;
+    &__line {
+        position: absolute;
+        bottom: 0;
+        height: 5px;
+        width: 100%;
+        background-color: #1e1e1e;
+        z-index: 1;
+    }
+    &__background {
+        width: 100vh;
+        height: -webkit-calc(100% - 50px);
+        margin-top: 50px;
+        background-color: rgba(0, 0, 0, 0.658);
+        position: fixed;
+        top: 0;
+        left: 0;
+        opacity: 0;
+        transition: all 0.3s ease;
     }
 
-    &__subtitle {
-        font-style: italic;
-        font-size: 32px;
-    }
 }
