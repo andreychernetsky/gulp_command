@@ -2,32 +2,18 @@
 @import "../partials/mixins";
 
 .main-header {
-    margin-bottom: 20px;
-    background-color: #292929;
+    margin: 30px;
+background-color:$header;
     width: 100%;
-    height:$nav-height;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+    height: 100px;
+    @include flex-around;
     position: relative;
     &__line {
         position: absolute;
         bottom: 0;
         height: 5px;
         width: 100%;
-        background-color: #1e1e1e;
+        background-color: $black;
         z-index: 1;
     }
-    &__background {
-        width: 100vh;
-        height: -webkit-calc(100% - 50px);
-        margin-top: 50px;
-        background-color: rgba(0, 0, 0, 0.658);
-        position: fixed;
-        top: 0;
-        left: 0;
-        opacity: 0;
-        transition: all 0.3s ease;
-    }
-
 }

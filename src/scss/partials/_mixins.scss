@@ -17,7 +17,14 @@
 @mixin flex {
      display: flex;
     justify-content: space-between;
-    align-items: center;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+}
+@mixin flex-around{
+     display: flex;
+    justify-content: space-around;
     display: -webkit-flex;
     display: -moz-flex;
     display: -ms-flex;
@@ -52,7 +59,7 @@
     &:active,
     &:focus,
     &:hover {
-    color:#2A4C3B;
+    color:#ddd;
         text-decoration: none;
         outline: 0;
 
