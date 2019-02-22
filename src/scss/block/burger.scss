@@ -1,0 +1,28 @@
+@import "../partials/params";
+@import "../partials/mixins";
+
+.menu-burger {
+    height: 30px;
+    margin: 0 10px;
+    width: 93%;
+}
+.burger {
+    display:none;
+    width: 20px;
+    height: 16px;
+    background-image: url(img/burger.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-color: $white;
+}
+#menu:checked ~ .main-menu {
+    right: 0;
+    opacity: 1;
+    z-index: 1;
+    border: none;
+}
+#menu:checked ~ .burger {
+    background-image: url(img/close.png);
+    background-size: contain;
+    border: none;
+}

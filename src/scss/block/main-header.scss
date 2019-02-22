@@ -2,6 +2,7 @@
 @import "../partials/mixins";
 
 .main-header {
+    max-width: 100%;
     margin-bottom: 30px;
     background-color: $header;
     width: 100%;

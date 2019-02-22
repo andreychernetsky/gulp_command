@@ -30,8 +30,15 @@
     .main-menu {
         display: none;
     }
-    .btn-menu {
+    .burger {
         display: block;
+        z-index: 20;
+    }
+    .blockquote-one__text {
+        font-size:1rem;
+        margin-top: 5%;
+        text-align: center;
+
     }
     .auth {
         max-width: 100%;

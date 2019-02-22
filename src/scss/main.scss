@@ -348,7 +348,7 @@ html{
     font-size:100%;
 }
 .wrap {
-    max-width: 1680px;
+    margin: 0 auto;
     @include clear;
     background-color:$grey;
     font-family:$main-font;
@@ -367,17 +367,25 @@ a {
 
 .view-port {
     width: $view-port;
-    margin: 0 auto;
 }
 
 .wrap-site {
     display: flex;
     flex-direction: column;
+    flex-wrap: wrap;
     min-width: 320px;
     margin: 0 auto;
     @include box-shadow(0, 2px, 5px, #555);
     overflow: hidden;
     background-color: $white;
+}
+.one-news {
+    max-width: 100%;
+    display:flex ;
+    justify-content: center;
+}
+span {
+    color: $red;
 }
 
 
