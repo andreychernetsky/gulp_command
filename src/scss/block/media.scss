@@ -10,6 +10,18 @@
 
 /* Medium Devices, Desktops */
 @media only screen and (max-width: 992px) {
+    .auth {
+        max-width: 100%;
+        display: flex;
+        justify-content: center;
+        &__link {
+            margin: 0 20px;
+            display: block;
+            font-size: 0.9rem;
+            font-weight: normal;
+        }
+
+    }
 
 }
 
@@ -21,10 +33,9 @@
     }
 
     .main-header {
-            margin-top: 0;
-            height: 85px;
-            z-index: 20;
-
+        margin-top: 0;
+        height: 85px;
+        z-index: 20;
 
     }
     .main-menu {
@@ -34,7 +45,7 @@
         display: block;
     }
     .blockquote-one__text {
-        font-size:1rem;
+        font-size: 1rem;
         margin-top: 5%;
         text-align: center;
 
@@ -42,8 +53,9 @@
     .auth {
         max-width: 100%;
         display: flex;
-        justify-content: space-around;
+        justify-content: center;
         &__link {
+            margin: 0 20px;
             display: block;
             font-size: 0.9rem;
             font-weight: normal;
@@ -91,9 +103,9 @@
 /* Extra Small Devices, Phones */
 @media only screen and (max-width: 480px) {
 
-.nav {
-    display: none;
-}
+    .nav {
+        display: none;
+    }
 }
 
 /* Custom, iPhone Retina */

@@ -47,6 +47,11 @@ a {
 span {
     color: $red;
 }
+.wto-news {
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+}
 
 
 
