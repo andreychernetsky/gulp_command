@@ -9,14 +9,15 @@
         display: flex;
         align-items: center;
         justify-content: space-around;
+        flex-wrap: wrap;
         height: $nav-height;
     }
 
     &__item {
+
         @include clear-list;
     }
     &__link {
-
         display: block;
         text-transform: uppercase;
         color: #ffffff;
