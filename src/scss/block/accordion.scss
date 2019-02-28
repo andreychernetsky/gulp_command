@@ -1,0 +1,50 @@
+@import "../partials/params";
+@import "../partials/mixins";
+
+.accordion {
+    @include outline;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background: $white;
+    padding: 12px 10px;
+    font-size:0.7rem;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    &__list {
+        display:none;
+        padding: 0;
+        margin: 10px 0 0;
+    }
+    &__active1 {
+        display: block;
+        background:#fff;
+    }
+    &__title {
+        margin: 0;
+        padding: 8px 0 8px 15px;
+        background:$black;
+        font-size: 1.5rem;
+        line-height:1.6rem;
+        color:#fff;
+    }
+    &__item {
+        font-size: 1rem;
+        list-style: none;
+        height: 31px;
+        border-bottom: 1px solid #e8e6de;
+        margin: 10px 16px;
+    }
+    &__link {
+        text-decoration: none;
+        color:$grey;
+        padding: 10px 10px 10px;
+        &:hover {
+            text-decoration: none;
+            color:$white;
+            text-align: center;
+            min-width: 30%;
+        }
+    }
+
+}
