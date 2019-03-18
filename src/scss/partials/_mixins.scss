@@ -5,7 +5,7 @@
 
 @mixin clear-list {
   @include clear;
-  list-style: none;
+  list-style-type: none;
 }
 
 @mixin flex-center {

@@ -116,6 +116,19 @@
         }
     }
 
+    .requirements{
+        width:100%;
+        @include flex-center;
+
+        &__art{
+            max-width: 95%;
+            margin: 40px;
+        }
+        &__text {
+
+        }
+
+    }
 }
 
 /* Extra Small Devices, Phones */
