@@ -6,7 +6,7 @@
     flex-direction: column;
     align-items: center;
     flex-wrap: wrap;
-    @include  outline;
+    //@include  outline;
     &__art{
         display: flex;
         flex-direction: column;
@@ -14,13 +14,13 @@
         flex-wrap: wrap;
         max-width: 900px;
         padding: 10px 30px 10px 30px;
-        @include  outline;
+        //@include  outline;
     }
     &__wrap {
         display: flex;
         flex-direction: column;
         align-items: center;
-        @include  outline;
+        //@include  outline;
         width: 700px;
         background: $grey;
         margin-bottom: 1em;
