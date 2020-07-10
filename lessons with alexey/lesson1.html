@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+<body>
+<script>
+  let s = "hello, world";      // Нач­нем с то­го же тек­ста.
+  s.length;                    //длинна строки
+  s.charAt(0);                 //"h": пер­вый сим­вол.
+  s.charAt(s.length-1);        //"d": по­след­ний сим­вол.
+  s.substring(1,4);            //"ell": 2-й, 3-й и 4-й сим­во­лы.
+  s.slice(1,4);                //"ell": то же са­мое
+  s.slice(-3);                 //"rld": по­след­ние 3 сим­во­ла
+  s.indexOf("l");              //2: по­зи­ция пер­во­го сим­во­ла l.
+  s.lastIndexOf("l");          //10: по­зи­ция по­след­не­го сим­во­ла l.
+  s.indexOf("l", 3);           //3: по­зи­ция пер­во­го сим­во­ла "l", сле­дую­ще­го за 3 сим­во­лом в стро­ке
+  s.split(", ");               //["hello", "world"] раз­би­ва­ет на под­стро­ки
+  s.replace("h", "H");         //"Hello, world": за­ме­ща­ет все вхо­ж­де­ния под­стро­ки
+  s.toUpperCase();             //"HELLO, WORLD"
+  //s[0];                        //"h"
+  //s[s.length-1];               //"d"
+	
+  //Дана строка. Вывести первые три символа и последний три символа, если длина строки больше 5.
+  //Иначе вывести первый символ столько раз, какова длина строки.
+
+  // задача.найти несколько вариантов решения.
+  // вариант 1
+  function lenFive(str) {
+    if(str.length <=5) {
+      for(let i = 0; i < str.length; i++){
+        console.log(str[0]);
+      }
+    } else {
+      console.log(str[0]);
+      console.log(str[1]);
+      console.log(str[2]);
+    }
+    return str;
+  }
+
+  console.log(lenFive("Where can I get some"));
+  console.log(lenFive("Where"));
+
+  // вариант 2.
+
+  function lenFive(str) {
+    if(str.length <=5) {
+      for (let i = 0; i < str.length; i++) {
+        console.log(str[0]);
+      }
+    } else {
+      // не работает forEach
+      str.split("").forEach((char,index)=> {
+        if((0 <= index && index <=2) || (str.length -3 <=index <= str.length -1)) {
+        console.log(char);
+      }
+    })
+
+    }
+
+  }
+  console.log(lenFive("Where can I get some"));
+  console.log(lenFive("Where"));
+
+  // вариант 3
+  function lenFive(str) {
+    str = str.trim();
+    let len = str.length, letter = '';
+    if (len > 5) {
+      return str.substr(0,3) + ' ' + str.substr(len-3,3);
+    }
+    for (len; len --;) {//не пойму как работает эта конструкция
+      letter += str.charAt(0);
+    }
+    return letter;
+  }
+  clog(lenFive("Where can I get some")); //Whe ome
+  clog(lenFive("Where")); //WWWWW
+
+</script>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+<body>
+<script>
+  let s = "hello, world";      // Нач­нем с то­го же тек­ста.
+  s.length;                    //длинна строки
+  s.charAt(0);                 //"h": пер­вый сим­вол.
+  s.charAt(s.length-1);        //"d": по­след­ний сим­вол.
+  s.substring(1,4);            //"ell": 2-й, 3-й и 4-й сим­во­лы.
+  s.slice(1,4);                //"ell": то же са­мое
+  s.slice(-3);                 //"rld": по­след­ние 3 сим­во­ла
+  s.indexOf("l");              //2: по­зи­ция пер­во­го сим­во­ла l.
+  s.lastIndexOf("l");          //10: по­зи­ция по­след­не­го сим­во­ла l.
+  s.indexOf("l", 3);           //3: по­зи­ция пер­во­го сим­во­ла "l", сле­дую­ще­го за 3 сим­во­лом в стро­ке
+  s.split(", ");               //["hello", "world"] раз­би­ва­ет на под­стро­ки
+  s.replace("h", "H");         //"Hello, world": за­ме­ща­ет все вхо­ж­де­ния под­стро­ки
+  s.toUpperCase();             //"HELLO, WORLD"
+  //s[0];                        //"h"
+  //s[s.length-1];               //"d"
+  //Сформировать строку из 10 символов.
+  //На четных позициях должны находится четные цифры, на нечетных позициях - буквы.
+	
+//	вариант 1
+	
+  function createWords() {
+    let len = 10, word = "", letter = "abcdefghik";
+    for (len; len --;) {
+      word += (len % 2 == 0) ?  len : letter.charAt(len);
+    }
+    return word;
+  }
+  clog(createWords()); //k8h6f4d2b0
+	
+//	вариант 2
+	
+  function createWords() {
+  let word = "";
+
+  while(word.length < 10) {
+    if(word.length % 2 === 0) {
+      word +='a';
+    } else {
+      word += '0';
+    }
+  }
+  return word;
+  }
+  console.log(createWords());//a0a0a0a0
+	
+//	вариант 3
+  function createWords() {
+    let word = "";
+
+    while(word.length < 10) {
+      word+=word.length % 2 ? 'a':'0'
+
+    }
+    return word;
+  }
+  console.log(createWords());//a0a0a0a0
+</script>
+</body>
+</html>
