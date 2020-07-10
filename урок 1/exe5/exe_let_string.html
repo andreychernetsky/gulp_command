@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Обращение к символам строки</title>
+</head>
+<body>
+<style>
+	.container {
+		padding: 0 15px;
+		margin: 30px auto;
+		width: 100%;
+		max-width: 900px;
+		
+	}
+</style>
+<div class="container">
+	<p>1. Создайте переменную str и присвойте ей значение 'abcde'. Обращаясь к отдельным символам этой строки выведите на экран символ 'a', символ 'c', символ 'e'.</p>
+	<div id="demo1_a"></div>
+	<div id="demo1_b"></div>
+	<div id="demo1_c"></div>
+	<div id="demo1_e"></div>
+	<div id="demo1_f"></div>
+	<!--///////////////////////////////////////////////////////////////////////	-->
+	<p>2) Создайте переменную num и присвойте ей значение '12345'. Найдите произведение (умножение) цифр этого числа.</p>
+	<div id="demo2"></div>
+	
+	
+	
+	
+	<!--///////////////////////////////////////////////////////////////////////////-->
+	<p> 3)	Продемонстрируйте конвертацию строки в число и наоборот.</p>
+	<div id="demo3"></div>
+	<div id="demo3_c"></div>
+	<div id="demo3_p"></div>
+	<div id="demo3_k"></div>
+	<!--////////////////////////////////////////////////////////////////////////////////-->
+	<p>4) Продемонстрируйте конвертацию особых примитивов в число и строку.</p>
+	<div id="demo4"></div>
+	<!--////////////////////////////////////////////////////////////////////////////////////-->
+	
+</div>
+
+
+<script>
+let str = 'abcde';
+document.getElementById('demo1_a').innerHTML = `${str[0]}`;
+document.getElementById('demo1_b').innerHTML = `${str[1]}`;
+document.getElementById('demo1_c').innerHTML = `${str[2]}`;
+document.getElementById('demo1_e').innerHTML = `${str[3]}`;
+document.getElementById('demo1_f').innerHTML = `${str[4]}`;
+
+//2) Создайте переменную num и присвойте ей значение '12345'. Найдите произведение (умножение) цифр этого числа.
+	let num = '12345';
+document.getElementById('demo2').innerHTML = `ответ ${num[0]*num[1]*num[2]*num[3]*num[4]}`;
+
+//3)	Продемонстрируйте конвертацию строки в число и наоборот.
+let num_b = '1';
+let result = typeof num_b;
+document.getElementById('demo3').innerHTML = `это строка ${result}`;
+
+//теперь сделаем тип number
+let num_c = '1';
+let result_c = Number(num_c);
+let resNum = typeof result_c;
+document.getElementById('demo3_c').innerHTML = `теперь число ${resNum}`;
+
+let num_s = '1';
+let num_n = 3;
+let result_p = typeof (num_s + num_n);
+document.getElementById('demo3_p').innerHTML = `это строка ${result_p}`;
+
+let num_v = '1';
+let num_g = 3;
+let result_k = typeof (+(num_v) + num_g);
+document.getElementById('demo3_p').innerHTML = `теперь число ${result_k}`;
+
+let num_c = +"10.5";
+document.getElementById('demo4').innerHTML = typeof(num_c);
+</script>
+</body>
+</html>

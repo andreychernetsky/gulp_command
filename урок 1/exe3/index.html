@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+<body>
+<!--
+Задание 4 (*)
+1.	Выведите строку в консоль.
+2.	Выведите несколько строк подряд в консоль.
+3.	Выведите значение переменной в консоль.
+4.	Выведите значение нескольких переменных в консоль.
+5.	Выведите значение нескольких переменных в консоль с использованием фигурных скобок.
+6.	Выведите сразу несколько разных значений: строку, переменную, переменную в фигурных скобках.
+-->
+
+<script>
+//  1.	Выведите строку в консоль.
+	
+	console.log('string');//string
+
+//2.	Выведите несколько строк подряд в консоль.
+let str2 = ["string1","string2"];
+console.log(str2);//["string1", "string2"]
+
+console.log("string1","string2");//string1 string2
+
+//3. Выведите значение переменной в консоль.
+let str = "string";
+console.log(str);//string
+
+//4.	Выведите значение нескольких переменных в консоль.
+let arr = [1];
+let str4 = 'string4';
+const obj = {
+  name:'andray'
+};
+
+console.log(`массив=${arr} строка = ${str4} объект = ${obj['name']}`);//массив =1 строка = string4 объект = andray
+
+//5.	Выведите значение нескольких переменных в консоль с использованием фигурных скобок.
+let arr = [1];
+let str4 = 'string4';
+const obj = {
+  name:'andray'
+};
+console.log({arr,str4,obj});//{arr:[1],str4:'string4',obj:{name:'andray}}
+
+</script>
+</body>
+</html>

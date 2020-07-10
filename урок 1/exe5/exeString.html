@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+<body>
+<style>
+	.container {
+		padding: 0 15px;
+		margin: 30px auto;
+		width: 100%;
+		max-width: 900px;
+		
+	}
+</style>
+<div class="container">
+	<p> 1. Создайте переменную str и присвойте ей значение 'Привет, Мир!'. Выведите значение этой переменной на экран</p>
+	<div id="demo1"></div>
+	<!--///////////////////////////////////////////////////////////////////////	-->
+	<p>Создайте переменные str1='Привет, ' и str2='Мир!'. С помощью этих переменных и операции сложения строк выведите на экран фразу 'Привет, Мир!'.</p>
+	<div id="demo2"></div>
+	
+	<!--второй вариант-->
+	<div id="demo2b"></div>
+	<!--///////////////////////////////////////////////////////////////////////////-->
+	<p> 3). Создайте переменную name и присвойте ей ваше имя. Выведите на экран фразу 'Привет, %Имя%!'.</p>
+	<div id="demo3"></div>
+	<!--////////////////////////////////////////////////////////////////////////////////-->
+	<p>4. Создайте переменную age и присвойте ей ваш возраст. Выведите на экран 'Мне %Возраст% лет!'</p>
+	<div id="demo4"></div>
+	<!--////////////////////////////////////////////////////////////////////////////////////-->
+	<p>5. Спросите имя пользователя с помощью методы prompt. Выведите с помощью innerHtml сообщение 'Ваше имя %имя%'.</p>
+	<div id="demo5"></div>
+	
+	<!--////////////////////////////////////////////////////////////////////////////////////////-->
+	<p>Спросите у пользователя число. Выведите с помощью innerHTML квадрат этого числа.</p>
+	<div id="demo6"></div>
+	<!--второй вариант-->
+	<div id="demo6_b"></div>
+	<div id="demo6_p"></div>
+</div>
+
+
+<script>
+	//1. Создайте переменную str и присвойте ей значение 'Привет, Мир!'. Выведите значение этой переменной на экран
+	let str = 'Привет, Мир!';
+  document.getElementById('demo1').innerHTML = (`${str}` );
+
+//  2)Создайте переменные str1='Привет, ' и str2='Мир!'. С помощью этих переменных и операции сложения строк выведите на экран фразу 'Привет, Мир!'.
+	let str2 = "Привет";
+	let str3 =  "Мир";
+  document.getElementById('demo2').innerHTML = (`${str2 + str3} ` );
+  
+//  второй вариант
+  let str_2b = "Привет";
+  let str_3b =  "Мир";
+  let result_3b =   str_2b  + ' ' +  str_3b;
+  document.getElementById('demo2b').innerHTML = (`${ result_3b } ` );
+
+//  3). Создайте переменную name и присвойте ей ваше имя. Выведите на экран фразу 'Привет, %Имя%!'.
+	let name  ='Andru';
+  document.getElementById('demo3').innerHTML = (`Привет ${name } ` );
+
+//  4. Создайте переменную age и присвойте ей ваш возраст. Выведите на экран 'Мне %Возраст% лет!'
+	let age = 34;
+  document.getElementById('demo4').innerHTML = (`мне ${name } лет ` );
+
+//  5. Спросите имя пользователя с помощью методы prompt. Выведите с помощью innerHtml сообщение 'Ваше имя %имя%'.
+//  const userName = prompt('Как вас зовут?');
+//  document.getElementById('demo5').innerHTML = (`Ваше имя ${userName } ` );
+  
+  //6 Спросите у пользователя число. Выведите с помощью innerHTML квадрат этого числа.
+//	через prompt
+	let num_p = prompt('напишите любое число');
+  document.getElementById('demo6_p').innerHTML = (` квадрат числа = ${num_p * num_p } ` );
+	
+	let num = 2;
+	let result = num * num;
+  document.getElementById('demo6').innerHTML = (` квадрат числа = ${result } ` );
+  
+//  второй вариант
+  let num_b = 4;
+  let result_b = num_b * 2;
+  document.getElementById('demo6_b').innerHTML = (` квадрат числа(второй вариант) = ${result_b } ` );
+	
+</script>
+</body>
+</html>

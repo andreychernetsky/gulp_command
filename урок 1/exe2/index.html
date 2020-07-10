@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+<body>
+<!--Задание 3 (*)
+1.	Создайте несколько констант. Что выведется в консоль при попытке изменить значение константы?-->
+
+<a href="https://codepen.io/andreychernetsky/pen/mvXJXz?editors=1010"> материал о переменных</a>
+<script>
+//	example
+  const MATH = {
+  };
+console.log(MATH.PI);//undefined
+
+
+//  example
+
+const X = 5;//x is not defined константа не изменяетя
+X=10;
+console.log(X);//Assignment to constant variable.Присвоение постоянной переменной.
+
+//  example
+
+const MAX;
+console.log(MAX);//Missing initializer in const declaration
+// Отсутствует инициализатор в объявлении const
+
+//	example
+// MIN is not defined МИН не определен
+
+console.log(MIN);
+const MIN = 1;
+</script>
+</body>
+</html>
