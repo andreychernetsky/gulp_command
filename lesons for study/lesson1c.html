@@ -22,6 +22,11 @@
   string.repeat(3).slice(0, -2);
   console.log(string);
   
+//  правильный ответ
+  const string = "мега задача дни недели" + ', ';
+  let string2 = string.repeat(3).slice(0, -2);
+  console.log(string2);
+  
 //  вариант 3
   const string = "мега задача дни недели";
   let result = "";
@@ -64,12 +69,23 @@
   console.log(threeString('мега'));
 
   //	вариант 2 не работает
+//  посмотри на функцию. Что она возвращает? Куда записывается результат Array(3).fill(str).join(',');?
   function threeString(str) {
     Array(3).fill(str).join(',');
 //    [str,str,str].join(', ');
-		return str;
+    return str;
   }
   console.log(threeString('str'));
+  
+//  правильный ответ
+  function threeString(str) {
+    let result = Array(3).fill(str).join(',');
+//    [str,str,str].join(', ');
+    return result;
+  }
+  console.log(threeString('str'));
+
+//  Ещё можно сделать без доп переменой или стрелочную
 </script>
 </body>
 </html>
