@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+<body>
+<script>
+ /* В разных языка программирования используются различные варианты нотаций:
+
+    camelCase - слова не разделяются, каждое следующее слово с заглавной буквы
+  snake_case - слова разделяются нижним подчеркиванием
+  kebab-case - слова разделяются дефисом
+  Напишите функцию, которая принимает строку в одной из форм нотаций или форме обычного текста, и возвращает массив этой же переменной во всех нотациях.
+		*/
+  function getCases (str) {
+    let words = ''
+
+    // If source string in the form of plain text.:
+    if (str.includes(' ')) {
+      words = str
+        .split(' ')
+        .map(word => word.toLowerCase())
+    }
+
+    // If source string in snake_case:
+    else if (str.includes('_')) {
+      words = str.split('_')
+    }
+
+    // If source string in kebab-case:
+    else if (str.includes('-')) {
+      words = str.split('-')
+    }
+
+    // If source string in camelCase :
+    else {
+      words = []
+      let word = ''
+
+      // Создать массив из слов в нижнем регистре.
+      for (let i = 0; i < str.length; i++) {
+        word += str[i]
+
+        if ( i + 1 < str.length &&
+          str[i + 1] === str[i + 1].toUpperCase() ) {
+          words.push(word)
+          word = ''
+        }
+      }
+
+      words.push(word)
+      words.map(word => word.toLowerCase())
+    }
+
+    // Массив принятой строки во всех нотациях.
+    const abArray = []
+
+    // ****** camelCase ******
+    abArray.push(words[0])
+
+    for (let i = 1; i < words.length; i++) {
+      abArray[0] += words[i][0].toUpperCase() + words[i].slice(1)
+    }
+
+    // ****** snake_case ******
+    abArray.push(words[0])
+
+    for (let i = 1; i < words.length; i++) {
+      abArray[1] += '_' + words[i]
+    }
+
+    // ****** kebab-case ******
+    abArray.push(words[0])
+
+    for (let i = 1; i < words.length; i++) {
+      abArray[2] += '-' + words[i]
+    }
+
+    return abArray
+  }
+</script>
+</body>
+</html>

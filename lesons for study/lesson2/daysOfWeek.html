@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+<body>
+<!--ссылка на кодепен https://codepen.io/andreychernetsky/pen/gOPKVyr?editors=1010-->
+<ul></ul>
+<script>
+  //	задача. Написать дни недели и вывести их в консоли или окне браузера.
+
+  //	1) обращаемся к селектору ul
+  //2) создаем массив с днями недели
+  //3) напишем асинхронную функцию  main
+  //4) пройдем счетчиком по элементам массива и поместим их в day
+  //5) создадим li
+  //6)в liElement помещаем day
+  //7) в родительский контейнер ulElement помещаем элементы массива
+  //8) запустим и увидим список элементов массива
+  /*const ulElement = document.querySelector('ul');//1
+  const days  = ['пн','вт','ср','чт','пт','сб','вс'];//2
+
+  main();
+  async function main(){//3
+    for(const day of days) {//4
+      const liElement = document.createElement('li');//5
+      liElement.textContent = day;//6
+      ulElement.appendChild(liElement);//7
+    }
+  }
+*/
+
+  //  задача. Дописать функцию, которая позволяла бы выводить дни недели через две сек
+
+  //  9) Напишем функцию, которая будет выдавать задержку
+  //10) возвращаем новый промисс,
+  //11) дожидаемся вызова
+  //12) смотрим вызов функции. Дни недели будут появляться через две секунды
+  /*
+		const ulElement = document.querySelector('ul');
+		const days  = ['пн','вт','ср','чт','пт','сб','вс'];
+	
+		main();
+		async function main(){
+			for(const day of days) {
+				const liElement = document.createElement('li');
+				liElement.textContent = day;
+				ulElement.appendChild(liElement);
+				await delay(2000);//11
+			}
+		}
+	
+		function delay (milliseconds) {//9
+			return new Promise(r => setTimeout(r,milliseconds));//10
+		}
+	*/
+
+  //задача: дописать условие, чтобы выходные дни обозначались красным цветом
+
+  //13) переформатируем days напишем массив объектов
+  //14) напишим проверку на выходной и обозначим его красным
+
+  const ulElement = document.querySelector('ul')
+  const days = [
+    { name: 'пн', isWeekend: false },
+    { name: 'вт', isWeekend: false },
+    { name: 'ср', isWeekend: false },
+    { name: 'чт', isWeekend: false },
+    { name: 'пт', isWeekend: false },
+    { name: 'сб', isWeekend: true },
+    { name: 'вс', isWeekend: true }
+  ];
+
+  main()
+
+  async function main () {
+    for (const day of days) {
+      const liElement = document.createElement('li');
+      liElement.textContent = day.name;
+
+      if (day.isWeekend) {//14
+        liElement.style.color = 'red';//добавляем цвет
+      }
+
+      ulElement.append(liElement)
+      await delay(2000)
+    }
+  }
+
+  function delay (milliseconds) {
+    return new Promise(r => setTimeout(r, milliseconds))
+  }
+
+  //  задача: переделать через индекс
+
+  //задача. переделать через промис
+  //задача. Добавить кнопку, по клику на которую сработает функция вызова
+
+  //задача. Допиши свое дополнение либо из выше приведенных задач или добавь свое решение с новым дополнением.
+
+  // скидывай в контакте сообщением
+
+</script>
+</body>
+</html>

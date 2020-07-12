@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+<body>
+<script>
+  /*const users = [
+  { id: 1, name: "Алексей" },
+  { id: 2, name: "Андрей" },
+  { id: 3, name: "Серьгей" },
+  { id: 4, name: "Дмитрий" },
+  { id: 5, name: "Ольга" },
+  { id: 6, name: "Оксана" }
+];
+
+for(let i = 0; i < users.length; i++) {
+  console.log(users[i]);
+}*/
+  // результат в консоли при работе одного цикла i
+  /*
+	
+	 {id: 1, name: "Алексей"}
+	{id: 2, name: "Андрей"}
+	{id: 3, name: "Серьгей"}
+	{id: 4, name: "Дмитрий"}
+	{id: 5, name: "Ольга"}
+	{id: 6, name: "Оксана"}*/
+
+  // добавим второй цикл j который разместим в цикле i
+
+  /*const users = [
+		{ id: 1, name: "Алексей" },
+		{ id: 2, name: "Андрей" },
+		{ id: 3, name: "Серьгей" },
+		{ id: 4, name: "Дмитрий" },
+		{ id: 5, name: "Ольга" },
+		{ id: 6, name: "Оксана" }
+	];
+	
+	for(let i = 0; i < users.length; i++) {
+		console.log(users[i]);
+		for(let j = 0; j < users.length; j++) {
+		 console.log(users[i], users[j]);
+		}
+	
+	}*/
+  // результат в консоли
+  /*
+	{id: 1, name: "Алексей"} {id: 1, name: "Алексей"} -1 чтобы i не выводил первое значение
+	{id: 1, name: "Алексей"} {id: 2, name: "Андрей"}
+	
+	{id: 1, name: "Алексей"} {id: 3, name: "Серьгей"}
+	{id: 1, name: "Алексей"} {id: 4, name: "Дмитрий"}
+	
+	{id: 1, name: "Алексей"} {id: 5, name: "Ольга"}
+	{id: 1, name: "Алексей"} {id: 6, name: "Оксана"}
+	
+	{id: 2, name: "Андрей"} {id: 1, name: "Алексей"}
+	{id: 2, name: "Андрей"} {id: 2, name: "Андрей"} -1 чтобы i не выводил первое значение
+	
+	{id: 2, name: "Андрей"} {id: 3, name: "Серьгей"}
+	{id: 2, name: "Андрей"} {id: 4, name: "Дмитрий"}
+	
+	{id: 2, name: "Андрей"} {id: 5, name: "Ольга"}
+	{id: 2, name: "Андрей"} {id: 6, name: "Оксана"}
+	
+	{id: 3, name: "Серьгей"} {id: 1, name: "Алексей"}
+	{id: 3, name: "Серьгей"} {id: 2, name: "Андрей"}
+	
+	{id: 3, name: "Серьгей"} {id: 3, name: "Серьгей"}  -1 чтобы i не выводил первое значение
+	{id: 3, name: "Серьгей"} {id: 4, name: "Дмитрий"}
+	
+	{id: 3, name: "Серьгей"} {id: 5, name: "Ольга"}
+	{id: 3, name: "Серьгей"} {id: 6, name: "Оксана"}
+	
+	{id: 4, name: "Дмитрий"} {id: 1, name: "Алексей"}
+	{id: 4, name: "Дмитрий"} {id: 2, name: "Андрей"}
+	
+	{id: 4, name: "Дмитрий"} {id: 3, name: "Серьгей"}
+	{id: 4, name: "Дмитрий"} {id: 4, name: "Дмитрий"}  -1 чтобы i не выводил первое значение
+	
+	{id: 4, name: "Дмитрий"} {id: 5, name: "Ольга"}
+	{id: 4, name: "Дмитрий"} {id: 6, name: "Оксана"}
+	
+	{id: 5, name: "Ольга"} {id: 1, name: "Алексей"}
+	{id: 5, name: "Ольга"} {id: 2, name: "Андрей"}
+	
+	{id: 5, name: "Ольга"} {id: 3, name: "Серьгей"}
+	{id: 5, name: "Ольга"} {id: 4, name: "Дмитрий"}
+	
+	{id: 5, name: "Ольга"} {id: 5, name: "Ольга"}  -1 чтобы i не выводил первое значение
+	{id: 5, name: "Ольга"} {id: 6, name: "Оксана"}
+	
+	{id: 6, name: "Оксана"} {id: 1, name: "Алексей"}
+	{id: 6, name: "Оксана"} {id: 2, name: "Андрей"}
+	
+	{id: 6, name: "Оксана"} {id: 3, name: "Серьгей"}
+	{id: 6, name: "Оксана"} {id: 4, name: "Дмитрий"}
+	
+	{id: 6, name: "Оксана"} {id: 5, name: "Ольга"}
+	{id: 6, name: "Оксана"} {id: 6, name: "Оксана"}  -1 чтобы i не выводил первое значение */
+
+
+  // для того чтобы не выводился последнее значение, так как оно дублируется у него нет пары, то мы поставим -1
+
+
+  /*
+	const users = [
+		{ id: 1, name: "Алексей" },
+		{ id: 2, name: "Андрей" },
+		{ id: 3, name: "Серьгей" },
+		{ id: 4, name: "Дмитрий" },
+		{ id: 5, name: "Ольга" },
+		{ id: 6, name: "Оксана" }
+	];
+	
+	for(let i = 0; i < users.length-1; i++) {
+		console.log(users[i]);
+		for (let j = 0; j < users.length; j++) {
+			console.log(users[i], users[j]);
+		}
+	}
+	*/
+
+  /*
+	{id: 1, name: "Алексей"}
+	{id: 1, name: "Алексей"} {id: 1, name: "Алексей"}
+	{id: 1, name: "Алексей"} {id: 2, name: "Андрей"}
+	{id: 1, name: "Алексей"} {id: 3, name: "Серьгей"}
+	{id: 1, name: "Алексей"} {id: 4, name: "Дмитрий"}
+	{id: 1, name: "Алексей"} {id: 5, name: "Ольга"}
+	{id: 1, name: "Алексей"} {id: 6, name: "Оксана"}
+	{id: 2, name: "Андрей"}
+	{id: 2, name: "Андрей"} {id: 1, name: "Алексей"}
+	{id: 2, name: "Андрей"} {id: 2, name: "Андрей"}
+	{id: 2, name: "Андрей"} {id: 3, name: "Серьгей"}
+	{id: 2, name: "Андрей"} {id: 4, name: "Дмитрий"}
+	{id: 2, name: "Андрей"} {id: 5, name: "Ольга"}
+	{id: 2, name: "Андрей"} {id: 6, name: "Оксана"}
+	{id: 3, name: "Серьгей"}
+	{id: 3, name: "Серьгей"} {id: 1, name: "Алексей"}
+	{id: 3, name: "Серьгей"} {id: 2, name: "Андрей"} {id: 3, name: "Серьгей"} {id: 3, name: "Серьгей"}
+	{id: 3, name: "Серьгей"} {id: 4, name: "Дмитрий"}
+	{id: 3, name: "Серьгей"} {id: 5, name: "Ольга"}
+	{id: 3, name: "Серьгей"} {id: 6, name: "Оксана"}
+	{id: 4, name: "Дмитрий"}
+	{id: 4, name: "Дмитрий"} {id: 1, name: "Алексей"}
+	{id: 4, name: "Дмитрий"} {id: 2, name: "Андрей"}
+	{id: 4, name: "Дмитрий"} {id: 3, name: "Серьгей"}
+	{id: 4, name: "Дмитрий"} {id: 4, name: "Дмитрий"}
+	{id: 4, name: "Дмитрий"} {id: 5, name: "Ольга"}
+	{id: 4, name: "Дмитрий"} {id: 6, name: "Оксана"}
+	{id: 5, name: "Ольга"}
+	{id: 5, name: "Ольга"} {id: 1, name: "Алексей"}
+	{id: 5, name: "Ольга"} {id: 2, name: "Андрей"}
+	{id: 5, name: "Ольга"} {id: 3, name: "Серьгей"}
+	{id: 5, name: "Ольга"} {id: 4, name: "Дмитрий"}
+	{id: 5, name: "Ольга"} {id: 5, name: "Ольга"}
+	{id: 5, name: "Ольга"} {id: 6, name: "Оксана"}
+	*/
+
+  // добавим третий цикл k
+
+  const users = [
+    { id: 1, name: "Алексей" },
+    { id: 2, name: "Андрей" },
+    { id: 3, name: "Серьгей" },
+    { id: 4, name: "Дмитрий" },
+    { id: 5, name: "Ольга" },
+    { id: 6, name: "Оксана" }
+  ];
+
+  for(let i = 0; i < users.length-2; i++) {
+    for(let j = 0; j < users.length-1; j++) {
+      for(let k = j+1; k < users.length; k++) {
+        console.log(users[i], users[j], users[k]);
+      }
+    }
+  }
+
+  // задача: нужно перебрать по паррам и все пары вывести в консоль
+  /* перебрать по тройкам и все пары вывести в консоль
+	 перебрать по четверкам и все пары вывести в консоль*/
+  function forEach (array,number,callback) {
+
+  }
+
+  forEach(users,2,array =>console.log(array))
+</script>
+</body>
+</html>

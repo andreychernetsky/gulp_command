@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+<body>
+<script>
+ /* isPalindrome
+  Строку называют палиндромом если при реверсе получается этаже строка. Т.е. символы стоят в одном и том же порядке не зависимо с какого конца читать строку.
+
+    Пример палиндромов:
+
+    a
+  апа
+  лорол
+  лоррол
+  1212121
+  Напишите функцию, которая проверяет является ли ее аргумент палиндром.*/
+
+ /*Примеры
+
+ 1
+ isPalindrome("a") // true
+ 2
+ isPalindrome("апа") // true
+ 3
+ isPalindrome("лорол") // true
+ 4
+ isPalindrome("лоррол") // true
+ 5
+ isPalindrome("1212121") // true
+ 6
+​
+7
+ isPalindrome("123") // false
+ 8
+ isPalindrome("мама") // false
+ 9
+ isPalindrome("дом") // false
+ 10
+ isPalindrome("мода") // false
+ 11
+ isPalindrome("фоыщ9а87уцр4") // false*/
+
+ function isPalindrome (str) {
+   let lastIndex = str.length - 1
+
+   for (let i = 0; i < str.length; i++) {
+     if (str[i] !== str[lastIndex]) {
+       return false
+     }
+
+     lastIndex--
+   }
+
+   return true
+ }
+ 
+// example 2
+
+ function isPalindrome (str) {
+   if (str.length < 2) return true;
+   const firstSymbol = str[0];
+   const secondSymbol = str[str.length - 1];
+   if (firstSymbol !== secondSymbol) return false;
+   return isPalindrome(str.substring(1, str.length - 1))
+ }
+ 
+// example 3
+
+ function isPalindrome (str) {
+   str = str.toLowerCase();
+   return str === str.split('').reverse().join('');
+ }
+</script>
+</body>
+</html>

@@ -7,7 +7,7 @@
 	<title>Document</title>
 </head>
 <body>
-
+<!--дополнительный материал https://www.youtube.com/watch?v=aGTjRU7Dp20&t=1378s-->
 <style>
 	.container{
 		width: 100%;
@@ -56,6 +56,9 @@
 	<p>Если добавить число и строку, результатом будет строка:</p>
 	
 	<p id="demo7"></p>
+	
+	<p>Распространенной ошибкой является ожидание такого результата 30:</p>
+	<p id="demo8"></p>
 </div>
 
 
@@ -103,6 +106,13 @@
   let y7 = "20";
   let z7 = x7 + y7;
   document.getElementById("demo7").innerHTML = `10 + '20' = ${z7}` ;
+  
+//  exe9
+
+  let x8 = 10;
+  let y8 = 20;
+  document.getElementById("demo8").innerHTML =
+    "Результат: " + x8 + y8;
 </script>
 </body>
 </html>
