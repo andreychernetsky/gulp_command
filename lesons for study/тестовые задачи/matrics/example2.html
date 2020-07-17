@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+<body>
+<script>
+  // Вывести на экран числа, находящиеся под главной диагональю матрицы
+  // есть набор массивов, которые тоже лежат в массиве
+  // что такое диагональ матрицы? это числа 1,2,3,1 т.е. с верхнего левого угла в правый нижний
+  // и нам нужно вывести числа под этой диагональю
+  // 1) напишем переменную matrix
+  // 2) нужно сделать перебор родительского массива
+  const matrix =
+    [
+      [1, 4, 8, 9],//дочерние массивы имеют одинаковую длину
+      [6, 2, 11, 1],
+      [8, 0, 3, -5],
+      [-2, 10, 8, 1]
+    ];
+
+  for(let i = 1; i < matrix.length; i++) {
+    for(let j = 0; j < i; j++) {
+      console.log(matrix[i][j]);//6,8,0,-2,10,8
+    }
+  }
+
+  // через forEach
+  const matrix =
+    [
+      [1, 4, 8, 9],//дочерние массивы имеют одинаковую длину
+      [6, 2, 11, 1],
+      [8, 0, 3, -5],
+      [-2, 10, 8, 1]
+    ];
+
+  matrix.forEach(function (row,outerIndex) {
+    row.forEach(function (num,innerIndex) {
+      if(innerIndex < outerIndex) {
+        console.log(num);//6,
+      } else {
+        return;
+      }
+    })
+  });
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<style>
+	.hidden-block {
+		display: none;
+	}
+</style>
+<button id = "btn">silca</button>
+<progress id="user-progress" value="0" max="100">
+<div class="hidden-block">
+	hello
+</div>
+</progress>
+<script>
+ /* //шаг первый
+  function userProgress(time) {
+		let start = 0;
+		let progressElement = document.getElementById('user-progress');//элемент прогресс бар
+		setInterval(function () {
+			progressElement.value = start;
+			start++;
+		},time);
+	}
+	userProgress(500);
+
+  //шаг 2
+ function userProgress(time) {
+    let start = 0;
+    let progressElement = document.getElementById('user-progress');//элемент прогресс бар
+    let interval = setInterval(function () {
+      if (start >= 100) {
+        clearInterval(interval);
+      } else {
+        progressElement.value = start;
+      }
+      start++;
+    }, time);
+  }
+
+  userProgress(100);
+ */
+// шаг три
+  function userProgress(time) {
+    let start = 0;
+    let times = Math.round(time *1000 / 100);
+    let progressElement = document.getElementById('user-progress');//элемент прогресс бар
+    let interval = setInterval(function () {
+      if (start > 100) {
+        clearInterval(interval);
+        userProgressCallback();
+      } else {
+        progressElement.value = start;
+      }
+      start++;
+    }, times);
+  }
+  
+  function userProgressCallback() {
+    document.querySelector('.hidden-block').style.display = 'block';
+	}
+  userProgress(5);
+  
+  document.getElementById('btn').addEventListener('click',userProgress );
+  

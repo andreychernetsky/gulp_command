@@ -5,9 +5,247 @@
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>Document</title>
+
 </head>
 <body>
 <script>
+  //через for
+  /*For - цикл с параметром, While - цикл с условием.
+    Для For-цикла обычно задаётся начальное и конечное значение переменной цикла
+  и правила ее изменения. Переменная имеет числовой тип.
+    Для While - цикла можно задать любое условие. Цикл будет выполняться, пока условие верно.
+    В теле цикла, как правило, изменяються переменные, входящие в условие. Переменные могут быть любого типа.*/
+
+
+  /*Цикл for тоже позволяет выполнять оператор многократно, пока условие истинно.
+		Однако, он также содержит удобную и наглядную возможность для указания операторов,
+		которые должны быть выполнены перед началом цикла и на каждой итерации цикла*/
+
+  /*for ( старт; условие; изменение )
+		оператор*/
+  //example
+
+  let i;
+  for(i = 0; i < 100; i++) {
+    console.log(i); //выдаст текущее значение 1,2,3,4,5..100
+  }
+  console.log(i);//100
+
+  //	example
+  let sum = 0;
+  for(let i = 1; i <= 50; i++) {
+    sum =sum + i;
+  }
+  console.log(sum);
+
+  //  example
+  let myStringArray = ["Hello","World"];
+  let arrayLength = myStringArray.length;
+  let i;
+  for(i = 0; i < arrayLength; i++) {
+    console.log(myStringArray[i])
+  }
+
+  //  example
+
+  let arr = [2,4];
+  let result = 0;
+  for (let i = 0; i < arr.length; i++) {
+    result+=arr[i]*arr[i];
+    console.log(arr[i])
+  }
+  console.log(result);
+
+  //example
+  // Найдите сумму чисел массива, которые стоят на четных местах.
+
+  const num = [2,3,5,12,13];
+  let summ = 0;
+
+  for(let i = 0; i < num.length; i+=2) {
+    summ += num[i];
+
+    console.log(summ);//2, 7 ,20
+  }
+  //example
+
+  let arr = [2,2];
+  let result = 0;
+  for (let i = 0; i < arr.length; i++) {
+    result+=Math.pow(arr[i],2);
+    console.log(arr[i])
+  }
+  console.log(result);
+
+  //example
+  let arr = [1,2,4,3];
+  let amount = 0;
+
+  let i, length = arr.length;
+  for(i = 0; i < length; i++) {
+    amount+=Math.round(arr[i]/arr.length);
+  }
+  console.log(amount);//3
+
+  //example
+
+  let arr = [1,2,3,4,5,6];
+  let result = [];
+  for(let i = 0; i < arr.length; i++) {
+    if(arr[i] % 2 !== 0) {
+      result.push(arr[i]);
+    }
+
+  }
+  console.log(result);//элементы массива ,которые стоят на четных позициях
+  //Функция — код (множество операторов), выполнение которого, возможно, потребуется повторять в различных местах страницы.
+  //через for через функцию
+
+  function loop(number) {
+    let i;
+    for(i = 0; i < number; i++) {
+      console.log(i);//0...100
+    }
+    return i;
+  }
+  const num = 100;
+  console.log(loop(num));//100
+
+  //  example
+  function midlleElem(arr) {
+    let amount = 0;
+
+    let i, length = arr.length;
+    for(i = 0; i < length; i++) {
+      amount+=Math.round(arr[i]/arr.length);
+    }
+    return amount;
+  }
+  let arr = [1,2,4,3];
+
+  console.log(midlleElem(arr));//3
+
+  //example
+
+  function oddElem(arr) {
+    let result = [];
+    for (let i = 0; i < arr.length; i++) {
+      if (arr[i] % 2 !== 0) {
+        result.push(arr[i]);
+      }
+    }
+    return result;
+  }
+
+  let arr = [1, 2, 3, 4, 5, 6];
+  console.log(oddElem(arr));//элементы массива ,которые стоят на четных позициях
+
+  //example
+  const num = [2,3,5,12,13];
+  let result = [];
+  let sum = 0;
+  for (let i = 0; i < num.length; i++) {
+    /*if ((num[i] >= 1 )&& (num[i] <= 12)) { //одно из условий не верно выдаст NaN*/
+    if ((num[i] >= 1 )|| (num[i] <= 12)) { //одно из условий выдаст результат
+      result[i] = num[i];
+    }
+    if (result[i] % 2 !== 0) {
+      sum = sum + result[i];
+    }
+  }
+  console.log(sum);
+
+  //example
+  function oddarr () {
+    let result = [];
+    let sum = 0;
+    for (let i = 0; i < num.length; i++) {
+      /*if ((num[i] >= 1 )&& (num[i] <= 12)) {
+			одно из условий не верно выдаст NaN*/
+
+      if ((num[i] >= 1 ) || (num[i] <= 12)) { //одно из условий выдаст результат
+        result[i] = num[i];
+      }
+      if (result[i] % 2 !== 0) {
+        sum = sum + result[i];
+      }
+
+    }
+    return sum;
+  }
+  console.log(oddarr([2,3,5,12,13]));//38
+
+  //example
+
+  'use strict';
+  //Найдите сумму чисел массива, которые стоят на четных местах.
+
+  function summArr(arr) {
+    let summ = 0;
+    for (let i = 0; i < arr.length; i += 2) {
+      summ+=arr[i] ;
+    }
+    return summ;
+  }
+  const yourArray = [12,23,57,52,-4,-13,9];
+  const result = summArr(yourArray);
+  console.log(result);//74
+  console.log("Сумма элементов в массиве ["+ yourArray.toString() + "] на четных местах равна: " + result + ". Примечание:" +
+    " нумерация начинается с нуля. ");//Сумма элементов в массиве [12,23,57,52,-4,-13,9] на четных местах равна: 74. Примечание: нумерация начинается с нуля.
+
+
+  ////////////////////////////////////////////////////////////////
+
+
+
+  //  example
+
+  //'use script';
+
+  //Найдите сумму нечетных чисел массива, которые не превосходят 11.
+
+  let arr = [1,13,4,3];
+  let summOdd = 0;
+
+  for(let i = 0,len = arr.length; i < len; i++) {
+    if((arr[i] % 2 !==0) && (arr[i]<=11)) {
+      summOdd +=arr[i];
+    }
+  }
+  console.log(summOdd);//4
+
+
+  //example
+
+  let arr = [3,5,7];
+  arr.foo = "hello";
+
+  for(let i in arr) {
+    console.log(i);// 0,1,2,foo
+
+  }
+
+  let arr = [3,5,7];
+  arr.foo = "hello";
+
+  for(let i of arr) {
+    console.log(i);// 3,5,7
+  }
+
+  //  example
+  let sum = 0;
+
+  for(let i = 1; i <=1000; i++) {
+    sum+=i;
+
+    if(i === 5) {
+      break;
+    }
+  }
+  console.log(sum);//15
+	
+//	example
+	
   function loop(number) {
     let i;
     for (i = 0; i < number; i++) {
@@ -18,6 +256,17 @@
 
   const num = 100;
   console.log(loop(num));//100
+	
+//   Дан массив числами, например: [10, 20, 30, 50, 235, 3000]. Выведите
+//  на экран только те числа из массива, которые начинаются на цифру 1, 2 или 5.
+
+	const array = ['10', '20', '30', '50', '235', '3000','325'];
+  for (let i = 0; i < array.length; i++) {
+    if (array[i][0] == '1' || array[i][0] == '2' || array[i][0] == '5') {
+      console.log(array[i]);//10,20,50,235
+    }
+  }
+
 </script>
 </body>
 </html>
