@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+<body>
+<script>
+  // 1. Создайте массив arr = ['a', 'b', 'c']. Выведите его в консоль
+  const arr = ['a', 'b', 'c'];
+  console.log(arr);
+  
+//  example
+//  2. С помощью массива arr выведите на экран содержимое первого, второго и третьего элементов.
+  const arr = ['a', 'b', 'c'];
+  console.log(arr[0]);//a
+  console.log(arr[1]);//b
+  console.log(arr[2]);//c
+
+//  3. Создайте массив arr = ['a', 'b', 'c', 'd'] и с его помощью выведите на экран строку 'a+b, c+d'.
+  const arr = ['a', 'b', 'c', 'd'];
+  console.log(arr[0] +'+'+ arr[1] +',' + arr[2] +'+'+ arr[3]);//a+b, c+d
+  console.log(`${arr[0]} + ${arr[1]}, ${arr[2]} + ${arr[3]}`);//a+b, c+d
+
+//	example
+  /*cоздайте массив arr с элементами 2, 5, 3, 9. Умножьте первый элемент массива на второй, а третий элемент на
+  четвертый. Результаты сложите, присвойте переменной result. Выведите на экран значение этой переменной.*/
+  
+  const arr = [2,5,3,9];
+  let result = (arr[0]*arr[1])+(arr[2]*arr[3]);
+  console.log(result);//37
+	
+//	example
+  let name = 'Объекты (ассоциативные массивы)';
+  console.log(name);
+  
+
+
+	
+	
+//  example
+  function dayWeek(num) {
+    let week = ["пн", "вт", "ср", "чт", "пт", "сб", "вс"];
+    if (num <= 7) {
+      return (week[num - 1]);
+    } else {
+      return 'Введите значения от 1 до 7!';
+    }
+  }
+
+  console.log(dayWeek(7));
+  
+  
+</script>
+</body>
+</html>

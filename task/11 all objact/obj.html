@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+<body>
+<script>
+  //  example
+  //  5. Создайте объект obj. Выведите на экран элемент с ключом 'c' двумя способами: через квадратные скобки и как свойство объекта:
+  const obj = {
+    'a':1,
+    'b':2,
+    'c':3
+  };
+  console.log(obj.c);//3
+  console.log(obj['c']);//3
+	
+//	example
+	
+  const selery = {
+    коля:1000,
+    петя:2000,
+    катя:1500
+  };
+  // первый вариант без цикла
+  /*console.log('зарплата '+ selery['коля'] + ' долларов ');//1000
+  console.log('зарплата '+ selery['Петя'] + ' долларов ');//2000
+  console.log('зарплата '+ selery['катя'] + ' долларов ');//1500*/
+
+  console.log('зарплата '+ selery.коля + ' долларов ');//1000
+  console.log('зарплата '+ selery.петя + ' долларов ');//2000
+  console.log('зарплата '+ selery.катя + ' долларов ');//1500
+	
+//	example
+  const selery = {
+    коля:1000,
+    петя:2000,
+    катя:1500
+  };
+  // с циклом for in цикла
+  for(key in selery) {
+    console.log('зарплата '+ key + ' долларов ');//зарплата коля 1000 долларов, зарплата петя 2000 долларов,зарплата катя долларов 1500
+    console.log('зарплата '+ selery[key] + ' долларов ');//зарплата коля 1000 долларов, зарплата 2000 петя долларов,зарплата катя 1500 долларов
+  }
+
+//  Создайте объект с днями недели. Ключами в нем должны служить номера дней от начала недели (понедельник - первый и т.д.). Выведите на экран текущий день недели.
+  const weekDay = {
+    1:'пн',
+    2:'вт',
+    3:'ср',
+    4: 'чт',
+    5:'пт',
+    6:'cб',
+    7:'вс'
+  };
+
+  console.log(weekDay['1']);//пн
+
+//  var name = 'Объекты (Многомерные массивы)'
+  console.log(name);
+
+
+</script>
+</body>
+</html>
