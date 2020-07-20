@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+<body>
+<script>
+  /*Дано число n=1000. Делите его на 2 столько раз, пока результат деления не
+  станет меньше 50. Какое число получится? Посчитайте количество итераций,
+    необходимых для этого (итерация - это проход цикла), и запишите его в
+  переменную num.*/
+
+  for (let n = 1000, num = 0; n > 50; n /= 2, num++);
+  // console.log(n);
+
+  let num = 0;
+  let n = 1000;
+  while (n > 50) {
+    n = n / 2;
+    num++;
+  }
+  console.log(num);// 5 итераций
+  console.log(n);// 31.25
+
+//  Напишите скрипт, который считает количество секунд в часе, в сутках, в месяце.
+
+  const sec = 60;
+  const hour = 60;
+  const day = 24;
+  const month = 30;
+  console.log('Hour = ' + sec * hour + ' second');//Hour = 3600 second
+  console.log('Day = ' + sec * hour * day + ' second');//Day = 86400 second
+  console.log('Month = ' + sec * hour * day * month + ' second');//Month = 2592000 second
+
+
+  //=======================
+  //  Создайте три переменные - час, минута, секунда. С их помощью выведите текущее время в формате 'час:минута:секунда'.
+
+  let hour = '09';
+  let minute = '25';
+  let second = '33';
+  console.log(hour + ':' + minute + ':' + second);
+
+  //=======================
+  // Создайте переменную, присвойте ей число. Возведите это число в квадрат. Выведите его на экран.
+  let num = 4;
+  console.log(num * num);
+
+
+  //=======================
+  let name = ('Работа с присваиванием и декрементами');
+  console.log(name);
+  //=======================
+
+
+  //  Переделайте этот код так, чтобы в нем использовались операции +=, -=, *=, /=. Количество строк кода при этом не должно измениться.
+  let num = 47;
+  num += 7;
+  num -= 18;
+  num *= 10;
+  num /= 15;
+  console.log(num);
+  //=======================
+
+  // 18. Переделайте этот код так, чтобы в нем использовались операции ++ и --. Количество строк кода при этом не должно измениться.
+  let num = 10;
+  num++;
+  num++;
+  num--;
+  console.log(num);
+
+</script>
+</body>
+</html>

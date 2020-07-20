@@ -23,27 +23,43 @@
   s.toUpperCase();             //"HELLO, WORLD"
   //s[0];                        //"h"
   //s[s.length-1];               //"d"
-	
+
   //Дана строка. Вывести первые три символа и последний три символа, если длина строки больше 5.
   //Иначе вывести первый символ столько раз, какова длина строки.
 
-  // задача.найти несколько вариантов решения.
-  // вариант 1
-  function lenFive(str) {
-    if(str.length <=5) {
-      for(let i = 0; i < str.length; i++){
-        console.log(str[0]);
+  // задача. найти несколько вариантов решения.
+
+  // 1) создаем функцию
+  //2) поместим строку в переменную
+  // 3) передадим строку в параметр функции
+  // 4) вызываем функцию с параметром строки
+  // 5) вернем функцию
+  /*
+	function lenStr(parameter) {//1,2
+	return parameter;
+	}
+	const str = 'строка';//2
+	console.log(lenStr(str));//4 //строка
+	*/
+  // 6) напишем проверку на длину строки
+  // 7) если длина передаваемой строки меньше либо равна 5, то выводим первый символ столько раз какова длина строки, если строка больше пяти символов, о выводи первые три символа строки
+
+  function lenStr(parameter) {//1,2
+    if (parameter.length <= 5) {//6
+      for (let i = 0; i < parameter.length; i++) {
+        console.log(str[0]);//c,c,c,c
       }
     } else {
       console.log(str[0]);
       console.log(str[1]);
       console.log(str[2]);
     }
-    return str;
+    return parameter;
   }
 
-  console.log(lenFive("Where can I get some"));
-  console.log(lenFive("Where"));
+  const str = 'стро';//2
+  // const str = 'строка';//2
+  console.log(lenStr(str));//4 //строка
 
   // вариант 2.
 
