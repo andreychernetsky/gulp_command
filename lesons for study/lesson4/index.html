@@ -45,36 +45,7 @@
  11
  isPalindrome("фоыщ9а87уцр4") // false*/
 
- function isPalindrome (str) {
-   let lastIndex = str.length - 1
-
-   for (let i = 0; i < str.length; i++) {
-     if (str[i] !== str[lastIndex]) {
-       return false
-     }
-
-     lastIndex--
-   }
-
-   return true
- }
  
-// example 2
-
- function isPalindrome (str) {
-   if (str.length < 2) return true;
-   const firstSymbol = str[0];
-   const secondSymbol = str[str.length - 1];
-   if (firstSymbol !== secondSymbol) return false;
-   return isPalindrome(str.substring(1, str.length - 1))
- }
- 
-// example 3
-
- function isPalindrome (str) {
-   str = str.toLowerCase();
-   return str === str.split('').reverse().join('');
- }
 </script>
 </body>
 </html>

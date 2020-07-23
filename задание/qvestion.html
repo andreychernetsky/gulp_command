@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+<body>
+<a href="https://codepen.io/andreychernetsky/pen/oNbJQBR?editors=1010">Ответ</a>
+<script>
+  /*
+1)Реализуйте функцию range(start: number, end: number): array которая отдает массив чисел из диапазона [15, 30] включая крайние числа.
+
+
+
+Написать функцию, формирующую массив чисел из заданного диапазона
+what - какие числа брать
+0 - все (по умолчанию)
+1 - четные
+2 - нечетные.
+Если start больше end, числа в обратном порядке
+*/
+//вариант 1
+  const range = (start,end)=>{
+    let arr =[];
+    for(let i = start; i <= end; ++i) {
+      console.log(start);//1,1,1,1,1
+      console.log(end);//5,5,5,5,5
+      arr.push(i)
+      console.log(arr)//[1],[1,2],[1,2,3],[1,2,3,4],[1,2,3,4,5]
+    }
+    return arr;
+  };
+
+  console.log(range(15,30));//
+  
+//	вариант 3
+  const range = (start,end)=>{
+    let arr = [];
+    // let arr = new Array();
+    for(let i = start; i <= end; ++i) {
+      console.log(start);//1,1,1,1,1
+      console.log(end);//5,5,5,5,5
+      arr.push(i)
+      console.log(arr)//[1],[1,2],[1,2,3],[1,2,3,4],[1,2,3,4,5]
+    }
+    return arr;
+  };
+
+  const rangeOdd = (start,end) =>{
+    let arr = [];
+    let newStart = start;
+    console.log(newStart);//2
+    if(start %2 === 0) {//если делится без остатка, то добавляем 1
+      newStart+=1;
+      console.log(newStart);//3
+    }
+    for(let i = newStart; i<=end; i+=2) {//
+      arr.push(i);
+      console.log(arr);//[3],[3,5],[3,5,7],[1],[1,3],[1,3,5]
+    }
+    return arr;
+  };
+
+  console.log(range(1,5));//[1,2,3,4,5]
+  console.log(rangeOdd(2,7));//[3,5,7]
+  console.log(rangeOdd(1,6));//[1,3,5]
+  console.log(rangeOdd(6,11))//[7,9,11]
+	
+//  вариант 2
+//	задание. Расписать последовательные действие как в примере выше
+//	           Привести свой пример на конструкцию switch с подробным описанием решения.
+  const range = (start, end, what=0)=>{
+    let arr = [];
+    let newStart = start;
+    let step = 1;
+
+
+    if (newStart<end){
+      switch (what){
+        case 0: {
+          break;
+        }
+        case 1:{
+          if (start % 2 === 1){
+            newStart+=1;
+          }
+          step = 2;
+          break;
+        }
+        case 2:{
+          if (start % 2 === 0){
+            newStart+=1;
+          }
+          step = 2;
+          break;
+        }
+      }
+      for (let i = newStart; i <= end; i+=step){
+        arr.push(i);
+      }
+    }
+    else{
+      switch (what){
+        case 0: {
+          break;
+        }
+        case 1:{
+          if (start % 2 === 1){
+            newStart-=1;
+          }
+          step = 2;
+          break;
+        }
+        case 2:{
+          if (start % 2 === 0){
+            newStart-=1;
+          }
+          step = 2;
+          break;
+        }
+      }
+      for (let i = newStart; i >= end; i-=step){
+        arr.push(i);
+      }
+    }
+    return arr;
+  }
+
+  console.log(range(1,5));
+  console.log(range(1,5,1));
+  console.log(range(1,5,2));
+  console.log(range(1,6,1));
+  console.log(range(5,1));
+  console.log(range(5,1,1));
+  console.log(range(5,1,2));
+  console.log(range(6,1,1));
+  
+//  вторая задача
+  //  вторая задача
+  /*2) Реализуйте функцию rangeOdd(start: number, end: number): array которая отдает массив нечетных чисел из диапазона [15, 30] включая крайние числа.*/
+  /*1) создаем функцию range
+		2)  в функцию range передаем два аргумента начальное значение start и end конечное
+		3) вызовем функцию и передадим два параметра console.log(rangeOdd(2, 5));//[3,5]
+		4) напишем константу массива, туда будем помещать элементы
+		5) напишем цикл for
+		6) в цикле в переменную i поместим параметр start
+		7) сделаем вывод в консоль
+			 console.log(start);//1,1,1,1,1
+				console.log(end);//5,5,5,5,5
+			 8) через метод push поместим в массив диапазон генерируемых элементов
+			 9)сделаем вызов  console.log(arr)//[1],[1,2],[1,2,3],[1,2,3,4],[1,2,3,4,5]
+			 10) вернем массив с элементами
+		*/
+  const range = (start,end)=>{//1,2
+    const arr =[];//3
+    for(let i = start; i <= end; i++) {//4,5
+      console.log(start);//1,1,1,1,1
+      console.log(end);//5,5,5,5,5
+      arr.push(i);//8
+      console.log(arr)//9  [1],[1,2],[1,2,3],[1,2,3,4],[1,2,3,4,5]
+    }
+    return arr;//10
+  };
+
+  // 11) напишем функцию rangeOdd
+  //12) в константу поместим параметры функции range(start, end)
+  // 13) создадим новый массив
+  // 14) напишем цикл с шагом 2
+  // 15) если остаток от деление не равен,
+  //16) то мы помещаем его через метод push в массив
+  function rangeOdd(start, end){//11
+    console.log(start);//1
+    console.log(end);//5
+    const ar = range(start, end);//12
+    console.log(ar);//[1,2,3,4,5]
+    let ans = [];//13
+    for(let i = 0; i < ar.length; i+=2){//14
+      // if(ar[i] % 2 === 1){//15
+      if(ar[i] % 2 !== 0){//15
+        ans.push(ar[i]);//16
+        console.log(ans);//[3,5],[1],[1,3],[1,3,5]
+      }
+      // 17) если остаток от деления 0, то мы добавляем 1
+      //18) помещаем  элемент в массив
+      //19) возвращаем массив
+      else {
+        i++; //к двойке добавляем 1
+        ans.push(ar[i]);//18
+        console.log(ans)//[3]
+
+      }
+    }
+    return ans;//19
+  }
+  console.log(rangeOdd(2, 5));//[3,5]
+  // console.log(rangeOdd(1, 5));//[1,3,5,9]
+
+</script>
+</body>
+</html>

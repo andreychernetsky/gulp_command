@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+<body>
+<script>
+  // example 1
+  let num = 23;
+  num = 'str';
+  console.log(num);//str
+  // ==================================
+
+  // example2
+  // напишем переменную, которой пока нет
+
+  console.log(a);
+
+  // напишем условие перед console.log()
+
+  if (true) {
+    var a = 42;
+  }
+  console.log(a);//42
+
+  // область видимости переменной var отличается от let и const
+
+
+  // example
+
+  let a = 30;//глобальная обоасть видимости
+  if(true) {
+    let a = 42;//локальная облсть видимости
+    console.log(a);//42
+  }
+  console.log(a);
+
+  // что такое hoisting
+  // если мы вызовим переменною до того как ее объявили,то переменная будет не найдена
+  let b;
+  console.log(b);//undefined
+
+  let b = 23;
+
+  // example 3
+  // если перепишем пример то выдаст ошибку, так как переменная не определится
+  let a;
+  console.log(a);//undefined
+
+  // но если есть объявляемая переменная выше, то сработает
+  a = 24;
+  console.log(a);//24
+
+  // example
+
+
+  // example 4
+  // напишем в локальном scope перенную которая пока не существует
+
+  function hoisted() {
+    age = 26
+  }
+  // при такой записи функция будет обращаться к глобальному scope
+  // в данном случае глобальный будет являтся модулем
+  // допишем следующее условие
+
+  let age;
+  console.log(hoisted(age))//26
+
+  // example const
+
+  const COLOR = '#FFEEEBB';
+  console.log(COLOR);//#FFEEEBB
+
+  // но мы не можем присвоить значение нового цвета
+  const COLOR = '#FFEEEBB';
+  COLOR = '#OOO';//assigment to constant variable
+  console.log(COLOR);//#FFEEEBB
+
+  // но мы не можем присвоить значение нового цвета
+  // если  напишем массив через переменную const
+  // внутренее состояние массива можно менять
+  const array = ['#FFEEEBB','fff'];
+  console.log(array);//['#FFEEEBB','fff'];
+  array.push('#OOO');
+  console.log(array);//['#FFEEEBB','fff','#OOO'];
+
+
+  // example obj
+  // то же касается и объекта. нелязя менять тип данных
+  const obj = {a:42};
+  obj = 'new elem';//assigment to constant variable
+  console.log(obj)
+
+  // Можно добавлять новые поля, но
+  const obj = {a:42};
+  obj.name = 'new elem 2';
+  console.log(obj);//{a:42,name:'new elem 2'}
+</script>
+</body>
+</html>

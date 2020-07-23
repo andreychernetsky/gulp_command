@@ -24,7 +24,15 @@
   /*for ( старт; условие; изменение )
 		оператор*/
   //example
-
+  let arrNum = [10,2,15,7];
+  let i;
+  for(i = 0; i < arrNum.length; i++) {
+    console.log(i)//0,1,2,3 индекс элементов
+    console.log(arrNum[i])//10,2,15,7 теккущие элементы в массиве
+  }
+  console.log(i);//4 количество элементов
+  console.log(arrNum[i])//undefined
+//example
   let i;
   for(i = 0; i < 100; i++) {
     console.log(i); //выдаст текущее значение 1,2,3,4,5..100
