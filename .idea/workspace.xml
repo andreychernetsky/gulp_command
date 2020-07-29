@@ -2,31 +2,29 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="45a0dfc1-517b-4593-bf15-a6b4e1db3073" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/task/1 all переменные консанты/test all let const obj/tasks.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/task/11 all objact/lesson2.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/task/13 string/task2.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/task/13 string/tasks.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/task/14 методы строк/tasks.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/task/19 даты/lesson1.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/task/25 Заявления if...else/tasks.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/task/4 Арифметика/tasks.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/task/7 all function/lesson3.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/task/7 all function/tasks.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/task/9 all array/lessons2.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/задание/qvestion.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/практические примеры для сайта/calendar/calendar.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/практические примеры для сайта/calendar/calendar2.html" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/JS Start.docx" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/all loop/lesson1.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/task/1 all переменные консанты/lesson4.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/task/14 методы строк/task.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/task/14 методы строк/task3.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/task/all promisa/task.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/практические примеры для сайта/calendar/calendar3.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/практические примеры для сайта/calendar/calendar4.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/практические примеры для сайта/Фильтр таблицы/script.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/практические примеры для сайта/Фильтр таблицы/style.css" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/задание/~$ражнения.docx" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lesons for study/lesson4/index.html" afterPath="$PROJECT_DIR$/lesons for study/lesson4/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/task/1 all переменные консанты/DataTypes-master/JavaScript/2-const-let.js" afterPath="$PROJECT_DIR$/task/1 all переменные консанты/DataTypes-master/JavaScript/2-const-let.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/task/10 all number/number_task.html" afterPath="$PROJECT_DIR$/task/10 all number/number_task.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/task/11 all objact/obj.html" afterPath="$PROJECT_DIR$/task/11 all objact/obj.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/task/20 all for/for.html" afterPath="$PROJECT_DIR$/task/20 all for/for.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/task/21 all while/while.html" afterPath="$PROJECT_DIR$/task/21 all while/while.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/task/7 all function/index.html" afterPath="$PROJECT_DIR$/task/7 all function/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/практические примеры для сайта/index.html" afterPath="$PROJECT_DIR$/практические примеры для сайта/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/task/11 all objact/lesson2.html" afterPath="$PROJECT_DIR$/task/11 all objact/lesson2.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/task/13 string/task2.html" afterPath="$PROJECT_DIR$/task/13 string/task2.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/task/13 string/tasks.html" afterPath="$PROJECT_DIR$/task/13 string/tasks.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/task/25 Заявления if...else/tasks.html" afterPath="$PROJECT_DIR$/task/25 Заявления if...else/tasks.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/task/4 Арифметика/tasks.html" afterPath="$PROJECT_DIR$/task/4 Арифметика/tasks.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/task/7 all function/tasks.html" afterPath="$PROJECT_DIR$/task/7 all function/tasks.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/task/9 all array/arr.html" afterPath="$PROJECT_DIR$/task/9 all array/arr.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/практические примеры для сайта/calendar/calendar.html" afterPath="$PROJECT_DIR$/практические примеры для сайта/calendar/calendar.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/практические примеры для сайта/calendar/calendar2.html" afterPath="$PROJECT_DIR$/практические примеры для сайта/calendar/calendar2.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/практические примеры для сайта/test.js" afterPath="$PROJECT_DIR$/практические примеры для сайта/test.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/урок 1/test.js" afterPath="$PROJECT_DIR$/урок 1/test.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/task/9 all array/lessons2.html" afterPath="$PROJECT_DIR$/task/9 all array/task1.html" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -39,27 +37,25 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="vertical" split-proportion="0.2698145">
+    <splitter split-orientation="vertical" split-proportion="0.72681284">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="lesson1.html" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/task/19 даты/lesson1.html">
+          <file leaf-file-name="arr.html" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/task/9 all array/arr.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1520">
-                  <caret line="95" column="7" lean-forward="false" selection-start-line="95" selection-start-column="7" selection-end-line="95" selection-end-column="7" />
+                <state relative-caret-position="440">
+                  <caret line="119" column="77" lean-forward="true" selection-start-line="119" selection-start-column="77" selection-end-line="119" selection-end-column="77" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="calendar.html" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/практические примеры для сайта/calendar/calendar.html">
+          <file leaf-file-name="task1.html" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/task/9 all array/task1.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="16">
-                  <caret line="235" column="52" lean-forward="false" selection-start-line="235" selection-start-column="52" selection-end-line="235" selection-end-column="52" />
-                  <folding>
-                    <marker date="1595491006487" expanded="true" signature="3324:3363" ph="..." />
-                  </folding>
+                <state relative-caret-position="238">
+                  <caret line="191" column="54" lean-forward="false" selection-start-line="191" selection-start-column="54" selection-end-line="191" selection-end-column="54" />
+                  <folding />
                 </state>
               </provider>
             </entry>
@@ -68,21 +64,21 @@
       </split-first>
       <split-second>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="scratch_191.es6" pinned="false" current-in-tab="false">
-            <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch_191.es6">
+          <file leaf-file-name="test.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/практические примеры для сайта/test.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="87">
-                  <caret line="14" column="37" lean-forward="false" selection-start-line="14" selection-start-column="37" selection-end-line="14" selection-end-column="37" />
+                <state relative-caret-position="0">
+                  <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="obj.html" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/task/11 all objact/obj.html">
+          <file leaf-file-name="scratch_195.es6" pinned="false" current-in-tab="true">
+            <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch_195.es6">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="144">
-                  <caret line="9" column="81" lean-forward="false" selection-start-line="9" selection-start-column="81" selection-end-line="9" selection-end-column="81" />
+                <state relative-caret-position="0">
+                  <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
@@ -105,57 +101,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/урок 1/exe6/script3.js" />
-        <option value="$PROJECT_DIR$/lesons for study/lesson2/daysOfWeek.html" />
-        <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch_176.es6" />
-        <option value="$PROJECT_DIR$/lesons for study/test.js" />
-        <option value="$PROJECT_DIR$/test/index.html" />
-        <option value="$PROJECT_DIR$/test/test.js" />
-        <option value="$PROJECT_DIR$/lesons for study/lesson2/task.html" />
-        <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch_178.es6" />
-        <option value="$PROJECT_DIR$/lesons for study/lesson1.html" />
-        <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch_182.es6" />
-        <option value="$PROJECT_DIR$/task/1 all переменные консанты/read.html" />
-        <option value="$PROJECT_DIR$/task/1 all переменные консанты/DataTypes-master/JavaScript/4-types.js" />
-        <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch_183.es6" />
-        <option value="$PROJECT_DIR$/task/1 all переменные консанты/DataTypes-master/JavaScript/5-undefined-null-NaN.js" />
-        <option value="$PROJECT_DIR$/task/1 all переменные консанты/DataTypes-master/JavaScript/6-parse.js" />
-        <option value="$PROJECT_DIR$/task/20 all for/matrix.html" />
-        <option value="$PROJECT_DIR$/task/1 all переменные консанты/test all let const obj/tasks.html" />
         <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch_184.es6" />
         <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch_8.js" />
         <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch_9.js" />
         <option value="$PROJECT_DIR$/lesons for study/lesson4/index.html" />
-        <option value="$PROJECT_DIR$/task/13 string/tasks.html" />
-        <option value="$PROJECT_DIR$/task/9 all array/lessons2.html" />
-        <option value="$PROJECT_DIR$/task/4 Арифметика/tasks.html" />
         <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch_186.es6" />
         <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch_187.es6" />
-        <option value="$PROJECT_DIR$/task/7 all function/tasks.html" />
         <option value="$PROJECT_DIR$/task/10 all number/number_task.html" />
         <option value="$PROJECT_DIR$/task/21 all while/while.html" />
         <option value="$PROJECT_DIR$/task/20 all for/for.html" />
         <option value="$PROJECT_DIR$/task/7 all function/lesson3.html" />
-        <option value="$PROJECT_DIR$/task/11 all objact/lesson2.html" />
-        <option value="$PROJECT_DIR$/task/25 Заявления if...else/tasks.html" />
         <option value="$PROJECT_DIR$/task/7 all function/index.html" />
         <option value="$PROJECT_DIR$/task/1 all переменные консанты/DataTypes-master/JavaScript/2-const-let.js" />
         <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch_188.es6" />
         <option value="$PROJECT_DIR$/all switch/switch.html" />
         <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch_189.es6" />
         <option value="$PROJECT_DIR$/задание/qvestion.html" />
-        <option value="$PROJECT_DIR$/task/13 string/task2.html" />
         <option value="$PROJECT_DIR$/task/14 методы строк/tasks.html" />
         <option value="$PROJECT_DIR$/task/19 даты/getDay.html" />
         <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch_190.es6" />
         <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch_10.js" />
         <option value="$PROJECT_DIR$/практические примеры для сайта/index.html" />
-        <option value="$PROJECT_DIR$/практические примеры для сайта/calendar/calendar2.html" />
-        <option value="$PROJECT_DIR$/практические примеры для сайта/test.js" />
         <option value="$PROJECT_DIR$/task/19 даты/lesson1.html" />
-        <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch_191.es6" />
-        <option value="$PROJECT_DIR$/практические примеры для сайта/calendar/calendar.html" />
         <option value="$PROJECT_DIR$/task/11 all objact/obj.html" />
+        <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch_191.es6" />
+        <option value="$PROJECT_DIR$/практические примеры для сайта/Фильтр таблицы/script.js" />
+        <option value="$PROJECT_DIR$/практические примеры для сайта/Фильтр таблицы/style.css" />
+        <option value="$PROJECT_DIR$/практические примеры для сайта/Фильтр таблицы/index.html" />
+        <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch_192.es6" />
+        <option value="$PROJECT_DIR$/task/7 all function/tasks.html" />
+        <option value="$PROJECT_DIR$/практические примеры для сайта/test.js" />
+        <option value="$PROJECT_DIR$/task/14 методы строк/task.html" />
+        <option value="$PROJECT_DIR$/task/14 методы строк/task3.html" />
+        <option value="$PROJECT_DIR$/task/7 all function/lesson4.html" />
+        <option value="$PROJECT_DIR$/all loop/lesson1.html" />
+        <option value="$PROJECT_DIR$/task/4 Арифметика/tasks.html" />
+        <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch_193.es6" />
+        <option value="$PROJECT_DIR$/task/13 string/tasks.html" />
+        <option value="$PROJECT_DIR$/task/13 string/task2.html" />
+        <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch_194.es6" />
+        <option value="$PROJECT_DIR$/практические примеры для сайта/calendar/calendar2.html" />
+        <option value="$PROJECT_DIR$/практические примеры для сайта/calendar/calendar3.html" />
+        <option value="$PROJECT_DIR$/урок 1/test.js" />
+        <option value="$PROJECT_DIR$/практические примеры для сайта/calendar/calendar.html" />
+        <option value="$PROJECT_DIR$/практические примеры для сайта/calendar/calendar4.html" />
+        <option value="$PROJECT_DIR$/task/25 Заявления if...else/tasks.html" />
+        <option value="$PROJECT_DIR$/task/all promisa/task.html" />
+        <option value="$PROJECT_DIR$/task/11 all objact/lesson2.html" />
+        <option value="$PROJECT_DIR$/task/9 all array/arr.html" />
+        <option value="$PROJECT_DIR$/task/9 all array/lessons2.html" />
+        <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch_195.es6" />
+        <option value="$PROJECT_DIR$/task/9 all array/task1.html" />
       </list>
     </option>
   </component>
@@ -175,8 +171,8 @@
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
-    <option name="width" value="1148" />
-    <option name="height" value="735" />
+    <option name="width" value="1382" />
+    <option name="height" value="744" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -210,6 +206,7 @@
     </navigator>
     <panes>
       <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -220,35 +217,18 @@
             <path>
               <item name="материал с курса conscode" type="b2602c69:ProjectViewProjectNode" />
               <item name="материал с курса conscode" type="462c0819:PsiDirectoryNode" />
-              <item name="lesons for study" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="материал с курса conscode" type="b2602c69:ProjectViewProjectNode" />
-              <item name="материал с курса conscode" type="462c0819:PsiDirectoryNode" />
               <item name="task" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="материал с курса conscode" type="b2602c69:ProjectViewProjectNode" />
               <item name="материал с курса conscode" type="462c0819:PsiDirectoryNode" />
               <item name="task" type="462c0819:PsiDirectoryNode" />
-              <item name="11 all objact" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="материал с курса conscode" type="b2602c69:ProjectViewProjectNode" />
-              <item name="материал с курса conscode" type="462c0819:PsiDirectoryNode" />
-              <item name="практические примеры для сайта" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="материал с курса conscode" type="b2602c69:ProjectViewProjectNode" />
-              <item name="материал с курса conscode" type="462c0819:PsiDirectoryNode" />
-              <item name="практические примеры для сайта" type="462c0819:PsiDirectoryNode" />
-              <item name="calendar" type="462c0819:PsiDirectoryNode" />
+              <item name="25 Заявления if...else" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -263,6 +243,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\галп с различными примерами\...agragregraOptimizedHTML-4\материал с курса conscode\task\1 all переменные консанты" />
       <recent name="D:\галп с различными примерами\...agragregraOptimizedHTML-4\материал с курса conscode\test" />
     </key>
   </component>
@@ -302,37 +283,37 @@
       <workItem from="1594726396037" duration="48000" />
       <workItem from="1595054792888" duration="13646000" />
       <workItem from="1595238737635" duration="54340000" />
-      <workItem from="1595529470997" duration="29000" />
+      <workItem from="1595529470997" duration="49385000" />
+      <workItem from="1596004119699" duration="2831000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="100449000" />
+    <option name="totallyTimeSpent" value="152636000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27083334" sideWeight="0.84317034" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17261904" sideWeight="0.84317034" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Quokka" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.12828948" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.15895523" sideWeight="0.15682968" order="1" side_tool="true" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.34046054" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.15625" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+    </layout>
+    <layout-to-restore>
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20982143" sideWeight="0.84317034" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Quokka" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.024671054" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.15895523" sideWeight="0.15682968" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.024671054" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.15625" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-    </layout>
-    <layout-to-restore>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.0103585655" sideWeight="0.84317034" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Quokka" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.025041737" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.15895523" sideWeight="0.15682968" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.024671054" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.12828948" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.15625" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
     </layout-to-restore>
@@ -344,183 +325,12 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <option name="time" value="1" />
+    </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch_184.es6">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="32">
-          <caret line="2" column="43" lean-forward="true" selection-start-line="2" selection-start-column="43" selection-end-line="2" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/урок 1/первые шаги/exe1/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-289">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/урок 1/exe6/script.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/task/1 all переменные консанты/DataTypes-master/Exercises/4-count-types.test">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch_8.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/task/1 all переменные консанты/DataTypes-master/JavaScript/8-bitwise.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="128">
-          <caret line="8" column="30" lean-forward="true" selection-start-line="2" selection-start-column="0" selection-end-line="8" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch_9.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="128">
-          <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lesons for study/lesson4/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="47" column="1" lean-forward="false" selection-start-line="47" selection-start-column="1" selection-end-line="47" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lesons for study/тестовые задачи/matrics/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="13" column="40" lean-forward="false" selection-start-line="13" selection-start-column="40" selection-end-line="13" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/task/9 all array/lessons2.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="13" column="7" lean-forward="true" selection-start-line="13" selection-start-column="7" selection-end-line="13" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/task/4 Арифметика/tasks.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="263">
-          <caret line="33" column="0" lean-forward="true" selection-start-line="21" selection-start-column="2" selection-end-line="33" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/task/13 string/tasks.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="478">
-          <caret line="39" column="3" lean-forward="false" selection-start-line="39" selection-start-column="3" selection-end-line="39" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch_186.es6">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/task/7 all function/tasks.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="206">
-          <caret line="25" column="10" lean-forward="false" selection-start-line="25" selection-start-column="10" selection-end-line="25" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch_187.es6">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="5" column="14" lean-forward="true" selection-start-line="5" selection-start-column="14" selection-end-line="5" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/task/21 all while/while.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="27" column="0" lean-forward="true" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/task/20 all for/for.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="33" column="35" lean-forward="false" selection-start-line="33" selection-start-column="35" selection-end-line="33" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/task/10 all number/number_task.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="107">
-          <caret line="106" column="2" lean-forward="true" selection-start-line="106" selection-start-column="2" selection-end-line="106" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/task/11 all objact/lesson2.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="100" column="83" lean-forward="false" selection-start-line="100" selection-start-column="83" selection-end-line="100" selection-end-column="83" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/task/25 Заявления if...else/tasks.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="99">
-          <caret line="45" column="12" lean-forward="true" selection-start-line="45" selection-start-column="12" selection-end-line="45" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/task/7 all function/lesson3.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="771">
-          <caret line="137" column="0" lean-forward="true" selection-start-line="137" selection-start-column="0" selection-end-line="137" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/task/7 all function/index2.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-144">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/task/7 all function/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="70" column="7" lean-forward="true" selection-start-line="70" selection-start-column="7" selection-end-line="70" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/task/1 all переменные консанты/DataTypes-master/JavaScript/1-comments.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="64">
-          <caret line="4" column="2" lean-forward="true" selection-start-line="4" selection-start-column="2" selection-end-line="4" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/task/1 all переменные консанты/DataTypes-master/JavaScript/2-const-let.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="192">
@@ -532,7 +342,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-144">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -540,7 +349,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -558,7 +366,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -574,23 +381,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="72">
           <caret line="25" column="29" lean-forward="true" selection-start-line="25" selection-start-column="29" selection-end-line="25" selection-end-column="29" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/task/13 string/task2.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1200">
-          <caret line="10" column="8" lean-forward="false" selection-start-line="10" selection-start-column="8" selection-end-line="10" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/task/14 методы строк/tasks.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="35" column="35" lean-forward="false" selection-start-line="35" selection-start-column="35" selection-end-line="35" selection-end-column="35" />
         </state>
       </provider>
     </entry>
@@ -599,13 +389,6 @@
     <entry file="file://$PROJECT_DIR$/практические примеры для сайта/calendar/files/js/app2.js" />
     <entry file="file://$PROJECT_DIR$/практические примеры для сайта/calendar/files/js/app1.js" />
     <entry file="file://$PROJECT_DIR$/практические примеры для сайта/calendar/tasks.js" />
-    <entry file="file://$PROJECT_DIR$/task/9 all array/arr.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-476">
-          <caret line="52" column="26" lean-forward="false" selection-start-line="52" selection-start-column="26" selection-end-line="52" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/задание/qvestion.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="26">
@@ -617,7 +400,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="163">
           <caret line="45" column="0" lean-forward="true" selection-start-line="41" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -625,71 +407,257 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
           <caret line="15" column="31" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="122" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch_191.es6">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="464">
+          <caret line="79" column="6" lean-forward="true" selection-start-line="79" selection-start-column="6" selection-end-line="79" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/task/11 all objact/obj.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-384">
+          <caret line="9" column="81" lean-forward="false" selection-start-line="9" selection-start-column="81" selection-end-line="9" selection-end-column="81" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/практические примеры для сайта/calendar/calendar2.html">
+    <entry file="file://$PROJECT_DIR$/практические примеры для сайта/Фильтр таблицы/script.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2064">
-          <caret line="21" column="4" lean-forward="true" selection-start-line="21" selection-start-column="4" selection-end-line="21" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/практические примеры для сайта/test.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1008">
-          <caret line="63" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="63" selection-end-column="0" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
+        <state relative-caret-position="272">
+          <caret line="17" column="1" lean-forward="false" selection-start-line="17" selection-start-column="1" selection-end-line="17" selection-end-column="1" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/практические примеры для сайта/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="24">
-          <caret line="67" column="4" lean-forward="true" selection-start-line="67" selection-start-column="4" selection-end-line="67" selection-end-column="4" />
+        <state relative-caret-position="260">
+          <caret line="75" column="19" lean-forward="false" selection-start-line="75" selection-start-column="19" selection-end-line="75" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/практические примеры для сайта/Фильтр таблицы/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="208">
+          <caret line="28" column="7" lean-forward="true" selection-start-line="28" selection-start-column="7" selection-end-line="28" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/практические примеры для сайта/Фильтр таблицы/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="122">
+          <caret line="20" column="1" lean-forward="true" selection-start-line="20" selection-start-column="1" selection-end-line="20" selection-end-column="1" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/task/19 даты/getDay.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
+        <state relative-caret-position="86">
           <caret line="26" column="38" lean-forward="false" selection-start-line="26" selection-start-column="38" selection-end-line="26" selection-end-column="38" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/task/19 даты/lesson1.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1520">
+        <state relative-caret-position="989">
           <caret line="95" column="7" lean-forward="false" selection-start-line="95" selection-start-column="7" selection-end-line="95" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/task/7 all function/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1120">
+          <caret line="70" column="7" lean-forward="true" selection-start-line="70" selection-start-column="7" selection-end-line="70" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/task/7 all function/index2.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/task/7 all function/lesson3.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1924">
+          <caret line="137" column="0" lean-forward="true" selection-start-line="137" selection-start-column="0" selection-end-line="137" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/task/7 all function/tasks.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-131">
+          <caret line="67" column="34" lean-forward="true" selection-start-line="67" selection-start-column="34" selection-end-line="67" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch_192.es6">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="223">
+          <caret line="20" column="0" lean-forward="true" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/all loop/lesson1.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="477">
+          <caret line="534" column="0" lean-forward="true" selection-start-line="534" selection-start-column="0" selection-end-line="534" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch_191.es6">
+    <entry file="file://$PROJECT_DIR$/task/1 all переменные консанты/lesson4.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="87">
-          <caret line="14" column="37" lean-forward="false" selection-start-line="14" selection-start-column="37" selection-end-line="14" selection-end-column="37" />
-          <folding />
+        <state relative-caret-position="224">
+          <caret line="61" column="0" lean-forward="true" selection-start-line="61" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/task/14 методы строк/task.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="370">
+          <caret line="300" column="7" lean-forward="true" selection-start-line="300" selection-start-column="7" selection-end-line="300" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/task/14 методы строк/task3.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="16">
+          <caret line="1" column="14" lean-forward="true" selection-start-line="1" selection-start-column="12" selection-end-line="1" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/task/14 методы строк/tasks.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="274">
+          <caret line="35" column="35" lean-forward="false" selection-start-line="35" selection-start-column="35" selection-end-line="35" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/task/4 Арифметика/tasks.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="158" column="0" lean-forward="false" selection-start-line="158" selection-start-column="0" selection-end-line="158" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch_193.es6">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="22">
+          <caret line="1" column="37" lean-forward="true" selection-start-line="1" selection-start-column="37" selection-end-line="1" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/task/13 string/tasks.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="9" column="71" lean-forward="true" selection-start-line="9" selection-start-column="71" selection-end-line="9" selection-end-column="71" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch_194.es6">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/task/13 string/task2.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="663">
+          <caret line="102" column="7" lean-forward="true" selection-start-line="102" selection-start-column="7" selection-end-line="102" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/практические примеры для сайта/calendar/calendar2.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-154">
+          <caret line="261" column="44" lean-forward="true" selection-start-line="261" selection-start-column="41" selection-end-line="261" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/урок 1/test.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="20" column="19" lean-forward="true" selection-start-line="20" selection-start-column="19" selection-end-line="20" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/практические примеры для сайта/calendar/calendar3.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="369">
+          <caret line="234" column="0" lean-forward="false" selection-start-line="234" selection-start-column="0" selection-end-line="234" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/практические примеры для сайта/calendar/calendar4.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="48">
+          <caret line="117" column="19" lean-forward="true" selection-start-line="117" selection-start-column="19" selection-end-line="117" selection-end-column="19" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/практические примеры для сайта/calendar/calendar.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="16">
-          <caret line="235" column="52" lean-forward="false" selection-start-line="235" selection-start-column="52" selection-end-line="235" selection-end-column="52" />
-          <folding>
-            <marker date="1595491006487" expanded="true" signature="3324:3363" ph="..." />
-          </folding>
+        <state relative-caret-position="84">
+          <caret line="381" column="8" lean-forward="true" selection-start-line="381" selection-start-column="8" selection-end-line="381" selection-end-column="8" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/task/11 all objact/obj.html">
+    <entry file="file://$PROJECT_DIR$/task/all promisa/task.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="9" column="81" lean-forward="false" selection-start-line="9" selection-start-column="81" selection-end-line="9" selection-end-column="81" />
+        <state relative-caret-position="96">
+          <caret line="15" column="9" lean-forward="true" selection-start-line="15" selection-start-column="9" selection-end-line="15" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/task/25 Заявления if...else/tasks.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="256">
+          <caret line="81" column="2" lean-forward="true" selection-start-line="81" selection-start-column="2" selection-end-line="81" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/task/11 all objact/lesson2.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1424">
+          <caret line="89" column="7" lean-forward="true" selection-start-line="89" selection-start-column="7" selection-end-line="89" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/практические примеры для сайта/test.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/task/9 all array/arr.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="440">
+          <caret line="119" column="77" lean-forward="true" selection-start-line="119" selection-start-column="77" selection-end-line="119" selection-end-column="77" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch_195.es6">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/task/9 all array/task1.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="191" column="54" lean-forward="false" selection-start-line="191" selection-start-column="54" selection-end-line="191" selection-end-column="54" />
           <folding />
         </state>
       </provider>

@@ -7,7 +7,7 @@
 	<title>Document</title>
 </head>
 <body>
-<a href="https://codepen.io/andreychernetsky/pen/ZEQwJOw?editors=1010"> проработка календаря</a>
+<a href="https://codepen.io/andreychernetsky/pen/ZEQwJOw"> проработка календаря</a>
 <style>
 	body {
 		background-color: #444444;
@@ -81,196 +81,211 @@
 
 </div>
 <script>
-  const date = new Date();//1
-  console.log(date);//wed 22 2020
-  const showedYear = date.getFullYear();
-  console.log(showedYear);//2020
-  const showedMonth = date.getMonth();
-  console.log(showedMonth);//6
-  let calendar = document.querySelector('#calendar');//5
-  console.log(calendar);
+   const date = new Date();//1
+   const showedYear = date.getFullYear();
+   const showedMonth = date.getMonth();
+   const calendar = document.querySelector('#calendar'); //5
 
-  function createTable(arr, parent) {
-    parent.innerHTML = '';//очищает календарь
-    for (let i = 0; i < arr.length; i++) {
-      let tr = document.createElement('tr');
-      for (let j = 0; j < arr[i].length; j++) {
-        let td = document.createElement('td');
-        td.innerHTML = arr[i][j];
-        tr.appendChild(td);
-      }
-      parent.appendChild(tr);
-    }
-  }
+   function createAndMountTable (arr, parent) {//5
+   	parent.innerHTML = ''; //очищает календарь
 
-  // пишем функцию которая параметром принимает число и число
-  // и заполняет массив
-  function createArr(from, to) {//7
-    const arr = [];
-    for (let i = from; i <= to; i++) {
-      arr.push(i);
-      // console.log(i);
-    }
-    return arr;
-  }
+   	for (let i = 0; i < arr.length; i++) {
+   		let tr = document.createElement('tr');
 
-  function unshiftElems(num, elem, arr) {//8
-    for (let i = 0; i < num; i++) {
-      arr.unshift(elem);
-    }
-    return arr;
-  }
+   		for (let j = 0; j < arr[i].length; j++) {
+   			let td = document.createElement('td');
+   			td.innerHTML = arr[i][j];
+   			tr.appendChild(td);
+   		}
 
-  function pushElems(num,elem,arr) {//9
-    for(let i = 0; i < num; i++){
-      arr.push(elem);
-    }
-
-    return arr;
-  }
-  function drawDates(year, month, dates) {//10) отрисовываем даты внутри функции initCalendar()
-    const arr = [];
-    let firstDateOfMonth = 1; //первый день месяца
-    let LastDateOfMonth = getLastDayOfMonth(year, month); // параметр month принимает последний день месяца
-    // текущего года параметра year
-    let unshiftElemsNum =  getUnshiftElemsNum(year, month); //количество пустые ячейки до первого числа
-    // параметры указывают на какой день недели попадет первое число
-    let pushElemsNum = getPushElemsNum(year, month);// количество пустых ячеек, если последний день месяца не заканчивается на воскресенье
-
-    arr = createArr(firstDateOfMonth, LastDateOfMonth); //получаем в массив первый и последний день
-    arr = unshiftElems(unshiftElemsNum, '', arr); // получаем в массив отрисовка пустых ячеек в массиве
-    arr = pushElems(pushElemsNum, '', arr); // получаем в массив отрисовка пустых ячеек в конце массива
-    arr = chunkArr(7, arr); //формируем  в массиве отрисовка  7 дней .
-
-    createTable(arr, dates);
-    console.log()
-  }
-  function getLastDayOfMonth(year, month) { //11 выводит последний день месяца
-    let date = new Date(year, month + 1 , 0); //15) написать
-    // первый вариант нахождения весокосного года
-    return date.getDate(); // getDate() -это день недели
-  }
-
-  function getUnshiftElemsNum(year, month) { //12
-    let jsDayNum = getFirstWeekDayOfMonthNum(year,month);
-    let realDayNum = getRealDayOfWeekNum(jsDayNum);
-
-    return realDayNum - 1; //от реального дня отнимаем 1 и получаем количество пустых ячеек
-    // в начале массива
-  }
-
-  function getPushElemsNum(year, month) { //13
-    let jsDayNum = getLastWeekDayOfMonthNum(year, month);
-    console.log(jsDayNum);
-    let realDayNum = getRealDayOfWeekNum(jsDayNum);
-    console.log(realDayNum);
-
-    return 7 - realDayNum; //от семи отнимаем реальный день и получаем количество
-    // пустых ячеек в конце массива
-  }
-
-  function chunkArr(num, arr) { //14
-    let result = []; //массив после обрезки
-    let chunk = [];
-    let iterCount = arr.length / num; //находим количество итераций
-
-    for (let i = 0; i < iterCount; i++) {
-      chunk = arr.splice(0, num); //обрезаем массив
-      result.push(chunk);// помещаем вырезанную часть в result
-    }
-
-    return result;
-  }
-
-  function getRealDayOfWeekNum(jsNumOfDay){ //16
-    // если ноль, то возвращаем воскресенье
-    if (jsNumOfDay === 0){
-      return 7; //весь рад заполниться 7 значениями
-    } else {
-      return jsNumOfDay;
-    }
-  }
-
-  // эта функция возвращает номер первого дня месяца
-  function getFirstWeekDayOfMonthNum(year, month) { //17)получает первый день недели  месяца
-    let date = new Date(year, month, 1);
-    return date.getDay();
-  }
-
-  function getLastWeekDayOfMonthNum(year, month) { //18
-    let date = new Date(year, month + 1, 0);
-    return date.getDay();
-  }
+   		parent.appendChild(tr);
+   	}
+   }
 
 
 
+   // пишем функцию, которая параметром принимает число и число
+   // заполняет массив
+   function createArr (start, finish) {//7
+   	const arr = [];
+   	for (let i = start; i <= finish; i++) {
+   		arr.push(i);
+   		// console.log(i);
+   	}
+   	return arr;
+
+   	// return Array(finish - start).fill().map((_, i) => start + i)
+   }
+
+   function unshiftElems(num, elem, arr) {//8
+   	for (let i = 0; i < num; i++) {
+   		arr.unshift(elem);
+   	}
+   	return arr;
+
+   	// arr.unshift(...Array(num).fill(elem))
+   }
+
+   function pushElems(num,elem,arr) {//9
+   	for(let i = 0; i < num; i++){
+   		arr.push(elem);
+   	}
+
+   	return arr;
+
+   	// arr.push(...Array(num).fill(elem))
+   }
+
+   function drawDates (year, month, dates) {//10) отрисовываем даты внутри функции initCalendar()
+   	let arr = [];
+
+   	const lastDateOfMonth = getLastDayOfMonth(year, month); // последний день месяца
+   	// текущего года параметра year
+   	const unshiftElemsNum =  getUnshiftElemsNum(year, month); //количество пустыx ячеек до первого числа
+   	// параметры указывают на какой день недели попадет первое число
+   	const pushElemsNum = getPushElemsNum(year, month);// количество пустых ячеек, если последний день месяца не заканчивается на воскресенье
+
+   	arr = createArr(1, lastDateOfMonth); //получаем в массив первый и последний день
+   	arr = unshiftElems(unshiftElemsNum, '', arr); // получаем в массив отрисовку пустых ячеек в массиве
+   	arr = pushElems(pushElemsNum, '', arr); // получаем в массив отрисовку пустых ячеек в конце массива
+   	arr = chunkArr(7, arr); //формируем  в массиве отрисовку  7 дней .
+
+   	createAndMountTable(arr, dates);
+   }
+
+
+   function getLastDayOfMonth(year, month) { //11 выводит последний день месяца
+   	const date = new Date(year, month + 1 , 0); //15) написать
+   	// первый вариант нахождения весокосного года
+   	return date.getDate(); // getDate() - это день недели
+
+   	// return (new Date(year, month + 1, 0)).getDay()
+   }
+
+   function getUnshiftElemsNum (year, month) { //12
+   	const jsDayNum = getFirstWeekDayOfMonthNum(year, month);
+   	const realDayNum = getRealDayOfWeekNum(jsDayNum);
+
+   	return realDayNum - 1; //от реального дня отнимаем 1 и получаем количество пустых ячеек
+   	// в начале массива
+   }
+
+   function getPushElemsNum(year, month) { //13
+   	const jsDayNum = getLastWeekDayOfMonthNum(year, month);
+   	const realDayNum = getRealDayOfWeekNum(jsDayNum);
+
+   	return 7 - realDayNum; //от семи отнимаем реальный день и получаем количество
+   	// пустых ячеек в конце массива
+   }
+
+   function chunkArr(num, arr) { //14
+   	const result = []; //массив после обрезки
+   	let chunk = null;
+   	const iterCount = arr.length / num; //находим количество итераций
+
+   	for (let i = 0; i < iterCount; i++) {
+   		chunk = arr.splice(0, num); //обрезаем массив
+   		result.push(chunk);// помещаем вырезанную часть в result
+   	}
+
+   	return result;
+   }
+
+   function getRealDayOfWeekNum(jsNumOfDay){ //16
+   	// если ноль, то возвращаем воскресенье
+   	if (jsNumOfDay === 0){
+   		return 7; //весь ряд заполниться 7 значениями
+   	} else {
+   		return jsNumOfDay;
+   	}
+   }
+
+   // эта функция возвращает номер первого дня месяца
+   function getFirstWeekDayOfMonthNum(year, month) { //17)получает первый день недели  месяца
+   	let date = new Date(year, month, 1);
+   	return date.getDay();
+   }
+
+
+   function getLastWeekDayOfMonthNum(year, month) { //18
+   	let date = new Date(year, month + 1, 0);
+   	return date.getDay();
+   }
+
+    drawDates(
+    	date.getFullYear(),
+    	date.getMonth(),
+    	document.querySelector('.dates')
+    )
+
+  // // 1) текущий день недели
+  // // 2)текущий год
+  // // 3) текущий месяц года
+  // // 4) обращаемся к нашему календарю
+  // // 5) по заходу на страницу календаря он должен отрисовываться за текущий год
+  // //   у нас должна отрисовываться таблица
+  // //   6) функция которая будет отрисовывать таблицу.
+  // // параметром передадим массив arr это наши числа при этом будут
+  // // учитываться пробелы в начале если 1 число будет начинаться не с понедельника
+  // // и пробелы в конце календаря, если месяц закончится не на воскресенье
+  // // эта функция function createTable(){} параметром примет parent это и будет наша таблица
+
+  // // 7) напишем функцию function createArr(from,to){} она будет отрисовывать в таблице числа от 1до 30
+  // // и в нашем массиве будет заполнение от 1до 30
+
+  // // 8) теперь нам нужно написать функцию, которая будет добавлять пустые значения, если 1 число не попадает
+  // // на понедельник function pushElems(num, elem, arr)
+  // // параметр num говорит сколько нужно пустых элементов поместить до первого числа
+  // // параметр arr принимает количество пустых ячеек до первого числа
+
+  // // 9)эта функция function pushElems(num, elem, arr) добавляет пустые элементы в конец календаря
+  // //  если 30 или 31 или високосный год попадают не на воскресенье
+
+  // //  10) пишем функцию function drawDates(year, month, dates){}
+  // // a) она принимает массив в котором будут находиться дни месяца
+  // // b) затем переменную которая будет начинать месяц с 1
+  // // g) и последний день месяца
+
+  // // 11) функция function getLastDayOfMonth(year, month) {}
+  // // выводит поcледний день месяца
+
+  // // 12) function getUnshiftElemsNum(year, month) {} эта функция показывает количество пустых ячеек в начале
+  // // календаря
+
+  // // 13) function getPushElemsNum(year, month) {} эта функция показвает кол пустых ячеек после завершения месяца
+
+  // // 14) теперь нам нужна функция function chunkArr(num, arr) {} которая наш массив разобьет по семь ячеек
+  // // первый  параметр num  указывает на сколько элементов разбивать массив
+  // // второй параметр arr в котором находятся наши ячейки
+
+  // // начинаем работать над заполнением каждой функции. Начнем с последнего дня месяца это функция
+  // // 15)function getLastDayOfMonth(year, month) {}
+
+  // // 16 теперь начнем заполнять функцию
+  // // мы должны узнать на какой день попадет первое число текущего месяца
+  // // нам нужна дополнительная функция, которая бы определяла каждый день по счету
+  // // пон 1 вт 2 ср 3 чт 4 пт 5 сб 6 вс 7 т.е текущий день недели
+  // // function getRealDayOfWeekNum(jsNumOfDay){}
+
+  // // 17 теперь нам нужно написать дополнительную функцию которая будет определять
+  // // первый день недели текущего месяца и последний день текущего месяца
+  // // function getFirstWeekDayOfMonthNum(year, month) {}
+
+  // // теперь нам нужно написать дополнительную функцию, которая будет определять последний день недели месяца
+  // // 18) function getLastWeekDayOfMonthNum(year, month)
+
+  // // 19)заполняем функцию 7
+
+  // // 20) заполняем функцию 8
+  // // 21) заполняем функцию function chunkArr(num, arr) { }//14
+  // // 22) заполняем функцию  function createTable(arr, parent){  //6 отрисовываем таблицу
+  // //23) заполняем функцию initCalendar(showedYear, showedMonth, calendar)
+  // // 24) отрисовываем дату  над календарем
+  // // 25) пишем функцию  function getMonthName(num) {}
+  // // 26 пишем функцию при нажатии на кнопку менялся год-->
+
+
+ 
 </script>
-
-/<!--/ 1) текущий день недели
-// 2)текущий год
-// 3) текущий месяц года
-// 4) обращаемся к нашему календарю
-// 5) по заходу на страницу календаря он должен отрисовываться за текущий год
-//   у нас должна отрисовываться таблица
-//   6) функция которая будет отрисовывать таблицу.
-// параметром передадим массив arr это наши числа при этом будут
-// учитываться пробелы в начале если 1 число будет начинаться не с понедельника
-// и пробелы в конце календаря, если месяц закончится не на воскресенье
-// эта функция function createTable(){} параметром примет parent это и будет наша таблица
-
-// 7) напишем функцию function createArr(from,to){} она будет отрисовывать в таблице числа от 1до 30
-// и в нашем массиве будет заполнение от 1до 30
-
-// 8) теперь нам нужно написать функцию, которая будет добавлять пустые значения, если 1 число не попадает
-// на понедельник function pushElems(num, elem, arr)
-// параметр num говорит сколько нужно пустых элементов поместить до первого числа
-// параметр arr принимает количество пустых ячеек до первого числа
-
-// 9)эта функция function pushElems(num, elem, arr) добавляет пустые элементы в конец календаря
-//  если 30 или 31 или високосный год попадают не на воскресенье
-
-//  10) пишем функцию function drawDates(year, month, dates){}
-// a) она принимает массив в котором будут находиться дни месяца
-// b) затем переменную которая будет начинать месяц с 1
-// g) и последний день месяца
-
-// 11) функция function getLastDayOfMonth(year, month) {}
-// выводит поcледний день месяца
-
-// 12) function getUnshiftElemsNum(year, month) {} эта функция показывает количество пустых ячеек в начале
-// календаря
-
-// 13) function getPushElemsNum(year, month) {} эта функция показвает кол пустых ячеек после завершения месяца
-
-// 14) теперь нам нужна функция function chunkArr(num, arr) {} которая наш массив разобьет по семь ячеек
-// первый  параметр num  указывает на сколько элементов разбивать массив
-// второй параметр arr в котором находятся наши ячейки
-
-// начинаем работать над заполнением каждой функции. Начнем с последнего дня месяца это функция
-// 15)function getLastDayOfMonth(year, month) {}
-
-// 16 теперь начнем заполнять функцию
-// мы должны узнать на какой день попадет первое число текущего месяца
-// нам нужна дополнительная функция, которая бы определяла каждый день по счету
-// пон 1 вт 2 ср 3 чт 4 пт 5 сб 6 вс 7 т.е текущий день недели
-// function getRealDayOfWeekNum(jsNumOfDay){}
-
-// 17 теперь нам нужно написать дополнительную функцию которая будет определять
-// первый день недели текущего месяца и последний день текущего месяца
-// function getFirstWeekDayOfMonthNum(year, month) {}
-
-// теперь нам нужно написать дополнительную функцию, которая будет определять последний день недели месяца
-// 18) function getLastWeekDayOfMonthNum(year, month)
-
-// 19)заполняем функцию 7
-
-// 20) заполняем функцию 8
-// 21) заполняем функцию function chunkArr(num, arr) { }//14
-// 22) заполняем функцию  function createTable(arr, parent){  //6 отрисовываем таблицу
-//23) заполняем функцию initCalendar(showedYear, showedMonth, calendar)
-// 24) отрисовываем дату  над календарем
-// 25) пишем функцию  function getMonthName(num) {}
-// 26 пишем функцию при нажатии на кнопку менялся год-->
-
-</body>
+  </body>
 </html>

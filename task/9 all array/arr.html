@@ -7,6 +7,7 @@
 	<title>Document</title>
 </head>
 <body>
+<a href="https://codepen.io/andreychernetsky/pen/omEbZj"> task for arr</a>
 <script>
   // 1. Создайте массив arr = ['a', 'b', 'c']. Выведите его в консоль
   const arr = ['a', 'b', 'c'];
@@ -102,6 +103,23 @@
       document.write(dayTheWeeks[i] + '<br>');
     }
   }
+
+  //  Даны два массива: [1, 2, 3] и [4, 5, 6]. Объедините их вместе.
+
+  const arrayFirst = [1, 2, 3];
+  const arraySecond = [4, 5, 6];
+  let together;
+  together = arrayFirst.concat(arraySecond);
+  console.log(together);
+
+  // or
+
+  const arrayFirst = [1, 2, 3];
+  const arraySecond = [4, 5, 6];
+  const together;
+  together = arrayFirst.push(arraySecond[0], arraySecond[1], arraySecond[2]);
+  console.log(arrayFirst);
+  
 </script>
 </body>
 </html>

@@ -15,14 +15,19 @@
   // 4) в переменную str2 записываю строку и добавляю запятую
   // 5) с помощью slice удаляю последний символ т.е запятую
   // 	const str = "Дана строка. Вывести ее три раза через запятую и показать количество символов в ней." //1
+  let str = 'Данная строка', ans = str+','+str+','+str;
 
+  console.log(ans, ans.length, str.length)
+
+  const a = []; a.length = 3; a.fill('Данная строка'); console.log(a.join(','))
+	
   const str = ' kitty';
   let str2 = '';
   for(let i = 0; i < 3; i++) {
     str2 += str;
 
   }
-  console.log(str2.slice(0,-1))
+  console.log(str2.slice(0,-1), str2.length)
 
   //	example
 

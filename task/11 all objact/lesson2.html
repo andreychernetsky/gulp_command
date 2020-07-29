@@ -9,14 +9,23 @@
 <body>
 <script>
   //  объекты
+  const person1 = {};
+  person1.name = 'Marcus';
+  person1.city = 'Roma';
+  person1.born = 121;
+
+  console.log(person1.city);//Roma
+	
+	example
+	
   const obj = {
     a:1,
     b:2,
     c:3
   };
-  for(let key in obj) {
+  for(const key in obj) {
     console.log(key);//a,b,c
-    console.log(obj);//{a:1,b:2,c:3
+    console.log(obj);//{a:1,b:2,c:3}
     console.log(obj[key]);//1,2,3
     console.log()
   }
@@ -38,35 +47,8 @@
   const summed = sum(sample);
   console.log("sum:" + summed);//sum:6
 
-  //  example
-  const obj = {
-    a:1,
-    b:2,
-    c:3
-  };
-  for(let key in obj) {
-    console.log(key);//a,b,c
-    console.log(obj);//{a:1,b:2,c:3
-    console.log(obj[key]);//1,2,3
-    console.log()
-  }
 
-  //	example
-  // Метод hasOwnProperty() возвращает логическое значение, указывающее, содержит ли объект указанное свойство.
-
-  function sum(obj) {
-    let sum = 0;
-    for(let el in obj) {
-      if(obj.hasOwnProperty(el)){
-        sum += parseFloat(obj[el]);
-      }
-    }
-    return sum;
-  }
-
-  const sample = {a:1,b:2,c:3};
-  const summed = sum(sample);
-  console.log("sum:" + summed);//sum:6
+  
 
   //	example
   /*
@@ -86,14 +68,18 @@
     "p3": "value3"
   };
 
-  for(let key in p) {
+  for(const key in p) {
     if(p.hasOwnProperty(key)) {
       console.log(key + "->" +p[key] );//p1-> value1,p2-> value2,p3-> value3,
     }
   }
   //example
-  const obj = {0: 'x', 1: 'y', 2: 'z'};
-  // const obj = {вася:'200', петя:'30', ира:'4444'};
+  /*Метод Object.keys() возвращает массив из собственных перечисляемых свойств переданного объекта, в том же порядке, в котором они бы обходились циклом for...in (разница между циклом и методом в том, что цикл перечисляет свойства и из цепочки прототипов).*/
+  
+//  const obj = {0: 'x', 1: 'y', 2: 'z'};
+	
+   const obj = {вася:'200', петя:'30', ира:'4444'};
+   
   for (key in obj) {
     console.log(Object.keys(obj[key]));//200 = ['0','1','2'] 30 = ['0','1'] 4444 = ['0','1','2','3']
     console.log(Object.keys(obj));//['вася','петя','ира']
