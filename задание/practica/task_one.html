@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+<body>
+<script>
+
+  // ============================================================================
+  const name = 'Практика';
+  console.log('Урок № 9 - ' + name);
+  // ============================================================================
+
+  /*
+	1. Дана строка. Сделайте заглавным первый символ этой строки не используя цикл.
+	 Найдите два решения.
+	*/
+
+  const string = 'дана строка';
+  const newString = string[0].toUpperCase() + string.substr(1);
+  console.log(newString);//Дана строка
+//or
+  const string = 'дана строка';
+  const newString = string.substr(0, 1).toUpperCase();
+  console.log(newString + string.substring(1));
+//  example
+
+  let string = 'дана строка';
+  string = string.split('');
+  console.log(string);//["д", "а", "н", "а", " ", "с", "т", "р", "о", "к", "а"]
+  string[0] = string[0].toUpperCase();
+  const newString = string.join('');
+  console.log(newString);//Дана строка
+  // ============================================================================
+
+  /*
+	2. Дана строка, например, '123456'. Переверните эту строку (сделайте из нее
+	'654321') не используя цикл.
+	*/
+
+  let string = '123456';
+  string = string.split('').reverse();
+  console.log(string);//["6", "5", "4", "3", "2", "1"]
+  string = string.split('').reverse().join();
+  console.log(string);//6,5,4,3,2,1
+  // ============================================================================
+
+  /*
+	3. Дано число, например, 3751. Отсортируйте цифры в нем (сделайте из него 1357)
+	не используя цикл.
+	*/
+  const num = 3751;
+  const result =String (num).split('');
+  console.log(result);//["3", "7", "5", "1"]
+
+  const num = 3751;
+  const result = String(num).split('').sort().join('');
+  console.log(result);//1357
+
+  // ============================================================================
+
+  // 4. Проверьте, что строка начинается на http://
+
+  const string = 'http://theory.phphtml.net';
+  if (string.substr(0, 7) === 'http://') {
+    console.log('Строка начинаеть с ' + string.substr(0, 7));//Строка начинается с http://
+  } else {
+    console.log('Строка начинаеться с чего-то другого');
+  }
+
+  // ============================================================================
+
+  // 5. Проверьте, что строка заканчивается на .html.
+
+  const string = 'http://theory.php.html';
+  if (string.substr(-5) === '.html') {
+    console.log('Строка заканчиваеться на ' + string.substr(-5));//Строка заканчивается на .html
+  } else {
+    console.log('Строка заканчиваеться чем-то другим');
+  }
+</script>
+</body>
+</html>
