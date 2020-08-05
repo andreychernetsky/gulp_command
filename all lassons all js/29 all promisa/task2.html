@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+<body>
+<script>
+  let isMamHappy = false;
+
+  let willGetNewPhone = new Promise(
+    function(resolve,reject) {
+      if(isMamHappy) {
+        const phone = {
+          brand:"sumsung",
+          color:"black"
+        };
+        resolve(phone);
+      } else {
+        let reason = new Error('mome is not happy');
+        reject(reason);
+      }
+
+
+    });
+
+  let askMam = function () {
+    willGetNewPhone.then(function(fulfiled){
+      console.log(fulfiled);
+    })
+      .catch(function(error){
+        console.log(error.message);
+      })
+  };
+  askMam();
+</script>
+</body>
+</html>

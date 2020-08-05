@@ -1,0 +1,482 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+<body>
+<a href="https://codepen.io/andreychernetsky/pen/YzwOpMG">функции часть 2</a>
+<script>
+  /*function a() {};
+ const B = function (){};
+ const c = (function(){});
+ const D = function foo() {};//именованное функциональное выражение
+ const e  = (function () {})();// самовызывающееся функциональное выражение
+ const F = new Function();// конструктор функции*/
+
+  // Math.sqrt-ищет квадратный корень
+  // Math.round - округляет до целых в большую сторону
+  //Math.floor --округляет в меньшую сторону
+  // parseInt -округление до целых
+  //  Метод Math.pow() возвращает основание, возведённое в степень показатель, то есть, значение выражения основаниепоказатель.
+  function cube(x) {
+    return Math.pow(x, 3);
+  }
+
+  console.log(cube(3));//27
+  /*Функция — код (множество операторов), выполнение которого, возможно, потребуется повторять в различных местах страницы.
+	То есть, описав (объявив) функцию один раз, мы можем её вызывать из различных мест кода, и каждый раз будут выполняться операторы, составляющие тело функции.
+	*/
+  //example
+  function cube(x) {
+    return x * x;
+  }
+
+  console.log(cube(2));//4
+  /*После того как вызванная функция выполнилась (отработала), выполнение возвращается в точку, откуда она была вызвана, и далее выполняются операторы, следующие за вызовом функции.*/
+  //	example
+  function sum(a, b) {
+    return a + b;
+  }
+
+  console.log(sum(2, 2));//4
+  /* Функция может получать аргументы — переменные, которые видны только в теле функции
+	и которые получают конкретные значения при вызове функции.
+	Функция может и не получать аргументов.*/ привести пример
+
+
+  //	example
+  function sum(a, b) {
+    let result = a + b;
+    return result;
+  }
+
+  console.log(sum(2, 2));//4
+  /*Функция может возвращать результат — значение любого типа, представляющее результат её работы. В качестве результата функция может возвращать только одно значение, либо не возвращать никакого значения.*/ привести пример
+
+  //	example
+  function equation(a, b, c) {
+    return (a - b) / c;
+  }
+
+  console.log(equation(20, 10, 5));//2
+  /*Если требуется, чтобы функция возвращала несколько значений, придётся вернуть одно,
+	но сложное — хэш, и элементами хэша будут все значения, которые требуется вернуть из функции.*/ привести пример
+
+  //	example
+  function dayWeek(num) {
+    if(num === 0) return 'таких дней недели нету';
+    const obj = {
+      1: "пн",
+      2: "вт",
+      3: "ср",
+      4: "чт",
+      5: "пт",
+      6: "сб",
+      7: "вс"
+    };
+    if(num <=7) {
+      return obj[num];
+      // console.log(obj[num])//если передали в параметр 2 то =вт
+    } else {
+      return 'Введите значение от одного до 7';
+    }
+
+  }
+  console.log(dayWeek(2));//вт
+
+  /*Как назвать функцию, должна ли она получать аргументы, какие и в каком порядке,
+	будет ли она возвращать результат и какой — решает разработчик.*/
+
+  //example через массив
+  function dayWeek(num) {
+    let week = ["пн", "вт", "ср", "чт", "пт", "сб", "вс"];
+    if (num <= 7) {
+      return (week[num - 1]);
+    } else {
+      return 'Введите значения от 1 до 7!';
+    }
+  }
+
+  console.log(dayWeek(7));
+  /* Функции, во-первых, важны для повторного использования кода, то есть, единожды
+	написав и отладив некий осмысленный (полезный) код, мы (или другой разработчик)
+	можем этим кодом в дальнейшем пользоваться многократно, в этом или в других проектах.*/
+
+  //example
+  function dayWeek(num) {
+    if (num === 0) return '0 нету в днях недели';
+    const day = ['пн', 'вт', 'ср', 'чт', 'пт', 'сб', 'вс'];
+    if (num <= 7) {
+      // console.log(day[num -1]);//чт
+      return day[num -1];
+    } else {
+      return 'нету таких дней недели';
+    }
+    return num;
+  }
+
+  const dayNum = 4;
+  console.log(dayWeek(dayNum));//чт
+	
+  /*Во-вторых, функции позволяют делать код компактнее и яснее.
+	Синтаксис описания (объявления) функции:
+	function имяфункции(аргумент1,аргумент2,...)
+	{
+	операторы (тело функции)
+	}
+	В теле функции можно использовать оператор возврата результата:
+	return возвращаемоезначение;
+	При такой записи оператор return прекращает выполнение функции и возвращает результат.
+	Если выполнение функции требуется прекратить, а результат возвращать не требуется:
+	return;*/
+
+  //  example
+  function dayWeek(num) {
+    if (num === 0) return '0 нету в днях недели';
+    const day = ['пн', 'вт', 'ср', 'чт', 'пт', 'сб', 'вс'];
+    return (num <= 7 ) ? day[num - 1] : 'введи число от1 до 7';
+  }
+
+  const dayNum = 0;
+  console.log(dayWeek(dayNum));
+  /*Если выполнение кода в теле функции дошло до самого конца, а оператор return
+	так и не встретился, выполнение функции также прекращается, без возврата значения.
+	По какой бы причине не прекратилось выполнение функции — далее выполняются операторы, которые следуют после вызова функции.
+	Синтаксис вызова функции:
+	имяфункции(значение1,значение2,...)*/
+
+
+  //  example
+  function dayWeek(num) {
+    if (num === 0) return '0 нету в днях недели';
+    const day = {1: 'пн', 2: 'вт', 3: 'ср', 4: 'чт', 5: 'пт', 6: 'сб', 7: 'вс'};
+    return (num <= 7) ? day[num] : 'введи число от1 до 7';
+  }
+
+  const dayNum = 4;
+  console.log(dayWeek(dayNum));
+  /*При вызове функции, переданные функции значения присваиваются переменным-аргументам в функции, т.е. когда тело функции выполняется, переменные-аргументы имеют те значения, которые переданы функции при её вызове. Если для переменной-аргумента не передано никакого значения, она получит значение undefined.*/
+
+  //  example
+  function dayWeek(arr) {
+    let i;
+    for (i = 0; i < arr.length; i++) {
+      if (i === 5 || i === 6) {
+        document.write(arr[i].italics() + '<br>');
+      } else {
+        document.write(arr[i]);
+      }
+    }
+    return;
+  }
+
+  const day = ['пн ', 'вт ', 'ср ', 'чт ', 'пт ', 'сб ', 'вс '];
+  document(dayWeek(day));
+  /*Если при описании функции аргументы не были указаны, т.е. функции аргументы не требуются, то и при вызове функции их указывать не нужно, однако, круглые скобки обязательны:*/
+
+  //  example
+  function dayWeek(num) {
+    const fun = num.forEach((elem, i) => i === 5 || i === 6 ? document.write('<b>' + num[i] + '</b>') : document.write(num[i]));
+    return fun;
+  }
+
+  const day = ['пн ', 'вт ', 'ср ', 'чт ', 'пт ', 'сб ', 'вс '];
+  dayWeek(day);
+  //Функция — код (множество операторов), выполнение которого, возможно, потребуется повторять в различных местах страницы.
+  //через for через функцию
+  function loop(number) {
+    let i;
+    for (i = 0; i < number; i++) {
+      console.log(i);//0...100
+    }
+    return i;
+  }
+
+  const num = 100;
+  console.log(loop(num));//100
+  //  example
+  function midlleElem(arr) {
+    let amount = 0;
+    let i, length = arr.length;
+    for (i = 0; i < length; i++) {
+      amount += Math.round(arr[i] / arr.length);
+    }
+    return amount;
+  }
+
+  let arr = [1, 2, 4, 3];
+  console.log(midlleElem(arr));//3
+  //example
+
+  function oddElem(arr) {
+    let result = [];
+    for (let i = 0; i < arr.length; i++) {
+      if ([i] % 2 !== 0) {
+        result.push(arr[i]);
+      }
+    }
+    return result;
+  }
+
+  const arr = [1, 2, 3, 4, 5, 6,9,8];
+  console.log(oddElem(arr));//элементы массива ,которые делятся на 2 [2,4,6,8]
+	
+  //	example
+  const each = function (arr, callback) {
+    let i, length = arr.length;
+    for (i = 0; i < length; i++) {
+      callback(arr[i], i, arr)
+    }
+  }
+  const arr = ["яблоко", "груша", "слива"];
+  each(arr, function (item, index, arr) {
+    console.log(item + ":" + index + "(массив:" + arr + ")");
+  });
+  /*яблоко:0(массив:яблоко,груша,слива)
+	груша:1(массив:яблоко,груша,слива)
+	слива:2(массив:яблоко,груша,слива)*/
+ 
+//examle
+	
+  function each(arr) {
+    let result = 0;
+    arr.forEach((elem) => {
+      result += Math.pow(elem, 2);
+// return result;
+  });
+    return result;
+  }
+
+  let arr = [2, 2];
+  console.log(each(arr));
+  console.log(result);//8
+	
+  //example
+	
+  const each = function (arr) {
+    let result = 0;
+    arr.forEach((elem) => {
+      result += Math.pow(elem, 2);
+// return result;
+  });
+    return result;
+  };
+  let arr = [2, 2];
+  console.log(each(arr));
+
+  //  example
+  function each(arr) {
+    for (let i = 0; i < arr.length; i++) {
+      console.log(arr);//["яблоко","груша","слива"],["яблоко","груша","слива"],["яблоко","груша","слива"]
+      console.log(arr[i]);//яблоко, груша, слива
+      console.log([i]);//[0],[1],[2]
+    }
+    return arr;
+  }
+
+  let arr = ["яблоко", "груша", "слива"];
+  console.log(each(arr));//
+  //	example
+  'use strict';
+
+  function inc(a) {//Function Declaration – функция, объявленная в основном потоке кода.
+    return a + 1;//инкремент
+  }
+
+  console.log('inc(5) = ' + inc(5));//inc(5) = 6
+  //  Основное отличие между ними: функции, объявленные как Function Declaration, создаются интерпретатором до выполнения кода.
+  'use strict';
+  const sum = function (a, b) {//Function Expression – объявление функции в контексте какого-либо выражения, например присваивания.
+    return a + b;
+  };
+  console.log('sum(1,3)=' + sum(1, 3)); //sum(1,3)=4
+	
+  //	example
+	
+  'use strict';
+  const max = (a, b) => (a > b ? a : b);
+  console.log('max(8,6)=' + max(8, 7));//max(8,6)=8
+	
+  //	example
+  'use strict';
+  
+  const sum = function (a, b) {
+    return a + b;
+  };
+//  example исправь ошибку. Найди среднее число при деление суммы на 2
+	
+  const avg = (a, b) => {
+    const s = sum(a, b);
+    return s / 2;
+  };
+  console.log('avg(12,8) =' + avg(12, 8));//avg(12,8) = 10
+	
+//	ответ
+	
+  const avg = (a, b) => {
+    let sum= a + b;
+    let s = sum;
+    return s / 2;
+  };
+	
+	
+  console.log('avg(12,8) =' + avg(12, 8));//avg(12,8) = 10
+//  example
+	
+  function randomNumbers(len) {
+    const arr = [];
+    for (let i = 0; i < len; i++) {
+      arr.push(Math.floor(Math.random() * 10))
+    }
+    return arr;
+  }
+
+  
+
+  //	добавим дейстивие
+  function randomNumbers(len) {
+    const arr = [];
+    for (let i = 0; i < len; i++) {
+      arr.push(Math.floor(Math.random() * 10))
+    }
+    return arr;
+  }
+
+  function first(arr) {
+    return arr.slice(0, 3);
+  }
+
+  function last(arr) {
+    return arr.slice(-3);
+  }
+
+  const lengthArray = 10;
+  const newArr = randomNumbers(lengthArray);
+  console.log(newArr);
+  console.log(first(newArr));
+  console.log(last(newArr));
+
+  //  добавим новые действие
+  function tasks(len) {
+    if (len < 4) return 'введите более 4 символов';
+
+    function randomNumbers(len) {
+      const arr = [];
+      for (let i = 0; i < len; i++) {
+        arr.push(Math.floor(Math.random() * 10))
+      }
+      return arr;
+    }
+
+    function first(arr) {
+      return arr.slice(0, 3);
+    }
+
+    function last(arr) {
+      return arr.slice(-3);
+    }
+
+    const newArr = randomNumbers(len);
+// return 'first' + first(newArr) + 'last:' + last(newArr);
+    return `first ${first(newArr)} last: ${last(newArr)}`;
+  }
+
+  const lengthArray = 4;
+  console.log(tasks(lengthArray));
+  //  example
+  /*Найдите сумму чисел массива, которые стоят на четных местах.
+	
+	1)создаем две функции OddMin = (arr) => и вторая function(min,current)
+	2)во второй функции передаем три параметра function( summ, current, index)
+	3)пишем проверку на четность  if ( % 2 == 0)
+	4)если индекс четный то число складывается и добавляется в  summ+=current;
+	5)*/
+  let oddSumm = (arr) => {
+    let result = arr.reduce(function (summ, current, index) {
+      if (index % 2 === 0) {
+        summ += current;
+      }
+      return summ;
+    }, 0);
+    return result;
+  };
+  let arr = [1, 2, 3, 2, 3];
+  console.log(oddSumm(arr));//7
+  //	example
+  //example
+  /*
+	1) создаем функцию summAndMultiplication она будет и складывать и одновременно умножать
+	2) параметром передаем массив summAndMultiplication = (arr) =>
+	3)создаем ассоциативный массив для хранения результатов let result = {} в ввиде ключа и значения
+	4)создаем первый блок . Он считает сумму let summ = arr.reduce(function(summ, current) {
+	return summ + current;
+	}, 0);
+	5) теперь блок отвечающий за умножение
+	let Multiplication = arr.reduce(function(Multiplication, current) {
+	return Multiplication * current;
+	}, 1);
+	6)заполним наш объект свойствами и значениями result.summ = summ;
+	тоже самое делаем с умножением result.Multiplication = Multiplication*/
+  const summAndMultiplication = (arr) => {
+    let result = {};
+    let summ = arr.reduce((summ, current) => {
+      return summ + current;
+  }, 0);
+    let multiplication = arr.reduce((Multiplication, current) => {
+      return Multiplication * current;
+  }, 1);
+    console.log(multiplication);
+    result.summ = summ;
+    result.multiplication = multiplication;
+    return result;
+  };
+  let arr = [2, 5, 3, 2, 6, -5];
+  console.log(summAndMultiplication(arr));//{summ:13, multiplication:-1800}
+  //example
+  function oddElem(arr) {
+    let result = [];
+    for (let i = 0; i < arr.length; i++) {
+      if (arr[i] % 2 !== 0) {
+        result.push(arr[i]);
+      }
+    }
+    return result;
+  }
+
+  let arr = [1, 2, 3, 4, 5, 6];
+  console.log(oddElem(arr));//элементы массива ,которые стоят на четных позициях
+  //	example
+  function oddarr() {
+    let result = [];
+    let sum = 0;
+    for (let i = 0; i < num.length; i++) {
+      /*if ((num[i] >= 1 )&& (num[i] <= 12)) {
+			одно из условий не верно выдаст NaN*/
+      if ((num[i] >= 1 ) || (num[i] <= 12)) { //одно из условий выдаст результат
+        result[i] = num[i];
+      }
+      if (result[i] % 2 !== 0) {
+        sum = sum + result[i];
+      }
+    }
+    return sum;
+  }
+
+  console.log(oddarr([2, 3, 5, 12, 13]));//38
+  //example
+  function oddNum(arr) {
+    let summOdd = 0;
+    arr.forEach((elem) => {
+      summOdd += elem
+  });
+    return summOdd
+  }
+
+  let arr = [1, 13, 4, 3];
+  console.log(oddNum(arr));
+</script>
+</body>
+</html>

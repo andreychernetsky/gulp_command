@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+<body>
+<script>
+  // ============================================================================
+  const name = 'Работа с логическими значениями';
+  console.log('Урок № 12 - ' + name);
+  // ============================================================================
+
+
+  // ============================================================================
+
+  /*
+	1. Сделайте функцию, которая параметрами принимает 2 числа. Если эти числа
+	равны - пусть функция вернет true, а если не равны - false.
+	*/
+
+  function same(a, b) {
+    return a === b;
+  }
+
+  console.log(same(5, 5));
+
+  // and
+
+  function different(a, b) {
+    return a > b;
+  }
+
+  console.log(different(5, 6));
+
+  // ============================================================================
+
+  /*
+	2. Сделайте функцию, которая параметрами принимает 2 числа. Если их сумма
+	больше 10 - пусть функция вернет true, а если нет - false
+	*/
+
+  function amountTrue(a, b) {
+    return a + b > 10;
+  }
+
+  console.log(amountTrue(5, 6));
+
+  // and
+
+  function amountFalse(a, b) {
+    return a + b > 10;
+  }
+
+  console.log(amountFalse(5, 5));
+
+  // ============================================================================
+
+  /*
+	3. Сделайте функцию, которая параметром принимает число и проверяет -
+	отрицательное оно или нет. Если отрицательное - пусть функция вернет true,
+	а если нет - false.
+	*/
+
+  function negativeNumber(a) {
+    return a < 0;
+  }
+
+  console.log(negativeNumber(-1));
+
+  // and
+
+  function positiveNumber(a) {
+    return a < 0;
+  }
+
+  console.log(positiveNumber(1));
+
+</script>
+</body>
+</html>

@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+<body>
+<script>
+  function applyForVisa(document,resolve) {
+    console.log('обработка заявления');
+    setTimeout(function () {
+      let visa = {};
+      resolve(visa);
+    }, 2000)
+  }
+
+  applyForVisa({}, function(visa){
+    console.log('виза получена');//виза получена
+  })
+
+  //	step2
+  function applyForVisa(document,resolve,reject) {
+    console.log('обработка заявления');
+    setTimeout(function () {
+      Math.random()>.5 ? resolve({}) :reject('в визе отказано')
+      let visa = {};
+    }, 2000)
+  }
+
+
+
+  applyForVisa({}, function(visa){
+      console.log('виза получена');//виза получена
+
+    },
+    function(reason){
+      console.log(reason);
+    });
+
+  //  ад колбеков
+  function applyForVisa(document,resolve,reject) {
+    console.log('обработка заявления');
+    setTimeout(function () {
+      Math.random()>.5 ? resolve({}) :reject('в визе отказано')
+      let visa = {};
+    }, 2000)
+  }
+
+  applyForVisa({}, function(visa){
+      console.log('виза получена');//виза получена
+      function bookHotel() {
+
+      }
+      function buyTickets() {
+
+      }
+    },
+    function(reason){
+      console.log(reason);
+      bookHotel(visa,function (reservation)  {
+        buyTickets(reservation, function() {
+
+        }, function(){
+
+        })
+      }, function(error){
+
+      })
+    },
+    function(reason){
+      console.error(reason);
+    });
+
+  //перепишем через обещания
+  function applyForVisa(document) {
+    console.log('обработка заявления');
+    let promise = new Promise(function (resolve, reject) {
+      setTimeout(function () {
+        Math.random() > .5 ? resolve({}) : reject('в визе отказано');
+      }, 2000)
+    });
+    return promise;
+  }
+
+  function buyHotel() {}
+
+  function buyTickets() {}
+
+  applyForVisa({})
+    .then(
+      function(visa) {
+        console.info('виза получена');
+      },
+      function(reason) {
+        console.error(reason);
+      });
+
+  //  перепишем на js6
+  function applyForVisa(document) {
+    console.log('обработка заявления');
+    let promise = new Promise(function (resolve, reject) {
+      setTimeout(function () {
+        Math.random() > .5 ? resolve({}) : reject('в визе отказано');
+      }, 2000)
+    });
+    return promise;
+  }
+
+  function bookHotel(visa) {
+    console.log('бранировать отель');
+  }
+
+  function buyTickets() {
+    console.log('покупаем билет');
+  }
+
+  applyForVisa({})
+    .then(visa => console.info('виза получена'))
+    .then(bookHotel)
+    .then(buyTickets)
+    .catch(error => console.error(error));
+
+
+  //  next stap
+  function applyForVisa(document) {
+    console.log('обработка заявления');
+    let promise = new Promise(function (resolve, reject) {
+      setTimeout(function () {
+        Math.random() > .5 ? resolve({}) : reject('в визе отказано');
+      }, 2000)
+    });
+    return promise;
+  }
+
+  function getVisa(visa) {
+    console.info('виза получена');
+    return visa;
+  }
+  function bookHotel(visa) {
+    console.log(visa);
+    console.log('бронировать отель');
+  }
+
+  function buyTickets() {
+    console.log('покупаем билет');
+  }
+
+  applyForVisa({})
+    .then(getVisa)
+    .then(bookHotel)
+    .then(buyTickets)
+    .catch(error => console.error(error));
+
+
+
+
+</script>
+</body>
+</html>

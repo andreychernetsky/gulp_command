@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+<body>
+<script>
+//	задача переделать через функцию.
+
+ /*Даны переменные a и b. Проверьте, что a делится без остатка на b. Если это
+ так - выведите 'Делится' и результат деления, иначе выведите
+ 'Делится с остатком' и остаток от деления.*/
+
+const a = 10
+const b = 3;
+let c = a%b;
+if(c == 0){
+  console.log('делится без остатка' + '=' + c/2);
+} else if(c !== 0){
+  console.log('остаток от деления' + '=' + c);
+}
+
+//example 	задача переделать через функцию.
+/*Дан массив с элементами 4, 2, 5, 19, 13, 0, 10. Найдите квадратный корень из
+суммы кубов его элементов. Для решения воспользуйтесь циклом for.*/
+
+const array = [4, 2, 5];
+let result = 0;
+
+for (let i= 0; i < array.length; i++) {
+  result += Math.pow(array[i], 3);
+  console.log(result);//64,72,197
+}
+
+console.log(Math.sqrt(result));//14.0356
+
+//	переделать через функцию
+// Дана переменная str, в которой хранится какой-либо текст. Реализуйте
+//обрезание длинного текста по следующему принципу: если количество символов
+//этого текста больше заданного в переменной n, то в переменную result запишем
+//первые n символов строки str и добавим в конец троеточие '...'. В противном
+//случае в переменную result запишем содержимое переменной str.
+
+// const string = 'безусловно все получиться';
+const string = 'пять';
+const n = 5;
+let result;
+if (string.length > n) {
+  result = string.substr(0, n) + '...';
+  console.log(result);//безус...
+} else {
+  console.log(string);//пять
+}
+//через тернарный оператор
+const string = 'безуслj';
+const n = 6;
+let result;
+result = (string.length > n) ? string.slice(0,n) + '...' : string;
+console.log(result);
+
+
+//	example
+// Дана строка 'Я-учу-javascript!'. Замените все дефисы на '!' с помощью
+//глобального поиска и замены.
+const string = 'Я-учу-javascript!';
+console.log(string.replace(/-/g, '!'));
+//первым параметром принимает что менять, а вторым - на что менять. А сам метод применяется к строке, в которой производится замена.
+
+//JavaScript метод replace() выполняет внутри строки поиск с использованием регулярного выражения (объект RegExp), или строкового значения и возвращает новую строку, в которой будут заменены найденные значения.
+
+/*/-/g Эти слеши называются ограничителями регулярных выражений.
+
+  Ограничители нужны для того, чтобы после них писать модификаторы - команды, которые изменяют общие свойства регулярного выражения.
+
+  С одним модификатором - g - вы должны быть уже знакомы - мы немного касались его, когда проходили метод replace. Этот модификатор включает режим глобального поиска и замены - без него регулярка ищет только первое совпадение, а с ним - все совпадения.*/
+
+//	через функцию
+/*В переменной date лежит дата в формате '2025-12-31'. Преобразуйте эту дату
+в формат '31.12.2025'*/
+
+function getChangeDay(str) {
+  const arr = str.split('-').reverse();
+  let changeDate =0;
+  arr.forEach((item,)=>{
+    return changeDate+=item + '.'
+  });
+  return changeDate.slice(1,-1)
+}
+const date = '2025-12-31';
+console.log(getChangeDay(date));//31.12.2025
+
+//	exemple2
+function getChangeDay(str,num) {
+  const arr = str.split('-').reverse();
+  console.log(arr);//['31','12','2025']
+  let same = num -1;
+  console.log(same);//2
+  let changeDate =0;
+  for(let i = 0; i < arr.length; i++) {
+    changeDate=(i===same)? str : str +'.';
+    console.log(changeDate);//2025-12-31.,2025-12-31.,2025-12-31
+  }
+
+  return changeDate
+}
+const date = '2025-12-31';
+const num = 3;
+console.log(getChangeDay(date,num));//2025-12-31.
+
+//example
+function endCaseWords(str) {
+  /*if(typeof str !== 'string') return "";*/
+  if(!str.substr) return '';
+  const  upString = (str) => str.slice(0, -1) + str.slice(-1).toUpperCase();
+
+  return str.toLowerCase()
+    .split(' ')
+    .map((elem) => upString(elem))
+    .join(' ');
+}
+
+const str2 = "чтOбы первый последний сиMвол был заглавный";
+console.log(endCaseWords(str2))
+console.log(endCaseWords(4));
+
+</script>
+</body>
+</html>

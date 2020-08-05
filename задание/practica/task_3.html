@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+<body>
+<script>
+  const arr = ['a', 'b', 'c'];
+  const result = [];
+
+  for(let i = arr.length; i>0; i--) {
+    result.push(arr[i])
+    console.log(result);
+    /* [undefined]
+		 [undefined, "c"]
+		 [undefined, "c", "b"]*/
+  }
+
+//теперь добавим меньше либо равно i<=0
+  const arr = ['a', 'b', 'c'];
+  const result = [];
+
+  for(let i = arr.length; i>=0; i--) {
+    result.push(arr[i])
+    console.log(result);
+    /* [undefined]
+		 [undefined, "c"]
+		 [undefined, "c", "b"]
+		 [undefined, "c", "b","a"]
+		 */
+  }
+
+//теперб поставим -1 arr.length-1
+	
+  const arr = ['a', 'b', 'c'];
+  const result = [];
+
+  for(let i = arr.length-1; i>=0; i--) {
+    result.push(arr[i]);
+    console.log(result);
+    /*["c"]
+    ["c", "b"]
+    ["c", "b", "a"]*/
+  }
+  
+
+</script>
+</body>
+</html>

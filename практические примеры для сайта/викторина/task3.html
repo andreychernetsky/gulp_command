@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+<body>
+<style>
+	#test div {
+		margin-bottom: 25px;
+	}
+	.corrent {
+		border:1px solid green
+	}
+	.incorrect {
+		border:1px solid red;
+	}
+</style>
+<div id="test"></div>
+<button id="btn">проверка ответа</button>
+<script>
+  const text = document.querySelector('#test');
+  const questions = [
+    {
+      text:' Сколько ступеней в До мажоре?',
+      right:7
+    },
+    {
+      text:' Назови цифровкай третью ноту в тональности До- мажор',
+      right:'ми'
+    },
+    {
+      text:' Какая нота в размере четырех четвертей имеет удар по струне на 1и ?',
+      right:'четвертная'
+    },
+    {
+      text:' Какая нота пишется между четвертой и пятой линейкой?',
+      right:'ми'
+    },
+    {
+      text:'Какая нота в размере четырех четвертей имеет удар по струне на 1и 2и ?',
+      right:'половинная'
+    },
+    {
+      text:'Какая нота пишется на третьей линейке?',
+      right:'си'
+    },
+    {
+      text:'что означает цифра в кружечке?',
+      right:'номер струны'
+    }
+  ];
+  for(const question of questions) {
+    const div = document.createElement('div');
+    text.append(div);
+
+    const paragraf = document.createElement('p');
+    paragraf.textContent = question.text;
+
+
+    const input = document.createElement('input');
+    input.dataset.right = question.right;
+    input.setAttribute('title',question.right);//  при наведении на ответ, должен показывать правильный ответ
+    div.append(paragraf,input);
+  }
+  const button = document.querySelector('#btn');
+  button.addEventListener('click',function() {
+    const inputs = document.querySelectorAll('#test input');
+    
+    let wrongCounter = 0;
+    
+    for (const inp of inputs) {
+      inp.classList.remove('correct');
+      inp.classList.remove('incorrect');
+      if (inp.value === inp.dataset.right) {
+        inp.classList.add('correct')
+      } else {
+        inp.classList.add('incorrect');
+        wrongCounter++;
+      }
+    }
+    if(wrongCounter > 0) {
+      button.textContent=`осталось ответить на ${wrongCounter} вопросов`
+    } else {
+      button.textContent = "Вы ответли на все вопросы правильно";
+      button.disabled = true;
+    }
+  })
+
+//  при наведении на ответ, должен показывать правильный ответ
+</script>
+</body>
+</html>

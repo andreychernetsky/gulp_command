@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+<body>
+<script>
+//  Напишите функцию getWeekDay(date),
+// показывающую день недели в коротком формате:
+// «ПН», «ВТ», «СР», «ЧТ», «ПТ»,
+
+//Метод date.getDay() возвращает номер дня недели, начиная с воскресенья.
+
+//  Создадим массив дней недели, чтобы получить имя нужного дня по его номеру:
+
+function getWeekDay(date) {
+  let days = ['ВС', 'ПН', 'ВТ', 'СР', 'ЧТ', 'ПТ', 'СБ'];
+
+  return days[date.getDay()];
+
+}
+
+let date = new Date(2020,0,3); // 3 января 2014 года
+console.log( getWeekDay(date) ); // ПТ
+
+// 14. Напишите скрипт, который считает количество секунд в часе, в сутках, в месяце.
+
+const sec = 60;
+const hour = 60;
+const day = 24;
+const month = 30;
+console.log('Hour = ' + sec * hour + ' second');
+console.log('Day = ' + sec * hour * day + ' second');
+console.log('Month = ' + sec * hour * day * month + ' second');
+
+</script>
+</body>
+</html>

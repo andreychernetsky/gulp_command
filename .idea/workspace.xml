@@ -2,8 +2,118 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="45a0dfc1-517b-4593-bf15-a6b4e1db3073" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/задание/practica/task_one.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/all lassons all js/29 all promisa/task1Visa.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/all lassons all js/29 all promisa/task2.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/all lassons all js/29 all promisa/taskViza.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/all lassons all js/29 all promisa/vebinar.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/all lassons all js/33 Работа с флагами/task.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/all lassons all js/5 присваивание/task1.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/all lassons all js/7 all function/task.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/all lassons all js/7 all function/стрелочные функции/lesson1.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/all lassons all js/8 all looper for and while/test.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/all lassons all js/9 all array/lesson1.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/all lassons all js/9 all array/task2.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/all lassons all js/DOM/dom.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/all lassons all js/all class/lesson1.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/all lassons all js/all loop/all forEach/forEach.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/all lassons all js/constructor/constructor.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/all lassons all js/oop/OOProlesValidateEmailPass.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/all lassons all js/oop/lesson1.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/all lassons all js/oop/modalOOP.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/all lassons all js/test/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/задание/lesons For js.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/задание/practica/task_3.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/задание/practica/task_two.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/задание/Задача о протеине/task.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/задание/ввод пароля/task.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/задание/стаж зарлаты/task.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/практические примеры для сайта/Vertical Timeline/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/практические примеры для сайта/calendar/calendar5.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/практические примеры для сайта/Как сдвинуть header/menu_bar.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/практические примеры для сайта/викторина/task.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/практические примеры для сайта/викторина/task3.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/практические примеры для сайта/викторина/task4.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/практические примеры для сайта/викторина/taskClass.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/практические примеры для сайта/многоуровневое меню/menu/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/практические примеры для сайта/многоуровневое меню/menu/script.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/практические примеры для сайта/многоуровневое меню/menu/style.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/практические примеры для сайта/test.js" afterPath="$PROJECT_DIR$/практические примеры для сайта/test.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/all loop/lesson1.html" afterPath="$PROJECT_DIR$/all lassons all js/all loop/lesson1.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/task/.idea/encodings.xml" afterPath="$PROJECT_DIR$/all lassons all js/.idea/encodings.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/task/.idea/modules.xml" afterPath="$PROJECT_DIR$/all lassons all js/.idea/modules.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/task/.idea/task.iml" afterPath="$PROJECT_DIR$/all lassons all js/.idea/task.iml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/task/.idea/workspace.xml" afterPath="$PROJECT_DIR$/all lassons all js/.idea/workspace.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/task/1 all переменные консанты/DataTypes-master/Exercises.en.md" afterPath="$PROJECT_DIR$/all lassons all js/1 all переменные консанты/DataTypes-master/Exercises.en.md" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/task/1 all переменные консанты/DataTypes-master/Exercises.ru.md" afterPath="$PROJECT_DIR$/all lassons all js/1 all переменные консанты/DataTypes-master/Exercises.ru.md" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/task/1 all переменные консанты/DataTypes-master/Exercises/1-hoisting.js" afterPath="$PROJECT_DIR$/all lassons all js/1 all переменные консанты/DataTypes-master/Exercises/1-hoisting.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/task/1 all переменные консанты/DataTypes-master/Exercises/1-hoisting.test" afterPath="$PROJECT_DIR$/all lassons all js/1 all переменные консанты/DataTypes-master/Exercises/1-hoisting.test" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/task/1 all переменные консанты/DataTypes-master/Exercises/2-by-value.js" afterPath="$PROJECT_DIR$/all lassons all js/1 all переменные консанты/DataTypes-master/Exercises/2-by-value.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/task/1 all переменные консанты/DataTypes-master/Exercises/2-by-value.test" afterPath="$PROJECT_DIR$/all lassons all js/1 all переменные консанты/DataTypes-master/Exercises/2-by-value.test" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/task/1 all переменные консанты/DataTypes-master/Exercises/3-by-reference.js" afterPath="$PROJECT_DIR$/all lassons all js/1 all переменные консанты/DataTypes-master/Exercises/3-by-reference.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/task/1 all переменные консанты/DataTypes-master/Exercises/3-by-reference.test" afterPath="$PROJECT_DIR$/all lassons all js/1 all переменные консанты/DataTypes-master/Exercises/3-by-reference.test" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/task/1 all переменные консанты/DataTypes-master/Exercises/4-count-types.js" afterPath="$PROJECT_DIR$/all lassons all js/1 all переменные консанты/DataTypes-master/Exercises/4-count-types.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/task/1 all переменные консанты/DataTypes-master/Exercises/4-count-types.test" afterPath="$PROJECT_DIR$/all lassons all js/1 all переменные консанты/DataTypes-master/Exercises/4-count-types.test" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/task/1 all переменные консанты/DataTypes-master/JavaScript/1-comments.js" afterPath="$PROJECT_DIR$/all lassons all js/1 all переменные консанты/DataTypes-master/JavaScript/1-comments.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/task/1 all переменные консанты/DataTypes-master/JavaScript/2-const-let.js" afterPath="$PROJECT_DIR$/all lassons all js/1 all переменные консанты/DataTypes-master/JavaScript/2-const-let.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/task/1 all переменные консанты/DataTypes-master/JavaScript/3-scalar.js" afterPath="$PROJECT_DIR$/all lassons all js/1 all переменные консанты/DataTypes-master/JavaScript/3-scalar.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/task/1 all переменные консанты/DataTypes-master/JavaScript/4-types.js" afterPath="$PROJECT_DIR$/all lassons all js/1 all переменные консанты/DataTypes-master/JavaScript/4-types.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/task/1 all переменные консанты/DataTypes-master/JavaScript/5-undefined-null-NaN.js" afterPath="$PROJECT_DIR$/all lassons all js/1 all переменные консанты/DataTypes-master/JavaScript/5-undefined-null-NaN.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/task/1 all переменные консанты/DataTypes-master/JavaScript/6-parse.js" afterPath="$PROJECT_DIR$/all lassons all js/1 all переменные консанты/DataTypes-master/JavaScript/6-parse.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/task/1 all переменные консанты/DataTypes-master/JavaScript/7-delete.js" afterPath="$PROJECT_DIR$/all lassons all js/1 all переменные консанты/DataTypes-master/JavaScript/7-delete.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/task/1 all переменные консанты/DataTypes-master/JavaScript/8-bitwise.js" afterPath="$PROJECT_DIR$/all lassons all js/1 all переменные консанты/DataTypes-master/JavaScript/8-bitwise.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/task/1 all переменные консанты/DataTypes-master/JavaScript/9-bigint.js" afterPath="$PROJECT_DIR$/all lassons all js/1 all переменные консанты/DataTypes-master/JavaScript/9-bigint.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/task/1 all переменные консанты/DataTypes-master/README.md" afterPath="$PROJECT_DIR$/all lassons all js/1 all переменные консанты/DataTypes-master/README.md" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/task/1 all переменные консанты/DataTypes-master/Solutions/1-hoisting.js" afterPath="$PROJECT_DIR$/all lassons all js/1 all переменные консанты/DataTypes-master/Solutions/1-hoisting.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/task/1 all переменные консанты/DataTypes-master/Solutions/2-by-value.js" afterPath="$PROJECT_DIR$/all lassons all js/1 all переменные консанты/DataTypes-master/Solutions/2-by-value.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/task/1 all переменные консанты/DataTypes-master/Solutions/3-by-reference.js" afterPath="$PROJECT_DIR$/all lassons all js/1 all переменные консанты/DataTypes-master/Solutions/3-by-reference.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/task/1 all переменные консанты/DataTypes-master/Solutions/4-count-types.js" afterPath="$PROJECT_DIR$/all lassons all js/1 all переменные консанты/DataTypes-master/Solutions/4-count-types.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/task/1 all переменные консанты/lesson4.html" afterPath="$PROJECT_DIR$/all lassons all js/1 all переменные консанты/lesson4.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/task/1 all переменные консанты/read.html" afterPath="$PROJECT_DIR$/all lassons all js/1 all переменные консанты/read.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/task/1 all переменные консанты/test all let const obj/tasks.html" afterPath="$PROJECT_DIR$/all lassons all js/1 all переменные консанты/test all let const obj/tasks.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/task/10 all number/.idea/encodings.xml" afterPath="$PROJECT_DIR$/all lassons all js/10 all number/.idea/encodings.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/task/10 all number/.idea/modules.xml" afterPath="$PROJECT_DIR$/all lassons all js/10 all number/.idea/modules.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/task/10 all number/.idea/number.iml" afterPath="$PROJECT_DIR$/all lassons all js/10 all number/.idea/number.iml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/task/10 all number/.idea/workspace.xml" afterPath="$PROJECT_DIR$/all lassons all js/10 all number/.idea/workspace.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/task/10 all number/exe1.html" afterPath="$PROJECT_DIR$/all lassons all js/10 all number/exe1.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/task/10 all number/number_task.html" afterPath="$PROJECT_DIR$/all lassons all js/10 all number/number_task.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/task/10 all number/questions about number.html" afterPath="$PROJECT_DIR$/all lassons all js/10 all number/questions about number.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/task/11 all objact/lesson2.html" afterPath="$PROJECT_DIR$/all lassons all js/11 all objact/lesson2.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/task/11 all objact/obj.html" afterPath="$PROJECT_DIR$/all lassons all js/11 all objact/obj.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/task/13 string/task2.html" afterPath="$PROJECT_DIR$/all lassons all js/13 string/task2.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/task/13 string/tasks.html" afterPath="$PROJECT_DIR$/all lassons all js/13 string/tasks.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/task/14 методы строк/task.html" afterPath="$PROJECT_DIR$/all lassons all js/14 методы строк/task.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/task/14 методы строк/task3.html" afterPath="$PROJECT_DIR$/all lassons all js/14 методы строк/task3.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/task/14 методы строк/tasks.html" afterPath="$PROJECT_DIR$/all lassons all js/14 методы строк/tasks.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/task/19 даты/getDay.html" afterPath="$PROJECT_DIR$/all lassons all js/19 даты/getDay.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/task/19 даты/lesson1.html" afterPath="$PROJECT_DIR$/all lassons all js/19 даты/lesson1.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/task/20 all for/for.html" afterPath="$PROJECT_DIR$/all lassons all js/20 all for/for.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/task/20 all for/matrix.html" afterPath="$PROJECT_DIR$/all lassons all js/20 all for/matrix.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/task/21 all while/while.html" afterPath="$PROJECT_DIR$/all lassons all js/21 all while/while.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/task/25 Заявления if...else/tasks.html" afterPath="$PROJECT_DIR$/all lassons all js/25 Заявления if...else/tasks.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/task/4 Арифметика/tasks.html" afterPath="$PROJECT_DIR$/all lassons all js/4 Арифметика/tasks.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/task/7 all function/.idea/7 all function.iml" afterPath="$PROJECT_DIR$/all lassons all js/7 all function/.idea/7 all function.iml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/task/7 all function/.idea/encodings.xml" afterPath="$PROJECT_DIR$/all lassons all js/7 all function/.idea/encodings.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/task/7 all function/.idea/modules.xml" afterPath="$PROJECT_DIR$/all lassons all js/7 all function/.idea/modules.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/task/7 all function/.idea/workspace.xml" afterPath="$PROJECT_DIR$/all lassons all js/7 all function/.idea/workspace.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/task/7 all function/index.html" afterPath="$PROJECT_DIR$/all lassons all js/7 all function/index.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/task/7 all function/index2.html" afterPath="$PROJECT_DIR$/all lassons all js/7 all function/index2.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/task/7 all function/lesson3.html" afterPath="$PROJECT_DIR$/all lassons all js/7 all function/lesson3.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/task/7 all function/tasks.html" afterPath="$PROJECT_DIR$/all lassons all js/7 all function/tasks.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/task/8 all looper for and while/.idea/encodings.xml" afterPath="$PROJECT_DIR$/all lassons all js/8 all looper for and while/.idea/encodings.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/task/8 all looper for and while/.idea/modules.xml" afterPath="$PROJECT_DIR$/all lassons all js/8 all looper for and while/.idea/modules.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/task/8 all looper for and while/.idea/workspace.xml" afterPath="$PROJECT_DIR$/all lassons all js/8 all looper for and while/.idea/workspace.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/task/8 all looper for and while/.idea/Работа с математическими функциями.iml" afterPath="$PROJECT_DIR$/all lassons all js/8 all looper for and while/.idea/Работа с математическими функциями.iml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/task/8 all looper for and while/task.html" afterPath="$PROJECT_DIR$/all lassons all js/8 all looper for and while/task.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/task/8 all looper for and while/test.js" afterPath="$PROJECT_DIR$/all lassons all js/28 битовые операции/task1.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/task/9 all array/arr.html" afterPath="$PROJECT_DIR$/all lassons all js/9 all array/arr.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/task/9 all array/task1.html" afterPath="$PROJECT_DIR$/all lassons all js/9 all array/task1.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/task/all promisa/task.html" afterPath="$PROJECT_DIR$/all lassons all js/29 all promisa/task.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/task/all switch/switch.html" afterPath="$PROJECT_DIR$/all lassons all js/26 all switch/switch.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/task/test/index.html" afterPath="$PROJECT_DIR$/all lassons all js/29 all promisa/lessonPromise.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/task/test/script.js" afterPath="$PROJECT_DIR$/all lassons all js/test/script.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/task/дополнительные уроки/index.html" afterPath="$PROJECT_DIR$/all lassons all js/дополнительные уроки/index.html" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -16,24 +126,24 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="vertical" split-proportion="0.5603604">
+    <splitter split-orientation="vertical" split-proportion="0.20418848">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="task1.html" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/task/9 all array/task1.html">
+          <file leaf-file-name="test.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/урок 1/test.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="238">
-                  <caret line="191" column="54" lean-forward="false" selection-start-line="191" selection-start-column="54" selection-end-line="191" selection-end-column="54" />
+                <state relative-caret-position="0">
+                  <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="task_one.html" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/задание/practica/task_one.html">
+          <file leaf-file-name="scratch_199.es6" pinned="false" current-in-tab="true">
+            <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch_199.es6">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="260">
-                  <caret line="82" column="3" lean-forward="false" selection-start-line="82" selection-start-column="3" selection-end-line="82" selection-end-column="3" />
+                <state relative-caret-position="96">
+                  <caret line="6" column="16" lean-forward="false" selection-start-line="6" selection-start-column="16" selection-end-line="6" selection-end-column="16" />
                   <folding />
                 </state>
               </provider>
@@ -43,21 +153,21 @@
       </split-first>
       <split-second>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="test.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/практические примеры для сайта/test.js">
+          <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/практические примеры для сайта/многоуровневое меню/menu/index.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="0">
-                  <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+                <state relative-caret-position="1912">
+                  <caret line="113" column="6" lean-forward="false" selection-start-line="113" selection-start-column="6" selection-end-line="113" selection-end-column="6" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="scratch_195.es6" pinned="false" current-in-tab="true">
-            <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch_195.es6">
+          <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/практические примеры для сайта/многоуровневое меню/menu/style.css">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="16">
-                  <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+                <state relative-caret-position="376">
+                  <caret line="154" column="1" lean-forward="false" selection-start-line="154" selection-start-column="1" selection-end-line="154" selection-end-column="1" />
                   <folding />
                 </state>
               </provider>
@@ -80,67 +190,67 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch_8.js" />
-        <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch_9.js" />
-        <option value="$PROJECT_DIR$/lesons for study/lesson4/index.html" />
-        <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch_186.es6" />
-        <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch_187.es6" />
-        <option value="$PROJECT_DIR$/task/10 all number/number_task.html" />
-        <option value="$PROJECT_DIR$/task/21 all while/while.html" />
-        <option value="$PROJECT_DIR$/task/20 all for/for.html" />
-        <option value="$PROJECT_DIR$/task/7 all function/lesson3.html" />
-        <option value="$PROJECT_DIR$/task/7 all function/index.html" />
-        <option value="$PROJECT_DIR$/task/1 all переменные консанты/DataTypes-master/JavaScript/2-const-let.js" />
-        <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch_188.es6" />
-        <option value="$PROJECT_DIR$/all switch/switch.html" />
-        <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch_189.es6" />
-        <option value="$PROJECT_DIR$/задание/qvestion.html" />
-        <option value="$PROJECT_DIR$/task/14 методы строк/tasks.html" />
-        <option value="$PROJECT_DIR$/task/19 даты/getDay.html" />
-        <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch_190.es6" />
-        <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch_10.js" />
-        <option value="$PROJECT_DIR$/практические примеры для сайта/index.html" />
-        <option value="$PROJECT_DIR$/task/19 даты/lesson1.html" />
-        <option value="$PROJECT_DIR$/task/11 all objact/obj.html" />
-        <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch_191.es6" />
-        <option value="$PROJECT_DIR$/практические примеры для сайта/Фильтр таблицы/script.js" />
-        <option value="$PROJECT_DIR$/практические примеры для сайта/Фильтр таблицы/style.css" />
-        <option value="$PROJECT_DIR$/практические примеры для сайта/Фильтр таблицы/index.html" />
-        <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch_192.es6" />
-        <option value="$PROJECT_DIR$/task/7 all function/tasks.html" />
-        <option value="$PROJECT_DIR$/практические примеры для сайта/test.js" />
-        <option value="$PROJECT_DIR$/task/14 методы строк/task.html" />
-        <option value="$PROJECT_DIR$/task/14 методы строк/task3.html" />
-        <option value="$PROJECT_DIR$/task/7 all function/lesson4.html" />
-        <option value="$PROJECT_DIR$/all loop/lesson1.html" />
-        <option value="$PROJECT_DIR$/task/4 Арифметика/tasks.html" />
-        <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch_193.es6" />
-        <option value="$PROJECT_DIR$/task/13 string/tasks.html" />
-        <option value="$PROJECT_DIR$/task/13 string/task2.html" />
-        <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch_194.es6" />
-        <option value="$PROJECT_DIR$/практические примеры для сайта/calendar/calendar2.html" />
-        <option value="$PROJECT_DIR$/практические примеры для сайта/calendar/calendar3.html" />
-        <option value="$PROJECT_DIR$/урок 1/test.js" />
-        <option value="$PROJECT_DIR$/практические примеры для сайта/calendar/calendar.html" />
-        <option value="$PROJECT_DIR$/практические примеры для сайта/calendar/calendar4.html" />
-        <option value="$PROJECT_DIR$/task/25 Заявления if...else/tasks.html" />
-        <option value="$PROJECT_DIR$/task/all promisa/task.html" />
-        <option value="$PROJECT_DIR$/task/11 all objact/lesson2.html" />
-        <option value="$PROJECT_DIR$/task/9 all array/arr.html" />
         <option value="$PROJECT_DIR$/task/9 all array/lessons2.html" />
         <option value="$PROJECT_DIR$/task/9 all array/task1.html" />
-        <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch_195.es6" />
         <option value="$PROJECT_DIR$/задание/practica/task_one.html" />
+        <option value="$PROJECT_DIR$/task/5 присваивание/task1.html" />
+        <option value="$PROJECT_DIR$/task/19 даты/getDay.html" />
+        <option value="$PROJECT_DIR$/all lassons all js/28 битовые операции/task1.html" />
+        <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch_195.es6" />
+        <option value="$PROJECT_DIR$/all lassons all js/test/script.js" />
+        <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch_196.es6" />
+        <option value="$PROJECT_DIR$/задание/practica/task_two.html" />
+        <option value="$PROJECT_DIR$/практические примеры для сайта/Как сдвинуть header/menu_bar.html" />
+        <option value="$PROJECT_DIR$/практические примеры для сайта/test.js" />
+        <option value="$PROJECT_DIR$/all lassons all js/21 all while/while.html" />
+        <option value="$PROJECT_DIR$/all lassons all js/33 Работа с флагами/task.html" />
+        <option value="$PROJECT_DIR$/all lassons all js/11 all objact/lesson2.html" />
+        <option value="$PROJECT_DIR$/задание/lesons For js.html" />
+        <option value="$PROJECT_DIR$/all lassons all js/7 all function/lesson3.html" />
+        <option value="$PROJECT_DIR$/all lassons all js/9 all array/task2.html" />
+        <option value="$PROJECT_DIR$/практические примеры для сайта/Vertical Timeline/index.html" />
+        <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch_197.es6" />
+        <option value="$PROJECT_DIR$/задание/practica/task_3.html" />
+        <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch_198.es6" />
+        <option value="$PROJECT_DIR$/all lassons all js/7 all function/task.html" />
+        <option value="$PROJECT_DIR$/практические примеры для сайта/викторина/task2.html" />
+        <option value="$PROJECT_DIR$/all lassons all js/29 all promisa/taskViza.html" />
+        <option value="$PROJECT_DIR$/all lassons all js/29 all promisa/vebinar.html" />
+        <option value="$PROJECT_DIR$/all lassons all js/29 all promisa/lessonPromise.html" />
+        <option value="$PROJECT_DIR$/all lassons all js/29 all promisa/task2.html" />
+        <option value="$PROJECT_DIR$/практические примеры для сайта/викторина/task3.html" />
+        <option value="$PROJECT_DIR$/практические примеры для сайта/викторина/taskClass.html" />
+        <option value="$PROJECT_DIR$/all lassons all js/all class/lesson1.html" />
+        <option value="$PROJECT_DIR$/all lassons all js/oop/lesson1.html" />
+        <option value="$PROJECT_DIR$/all lassons all js/oop/modalOOP.html" />
+        <option value="$PROJECT_DIR$/all lassons all js/oop/OOProlesValidateEmailPass.html" />
+        <option value="$PROJECT_DIR$/all lassons all js/DOM/dom.html" />
+        <option value="$PROJECT_DIR$/all lassons all js/constructor/constructor.html" />
+        <option value="$PROJECT_DIR$/all lassons all js/7 all function/tasks.html" />
+        <option value="$PROJECT_DIR$/all lassons all js/7 all function/стрелочные функции/lesson1.html" />
+        <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch_199.es6" />
+        <option value="$PROJECT_DIR$/практические примеры для сайта/calendar/calendar5.html" />
+        <option value="$PROJECT_DIR$/задание/стаж зарлаты/task.html" />
+        <option value="$PROJECT_DIR$/задание/ввод пароля/task.html" />
+        <option value="$PROJECT_DIR$/задание/Задача о протеине/task.html" />
+        <option value="$PROJECT_DIR$/all lassons all js/9 all array/lesson1.html" />
+        <option value="$PROJECT_DIR$/all lassons all js/all loop/all forEach/forEach.html" />
+        <option value="$PROJECT_DIR$/практические примеры для сайта/викторина/task4.html" />
+        <option value="$PROJECT_DIR$/практические примеры для сайта/математика/mat/Task.js" />
+        <option value="$PROJECT_DIR$/практические примеры для сайта/викторина/task.html" />
+        <option value="$PROJECT_DIR$/практические примеры для сайта/многоуровневое меню/menu/script.js" />
+        <option value="$PROJECT_DIR$/практические примеры для сайта/многоуровневое меню/menu/index.html" />
+        <option value="$PROJECT_DIR$/практические примеры для сайта/многоуровневое меню/menu/style.css" />
       </list>
     </option>
   </component>
   <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
   <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
   <component name="JsFlowSettings">
-    <service-enabled>false</service-enabled>
+    <service-enabled>true</service-enabled>
     <exe-path />
     <annotation-enable>false</annotation-enable>
-    <other-services-enabled>false</other-services-enabled>
+    <other-services-enabled>true</other-services-enabled>
     <auto-save>true</auto-save>
   </component>
   <component name="JsGulpfileManager">
@@ -148,10 +258,10 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1382" />
-    <option name="height" value="744" />
+    <option name="x" value="332" />
+    <option name="y" value="47" />
+    <option name="width" value="916" />
+    <option name="height" value="688" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -184,8 +294,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -196,26 +304,55 @@
             <path>
               <item name="материал с курса conscode" type="b2602c69:ProjectViewProjectNode" />
               <item name="материал с курса conscode" type="462c0819:PsiDirectoryNode" />
-              <item name="задание" type="462c0819:PsiDirectoryNode" />
+              <item name="all lassons all js" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="материал с курса conscode" type="b2602c69:ProjectViewProjectNode" />
+              <item name="материал с курса conscode" type="462c0819:PsiDirectoryNode" />
+              <item name="практические примеры для сайта" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="материал с курса conscode" type="b2602c69:ProjectViewProjectNode" />
+              <item name="материал с курса conscode" type="462c0819:PsiDirectoryNode" />
+              <item name="практические примеры для сайта" type="462c0819:PsiDirectoryNode" />
+              <item name="викторина" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="материал с курса conscode" type="b2602c69:ProjectViewProjectNode" />
+              <item name="материал с курса conscode" type="462c0819:PsiDirectoryNode" />
+              <item name="практические примеры для сайта" type="462c0819:PsiDirectoryNode" />
+              <item name="многоуровневое меню" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="материал с курса conscode" type="b2602c69:ProjectViewProjectNode" />
+              <item name="материал с курса conscode" type="462c0819:PsiDirectoryNode" />
+              <item name="практические примеры для сайта" type="462c0819:PsiDirectoryNode" />
+              <item name="многоуровневое меню" type="462c0819:PsiDirectoryNode" />
+              <item name="menu" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="settings.editor.selected.configurable" value="File.Encoding" />
+    <property name="settings.editor.selected.configurable" value="Settings.JavaScript" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="HbShouldOpenHtmlAsHb" value="" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$2/Languages" value="ECMAScript 6" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="JavaScriptPreferStrict" value="false" />
+    <property name="JavaScriptWeakerCompletionTypeGuess" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\галп с различными примерами\...agragregraOptimizedHTML-4\материал с курса conscode\all lassons all js" />
       <recent name="D:\галп с различными примерами\...agragregraOptimizedHTML-4\материал с курса conscode\task\1 all переменные консанты" />
       <recent name="D:\галп с различными примерами\...agragregraOptimizedHTML-4\материал с курса conscode\test" />
     </key>
@@ -232,11 +369,20 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JavaScript Debug.index.html">
+  <component name="RunManager" selected="JavaScript Debug.taskClass.html">
     <configuration name="index.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/материал с курса conscode/практические примеры для сайта/index.html" />
+    <configuration name="menu_bar.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/материал с курса conscode/практические примеры для сайта/Как сдвинуть header/menu_bar.html" />
+    <configuration name="taskClass.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/материал с курса conscode/практические примеры для сайта/викторина/taskClass.html" />
+    <list size="3">
+      <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.index.html" />
+      <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.menu_bar.html" />
+      <item index="2" class="java.lang.String" itemvalue="JavaScript Debug.taskClass.html" />
+    </list>
     <recent_temporary>
-      <list size="1">
-        <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.index.html" />
+      <list size="3">
+        <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.taskClass.html" />
+        <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.menu_bar.html" />
+        <item index="2" class="java.lang.String" itemvalue="JavaScript Debug.index.html" />
       </list>
     </recent_temporary>
   </component>
@@ -257,27 +403,32 @@
       <workItem from="1595054792888" duration="13646000" />
       <workItem from="1595238737635" duration="54340000" />
       <workItem from="1595529470997" duration="49385000" />
-      <workItem from="1596004119699" duration="3832000" />
+      <workItem from="1596004119699" duration="20947000" />
+      <workItem from="1596104366799" duration="764000" />
+      <workItem from="1596178505488" duration="6787000" />
+      <workItem from="1596437983708" duration="2347000" />
+      <workItem from="1596531571576" duration="23579000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="153637000" />
+    <option name="totallyTimeSpent" value="204229000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14657739" sideWeight="0.84317034" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18824404" sideWeight="0.84317034" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.34703946" sideWeight="0.5029762" order="1" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34703946" sideWeight="0.5029762" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Quokka" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.12828948" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Quokka" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.05756579" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.15895523" sideWeight="0.15682968" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.34703946" sideWeight="0.49702382" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25493717" sideWeight="0.49702382" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.15625" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20982143" sideWeight="0.84317034" order="0" side_tool="false" content_ui="combo" />
@@ -300,304 +451,122 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="1" />
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/задание/practica/task_3.html</url>
+          <line>10</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="2" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/task/1 all переменные консанты/DataTypes-master/JavaScript/9-bigint.js">
+    <entry file="file://$PROJECT_DIR$/практические примеры для сайта/test.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-144">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="256">
+          <caret line="16" column="13" lean-forward="false" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/task/1 all переменные консанты/DataTypes-master/Solutions/1-hoisting.js">
+    <entry file="file://$PROJECT_DIR$/all lassons all js/33 Работа с флагами/task.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="759">
+          <caret line="173" column="0" lean-forward="true" selection-start-line="173" selection-start-column="0" selection-end-line="173" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/task/1 all переменные консанты/DataTypes-master/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="32">
-            <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          </first_editor>
-          <second_editor />
+    <entry file="file://$PROJECT_DIR$/задание/lesons For js.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="9" column="83" lean-forward="false" selection-start-line="9" selection-start-column="83" selection-end-line="9" selection-end-column="83" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch_188.es6">
+    <entry file="file://$PROJECT_DIR$/all lassons all js/11 all objact/lesson2.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="-991">
+          <caret line="45" column="0" lean-forward="false" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/урок 1/exe6/script2.js">
+    <entry file="file://$PROJECT_DIR$/all lassons all js/7 all function/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="32">
-          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/all switch/switch.html" />
-    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch_189.es6">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="25" column="29" lean-forward="true" selection-start-line="25" selection-start-column="29" selection-end-line="25" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/практические примеры для сайта/calendar/files/js/app.js" />
-    <entry file="file://$PROJECT_DIR$/практические примеры для сайта/calendar/files/js/javascript.js" />
-    <entry file="file://$PROJECT_DIR$/практические примеры для сайта/calendar/files/js/app2.js" />
-    <entry file="file://$PROJECT_DIR$/практические примеры для сайта/calendar/files/js/app1.js" />
-    <entry file="file://$PROJECT_DIR$/практические примеры для сайта/calendar/tasks.js" />
-    <entry file="file://$PROJECT_DIR$/задание/qvestion.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="26">
-          <caret line="178" column="4" lean-forward="false" selection-start-line="178" selection-start-column="4" selection-end-line="178" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch_190.es6">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="163">
-          <caret line="45" column="0" lean-forward="true" selection-start-line="41" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch_10.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="15" column="31" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="122" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch_191.es6">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="464">
-          <caret line="79" column="6" lean-forward="true" selection-start-line="79" selection-start-column="6" selection-end-line="79" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/task/11 all objact/obj.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-384">
-          <caret line="9" column="81" lean-forward="false" selection-start-line="9" selection-start-column="81" selection-end-line="9" selection-end-column="81" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/практические примеры для сайта/Фильтр таблицы/script.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="17" column="1" lean-forward="false" selection-start-line="17" selection-start-column="1" selection-end-line="17" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/практические примеры для сайта/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="75" column="19" lean-forward="false" selection-start-line="75" selection-start-column="19" selection-end-line="75" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/практические примеры для сайта/Фильтр таблицы/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="28" column="7" lean-forward="true" selection-start-line="28" selection-start-column="7" selection-end-line="28" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/практические примеры для сайта/Фильтр таблицы/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="122">
-          <caret line="20" column="1" lean-forward="true" selection-start-line="20" selection-start-column="1" selection-end-line="20" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/task/19 даты/getDay.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="86">
-          <caret line="26" column="38" lean-forward="false" selection-start-line="26" selection-start-column="38" selection-end-line="26" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/task/19 даты/lesson1.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="989">
-          <caret line="95" column="7" lean-forward="false" selection-start-line="95" selection-start-column="7" selection-end-line="95" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/task/7 all function/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1120">
+        <state relative-caret-position="177">
           <caret line="70" column="7" lean-forward="true" selection-start-line="70" selection-start-column="7" selection-end-line="70" selection-end-column="7" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/task/7 all function/index2.html">
+    <entry file="file://$PROJECT_DIR$/all lassons all js/7 all function/index2.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
+        <state relative-caret-position="-192">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/task/7 all function/lesson3.html">
+    <entry file="file://$PROJECT_DIR$/all lassons all js/7 all function/lesson3.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1924">
-          <caret line="137" column="0" lean-forward="true" selection-start-line="137" selection-start-column="0" selection-end-line="137" selection-end-column="0" />
+        <state relative-caret-position="81">
+          <caret line="139" column="4" lean-forward="true" selection-start-line="139" selection-start-column="4" selection-end-line="139" selection-end-column="4" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/task/7 all function/tasks.html">
+    <entry file="file://$PROJECT_DIR$/all lassons all js/13 string/task2.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-131">
-          <caret line="67" column="34" lean-forward="true" selection-start-line="67" selection-start-column="34" selection-end-line="67" selection-end-column="34" />
+        <state relative-caret-position="1056">
+          <caret line="66" column="28" lean-forward="false" selection-start-line="57" selection-start-column="2" selection-end-line="66" selection-end-column="28" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch_192.es6">
+    <entry file="file://$PROJECT_DIR$/практические примеры для сайта/Vertical Timeline/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="223">
-          <caret line="20" column="0" lean-forward="true" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+        <state relative-caret-position="144">
+          <caret line="9" column="12" lean-forward="false" selection-start-line="9" selection-start-column="12" selection-end-line="9" selection-end-column="12" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/all loop/lesson1.html">
+    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch_197.es6">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="477">
-          <caret line="534" column="0" lean-forward="true" selection-start-line="534" selection-start-column="0" selection-end-line="534" selection-end-column="0" />
+        <state relative-caret-position="160">
+          <caret line="10" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/task/1 all переменные консанты/lesson4.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="61" column="0" lean-forward="true" selection-start-line="61" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/task/14 методы строк/task.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="370">
-          <caret line="300" column="7" lean-forward="true" selection-start-line="300" selection-start-column="7" selection-end-line="300" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/task/14 методы строк/task3.html">
+    <entry file="file://$PROJECT_DIR$/задание/practica/task_3.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="16">
-          <caret line="1" column="14" lean-forward="true" selection-start-line="1" selection-start-column="12" selection-end-line="1" selection-end-column="14" />
+          <caret line="19" column="3" lean-forward="false" selection-start-line="19" selection-start-column="3" selection-end-line="19" selection-end-column="3" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/task/14 методы строк/tasks.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="274">
-          <caret line="35" column="35" lean-forward="false" selection-start-line="35" selection-start-column="35" selection-end-line="35" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/task/4 Арифметика/tasks.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="158" column="0" lean-forward="false" selection-start-line="158" selection-start-column="0" selection-end-line="158" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch_193.es6">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="22">
-          <caret line="1" column="37" lean-forward="true" selection-start-line="1" selection-start-column="37" selection-end-line="1" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/task/13 string/tasks.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="9" column="71" lean-forward="true" selection-start-line="9" selection-start-column="71" selection-end-line="9" selection-end-column="71" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch_194.es6">
+    <entry file="file://$PROJECT_DIR$/практические примеры для сайта/опросник/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/task/13 string/task2.html">
+    <entry file="file://$PROJECT_DIR$/all lassons all js/9 all array/task2.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="663">
-          <caret line="102" column="7" lean-forward="true" selection-start-line="102" selection-start-column="7" selection-end-line="102" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/практические примеры для сайта/calendar/calendar2.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-154">
-          <caret line="261" column="44" lean-forward="true" selection-start-line="261" selection-start-column="41" selection-end-line="261" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/урок 1/test.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="20" column="19" lean-forward="true" selection-start-line="20" selection-start-column="19" selection-end-line="20" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/практические примеры для сайта/calendar/calendar3.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="369">
-          <caret line="234" column="0" lean-forward="false" selection-start-line="234" selection-start-column="0" selection-end-line="234" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/практические примеры для сайта/calendar/calendar4.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="48">
-          <caret line="117" column="19" lean-forward="true" selection-start-line="117" selection-start-column="19" selection-end-line="117" selection-end-column="19" />
+        <state relative-caret-position="16">
+          <caret line="102" column="45" lean-forward="false" selection-start-line="102" selection-start-column="2" selection-end-line="102" selection-end-column="45" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/практические примеры для сайта/calendar/calendar.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
+        <state relative-caret-position="6112">
           <caret line="381" column="8" lean-forward="true" selection-start-line="381" selection-start-column="8" selection-end-line="381" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/task/all promisa/task.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="15" column="9" lean-forward="true" selection-start-line="15" selection-start-column="9" selection-end-line="15" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/task/25 Заявления if...else/tasks.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="256">
-          <caret line="81" column="2" lean-forward="true" selection-start-line="81" selection-start-column="2" selection-end-line="81" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/task/11 all objact/lesson2.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1424">
-          <caret line="89" column="7" lean-forward="true" selection-start-line="89" selection-start-column="7" selection-end-line="89" selection-end-column="7" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/практические примеры для сайта/test.js">
+    <entry file="file://$PROJECT_DIR$/практические примеры для сайта/опросник/js/js.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -605,34 +574,297 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/task/9 all array/arr.html">
+    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch_198.es6">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="119" column="77" lean-forward="true" selection-start-line="119" selection-start-column="77" selection-end-line="119" selection-end-column="77" />
+        <state relative-caret-position="304">
+          <caret line="19" column="1" lean-forward="true" selection-start-line="19" selection-start-column="1" selection-end-line="19" selection-end-column="1" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/task/9 all array/task1.html">
+    <entry file="file://$PROJECT_DIR$/all lassons all js/29 all promisa/task.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="191" column="54" lean-forward="false" selection-start-line="191" selection-start-column="54" selection-end-line="191" selection-end-column="54" />
+        <state relative-caret-position="183">
+          <caret line="15" column="9" lean-forward="true" selection-start-line="15" selection-start-column="9" selection-end-line="15" selection-end-column="9" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch_195.es6">
+    <entry file="file://$PROJECT_DIR$/all lassons all js/29 all promisa/taskViza.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="384">
+          <caret line="157" column="0" lean-forward="true" selection-start-line="157" selection-start-column="0" selection-end-line="157" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/all lassons all js/29 all promisa/task1Visa.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="35" column="43" lean-forward="false" selection-start-line="35" selection-start-column="43" selection-end-line="35" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/all lassons all js/29 all promisa/vebinar.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="384">
+          <caret line="381" column="7" lean-forward="false" selection-start-line="381" selection-start-column="7" selection-end-line="381" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/all lassons all js/29 all promisa/lessonPromise.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="384">
+          <caret line="312" column="0" lean-forward="true" selection-start-line="312" selection-start-column="0" selection-end-line="312" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/all lassons all js/29 all promisa/task2.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="320">
+          <caret line="24" column="0" lean-forward="true" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/практические примеры для сайта/викторина/task3.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="182">
+          <caret line="71" column="13" lean-forward="true" selection-start-line="71" selection-start-column="13" selection-end-line="71" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/all lassons all js/all class/lesson1.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/all lassons all js/oop/lesson1.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="434">
+          <caret line="377" column="0" lean-forward="true" selection-start-line="377" selection-start-column="0" selection-end-line="377" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/all lassons all js/oop/modalOOP.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="434">
+          <caret line="499" column="5" lean-forward="false" selection-start-line="499" selection-start-column="5" selection-end-line="499" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/all lassons all js/oop/OOProlesValidateEmailPass.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2000">
+          <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/all lassons all js/DOM/dom.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="530">
+          <caret line="937" column="9" lean-forward="false" selection-start-line="937" selection-start-column="9" selection-end-line="937" selection-end-column="9" />
+          <folding>
+            <element signature="n#style#0;n#div#1;n#body#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#5;n#body#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <marker date="1596621686405" expanded="true" signature="20516:20528" ph="..." />
+            <marker date="1596621686405" expanded="true" signature="29711:29786" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/all lassons all js/7 all function/task.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="650">
+          <caret line="303" column="10" lean-forward="true" selection-start-line="303" selection-start-column="10" selection-end-line="303" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/all lassons all js/7 all function/tasks.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="101">
+          <caret line="117" column="0" lean-forward="true" selection-start-line="117" selection-start-column="0" selection-end-line="117" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/all lassons all js/constructor/constructor.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="50">
+          <caret line="94" column="18" lean-forward="false" selection-start-line="94" selection-start-column="18" selection-end-line="94" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/урок 1/test.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch_199.es6">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="6" column="16" lean-forward="false" selection-start-line="6" selection-start-column="16" selection-end-line="6" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/all lassons all js/7 all function/стрелочные функции/lesson1.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="80">
+          <caret line="19" column="12" lean-forward="true" selection-start-line="19" selection-start-column="12" selection-end-line="19" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/практические примеры для сайта/calendar/calendar5.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="9" column="80" lean-forward="false" selection-start-line="9" selection-start-column="80" selection-end-line="9" selection-end-column="80" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/задание/стаж зарлаты/task.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="172">
+          <caret line="23" column="3" lean-forward="false" selection-start-line="23" selection-start-column="3" selection-end-line="23" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/задание/ввод пароля/task.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="239">
+          <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/задание/Задача о протеине/task.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="9" column="32" lean-forward="false" selection-start-line="9" selection-start-column="32" selection-end-line="9" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/all lassons all js/9 all array/lesson1.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="16">
-          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <caret line="10" column="82" lean-forward="false" selection-start-line="10" selection-start-column="82" selection-end-line="10" selection-end-column="82" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/задание/practica/task_one.html">
+    <entry file="file://$PROJECT_DIR$/all lassons all js/all loop/all forEach/forEach.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="82" column="3" lean-forward="false" selection-start-line="82" selection-start-column="3" selection-end-line="82" selection-end-column="3" />
+        <state relative-caret-position="367">
+          <caret line="216" column="25" lean-forward="true" selection-start-line="216" selection-start-column="25" selection-end-line="216" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/задание/qvestion.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-368">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/практические примеры для сайта/викторина/task4.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="26" column="43" lean-forward="false" selection-start-line="26" selection-start-column="43" selection-end-line="26" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/практические примеры для сайта/математика/mat/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/практические примеры для сайта/математика/mat/script.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/практические примеры для сайта/математика/mat/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/практические примеры для сайта/математика/mat/Task.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="29">
+          <caret line="10" column="65" lean-forward="true" selection-start-line="10" selection-start-column="65" selection-end-line="10" selection-end-column="65" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/практические примеры для сайта/викторина/task.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-544">
+          <caret line="26" column="2" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="26" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/практические примеры для сайта/викторина/taskClass.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="134" column="60" lean-forward="true" selection-start-line="26" selection-start-column="2" selection-end-line="134" selection-end-column="60" />
+          <folding>
+            <marker date="1596621075739" expanded="true" signature="3598:3627" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/практические примеры для сайта/многоуровневое меню/menu/script.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="543">
+          <caret line="65" column="6" lean-forward="false" selection-start-line="65" selection-start-column="6" selection-end-line="65" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/практические примеры для сайта/многоуровневое меню/menu/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="376">
+          <caret line="154" column="1" lean-forward="false" selection-start-line="154" selection-start-column="1" selection-end-line="154" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/практические примеры для сайта/многоуровневое меню/menu/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1912">
+          <caret line="113" column="6" lean-forward="false" selection-start-line="113" selection-start-column="6" selection-end-line="113" selection-end-column="6" />
           <folding />
         </state>
       </provider>

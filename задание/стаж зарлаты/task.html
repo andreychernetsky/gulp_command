@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+<body>
+<p> Создайте программу, которая выводит надбавку за стаж. Пользователь вводит стаж работы, а программа пишет ему надбавку.</p>
+<a href="https://codepen.io/andreychernetsky/pen/bmdWRR">task</a>
+
+<input type="text" id='nadbavka'>
+<button id='calc'>click</button>
+<script>
+  document.getElementById('calc').onclick = function() {
+    let y = document.getElementById('nadbavka').value;
+    y = parseInt(y);
+    if(y >= 0 && y < 3) alert('0%');
+    else if (y >= 3 && y < 10) alert ('10%');
+    else if (y >= 10 && y < 20) alert ('20%');
+    else if (y >=20) alert ('25%');
+    else alert('error');
+  }
+</script>
+</body>
+</html>

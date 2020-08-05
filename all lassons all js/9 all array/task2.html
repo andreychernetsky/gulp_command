@@ -1,0 +1,365 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+<body>
+<script>
+  // ============================================================================
+  const name = 'Приемы работы с массивами';
+  console.log('Урок  - ' + name);
+  // ============================================================================
+
+
+  // ============================================================================
+  console.log('Заполнение массивов');
+  // ============================================================================
+
+  // заполним массив десятью иксами 'x'. Для этого воспользуемся методом
+
+  const arr = [];
+  for (let i = 1; i <= 10; i++) {
+    arr.push('x');
+  }
+  console.log(arr);
+
+  // or
+
+  const arr = [];
+  for (let i = 0; i < 10; i++) {
+    arr[i] = 'x';
+  }
+  console.log(arr);
+
+  // заполним массив числами от 1 до 10:
+
+ const arr = [];
+  for (let i = 1; i <= 10; i++) {
+    arr.push(i);
+  } console.log(arr);
+
+  // or
+
+  const arr = [];
+  for (let i = 0; i < 10; i++) {
+    arr[i] =i+1;
+  }
+  console.log(arr);
+
+
+  // ============================================================================
+  console.log('Переворот массива');
+  // ============================================================================
+
+  // из массива ['a', 'b', 'c', 'd', 'e'] сделаем ['e', 'd', 'c', 'b', 'a']. Для
+  // этого переберем исходный массив с конца и запишем его элементы в новый массив
+  // - они будут идти в обратном порядке:
+
+  const arr = ['a', 'b', 'c', 'd', 'e'];
+  console.log(arr.reverse());
+
+  // or
+
+  const result = [];
+  const arr = ['a', 'b', 'c', 'd', 'e'];
+  for (let i = arr.length-1 ; i >= 0; i--) {
+    console.log(i);//4,3,2,1,0
+    result.push(arr[i]);
+  }
+  console.log(result);//['e','d','c','b','a']
+
+
+  // ============================================================================
+  console.log('Переворот объекта');
+  // ============================================================================
+
+  // поменяем ключи и значения в объекте, например из {a: 1, b: 2, c: 3, d: 4, e: 5}
+  // сделаем {1: 'a', 2: 'b', 3: 'c', 4: 'd', 5: 'e'}.
+
+  const object = { a: 1, b: 2, c: 3, d: 4, e: 5 };
+  const result = {};
+
+  for (const key in object) {
+    result[object[key]] = key;
+    console.log(object[key]);//1,2,3,4,5
+    console.log(key)//a,b,c,d,e
+
+  }
+
+  console.log(result);//{1: "a", 2: "b", 3: "c", 4: "d", 5: "e"}
+
+
+  // ============================================================================
+  console.log('Подсчет колличества элементов');
+  // ============================================================================
+
+  // Пусть дан массив ['a', 'b', 'c', 'a', 'a', 'b']. Давайте подсчитаем количество
+  // одинаковых элементов в этом массиве и сделаем результат в виде объекта
+  // {a: 3, b: 2, c: 1}.
+
+  const arr = ['a', 'b', 'c', 'a', 'a', 'b'];
+  const count = { a: 0, b: 0, c: 0 };
+
+  for (let i = 0; i < arr.length; i++) {
+    count[arr[i]]++;
+    console.log(count)
+		/*{a: 1, b: 0, c: 0}
+  {a: 1, b: 1, c: 0}
+  {a: 1, b: 1, c: 1}
+  {a: 2, b: 1, c: 1}
+  {a: 3, b: 1, c: 1}
+  {a: 3, b: 2, c: 1}
+  {a: 3, b: 2, c: 1}*/
+  }
+
+  console.log(count);//{a:3,b:2,c:1}
+	
+//	example
+  const ar = [1, 1, 2, 3, 2, 2, 21, 12, 33, 3];
+
+  const ans = [...new Set(ar)];
+
+  console.log(ans);
+
+  function findeRepit(arr){
+    for(let i = 0; i< arr.length; i++){
+      if(arr[i]===arr[i-1]) {
+        result.push(arr[i]);
+      }
+
+    }
+    console.log(result) ;//[1,2]
+  }
+  const result = [];
+  const ar = [1, 1, 2, 3, 2, 2, 21, 12, 33, 3];
+  findeRepit(ar)
+  // Пусть объект count формируется автоматически таким образом: если такого элемента
+  // в count нет, то ему следует присвоить значение 1, а если есть - просто увеличить
+  // значение на единицу:
+
+  const arr = ['a', 'b', 'c', 'a', 'a', 'b'];
+  count = {};
+
+  for (let i = 0; i < arr.length; i++) {
+    if (count[arr[i]] === undefined) {
+      count[arr[i]] = 1;
+    } else {
+      count[arr[i]]++;
+    }
+  }
+
+  console.log(count);//{a:3,b:2,c:1}
+	
+//	через тернарный оператор
+  const arr = ['a', 'b', 'c', 'a', 'a', 'b'];
+  count = {};
+
+  for (let i = 0; i < arr.length; i++) {
+    (count[arr[i]] === undefined) ? count[arr[i]] = 1: count[arr[i]]++;
+  }
+
+  console.log(count);//{a:3,b:2,c:1}
+	
+	
+  // ============================================================================
+  console.log('Перебор многомерных массивов');
+  // ============================================================================
+
+  // выведем все его элементы на экран. Для этого нам необходимо запустить два
+  // вложенных друг в друга цикла:
+  const arr = [[1, 2, 3, 4, 5], [6, 7, 8], [9, 10]];
+  let result =null;
+  for (let i = 0; i <= arr.length; i++) {
+    for (let j = 0; j < arr[i].length; j++) {//Cannot read property 'length' of undefined
+      result = arr[i][j];
+      console.log(result);//1,2,3,4,5,6,7,8,9,10
+    }
+  }
+
+  // ============================================================================
+  console.log('Заполение массивов');
+  // ============================================================================
+
+  /*
+	1. Заполните массив следующим образом: в первый элемент запишите 'x',
+	во второй 'xx', в третий 'xxx' и так далее.
+	*/
+
+  const x = 'x';
+  let string = '';
+  const result = [];
+  for (let i = 1; i <= 10; i++) {
+    string += x;
+    result.push(string);
+  }
+  console.log(result);
+  
+//  ["x", "xx", "xxx", "xxxx", "xxxxx", "xxxxxx", "xxxxxxx", "xxxxxxxx", "xxxxxxxxx", "xxxxxxxxxx"]
+  // ============================================================================
+
+  /*
+	2. Заполните массив следующим образом: в первый элемент запишите '1', во второй
+	'22', в третий '333' и так далее.
+	*/
+
+  let str = '';
+  const result = [];
+  for (let i = 1; i <= 10; i++) {
+    str = '';
+    for (let j = 0; j < i; j++) {
+      str += i;
+    }
+
+    result.push(str);
+  }
+
+  console.log(result);
+//  ["1", "22", "333", "4444", "55555", "666666", "7777777", "88888888", "999999999", "10101010101010101010"]
+  // ============================================================================
+
+  /*
+	3. Сделайте функцию arrayFill, которая будет заполнять массив заданными значениями.
+	Первым параметром функция принимает значение, которым заполнять массив, а вторым
+	- сколько элементов должно быть в массиве. Пример: arrayFill('x', 5)
+	сделает массив ['x', 'x', 'x', 'x', 'x'].
+	*/
+
+  function arrayFill(symbol, amount) {
+    const result = [];
+    for (let i = 1; i <= amount; i++) {
+      result.push(string);
+    }
+    return result;
+  }
+  console.log(arrayFill(x, 10));
+
+  // or
+
+  function arrayFillSecond(symbol, amount) {
+    let string = 'x';
+    const result = [];
+    for (let i = 1; i <= amount; i++) {
+      result.push(string);
+    } return result;
+  }
+
+  console.log(arrayFillSecond(x, 2));
+
+  // ============================================================================
+
+  /*
+	4. Дан массив с числами. Узнайте сколько элементов с начала массива надо сложить,
+	чтобы в сумме получилось больше 10-ти.
+	*/
+
+  const arr = [1, 2, 3, 4, 5, 6, 7, 8];
+  let count = 0;
+  for (let i = 0; i < arr.length; i++) {
+    count += arr[i];
+    if (count > 10) {
+      console.log(arr[i]);
+      break;
+    }
+  }
+
+  // and
+
+  function amount(arr) {
+    var count = 0;
+    for (var i = 0; i < array.length; i++) {
+      count += arr[i];
+      if (count > 10) {
+        return arr[i];
+      }
+    }
+  }
+
+  console.log(amount([1, 2, 3, 4, 5, 6, 7, 8]));
+
+  // ============================================================================
+  console.log('Переворот массива');
+  // ============================================================================
+
+  /*
+	5. Дан массив с числами. Не используя метода reverse переверните его элементы
+	в обратном порядке.
+	*/
+
+  const array = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+  const result = [];
+  for (let i = array.length - 1; i >= 0; i--) {
+    result.push(array[i]);
+  }
+
+  console.log(result);
+
+  // ============================================================================
+  console.log('Многомерные массивы');
+  // ============================================================================
+
+  /*
+	6. Дан двухмерный массив с числами, например [[1, 2, 3], [4, 5], [6]].
+	Найдите сумму элементов этого массива. Массив, конечно же, может быть
+	произвольным.
+	*/
+
+  var array = [[10, 3, 13, 24], [5, 16, 7], [8, 14]];
+  var result = 0;
+  for (var i = 0; i < array.length; i++) {
+    for (var j = 0; j < array[i].length; j++) {
+      result += array[i][j];
+    }
+  } console.log(result);
+
+  // and
+
+  function arrHuge(arr) {
+    var result = 0;
+    for (var i = 0; i < arr.length; i++) {
+      for (var j = 0; j < arr[i].length; j++) {
+        result += arr[i][j];
+      }
+    } return result;
+  }
+
+  console.log(arrHuge([[10, 3, 13, 24], [5, 16, 7], [8, 14]]));
+
+  // ============================================================================
+
+  /*
+	7. Дан трехмерный массив с числами, например [[[1, 2], [3, 4]], [[5, 6], [7, 8]]].
+	Найдите сумму элементов этого массива.
+	Массив, конечно же, может быть произвольным.
+	*/
+
+  var arrBig = [[[1, 2], [3, 4]], [[5, 6], [7, 8]]];
+  var result = 0;
+  for (var i = 0; i < arrBig.length; i++) {
+    for (var j = 0; j < arrBig[i].length; j++) {
+      for (var k = 0; k < arrBig[i][j].length; k++) {
+        result += arrBig[i][j][k];
+      }
+    }
+  } console.log(result);
+
+  // and
+
+  function arrMost(arr) {
+    var result = 0;
+    for (var i = 0; i < arr.length; i++) {
+      for (var j = 0; j < arr[i].length; j++) {
+        for (var k = 0; k < arr[i][j].length; k++) {
+          result += arr[i][j][k];
+        }
+      }
+    } return result;
+  }
+
+  console.log(arrMost([[[1, 2], [3, 4]], [[5, 6], [7, 8]]]));
+
+</script>
+</body>
+</html>

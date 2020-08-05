@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+<body>
+<style>
+.test div {
+	margin-bottom: 25px;
+}
+	.correct {
+		border:1px solid green
+	}
+	.incorrect {
+		border:1px solid red;
+	}
+</style>
+
+<div id="app"></div><!--1-->
+<script>
+
+
+
+  //  1) создаем класс
+  //	2) создаем точку вставки или монтирования викторины в html
+  //3) обвертка для викторины
+  //	4) сюда помещаем вопросы
+  //	5) кнопка для проверки ответов
+  //	6) количество вопросов которые будут входить в наш конструктор
+  //	7) будем запоминать
+  //	8)помещаем div в test
+  //	9)обращаемся к кнпке для проверки ответа
+  //	10) помещаем отвеченные вопросы
+  //	11) создаем в html точку монтирование
+
+  /*12) создаем экземпляр класса, задача которого создать викторину. Его пишем в том же файле, что и массив объектов вопросов*/
+  // массив вопросов можно поместить в отдельный файл
+
+  const questions = [
+  {
+    text:' Сколько ступеней в До мажоре?',
+    right:7
+  },
+  {
+    text:' Назови цифровкай третью ноту в тональности До- мажор',
+    right:'ми'
+  },
+  {
+    text:' Какая нота в размере четырех четвертей имеет удар по струне на 1и ?',
+    right:'четвертная'
+  },
+  {
+    text:' Какая нота пишется между четвертой и пятой линейкой?',
+    right:'ми'
+  },
+  {
+    text:'Какая нота в размере четырех четвертей имеет удар по струне на 1и 2и ?',
+    right:'половинная'
+  },
+  {
+    text:'Какая нота пишется на третьей линейке?',
+    right:'си'
+  },
+  {
+    text:'что означает цифра в кружечке?',
+    right:'номер струны'
+  }
+];
+
+const quiz = new  Quiz(questions);
+document.querySelector('#app').append(quiz.view);
+
+
+class Quiz {//1
+    constructor(question = []) {//6
+			this.questions = questions;//7
+      this.view = document.createElement("div");//2
+      this.view.classList.add('wrapper');//3
+      this.view.innerHTML = `<div class="test"></div><button class="btn">проверка ответа</button>`
+			
+			this.questionsPlase = this.view.querySelector('.test');//4
+      this.checkButton = this.view.querySelector('')//5
+
+      for(const question of questions) {
+        const div = document.createElement('div');
+        this.questionsPlase.append(div);//8
+
+        const paragraf = document.createElement('p');
+        paragraf.textContent = question.text;
+
+
+        const input = document.createElement('input');
+        input.dataset.right = question.right;
+        input.setAttribute('title',question.right);
+        div.append(paragraf,input);
+      }
+      this.checkButton.addEventListener('click',()=>this.handlerCheck());//9
+		}
+    handlerCheck(){
+
+      const button = document.querySelector('#btn');
+      button.addEventListener('click',function() {
+        const inputs = this.questionsPlase.querySelectorAll('input');//10
+				
+				let wrongCounter = 0;
+				
+        for (const inp of inputs) {
+          inp.classList.remove('correct');
+          inp.classList.remove('incorrect');
+          
+          if (inp.value === inp.dataset.right) {
+            inp.classList.add('correct')
+          } else {
+            inp.classList.add('incorrect');
+            wrongCounter++;
+          }
+        }
+        if(wrongCounter > 0) {
+          this.checkButton.textContent=`осталось ответить на ${wrongCounter} вопросов`;
+        } else {
+          this.checkButton.textContent = "Вы ответли на все вопросы правильно";
+          this.checkButton.disabled = true;
+        }
+      })
+		}
+	}
+	
+
+//при создании другой викторины
+//const quiz2 = new  Quiz(questions);
+//document.querySelector('#app').append(quiz2.view);
+//  //  дописать нумерацию оставшихся неотвеченных вопросов.
+</script>
+</body>
+</html>

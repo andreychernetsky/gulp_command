@@ -1,0 +1,316 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+<body>
+<script>
+  /*	console.log('start app');
+	setTimeout(() => console.log('first timer'),2000);
+	setTimeout(()=> console.log('second timer'), 0);
+	
+	console.log('finish app');
+	
+	const getUser = (id, callback) => {
+		const user = {
+			id:id,
+			name:'jon dou'
+		};
+		setTimeout(()=> callback(user),3000);
+	};
+	getUser(31,console.log);//{id: 31, name: "jon dou"} подставится вместо callback*!/
+	*/
+  //	example
+
+  const somePromise = new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve('hey, it worked')
+    },2500);
+  });
+
+  somePromise.then((message) => {
+    console.log('success:', message);
+  });
+
+
+  //	 если данные не дошли и отловим ошибку
+  /* const somePromise = new Promise((resolve, reject) => {
+		 setTimeout(() => {
+			 reject('unable to full promise');
+		 },2500);
+	 });
+ 
+	 somePromise.then(
+		 (message) => {
+		 console.log('success:', message);
+	 },
+		 (errorMessage) => {
+		 console.error('Error:',errorMessage);//promisKiril.html:52 Error: unable to full promise
+	 });*/
+
+  //  второй вариант которым нужно пользоваться
+
+  /*  const somePromise = new Promise((resolve, reject) => {
+			setTimeout(() => {
+				reject('unable to full promise');
+			},2500);
+		});
+	somePromise.then(
+		(message) => {
+			console.log('success:',message);
+		},
+		(errorMessage)=>{
+		console.log('success:',message);
+		}
+	);
+	
+		somePromise.then((message) => {
+				console.log('success:', message);
+			})
+			.catch((errorMessage) => {
+				console.error('Error:',errorMessage);//promisKiril.html:52 Error: unable to full promise)
+			});*/
+
+  //example
+  /*	const asyncAdd = (a,b) =>{
+			return new Promise((resolve,reject) =>{
+				setTimeout(() => {
+					if(typeof  a === 'number' && typeof b === 'number') {
+						resolve(a + b);
+					} else {
+						reject('Arguments must be numbers');
+					}
+				},1000)
+			})
+		};
+		
+		asyncAdd(8, 5).then((response) => {
+			console.log('Result:',response);//13
+		}).catch((error) => {
+			console.log(error);
+		});
+		*/
+  //	передадим число строкой
+  /*
+	const asyncAdd = (a,b) =>{
+		return new Promise((resolve,reject) =>{
+			setTimeout(() => {
+			if(typeof  a === 'number' && typeof b === 'number') {
+				resolve(a + b);
+			} else {
+				reject('Arguments must be numbers');
+			}
+		},1000)
+	})
+	};
+	
+	asyncAdd(8, '5').then((response) => {
+		console.log('Result:',response);//13
+	}).catch((error) => {
+		console.log(error);//Arguments must be numbers
+	});
+	
+	*/
+
+  //усложняем код
+
+  /*
+	const asyncAdd = (a,b) =>{
+		return new Promise((resolve,reject) =>{
+			setTimeout(() => {
+			if(typeof  a === 'number' && typeof b === 'number') {
+				resolve(a + b);
+			} else {
+				reject('Arguments must be numbers');
+			}
+		},1000)
+	})
+	};
+	
+	asyncAdd(8, 7).then((response) => {//response содержит результат сложения двух чисел
+		console.log('Result:',response);
+	return asyncAdd(response,33);
+	
+	})
+	.then((result) => {//ловим результат сложения response и второго парметра33
+		console.log('Shold be 48', result)
+	})
+	.catch((error) => {
+		console.log(error);
+	});
+	*/
+
+  /*
+	function delay(second, callback) {
+		setTimeout(callback,second * 1000);
+	}
+	console.log('starting delay');
+	
+	delay(2, () => {
+		console.log('two seconds');
+	});
+	console.log('finish deley');
+	*/
+
+  //переделаем через промиссы
+  /*const delay = (second) => new Promise((resolve,reject) => {
+		setTimeout(()=>{
+			resolve('the long delay ended');
+	},second *1000);
+	
+	});
+	
+	console.log('Starting delay');
+	
+	delay(1)
+		.then(console.log)
+		.then(() => 42)
+		.then((number) => console.log('hello world:', number));
+	
+	console.log('finish delay');*/
+
+  //Starting delay
+  //promisKiril.html:174 finish delay
+  //the long delay ended
+  //promisKiril.html:172 hello world: 42
+
+
+  //	lesson5
+  /*const delay = (second) => new Promise((resolve,reject) =>{
+		if(second > 3) {
+			reject(new Error(`${second} is too long`));
+		}
+		
+		setTimeout(() => {
+			resolve('the long delay has ended');
+		},second * 1000);
+	});
+	
+	delay(5)
+		.then(console.log)
+		.then(() => 42)
+		.then((number) => console.log('hello world', number))
+	.catch(error => console.log('error',error));*/
+  /*
+	the long delay has ended
+	hello world 42*/
+
+  //example
+  /*const delay = (second, callback) => {
+		if(second > 3) {
+			callback(`${second} is too long`);
+		} else {
+			setTimeout(()=> {
+				callback(null, second + ' the long delay has ended');
+			},second * 1000);
+		}
+	};
+	
+	delay(5, (error, message) => {
+		if(error) {
+			console.log('Error;', error);//Error; 5 is too long
+		} else {
+			console.log('Message', message)//Message 2 the long delay has ended
+		}
+	});*/
+
+  /*callback функцию мы передаем наш  ответ и в функции delay она будет принимать два праометра (error, message) которые попадают в колбек функцию
+первый параметр из функции delay error будет выводить ошибку
+	
+	если передано больше чем 3 секунды то результат попадает в функцию колбек
+	
+	если правильный ответ,то в функции колбек первый параметр null это заглушка
+	второй параметр в данном случае second это ответ если условие верно*/
+
+  //	example 6
+
+  /*const asyncAdd = (a,b) => {
+		return new Promise((resolve, reject)=> {
+			setTimeout(()=> {
+				if(typeof a === 'number' && typeof  b === 'number') {
+					resolve(a + b);
+				} else {
+					reject('arguments must be numbers');
+				}
+			},1500);
+		})
+	};
+
+asyncAdd(8, 7).then((response) => {//response содержит результат сложения двух чисел
+	console.log('Result:',response);
+	return asyncAdd(response,33);
+
+})
+	.then((result) => {//ловим результат сложения response и второго парметра33
+		console.log('Shold be 48', result)
+	})
+	.catch((error) => {
+		console.log(error);
+	});*/
+
+  const camelCase = (str, callback) => {
+    if (typeof str !== 'string') return callback('First params must be a string!');
+    if (str.length < 3) return callback('Length must be bigger');
+
+    let arr = str.split('_');
+    let arr2 = [];
+    arr.forEach(function (elem) {
+      arr2.push(elem.slice(0, 1).toUpperCase() + elem.slice(1))
+    });
+
+    callback(null, arr2.join('')) //<-- (error, response)
+  };
+
+  let str = 'var_test_text';
+
+  camelCase(str, (error, response) => {
+    if (error) return console.log(error); //First params must be a string!
+                                          //Length must be bigger
+
+    return console.log(response); //VarTestText
+  });
+
+  // example8
+
+  /*
+	const fs = require('fs');//пакет для работы с файлами
+	const{promisefy} = require('util');//объвертка над промисом
+	const writeFile = promisefy(fs.writeFile);//создать файл
+	const unlink = promisefy(fs.unlink);//удалиь файл
+	const readdir = promisify(fs.readdir);// удалить папку
+	const beep = ()=> process.stdout.write("\x07");//отображение потока
+	
+	const delay = (seconds) => new promise(resolve)=>{
+		setTimeout(resolves,seconds * 1000);
+	});
+	
+	const doStuffSequentially = () => Promise.resolve()
+		.then(() => console.log('starting'))
+		.then(() => delay(1))
+		.then(() => 'writing')
+		.then(console.log)
+		.then(() => delay(2))
+		.then(() => writeFile ('file.txt', 'sample file...'))//создаст файл и запишет строку
+		.then(beep)
+		.then(() => 'file.txt created')//создаем файл
+		.then(console.log)//эту строку выводит в консоль
+		.then(() => delay(3))//вызываем задержку на 3 сек
+		.then(() => unlink('file.txt'))// удаляем наш созданный выше файл
+		.then(beep)//записывает данные в поток
+		.then(() => 'file.txt removed')
+	.then(console.log)
+		.catch(console.log);
+	
+	doStuffSequentially()
+		.then(() => console.log('again again'))
+		.then(() => doStuffSequentially())
+		.then(() => console.log('enough alredy...'));
+	
+	*/
+
+</script>
+</body>
+</html>

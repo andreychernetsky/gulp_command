@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<script>
+  // Абсолютно любой объект в JavaScript имеет свойство __proto__. Это скрытое системное свойство, и не во всех реализациях языка оно доступно пользователю.
+  // При обращении к любому свойству объекта, оно в первую очередь ищется в самом объекте:
+
+  const obj1 = {
+    ownProp: 1
+  };
+  console.log(obj1.ownProp); //1
+
+  obj1.__proto__ = { propertyProto: 2};
+  //obj1.propertyProto = 2;
+  console.log(obj1.propertyProto); //2
+
+  obj1.__proto__.__proto__ = { propProto: 3 };
+  console.log(obj1.propProto); //3
+
+  const obj2 = {
+    speed: 20
+  };
+  obj1.__proto__ = obj2;
+  console.log(obj1.speed); //20
+
+
+
+
+  var Person  = {
+    firstName: 'Jon',
+    lastName: 'Dou',
+    selfThis: this,
+    fullName: function () {
+      //return this.firstName + ' ' + this.lastName;
+      //let self = this;
+
+      // inside = () => {
+      //   return this.firstName + ' ' + this.lastName;
+      // };
+      function inside(first, last) {
+        return this.firstName + ' ' + this.lastName + ' ' + first  + ' ' + last;
+        //return self.firstName + ' ' + self.lastName;
+      }
+      //return inside.call(this, 'first str', 'last olol'); //undefined undefined
+      return inside.apply(this, ['first1', 'last2']); //undefined undefined
+    }
+  };
+  console.log(Person.fullName()); //Jon Dou
+  console.log(Person.selfThis); //{}
+
+
+
+
+  function Period (hours, minutes) {
+    this.hours = hours;
+    this.minutes = minutes;
+  }
+  var time1 = new Period(4, 10);
+  console.log(time1)
+
+  Period.prototype.format = function() { //<--
+    return this.hours + ' hours and ' + this.minutes + ' minutes';
+  };
+  console.log(time1.format())
+
+
+
+  var calc = { //цепочка или строитель
+    a: 5,
+    b: 9,
+    summ: function() {
+      return this.a + this.b;
+    },
+    add: function() {
+      return this.summ() + this.b;
+    },
+    destroy: function () {
+      return this.add = 0;
+    },
+    hear: function () {
+      this.b--;
+      return this;
+    },
+    enterLog: function () {
+      return this.b;
+    }
+  };
+  console.log(calc.summ()); //14
+  console.log(calc.add()); //23
+  console.log(calc.destroy()); //0
+  console.log(calc.hear().hear().enterLog()); //7
+  console.log(calc.hear().hear().summ()); //10
+
+
+  function Ninja5() {}
+  Ninja5.prototype.swingSword = function () {
+    return true;
+  };
+  var ninja51 = Ninja5(); //вызов как обычная функция не сработает
+  console.log(ninja51); //undefined
+  //console.log(ninja51.swingSword()); //undefined
+
+  var ninja52 = new Ninja5(); //вызов как конструктор сработает
+  console.log(ninja52.swingSword()); //true
+
+  var ninja53 = new Ninja5();
+  console.log(ninja52 === ninja53)
+
+
+  console.log(ninja53 instanceof Ninja5); //true
+  console.log(ninja53 instanceof Object); //true
+
+  console.log(ninja53.constructor); //[Function: Ninja5]
+
+</script>
+
+</body>
+</html>

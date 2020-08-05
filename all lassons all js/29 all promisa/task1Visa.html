@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+<body>
+<script>
+  new Promise(function(resolve, reject) {
+    const willGift = new Promise(
+      (resolve, reject) => {
+        let win = Math.random().toFixed(1);
+        if (win > 0.5)
+          resolve("Ты выиграл");
+        else
+          reject("Ты неудачник");
+
+      }
+    );
+    const buyTicket = function() {
+      willGift
+        .then(result => console.log(result))
+        .catch(error => console.log(error));
+    };
+    buyTicket();
+  });
+
+
+  //step 2
+
+  new Promise(function(resolve, reject) {
+    const willGift = new Promise(
+      (resolve, reject) => {
+        let win = Math.random().toFixed(1);
+        if (win > 0.5)
+          resolve("Ты выиграл");
+        else
+          reject("Ты неудачник");
+
+      }
+    );
+    const writeOnFb = function (gift) {
+//   return new Promise((resolve,reject) => resolve("я выиграл"));
+      return Promise.resolve("я выиграл");
+    };
+    const buyTicket = function() {
+      willGift
+        .then( writeOnFb)
+        .then(result => console.log(result))
+        .catch(error => console.log(error));
+    };
+    buyTicket();
+  });
+
+  //step 4
+
+  new Promise(function(resolve, reject) {
+    const willGift = new Promise(
+      (resolve, reject) => {
+        let win = Math.random().toFixed(1);
+        if (win > 0.5)
+          resolve("Ты выиграл");
+        else
+          reject("Ты неудачник");
+
+      }
+    );
+
+    const buyTicket = function() {
+      console.log("Покупаю билет");
+      willGift
+
+        .then(result => console.log(result))
+        .catch(error => console.log(error));
+      console.log("Отдыхаю неделю");
+    };
+    buyTicket();
+  });
+  /*
+	Покупаю билет
+	Отдыхаю неделю
+	Ты выиграл
+	*/
+
+
+</script>
+</body>
+</html>

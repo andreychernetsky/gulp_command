@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+<body>
+<a href="https://codepen.io/andreychernetsky/pen/WNryrZj?edito">"Дана строка. Вывести ее три раза через запятую и показать количество символов в ней."</a>
+<script>
+  //  1) создаю const str = "Дана строка. Вывести ее три раза через запятую и показать количество символов в ней."
+  // 2) создаю переменную.куда буду помещать результат
+  // 3) нужен цикл , чтобы пройти по строке
+  // 4) в переменную str2 записываю строку и добавляю запятую
+  // 5) с помощью slice удаляю последний символ т.е запятую
+  // 	const str = "Дана строка. Вывести ее три раза через запятую и показать количество символов в ней." //1
+  let str = 'Данная строка', ans = str+','+str+','+str;
+
+  console.log(ans, ans.length, str.length)
+
+  const a = []; a.length = 3; a.fill('Данная строка'); console.log(a.join(','))
+	
+  const str = ' kitty';
+  let str2 = '';
+  for(let i = 0; i < 3; i++) {
+    str2 += str;
+
+  }
+  console.log(str2.slice(0,-1), str2.length)
+
+  //	example
+
+  const str = 'kitty';
+  let str2 = "";
+
+  for(let i = 0; i < 3; i++) {
+    if(i ==2) {
+      str2 +=str;
+    } else {
+      str2 +=str + ",";
+    }
+  }
+
+  console.log(str2);
+
+  //example
+  const str = 'kitty';
+  let str2 = "";
+
+  for(let i = 0; i < 3; i++) {
+    (i ==2) ? str2 += str: str2 +=str + ",";
+  }
+
+  console.log(str2);
+
+  //example
+  function comma(str,count) {
+    let str2 = "";
+    let same = count -1;
+    for(let i = 0; i < count; i++) {
+      str2 +=(i === same) ? str + " " : str + ",";
+    }
+    return str2;
+  }
+  const str = 'kitty';
+  console.log(comma(str,3));
+
+  //example
+
+  function threeString(str){
+    let all = ' ', i = 3;
+    for( i; i--;) {
+      all+= str + ',';
+    }
+    return all + '='+ all.length;
+  }
+  let str = ' kitty';
+  console.log(threeString(str));//kitty,kitty,kitty = 22
+
+  //	example
+
+  /*
+	<p id="text"></p>
+	<button id="btn">https://vk.com/id459488160</button>
+	*/
+
+  function fun() {
+    let str2 = "";
+    let same = count-1;
+
+    for(let  i = 0; i < count; i++) {
+      str2 +=(i === same) ? str + "" :str +","
+    }
+    document.getElementById("text").innerHTML = str2;
+  }
+  const str = 'str3';
+  const count = 3;
+
+  let click = document.getElementById('btn').addEventListener('click', fun);
+</script>
+</body>
+</html>

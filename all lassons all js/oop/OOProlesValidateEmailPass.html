@@ -1,0 +1,457 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+</head>
+<body>
+
+<style>
+	.main-header {
+		background-color: #2c3e50;
+		color: #ecf0f1;
+		text-align: center;
+		padding-bottom: 1.5rem; }
+	
+	.validator-container {
+		margin-top: 2rem; }
+</style>
+
+
+<header class="container-fluid main-header">
+	<div class="row">
+		<h1>Валидация данных</h1>
+	</div>
+</header>
+
+<main class="container validator-container">
+	<div class="row">
+		
+		<!-- Контейнер для email адреса -->
+		<div class="col-sm-6">
+			<div class="input-group center-block">
+				<label for="email">Ваш адрес электронной почты</label>
+				<input type="text" class="form-control" id="email" placeholder="example@email.com">
+				<span id="email-error-container" class="help-block">Введите адресс вашей электронной почты</span>
+			</div>
+		</div>
+		
+		<!-- Контейнер для пароля -->
+		<div class="col-sm-6">
+			<div class="input-group center-block">
+				<label for="password">Ваш пароль</label>
+				<input type="password" class="form-control" id="password" placeholder="******">
+				<span id="password-error-container" class="help-block">Введите ваш пароль</span>
+			</div>
+		</div>
+		
+		<!-- Контейнер для кнопки, при нажатие на которую будет происходить валидация -->
+		<div class="col-sm-12">
+			<button class="btn btn-default" id="validate" type="button">Провести валидацию</button>
+		</div>
+	
+	</div>
+</main>
+
+<script>
+  function clog(item) {
+    console.log(item);
+  }
+  function ilog(item) {
+    console.info(item);
+  }
+  //https://habrahabr.ru/company/enterra/blog/153365/
+
+  function Point(x, y) {
+    this.x = x;
+    this.y = y;
+  }
+  var leftTop = new Point(0, 0);
+  var topPoint = new Point(15, 30);
+  var rightBottom = new Point(30, 30);
+  clog(leftTop.x + ' ' + leftTop.y); //0 0
+  clog(topPoint.x + ' ' + topPoint.y); //15 30
+  clog(rightBottom.x + ' ' + rightBottom.y); //30 30
+
+
+  function Human(name) {
+    this.firstName = name;
+    this.sayHello = function () {
+      clog("Hello " + this.firstName);
+    }
+  }
+  var Homer = new Human("Homer");
+  var Rocky = new Human("Rocky");
+  Homer.sayHello(); //Hello Homer
+  Rocky.sayHello(); //Hello Rocky
+
+
+  var Friend = function (mood) {
+    this.mood = mood;
+    if (this.mood === "nice") {
+      this.talk = function () {
+        clog("Hello what's up?");
+      };
+    } else if (this.mood === "bad") {
+      this.talk = function () {
+        clog("Sorry, I don't want talk with you.");
+      };
+    } else {
+      this.talk = function () {
+        clog("Hi!");
+      };
+    }
+  };
+  var nice = new Friend("nice");
+  var bad = new Friend("bad");
+  var nothing = new Friend("nothing");
+  nice.talk(); //Hello what's up?
+  bad.talk(); //Sorry, I don't want talk with you.
+  nothing.talk(); //Hi!
+
+
+  function Points(x, y) {
+    this.x = x;
+    this.y = y;
+    this.print = function () {
+      clog(this.x + ' ' + this.y);
+    };
+  }
+  Points.MaxPointCount = 100;
+  Points.getOrigin = function () {
+    return new Points(0, 0);
+  };
+  var p1 = new Points(100, 200);
+  p1.x = 300;
+  p1.y = 400;
+  p1.print(); //300 400
+  clog(Points.MaxPointCount); //100
+  Points.getOrigin().print(); //0 0
+
+  //прототипы
+  function Rectangle(w, h) {
+    this.width = w;
+    this.height = h;
+  }
+  Rectangle.prototype.getArea = function () {
+    return this.width + this.height;
+  };
+  Rectangle.prototype.name = "RECTANGLE";
+  Rectangle.prototype.toString = function () { //первращает значение в строку (встроеный метод)
+    return "Прямоугольник W:" + this.width + " H:" + this.height;
+  };
+  Rectangle.prototype.valueOf = function () { //вывести только значения
+    return this.getArea();
+  };
+  Rectangle.prototype.equals = function (otherObj) { //для сравнения двух обьектов на равенство
+    if (this.width === otherObj.width && this.height === otherObj.height) {
+      return true;
+    }
+    return false;
+  };
+  var rect1 = new Rectangle(100, 50);
+  var rect2 = new Rectangle(30, 150);
+  //var rect2 = new Rectangle(100, 50);
+  clog("Площадь прямоугольника " + rect1.getArea()); //Площадь прямоугольника 150
+  clog("Площадь прямоугольника " + rect2.getArea()); //Площадь прямоугольника 180
+  clog("Имя прямоугольника " + rect1.name); //Имя прямоугольника RECTANGLE
+  clog("Имя прямоугольника " + rect2.name); //Имя прямоугольника RECTANGLE
+  rect2.name = "Bigger rectangle";
+  clog("Имя прямоугольника " + rect2.name); //Имя прямоугольника Bigger rectangle
+  clog(rect1.toString()); //Прямоугольник W:100 H:50
+  clog(rect2.toString()); //Прямоугольник W:30 H:150
+  clog(rect1.valueOf()); //150
+  clog(rect2.valueOf()); //180
+  //принадлежат ли к обьекту
+  clog(rect1.hasOwnProperty("height")); //true
+  clog(rect1.hasOwnProperty("width")); //true
+  clog(rect1.hasOwnProperty("name")); //false
+  clog(rect1.__proto__.hasOwnProperty("name")); //true
+  clog(("name" in rect1)); //true
+  //проверка на равенство значений
+  clog(rect1 === rect2); //не сработает, сравнивает ссылки (var rect1 = new Rectangle(100, 50);) а не значения
+  clog(rect1.equals(rect2)); //false (150 != 180)
+  clog(rect1.valueOf() === rect2.valueOf()); //false (150 != 180)
+
+  //закрытые методы
+  var MyClass = function () {
+    var privateMethod = function () {
+      clog("Закрытый метод");
+    };
+    this.publicMethod = function () {
+      clog("Открытый метод");
+      privateMethod();
+    }
+  };
+  var obj = new MyClass();
+  //obj.privateMethod(); //Ошибка
+  obj.publicMethod(); //Открытый метод  Закрытый метод
+
+  //наследование
+  function Humans(name) {
+    this.name = name;
+    this.talk = function () {
+      clog("Hello My Name is " + this.name);
+    }
+  }
+  function Student(name) {
+    this.name= name;
+    this.scool = "CBS scool";
+  }
+  function Worker(name) {
+    this.name = name;
+    this.speciality = "Software developer";
+  }
+  //наследуем Student и Worker от Human
+  Student.prototype = new Humans();
+  Worker.prototype = new Humans();
+
+  var Alex = new Student("Alexandr");
+  var Andrey = new Worker("Andrey");
+  Alex.talk(); //Hello My Name is Alexandr
+  clog(Andrey.speciality); //Software developer
+  Andrey.talk(); //Hello My Name is Andrey
+  Worker.prototype.talk = function () {
+    clog("Полиморфизм, заменили унаследованный метод новым который лежит тепреь внутри");
+  };
+  Andrey.talk(); //Полиморфизм, заменили унаследованный метод новым который лежит тепреь внутри
+
+  //Простое наследование от прототипа
+  function Character() {}; // Base class
+  Character.prototype.health = 100;
+  Character.prototype.getHealth = function() {
+    return this.health;
+  };
+
+  function Player() {// Inherited classes
+    this.health = 200;
+  }
+  Player.prototype = new Character; //наследуем
+
+  function Monster() {}
+  Monster.prototype = new Character; //наследуем
+
+  var player1 = new Player();
+  var monster1 = new Monster();
+  clog(player1.getHealth()); // 200
+  clog(monster1.getHealth()); // 100
+
+  //Вызов методов родителя из дочерних классов
+  function ParentClass() {
+    this.color = 'red';
+    this.shape = 'square';
+  }
+  function ChildClass() {
+    ParentClass.call(this);  // use 'call' or 'apply' and pass in the child
+                             // class's context
+    this.shape = 'circle';
+  }
+  ChildClass.prototype = new ParentClass(); // ChildClass inherits from ParentClass
+  ChildClass.prototype.getColor = function() {
+    return this.color; // returns "red" from the inherited property
+  };
+
+  var colors = new ChildClass();
+  clog(colors.getColor()); //red
+  clog(colors.shape); //circle
+
+
+  //пустой обьект
+  var mikhail1 = Object.create(null);
+  var mikhail2 = {};
+  var mikhail3 = function () {};
+  function mikhail4() {};
+
+  //Создание свойств
+  Object.defineProperty(mikhail1, 'name', {
+    value: 'Mikhail'
+  });
+  clog(mikhail1.name); //Mikhail
+
+  Object.defineProperties(mikhail2, {
+    name: {
+      value: 'Mikhail',
+      configurable: false, //нельзя удалять
+      writable: false, //значение свойства не может быть изменено
+      enumerable: false, //если true, то свойство видно в цикле for..in (false)
+    },
+    age: {
+      value: 19,
+      writable: true //значение свойства может быть изменено
+    },
+    gender: {
+      value:'Male',
+      writable: true, //значение свойства может быть изменено или удалено
+      configurable: true //свойство можно удалять
+    },
+    p: {
+      get: function () { //функция вызывается без аргументов, когда происходит запрос к значению свойства.
+        return this.age * 2;
+      },
+      set: function (item) { //функция вызывается с аргументом — новым значением для свойства,
+        // когда пользователь пытается модифицировать значение свойства.
+        this.age = item / 4;
+      }
+    }
+  });
+  clog(mikhail2.name); //Mikhail
+  clog(mikhail2.age); //19
+  clog(mikhail2.gender); //Male
+  clog(mikhail2.p); //38 (get 19 * 2 = 38)
+  mikhail2.age = 5;
+  clog(mikhail2.p); //10 (get 19 * 2 = 38)
+  clog(mikhail2.age); //5
+  //set get
+  mikhail2.p = 10; //set если установить новое значение то оно заменит age = 10 / 4
+  clog(mikhail2.age); //2.5
+  clog(mikhail2.gender); //Male
+  //удаление
+  delete mikhail2.gender; //true
+  delete mikhail2['gender']; //true
+  mikhail2.gender = undefined; //то же самое что удалить но если удаление не доступно
+  clog(mikhail2.gender); //Male
+
+
+  //практика
+  //http://jsraccoon.ru/oop-example-validation
+  //подтянуть закрытые методы доступа в ооп
+
+  //Всё, что находится внутри неё, не будет доступно для записи и чтения, если мы сами
+  // не запишем данные, как свойство объекта window, или не вернём значение — в этом случае
+  // то, что возвращает функция будет записано в переменную Validator
+  var Validator = (function() {
+    'use strict';
+    //вставляем в текст ошибки текст из формы ввода например не верный пароль
+    var _createMessage = function(message, settings) {
+      for (var key in settings) {
+        message = message.replace('%' + key + '%', settings[key]);
+      }
+      return message;
+    };
+    // http://youmightnotneedjquery.com/#deep_extend
+    var _extend = function(out) {
+      out = out || {};
+      for (var i = 1; i < arguments.length; i++) {
+        var obj = arguments[i];
+        if (!obj) {
+          continue;
+        }
+        for (var key in obj) {
+          if (obj.hasOwnProperty(key)) {
+            if (typeof obj[key] === 'object') {
+              out[key] = _extend(out[key], obj[key]);
+            } else {
+              out[key] = obj[key];
+            }
+          }
+        }
+      }
+      return out;
+    };
+
+    var regExps = {
+      email: /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i,
+      url: /^((https?):\/\/(\w+:{0,1}\w*@)?(\S+)|)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?$/,
+      numbers: /^\d+(\.\d{1,2})?$/,
+      digits: /[0-9]*$/,
+      letters: /[a-z][A-Z]*$/
+    };
+    var messages = {
+      required: 'This field is required',
+      min: 'This field should contain at least %rule% characters',
+      max: 'This field should not contain more than %rule% characters',
+      match: 'This field shold countain a valid %rule%'
+    };
+    var Validate = function(element, options) {
+      var defaults = {
+        regExps: regExps,
+        messages: messages
+      };
+      this.options = _extend({}, defaults, options);
+      this.element = element;
+      this.regExps = regExps;
+    };
+
+    var fn = Validate.prototype;
+
+    fn.validate = function() {
+      var isValid = true;
+      this.value = this.element.value.trim();
+      this.length = this.value.length;
+      for (var rule in this.options.rules) {
+        var param = this.options.rules[rule];
+        if (!this[rule](param)) {
+          isValid = false;
+          this.message = _createMessage(this.options.messages[rule], {rule: param, data: this.value});
+          this.options.onError.call(this);
+          break;
+        }
+      }
+      if (isValid) {
+        this.options.onSuccess.call(this);
+      }
+    };
+    fn.required = function() { return this.length > 0;};
+    fn.min = function(param) { return this.length >= param; };
+    fn.max = function(param) { return this.length <= param; };
+    fn.match = function(param) { return this.regExps[param].test(this.value); };
+    return {
+      init: Validate,
+      fn: fn
+    };
+  })();
+
+  var onError = function() {
+    var parentNode = this.element.parentNode;
+    parentNode.classList.add('has-error');
+    parentNode.classList.remove('has-success');
+    parentNode.querySelector('.help-block').textContent = 'Ошибка: ' + this.message;
+  };
+  var onSuccess = function() {
+    var parentNode = this.element.parentNode;
+    parentNode.classList.add('has-success');
+    parentNode.classList.remove('has-error');
+    parentNode.querySelector('.help-block').textContent = 'Ура! Всё прошло хорошо, ваши данные полность валидные.';
+  };
+
+  var emailInput = new Validator.init(document.getElementById('email'), {
+    rules: {
+      min: 5,
+      max: 20,
+      match: 'email'
+    },
+    messages: {
+      min: 'Это поле должно содержать минимум %rule% символов. Значение %data% не подходит',
+      max: 'Это поле должно содержать максимум %rule% символов. Значение %data% не подходит',
+      match: 'Это поле должно содержать адрес электронной почты. Значение %data% не подходит'
+    },
+    onError: onError,
+    onSuccess: onSuccess
+  });
+
+  var passwordInput = new Validator.init(document.getElementById('password'), {
+    rules: {
+      required: true,
+      password: true
+    },
+    messages: {
+      required: 'Это поле обязательно для заполнения!',
+      password: 'Пароль должет быть 12345qwerty Значение "%data%" не подходит'
+    },
+    onError: onError,
+    onSuccess: onSuccess
+  });
+  Validator.fn.password = function() {
+    return this.value.toLowerCase() === '12345qwerty';
+  };
+  var validateBtn = document.getElementById('validate');
+  validateBtn.addEventListener('click', function(e) {
+    emailInput.validate();
+    passwordInput.validate();
+  }, false);
+
+</body>
+</html>

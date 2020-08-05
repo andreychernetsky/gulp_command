@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+<body>
+<a href="https://codepen.io/andreychernetsky/pen/gBaEWR"> ввод пароля</a>
+
+<p>Логин: <input type="text" id="login"></p>
+<p>Пароль: <input type="text" id="password"></p>
+<button id="check">Login</button>
+<script>
+  document.getElementById('check').onclick = function(){
+    let login = document.getElementById('login').value;
+    let password = document.getElementById('password').value;
+
+    if (login == 'ivan' && password == '334455')
+      alert('Welcome');
+    else if (login == 'alex' && password == '777')
+      alert('Welcome');
+    else if (login == 'petr' && password == 'b5678')
+      alert('Welcome');
+    else alert('Incorrect login or pass');
+  }
+</script>
+</body>
+</html>

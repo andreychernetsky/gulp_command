@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<a href="https://codepen.io/andreychernetsky/pen/OJMKVJN">вариан 1</a>
+<a href="https://repl.it/@andreychernetsk/WhisperedHonorableOctal#Quiz.js"> вариант 2</a>
+<style>
+	.wrapper{
+		margin:30px auto;
+		padding: 15px;
+		width: 990px;
+		max-width: 100%;
+	}
+	#test div {
+		margin-bottom: 30px;
+	}
+	.correct {
+		border:1px solid green;
+	}
+	.incorrect {
+		border:1px solid red;
+	}
+	
+</style>
+<div class="wrapper">
+	<div id="test"></div>
+	<button id="btn">проверка ответа</button>
+</div>
+
+<script>
+const text = document.querySelector('#test');
+const questions = [
+	{
+	  text:' Сколько ступеней в До мажоре?',
+		right:7
+	},
+  {
+    text:' Назови цифровкай третью ноту в тональности До- мажор',
+    right:'ми'
+  },
+  {
+    text:' Какая нота в размере четырех четвертей имеет удар по струне на 1и ?',
+    right:'четвертная'
+  },
+  {
+    text:' Какая нота пишется между четвертой и пятой линейкой?',
+    right:'ми'
+  },
+  {
+    text:'Какая нота в размере четырех четвертей имеет удар по струне на 1и 2и ?',
+    right:'половинная'
+  },
+  {
+    text:'Какая нота пишется на третьей линейке?',
+    right:'си'
+  },
+  {
+    text:'что означает цифра в кружечке?',
+    right:'номер струны'
+  }
+];
+for(const question of questions) {
+  const div = document.createElement('div');
+  text.append(div);
+  
+  const paragraf = document.createElement('p');
+  paragraf.textContent = question.text;
+//	div.append(paragraf);
+	
+	const input = document.createElement('input');
+  input.dataset.right = question.right;
+  div.append(paragraf,input);
+}
+const button = document.querySelector('#btn');
+button.addEventListener('click',function(){
+  const inputs = document.querySelectorAll('#test input');
+  let wrongCounter = 0;
+  for(const inp of inputs) {
+    inp.classList.remove('correct');
+    inp.classList.remove('incorrect');
+    if(inp.value === inp.dataset.right){
+      inp.classList.add('correct')
+		} else {
+      inp.classList.add('incorrect');
+//      wrongCounter++;
+		}
+  
+	}
+	if(wrongCounter > 0) {
+    button.textContent = `Осталось ответить на ${wrongCounter} вопросов`
+	} else {
+    button.textContent = 'вы ответили на все вопросы правильно';
+    button.disabled = true;
+	}
+})
+//	1) написать проверку после каждого вопроса
+//	если на вопрос ответили не верно, то результат дожен быть красный
+//	2) дописать нумерацию оставшихся неотвеченных вопросов.
+	//3) при наведении на ответ, должен показывать правильный ответ
+//	4) как сделать код универсальным, чтобы в каждой теме можно было формировать по 10 вопросов и они были независимы от другой группы 10 вопросов
+//	5) можно ли сохранять результат ответа , если викторина на гитхабе
+</script>
+</body>
+</html>

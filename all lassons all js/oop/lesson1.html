@@ -1,0 +1,381 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+<body>
+<script>
+  function clog(item) {
+    console.log(item);
+  }
+  function ilog(item) {
+    console.info(item);
+  }
+
+  //https://www.youtube.com/watch?v=O8wwnhdkPE4&t=3073s
+  var customer = {
+    name: "Tom Smith",
+    speak: function () {
+      return "My name is " + this.name;
+    },
+    address: {
+      street: "123 Main Str.",
+      city: "Pittsburgh",
+      state: "PA"
+    }
+  };
+  clog(customer.speak()); //My name is Tom Smith
+  clog(customer.name + " live at " + customer.address.street
+    + customer.address.city); //Tom Smith live at 123 Main Str.Pittsburgh
+  customer.address.country = "US";
+  clog(customer.address.country); //US
+  function Person(name, street) {
+    this.name = name;
+    this.street = street;
+    this.info = function () {
+      return "My name is " + this.name + " and I live on " + this.street;
+    }
+  }
+  var bobSmith = new Person("Bob Smith", "234 main str.");
+  clog(bobSmith.info()); //My name is Bob Smith and I live on 234 main str.
+  clog("Bob is a Persin " + (bobSmith instanceof Person)); //Bob is a Persin true
+  function changeName(person) {
+    person.name = "Sue Smith";
+  }
+  changeName(bobSmith);
+  clog("Bob became " + bobSmith.name); //Bob became Sue Smith
+
+
+  function getSum(num1, num2) {
+    return num1 + num2;
+  }
+  ilog("Num of arguments " + getSum.length); //2
+
+
+  function Mammal(name) {
+    this.name = name;
+    this.getInfo = function () {
+      return "The mammals name is " + this.name;
+    }
+  }
+  Mammal.prototype.sound = "Grrrr";
+  Mammal.prototype.makeSound = function () {
+    return this.name + " says " + this.sound;
+  };
+  var grover = new Mammal("Grover");
+  ilog(grover.makeSound()); //Grover says Grrrr
+  ilog("name Property of grover: " + grover.hasOwnProperty("name")); //true
+  ilog("sound Property of grover: " + grover.hasOwnProperty("sound")); //false
+
+
+  Array.prototype.inArray = function (value) {
+    for (var i = 0; i < this.length; i++) {
+      if (this[i] === value) {
+        return true;
+      }
+    }
+    return false;
+  };
+  var sampArray = [1,2,3,4,5];
+  ilog("3 in array " + sampArray.inArray(3)); //3 in array true
+
+
+  function SecretCode() {
+    var secretNum = 78;
+    this.guessNum = function (num) {
+      if (num > secretNum) {
+        return "Lower";
+      } else if (num < secretNum) {
+        return "Higher";
+      } else {
+        return "You guessed it";
+      }
+    }
+  }
+  var secret = new SecretCode();
+  ilog("Is 55 the number " + secret.guessNum(55)); //Is 55 the number Higher
+  ilog("Is 78 the number " + secret.guessNum(78)); //Is 78 the number You guessed it
+  ilog("Is 100 the number " + secret.guessNum(100)); //Is 100 the number Lower
+  ilog("Value of secretNum " + secret.secretNum); //Value of secretNum undefined
+  SecretCode.prototype.getSecret = function () {
+    return this.secretNum;
+  };
+  ilog("The secret number is " + secret.getSecret()); //The secret number is undefined
+
+
+  var address = {
+    street: "No Street",
+    city: "No City",
+    state: "No State",
+    get getAddress() {
+      return this.street + ", " + this.city + ", " + this.state;
+    },
+    set setAddress(theAddress) {
+      var parts = theAddress.toString().split(", ");
+      this.street = parts[0] || "";
+      this.city = parts[1] || "";
+      this.state = parts[2] || "";
+    }
+  };
+  address.setAddress = "123 main Str, Pittsbyrgh, PA";
+  ilog("Address : " + address.getAddress); //Address : 123 main Str, Pittsbyrgh, PA
+  ilog("City : " + address.city); //City : Pittsbyrgh
+  ilog("Address : " + address.getAddress); //Address : No Street, No City, No State
+
+
+  function Coordinates() {
+    this.latitude = 0;
+    this.longitude = 0;
+  }
+  Object.__defineGetter__.call(Coordinates.prototype, "getCoords", function () {
+    return "Lat : " + this.latitude + " Long : " + this.longitude;
+  });
+  Object.__defineSetter__.call(Coordinates.prototype, "setCoords", function (coords) {
+    var parts = coords.toString().split(", ");
+    this.latitude = parts[0] || "";
+    this.longitude = parts[1] || "";
+  });
+  var testCoords = new Coordinates();
+  testCoords.setCoords = "40.71, 74.00";
+  ilog("Coordinates : " + testCoords.getCoords); //Coordinates : Lat : 40.71 Long : 74.00
+
+
+  function Point() {
+    this.xPos = 0;
+    this.yPos = 0;
+  }
+  Object.defineProperty(Point.prototype, "pointPos", {
+    get: function () {
+      return "X : " + this.xPos + " Y : " + this.yPos;
+    },
+    set:  function (thePoint) {
+      var parts = thePoint.toString().split(", ");
+      this.xPos = parts[0] || "";
+      this.yPos = parts[1] || "";
+    }
+  });
+  var aPoint = new Point();
+  aPoint.pointPos = "100, 200";
+  ilog("Point Position " + aPoint.pointPos); //Point Position X : 100 Y : 200
+
+
+  var Circle = function (radius) {
+    this._radius = radius;
+  };
+  Circle.prototype = {
+    set radius(radius) {
+      this._radius = radius;
+    },
+    get radius() {
+      return this._radius;
+    },
+    get area() {
+      return Math.PI * (this._radius * this._radius);
+    }
+  };
+  var circ  = new Circle(10);
+  ilog("A circle with radius " + circ.radius + " has an area of "
+    + circ.area.toFixed(2)); //A circle with radius 10 has an area of 314.16
+  circ.radius = 15;
+  ilog("A circle with radius " + circ.radius + " has an area of "
+    + circ.area.toFixed(2)); //A circle with radius 15 has an area of 706.86
+
+
+  function Animal() {
+    this.name = "Animal";
+    this.toString = function () {
+      return "My name is " + this.name;
+    };
+  }
+  function Canine() {
+    this.name = "Canine";
+  }
+  function Wolf() {
+    this.name = "Wolf";
+  }
+  Canine.prototype = new Animal();
+  Wolf.prototype = new Animal();
+  Canine.prototype.constructor = Canine;
+  Wolf.prototype.constructor = Wolf;
+  var arcticWolf = new Wolf();
+  ilog(arcticWolf.toString()); //My name is Wolf
+  ilog("Wolf instance of Animal : " + (arcticWolf instanceof Animal)); //Wolf instance of Animal : true
+  Animal.prototype.sound = "Grrr";
+  Animal.prototype.getSound = function () {
+    return this.name + " says " + this.sound;
+  };
+  Canine.prototype.sound = "Woolf";
+  Wolf.prototype.sound = "Grrr Woolf";
+  ilog(arcticWolf.getSound()); //Wolf says Grrr Woolf
+  function Rodent() {
+    this.name = "Rodent";
+  }
+  function Rat() {
+    this.name = "Rat";
+  }
+  Rodent.prototype = new Animal();
+  Rat.prototype = Rodent.prototype;
+  Rodent.prototype.constructor = Rodent;
+  Rat.prototype.constructor = Rat;
+  var caneRat = new Rat();
+  ilog(caneRat.toString()); //My name is Rat
+
+
+  function extend(Child, Parent) {
+    var Temp = function () {};
+    Temp.prototype = Parent.prototype;
+    Child.prototype = new Temp();
+    Child.prototype.constructor = Child;
+  }
+  function Deer() {
+    this.name = "Deer";
+    this.sound = "Snort";
+  }
+  extend(Deer, Animal);
+  var elk = new Deer();
+  ilog(elk.getSound()); //Deer says Snort
+
+
+  function Vehicle(name) {
+    this.name = "Vehicle";
+  }
+  Vehicle.prototype = {
+    drive: function () {
+      return this.name + " drives forward";
+    },
+    stop: function () {
+      return this.name + " stop";
+    }
+  };
+  function Truck(name) {
+    this.name = name;
+  }
+  Truck.prototype = new Vehicle();
+  Truck.prototype.constructor = Truck;
+  Truck.prototype.drive = function () {
+    var driveMsg = Vehicle.prototype.drive.apply(this);
+    return driveMsg += " through a field";
+  };
+  var jeep = new Truck("Jeep");
+  ilog(jeep.drive()); //Jeep drives forward through a field
+  ilog(jeep.stop()); //Jeep stop
+
+  //Патерны
+
+  function Hero(name) {
+    if (typeof Hero.instance === "object") { //если уже установлен параметр то вернуть его
+      return Hero.instance;
+    }
+    this.name = name;
+    Hero.instance = this;
+    return this;
+  }
+  var derekHero = Hero("Derek");
+  var paulHero = Hero("Paul");
+  clog("Our here is " + derekHero.name); //Our here is Derek
+  clog("Our here is " + paulHero.name); //Our here is Derek
+
+
+  //Фабрика Factory Pattern
+  function Sword(desc) {
+    this.weaponType = "Sword";
+    this.metal = desc.metal || "Steel";
+    this.style = desc.style || "Longsword";
+    this.hasMagic = desc.hasMagic || false;
+  }
+  function Bow(desc) {
+    this.weaponType = "Bow";
+    this.material = desc.metal || "Wood";
+    this.style = desc.style || "Longsword";
+    this.hasMagic = desc.hasMagic || false;
+  }
+  function WeaponFactory() {}
+  WeaponFactory.prototype.makeWeapon = function (desc) {
+    var weaponClass = null;
+    if (desc.weaponType === "Sword") {
+      weaponClass = Sword;
+    } else if (desc.weaponType === "Bow") {
+      weaponClass = Bow;
+    } else {
+      return false;
+    }
+    return new weaponClass(desc);
+  };
+  var myWeaponFact = new WeaponFactory();
+  var bladeFirst = myWeaponFact.makeWeapon({
+    weaponType: "Sword",
+    metal: "Dark Iron",
+    style: "Scythe",
+    hasMagic: true
+  });
+  clog(bladeFirst.weaponType + " of type " + bladeFirst.style + " craft from " + bladeFirst.metal)
+
+
+  //Decorator Pattern
+  //https://ru.wikipedia.org/wiki/%D0%94%D0%B5%D0%BA%D0%BE%D1%80%D0%B0%D1%82%D0%BE%D1%80_(%D1%88%D0%B0%D0%B1%D0%BB%D0%BE%D0%BD_%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F)#JavaScript
+  function Pizza(price) {
+    this.price = price || 10;
+  }
+  Pizza.prototype.getPrice = function () {
+    return this.price;
+  };
+  function ExtraCheese(pizza) {
+    var prevPrice = pizza.price;
+    pizza.price = prevPrice + 1;
+  }
+  var myPizza = new Pizza(10);
+  ExtraCheese(myPizza);
+  clog("Cost of Pizza : $" + myPizza.price); //Cost of Pizza : $11
+
+
+  //Observer Pattern
+  //https://ru.wikipedia.org/wiki/%D0%9D%D0%B0%D0%B1%D0%BB%D1%8E%D0%B4%D0%B0%D1%82%D0%B5%D0%BB%D1%8C_(%D1%88%D0%B0%D0%B1%D0%BB%D0%BE%D0%BD_%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F)
+  var Observable = function () {
+    this.subscribers = [];
+  };
+  Observable.prototype = {
+    subscribe: function (subscriber) {
+      this.subscribers.push(subscriber);
+    },
+    unsubscribe: function (unsubscriber) {
+      for (var i = 0; i < this.subscribers.length; i++) {
+        if (this.subscribers[i] === unsubscriber) {
+          this.subscribers.splice(i, 1);
+          return unsubscriber.name;
+        }
+      }
+    },
+    publish: function (data) {
+      for (var i = 0; i < this.subscribers.length; i++) {
+        this.subscribers[i].receiveData(data);
+      }
+    }
+  };
+  var OrganFanny = {
+    name: "Organ Fanny",
+    receiveData: function (data) {
+      clog(this.name + " received your info " + data);
+    }
+  };
+  var BoldmanYaks = {
+    name: "Boldman Yaks",
+    receiveData: function (data) {
+      clog(this.name + " received your info " + data);
+    }
+  };
+  observable = new Observable();
+  observable.subscribe(OrganFanny);
+  observable.publish("IBM at $145.30"); //Organ Fanny received your info IBM at $145.30
+  clog(observable.unsubscribe(OrganFanny) + " unsubscribe"); //Organ Fanny unsubscribe
+  observable.subscribe(BoldmanYaks);
+  observable.publish("IBM at $158.10"); //Boldman Yaks received your info IBM at $158.10
+  clog(observable.unsubscribe(BoldmanYaks) + " unsubscribe"); //Boldman Yaks unsubscribe
+
+
+
+</script>
+</body>
+</html>

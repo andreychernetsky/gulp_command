@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+<body>
+<script>
+  // ============================================================================
+  const name = 'Работа с флагами';
+  console.log('Урок № 11 - ' + name);
+  // ============================================================================
+
+
+  // ============================================================================
+  /*
+	1. Дан массив с числами. Проверьте, что в этом массиве есть число 5. Если есть
+	- выведите 'да', а если нет - выведите 'нет'.
+	*/
+
+  const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+  let flag = false;
+
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] === 5) {
+      flag = true;
+    }
+  }
+
+  if (flag === true) {
+    console.log('Да');
+  } else {
+    console.log('Нет');
+  }
+  // or
+
+  const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+  function searchArray(arr) {
+    for (let i = 0; i < arr.length; i++) {
+      if (arr[i] === 5) {
+        return true;
+      }
+    } return false;
+  }
+
+  console.log(searchArray(arr));
+
+  // ============================================================================
+
+  /*
+	2. Дано число, например 31. Проверьте, что это число не делится ни на одно
+	другое число кроме себя самого и единицы. То есть в нашем случае нужно проверить,
+	что число 31 не делится на все числа от 2 до 30. Если число не делится - выведите
+	'false', а если делится - выведите 'true'.
+	*/
+
+  const num = 31;
+  let flag = false;
+
+  for (let i = 2; i < num; i++) {
+    if (num % i === 0) {
+      flag = true;
+    }
+  }
+
+  if (flag === true) {
+    console.log(true);
+  } else {
+    console.log(false);
+  }
+
+//  example
+
+  const num = 31;
+  for (let i = 2; i < num; i++) {
+    if (num % i === 0) {
+      console.log(true);
+    } else {
+      console.log(false);
+      break;
+    }
+  }
+
+  // Так же через функцию
+
+  function decideTwo(x) {
+    for (let i = 2; i < x; i++) {
+      if (x % i === 0) {
+        return true;
+      }
+    }
+    return false;
+  }
+
+  console.log(decideTwo(31));
+
+  // or
+
+  function decideThree(x) {
+    for (let i = 2; i < x; i++) {
+      return x % i === 0;
+    }
+  }
+
+  console.log(decideThree(31));
+
+  // ============================================================================
+
+  /*
+	Для себя придумал еще задачу
+	
+	Вернуть числа, которые делять на число Х без остатка.
+	*/
+
+  function remainder(x) {
+    for (let i = 1; i <= x; i++) {
+      if (x % i === 0) {
+        console.log(i);//1,31
+      }
+    }
+  }
+
+  remainder(31);
+  /*
+	3. Дан массив с числами. Проверьте, есть ли в нем два одинаковых числа подряд.
+	Если есть - выведите 'да', а если нет - выведите 'нет'
+	*/
+
+  const arr = [1, 2, 3,3, 4, 5, 6, 7, 7];
+  let flag = false;
+
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] === arr[i - 1]) {
+      console.log(arr[i]);//3,7
+      flag = true;
+    }
+  }
+
+  if (flag === true) {
+    console.log('Есть');
+  } else {
+    console.log('Нет');
+  }
+
+  // or
+
+  const arr = [1, 2, 3, 4, 5, 6, 7, 7];
+
+  function sameNumber(arr) {
+    for (let i = 0; i < arr.length; i++) {
+      if (arr[i] === arr[i - 1]) {
+        return 'Есть = ' + arr[i];
+      }
+    } return 'Нет';
+  }
+
+  console.log(sameNumber(arr));//есть  = 7
+  // Создайте функцию, которая вернет одинаковые значение из массива.
+  const arr = [1, 1, 2, 3, 4, 4, 5, 6, 7, 7];
+  const result = [];
+
+  function sameS(arr) {
+    for (let i = 0; i < arr.length; i++) {
+      if (arr[i] === arr[i - 1]) {
+        result.push(arr[i]);
+      }
+    }
+    return result;
+  }
+  console.log(sameS(arr));
+
+
+ 
+
+</script>
+</body>
+</html>

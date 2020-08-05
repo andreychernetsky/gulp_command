@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+<body>
+<a href="https://codepen.io/andreychernetsky/pen/VEYKQO"> array</a>
+<a href="https://codepen.io/andreychernetsky/pen/MPYjXr?editors=1010"> Minimum age</a>
+<script>
+  function myFunction () {
+    let fruits = ["Banana","Orange"];
+    let fruits2 = ["Aple","Mango"];
+    let count = fruits.concat(fruits2);
+    document.getElementById("demo").innerHTML = count;
+  }
+
+  let fruits = ["Banana", "Orange", "Apple", "Mango"];
+  document.getElementById("demo").innerHTML = fruits;
+
+  function myFunction() {
+    document.getElementById("demo").innerHTML = fruits.copyWithin(2,0);
+  }
+
+  let ages = [33,33,16,20];
+
+  function checkAdult(age) {
+    return age >= 18;
+  }
+  function myFunction()	{
+    document.getElementById("demo").innerHTML = ages.filter(checkAdult);
+  }
+
+</script>
+</body>
+</html>

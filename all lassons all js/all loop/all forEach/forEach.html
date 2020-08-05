@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<a href="https://codepen.io/andreychernetsky/pen/MNGYXO?editors=1010">forEach</a>
+<script>
+  //example
+  /*Метод «arr.forEach(callback[, thisArg])» используется для перебора массива.
+
+ Он для каждого элемента массива вызывает функцию callback.
+
+ Этой функции он передаёт три параметра callback(item, i, arr):
+
+item – очередной элемент массива.
+ i – его номер.
+ arr – массив, который перебирается.*/
+  /*
+	const numbers = [1,2,3,4];
+	const sum = 0;
+		numbers.forEach(function(elem){
+		return elem = elem + elem;
+	})
+	console.log(sum)*/
+
+
+  // example reduce
+  /*
+	Метод «arr.reduce(callback[, initialValue])» используется для последовательной обработки каждого элемента массива с сохранением промежуточного результата.
+	
+		Это один из самых сложных методов для работы с массивами. Но его стоит освоить, потому что временами с его помощью можно в несколько строк решить задачу, которая иначе потребовала бы в разы больше места и времени.
+	
+		Метод reduce используется для вычисления на основе массива какого-либо единого значения, иначе говорят «для свёртки массива». Чуть далее мы разберём пример для вычисления суммы.
+	
+		Он применяет функцию callback по очереди к каждому элементу массива слева направо, сохраняя при этом промежуточный результат.
+	
+		Аргументы функции callback(previousValue, currentItem, index, arr):
+	
+	previousValue – последний результат вызова функции, он же «промежуточный результат».
+	currentItem – текущий элемент массива, элементы перебираются по очереди слева-направо.
+		index – номер текущего элемента.
+		arr – обрабатываемый массив.
+		Кроме callback, методу можно передать «начальное значение» – аргумент initialValue. Если он есть, то на первом вызове значение previousValue будет равно initialValue, а если у reduce нет второго аргумента, то оно равно первому элементу массива, а перебор начинается со второго.
+	
+	
+		Проще всего понять работу метода reduce на примере.
+	
+		Например, в качестве «свёртки» мы хотим получить сумму всех элементов массива.
+	
+		Вот решение в одну строку:
+		*/
+
+  let each = function(arr,callback) {
+    let i, length = arr.length;
+
+    for(i = 0; i < length; i++) {
+      callback(arr[i], i, arr)
+    }
+  }
+  let arr = ["яблоко","груша","слива"];
+  each(arr,function(item,index,arr) {
+    console.log(item + ":" + index + "(массив:" + arr + ")");//
+  });
+
+  //  example
+
+  let arr = [2,2];
+  let result = 0;
+  arr.forEach((elem)=>{
+    result+=Math.pow(elem,2);
+    return result;
+  });
+
+  //example
+
+  function each(arr) {
+    let result = 0;
+    arr.forEach((elem)=>{
+      result+=Math.pow(elem,2);
+      // return result;
+    });
+    return result;
+  }
+
+  let arr = [2,2];
+  console.log(each(arr));
+  console.log(result);//8
+
+
+  //example
+  const each = function (arr) {
+    let result = 0;
+    arr.forEach((elem)=>{
+      result+=Math.pow(elem,2);
+      // return result;
+    });
+    return result;
+  };
+
+  let arr = [2,2];
+  console.log(each(arr));
+
+  //  example
+
+  function each(arr) {
+    for(let i = 0; i < arr.length; i++) {
+      console.log(arr);//["яблоко","груша","слива"],["яблоко","груша","слива"],["яблоко","груша","слива"]
+      console.log(arr[i]);//яблоко, груша, слива
+      console.log([i]);//[0],[1],[2]
+    }
+    return arr;
+  }
+
+  let arr = ["яблоко","груша","слива"];
+  console.log(each(arr));//
+
+  //example
+
+  const array = ["one", "two", "three"];
+  array.forEach(function(item,index){
+    console.log(item,index);
+  });
+
+  //  example
+  let arr = ["яблоко","груша","слива"];
+  arr.forEach(function(item,index,arr) {
+    console.log(index + ":" + item + "(массив:" + arr + ")");
+  });
+
+  //  example
+
+  ["яблоко","груша","слива"].forEach((item,index,arr)=>{
+    console.log(item + ":" + index + "(массив:" + arr + ")");
+  });
+
+  //  example
+
+  const arr = [1,13,4,3];
+  let summOdd = 0;
+  arr.forEach((elem) =>{
+    return Math.round(summOdd +=elem)
+  });
+  console.log(summOdd);
+
+  //example
+
+
+  function oddNum(arr) {
+    let summOdd = 0;
+    arr.forEach((elem)=>{
+      summOdd +=elem
+
+    });
+
+    return summOdd
+  }
+  let arr = [1,13,4,3];
+  console.log(oddNum(arr));
+
+  //examole
+
+  function oddNum(arr) {
+    let summOdd = 0;
+    arr.forEach((elem)=>{
+      if((elem % 2 ==0) && (elem <=11)){
+        summOdd +=elem
+      }
+    });
+
+    return summOdd
+  }
+  let arr = [2,4,3,14];
+  console.log(oddNum(arr));//6
+
+  //  example
+
+  const numbers = [1,2,3];
+  const doubled = numbers.map(n => n*2);
+
+  console.log(doubled);
+
+  //example
+
+  let arr = [1,2,3];
+  arr.forEach((num,index)=>{
+    return arr[index] = num *2;
+  });
+  console.log(arr);//[2,4,6]
+
+  // example
+
+  let arr = ['a','b','c'];
+  arr.forEach((letter)=> {
+    console.log(letter);//a,b,c
+  });
+
+  //example
+
+  function dayWeek(num) {
+    const fun = num.forEach((elem,i)=> i === 5 || i===6 ? document.write('<b>' + num[i] + '</b>'):document.write(num[i]));
+    return fun;
+  }
+  const day = ['пн ','вт ','ср ','чт ','пт ','сб ','вс '];
+  dayWeek(day);
+
+  //  example
+  /*Найдите сумму наибольшего и наименьшего элементов массива.*/
+
+  const minAndMax = (arr)=>{
+    let min = arr[0];
+    let max = arr[0];
+
+    arr.forEach((current)=>{
+      if(current < min) {
+        min = current;
+      }  if(current > max) {
+        max = current;
+      }
+      console.log(min);//-1
+      console.log(max);//4
+    });
+    return max + min;
+
+  };
+  const elemArr = [4,-1,3];
+  console.log(minAndMax(elemArr))//3
+</script>
+</body>
+</html>
