@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+				content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+<body>
+<style>
+	.left-menu	{
+		height: 50px;
+		width: 40px;
+		position: fixed;
+		left: 0;
+		top: 0;
+		z-index: 50;
+		
+		overflow: hidden;
+	}
+	.openMenu {
+		width: 400px;
+		overflow: hidden;
+	}
+	.left-menu.openMenu {
+		height: 100%;
+		background:rgba(0,0,0,0.2);
+	}
+	.hamburger {
+		width: 40px;
+		height: 40px;
+		float: right;
+		background: #000;
+		position: relative;
+		z-index: 70;
+	 }
+	.accordion {
+		display: flex;
+		max-width: 460px;
+		flex-direction: column;
+		align-items: center;
+		margin: auto;
+	}
+	
+	.accordion * {
+		font: normal 1em/1.5em 'Tahoma', sans-serif;
+	}
+	
+	.accordion__button {
+		width: 100%;
+		min-height: 42px;
+		padding: 0.5em 20px;
+		margin-bottom: 5px;
+		text-align: left;
+		position: relative;
+		border: 0 none;
+		-moz-border-radius: 21px;
+		-webkit-border-radius: 21px;
+		border-radius: 1%;
+		
+		background-color:#5E4A3F;
+		color: #fff;
+		
+		z-index: 2;
+	}
+	
+	.accordion__button:nth-child(2n) {
+		background-color: #E7E7E7;
+		color: #4f4f4f;
+	}
+	
+	.accordion__button:hover {
+		cursor: pointer;
+	}
+	
+	.accordion__button:after {
+		position: absolute;
+		width: 0;
+		height: 0;
+		margin-top:2%;
+		right: 3%;
+		content: '';
+		border-left: 7px solid transparent;
+		border-right: 7px solid transparent;
+		border-top: 12px solid #FF8966;
+	}
+	
+	.accordion__button.active {
+		background-color: #136018;
+		color: #fff;
+	}
+	
+	.accordion__button.active:after {
+		border-bottom: 12px solid #fff;
+		top: -5px;
+	}
+	
+	.accordion__list {
+		width: 100%;
+		max-height: 0;
+		margin-top: -42px;
+		padding: 25px 0 10px;
+		background-color: #E7E7E7;
+		margin-bottom: 5px;
+		/*border-radius: 5%;*/
+		z-index: 1;
+		overflow: hidden;
+		-moz-transition: max-height 0.35s ease-out;
+		-webkit-transition: max-height 0.35s ease-out;
+		transition: max-height 0.35s ease-out;
+	}
+	
+	.accordion__item {
+		/*	padding: 2px 20px;
+			list-style-type: none;
+			color: #4f4f4f;*/
+		list-style: none;
+		height: 31px;
+		border-bottom: 1px solid #136018;
+		margin: 10px 16px;
+	}
+	
+	.accordion__item:first-child {
+		margin-top: 21px;
+	}
+	.accordion__link {
+		text-decoration: none;
+		color: rgb(58, 54, 54);
+	: 10px 10px 10px;
+	}
+	.accordion__link:hover {
+		text-decoration: none;
+		display:inline-block;
+		/*color: rgb(194, 193, 193);
+		border: 1px solid #c2c2c2;*/
+		/*border-radius:50px;*/
+		text-align: center;
+		min-width: 30%;
+		/*background-color: rgb(194, 193, 193);*/
+		color: #96ae3e;
+		
+		border-color: rgb(241, 241, 241);
+	}
+	:focus {
+		outline-style: none;
+		outline-width: 0px !important;
+		outline-color: none !important;
+	}
+</style>
+<div class="left-menu">
+	<div class="hamburger active">
+		<span></span>
+		<span></span>
+		<span></span>
+	</div>
+	
+	<div class="accordion">
+		<button class="accordion__button">Видосики</button>
+		<ul class="accordion__list">
+			<li class="accordion__item">
+				<a class="accordion__link" href="https://vk.com/video267955976_456239274">сочинение мелодий га аккорд C </a>
+				<ul class="accordion__dropdown-list dropdown-list">
+					<li class="dropdown-list">
+						<a href="">мелодиии от ноты до</a>
+					</li>
+				</ul>
+			</li>
+			<li class="accordion__item">
+				<a class="accordion__link" href="https://vk.com/video267955976_456239101">Сылка на </a>
+			</li>
+			<li class="accordion__item">
+				<a class="accordion__link" href="https://vk.com/video267955976_456239104">Сылка на </a>
+			</li>
+		</ul>
+		
+		<button class="accordion__button">Подготовка уроков</button>
+		<ul class="accordion__list">
+			<li class="accordion__item">
+				<a class="accordion__link" href="">Сылка на статью</a>
+			</li>
+			<li class="accordion__item">
+				<a class="accordion__link" href="https://vk.com/video267955976_456239274">Сылка на </a>
+			</li>
+			<li class="accordion__item">
+				<a class="accordion__link" href="https://vk.com/video267955976_456239101">Сылка на </a>
+			</li>
+			<li class="accordion__item">
+				<a class="accordion__link" href="https://vk.com/video267955976_456239104">Сылка на </a>
+		</ul>
+		
+		<button class="accordion__button">Заголовок</button>
+		<ul class="accordion__list">
+			<li class="accordion__item">
+				<a class="accordion__link" href="https://vk.com/video267955976_456239274">Сылка на </a>
+			</li>
+			<li class="accordion__item">
+				<a class="accordion__link" href="https://vk.com/video267955976_456239101">Сылка на </a>
+			</li>
+			<li class="accordion__item">
+				<a class="accordion__link" href="https://vk.com/video267955976_456239104">Сылка на </a>
+		</ul>
+	
+	</div>
+</div>
+
+<script>
+  /*{
+    document.querySelector('.accordion').onclick = function(event) {
+      let target = event.target;
+
+      if(target.targetName = 'accordion__button') {
+        let buttons = document.getElementsByClassName('accordion__button');
+
+        for(let i = 0; i < buttons.length; ++i) {
+          let button = buttons[i];
+          let list = button.nextElementSibling;
+
+          if(target == button) {
+            if(list.style.maxHeight) {
+              list.style.maxHeight = null;
+              break;
+            } else {
+              list.style.maxHeight = list.scrollHeight + 'px';
+            }
+          } else {
+            button.classList.remove('active');
+            list.style.maxHeight = null;
+          }
+
+        }
+        target.classList.toggle('active');
+      }
+    }
+  }
+*/
+  //открываем меню
+	{
+	  const burger = document.querySelector('.hamburger');
+	  const leftMenu = document.querySelector('.left-menu');
+	  
+	  const menu = ()=>{
+	  burger.addEventListener('click', ()=>{
+	    leftMenu.classList.toggle('openMenu');
+	    burger.classList.toggle('open');
+		})
+		}
+	}
+</script>
+</body>
+</html>

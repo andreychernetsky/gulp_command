@@ -229,14 +229,14 @@
 	равных соответственно 3 и 5, 6 и 1.
 	*/
 
-  var a = 3;
-  var b = 5;
-  var c = (Math.abs(a - b));
+  const a = 3;
+  const b = 5;
+  const c = (Math.abs(a - b));
   console.log(c);
 
-  var a = 6;
-  var b = 1;
-  var c = (Math.abs(a - b));
+  const a = 6;
+  const b = 1;
+  const c = (Math.abs(a - b));
   console.log(c);
 
   // ============================================================================
@@ -248,17 +248,17 @@
 	задачу на массиве с элементами 12, 15, 20, 25, 59, 79.
 	*/
 
-  var arr = [12, 15, 20, 25, 59, 79];
-  var result = 0;
-  for (var i = 0; i < arr.length; i++) {
+  const arr = [12, 15, 20, 25, 59, 79];
+  let result = 0;
+  for (let i = 0; i < arr.length; i++) {
     arr[i] = arr[i] / arr.length;
     result = result + arr[i];
     console.log('Среднее арифметическое каждого элемента массива = ' + arr[i]);
   }
 
-  var arr = [12, 15, 20, 25, 59, 79];
-  var result = 0;
-  for (var i = 0; i < arr.length; i++) {
+  const arr = [12, 15, 20, 25, 59, 79];
+  let result = 0;
+  for (let i = 0; i < arr.length; i++) {
     result = result + arr[i];
   }
 
@@ -272,15 +272,27 @@
 	данного, и его самого. Например, 4! = 1*2*3*4.
 	*/
 
-  var factorial = 5;
-  var count = 1;
-  var result = 1;
-  for (var i = 2; i <= factorial; i++) {
+  const factorial = 10;
+  let count = 1;
+  let result = 1;
+  for (let i = 2; i <= factorial; i++) {
     count = count + '*' + i;
     result = result * i;
   }
 
-  console.log(factorial + '! = ' + count + ' = ' + result);
+  console.log(factorial + '=' + count + ' = ' + result);//5=1*2*3*4*5=120
+  // Math.sqrt-ищет квадратный корень
+  // Math.round - округляет до целых в большую сторону
+  //Math.floor --округляет в меньшую сторону
+  // parseInt -округление до целых
+  const arr = [4, 2, 5, 19, 13, 0, 10];
+  let sum = 0;
+  arr.forEach((elem) => {
+    return sum += parseInt(Math.sqrt(elem));
+  });
+  console.log(sum);//16
+
+
 
 </script>
 </body>

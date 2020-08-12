@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>lesson-20</title>
+</head>
+<body>
+  <!-- innerHTML -->
+  <!-- 1. -->
+  <p id="text">Какой-то текст</p>
+  <button onclick="clickButton()">Кнопка смены текста</button>
+  <script>
+    function clickButton() {
+      var button = document.getElementById('text');
+      button.innerHTML = 'замена';
+    }
+  </script>
+
+  <!-- 2 -->
+  <p id="text__two">Какой-то текст</p>
+  <button onclick="clickButtonTwo()">Кнопка смены текста</button>
+  <script>
+    function clickButtonTwo() {
+      var buttonTwo = document.getElementById('text__two');
+      buttonTwo.innerHTML = '<b>Новый текст</b>';
+    }
+  </script>
+
+  <!-- outerHTML -->
+  <!-- 1 -->
+  <p id="text__three">Какой-то текст</p>
+  <button onclick="clickButtonThree()">Замена тега</button>
+  <script>
+    function clickButtonThree() {
+      var buttonThre = document.getElementById('text__three');
+      buttonThre.outerHTML = '<h1>Новый текст</h1>';
+    }
+  </script>
+
+  <!-- getElementsByTagName -->
+  <!-- 1 -->
+  <h3>Массив 0</h3>
+  <h3>Массив 1</h3>
+  <h3>Массив 2</h3>
+  <button onclick="clickButtonFor()">Кнопки изменения массива</button>
+  <script>
+    function clickButtonFor() {
+      var buttonFor = document.getElementsByTagName('h3');
+      buttonFor[0].innerHTML = 'Новый массив 0';
+      buttonFor[2].outerHTML = '<h1>Новый массив 2</h1>';
+    }
+  </script>
+
+  <!-- for -->
+  <!-- 1 -->
+  <h5>Массив 0</h5>
+  <h5>Массив 1</h5>
+  <h5>Массив 2</h5>
+  <button onclick="clickButtonFive()">Кнопка изменения массива</button>
+  <script>
+    function clickButtonFive() {
+      var buttonFive = document.getElementsByTagName('h5');
+
+      for (var i = 0; i < buttonFive.length; i++) {
+        buttonFive[i].innerHTML = 'Новый массив ' + i;
+      }
+    }
+  </script>
+
+  <!-- children -->
+  <!-- 1 -->
+  <div id="parent">
+    <p>Первый потомок</p>
+    <p>Второй потомок</p>
+  </div>
+  <script>
+    var myChildren = document.getElementById('parent');
+    document.write(myChildren.children[0].innerHTML);
+    document.write(myChildren.children[1].innerHTML);
+  </script>
+
+  <!-- 2 -->
+  <div id="parents">
+    <h4>Первый потомок</h4>
+    <h4>Второй потомок</h4>
+    <h4>Третий потомок</h4>
+    <h4>Четвертый потомок</h4>
+    <h4>Пятый потомок</h4>
+  </div>
+  <script>
+    var parents = document.getElementById('parents');
+    var elems = parents.children;
+    for (var i = 0; i < elems.length; i++) {
+      var change = elems[i].innerHTML + '-' + [i] + '<br>';
+      document.write(change);
+    }
+  </script>
+
+  <!-- form -->
+  <!-- 1 -->
+	<form>
+		<input type="text" value="1">
+		<input type="text" value="2">
+		<input type="text" value="3">
+	</form>
+	<form>
+		<input type="text" value="1">
+		<input type="text" value="2">
+		<input type="text" value="3">
+	</form><br>
+<script>
+  document.forms[0].innerHTML = 'NOT';
+</script>
+
+<!-- 2 -->
+<form>
+  <input type="text" value="1">
+  <input type="text" value="2">
+  <input type="text" value="3">
+</form>
+<form>
+  <input type="text" value="1">
+  <input type="text" value="2">
+  <input type="text" value="3">
+</form>
+<script>
+  var forms = document.forms;
+  for (var i = 0; i < forms.length; i++) {
+    forms[i].innerHTML = 'new' + [i];
+  }
+</script>
+
+<!-- document.name -->
+<!-- 1 -->
+<form name="form1">
+		<input value="1">
+		<input value="2">
+		<input value="3">
+	</form>
+	<form name="form2">
+		<input value="1">
+		<input value="2">
+		<input value="3">
+	</form>
+<script>
+  var form1 = document.forms.form1;
+  form1.innerHTML = '!';
+  var form2 = document.forms['form2'];
+  form2.innerHTML = '?';
+</script>
+
+<!-- elements -->
+<!-- 1 -->
+<form name="form-one">
+		<input type="text" value="1">
+		<input type="text" value="2">
+		<input type="text" value="3">
+	</form>
+	<form>
+		<input type="text" value="1">
+		<input type="text" value="2">
+		<input type="text" value="3">
+	</form>
+<script>
+  document.forms['form-one'].elements[0].value = 'Первая форма';
+  document.forms[1].elements[0].value = 'Вторая форма';
+</script>
+
+<!-- 2 -->
+<form name="main-form">
+		<input type="text" value="1">
+		<input type="text" value="2">
+		<input type="text" value="3">
+	</form>
+	<form>
+		<input type="text" value="1">
+		<input type="text" value="2">
+		<input type="text" value="3">
+</form>
+<script>
+  var mainForm = document.forms['main-form'].elements;
+
+  for (var i = 0; i < mainForm.length; i++) {
+    mainForm[i].value = 'Новые элементы';
+  }
+</script>
+
+<!-- name elements -->
+<form name="best-form">
+		<input value="one" name="input1">
+		<input value="two" name="input2">
+		<input value="three" name="input3">
+</form>
+<script>
+  document.forms['best-form'].elements['input1'].value = 'Новое значение';
+</script>
+
+<!-- select -->
+<!-- 1 -->
+<select id="select">
+	<option value="one">Один</option>
+	<option value="two" selected>Два</option>
+	<option value="three">Три</option>
+</select>
+<script>
+  var select = document.getElementById('select');
+  select.value = 'one';
+</script>
+
+<!-- 2 -->
+<select id="select-two">
+	<option value="one">Один</option>
+	<option value="two" selected>Два</option>
+	<option value="three">Три</option>
+</select>
+<script>
+  var select = document.getElementById('select-two');
+  select.selectedIndex = [2];
+</script>
+
+<!-- 3 -->
+<select id="select-three">
+	<option value="one">Один</option>
+	<option value="two" selected>Два</option>
+	<option value="three">Три</option>
+</select><br>
+<script>
+  var option = document.getElementById('select-three');
+  option[0].selected = true;
+</script>
+
+<!-- getAttribute -->
+<input type="text" value="!" id="test">
+<input type="submit" onclick="func()">
+
+<script>
+  function func() {
+    var myGet = test.getAttribute('value');
+    console.log(myGet);
+    // setAttribute
+
+    var mySet = test.setAttribute('value', 'new');
+
+    // removeAttibute
+
+    var myRemove = test.removeAttribute('value');
+
+    // hasAttribute
+
+    var myHas = text.hasAttribute('value');
+    console.log(myHas);
+  }
+</script>
+
+<!-- getElementsByClassName -->
+<p class="www">Текст абзаца.</p>
+<p class="www">Текст абзаца.</p>
+<p class="www">Текст абзаца.</p>
+<p>Текст абзаца.</p>
+<input type="submit" onclick="myBtn()"><br>
+
+<script>
+  function myBtn() {
+    var myClass = document.getElementsByClassName('www');
+    for (var i = 0; i < myClass.length; i++) {
+      myClass[i].innerHTML = '!';
+    }
+  }
+</script>
+
+<!-- querySelector -->
+<!-- class -->
+<input type="text" value="class" class="qqq">
+<input type="submit" onclick="myQuery()">
+
+<script>
+  function myQuery() {
+    var query = document.querySelector('.qqq');
+    console.log(query.getAttribute('value'));
+  }
+</script>
+
+<!-- id -->
+
+<input type="text" value="id" id="idd">
+<input type="submit" onclick="myQuery2()">
+
+<script>
+  function myQuery2() {
+    var query2 = document.querySelector('#idd');
+    console.log(query2.getAttribute('value'));
+  }
+</script>
+
+<!-- querySelectorAll -->
+<p class="ddd">Текст абзаца.</p>
+<p class="ddd">Текст абзаца.</p>
+<p class="ddd">Текст абзаца.</p>
+<p>Текст абзаца.</p>
+<input type="submit" onclick="clickAll()">
+
+<script>
+  function clickAll() {
+    var myAll = document.querySelectorAll('.ddd');
+
+    for (var i = 0; i < myAll.length; i++) {
+      myAll[i].innerHTML = 'new';
+    }
+  }
+</script>
+
+<!-- data- -->
+<div id="elem" data-price="1000" data-product-number="5">
+	Товар Джинсы
+</div>
+<input type="submit" onclick="clickData()">
+
+<script>
+  var myElem = document.querySelector('#elem');
+  console.log(myElem.dataset.price);
+  console.log(myElem.dataset.productNumber);
+
+  // or
+
+  console.log(myElem.getAttribute('data-price'));
+  console.log(myElem.getAttribute('data-product-number'));
+
+  console.log(elem.dataset.price);
+  console.log(elem.dataset.productNumber)
+</script>
+
+
+
+
+</body>
+</html>

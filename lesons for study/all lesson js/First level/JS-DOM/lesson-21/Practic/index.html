@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Lesson-21, practic</title>
+</head>
+<body>
+<h1>Работа с датами в JS</h1>
+<h2>Объект Date</h2>
+
+<!-- date -->
+<!-- ====================================================================== -->
+
+<script>
+  var date = new Date();
+  console.log(date.getMilliseconds());
+  console.log(date.getSeconds());
+  console.log(date.getMinutes());
+  console.log(date.getHours());
+  console.log(date.getDay());
+  console.log(date.getDate());
+  console.log(date.getMonth());
+  console.log(date.getFullYear());
+</script>
+
+<!-- getDay -->
+<!-- ====================================================================== -->
+
+<script>
+  var date = new Date();
+  var day = date.getDay();
+  var days = ['вс', 'пн', 'вт', 'ср', 'чт', 'пт', 'сб'];
+
+  for (var i = 0; i < days.length; i++) {
+    console.log(days[day]);
+  }
+</script>
+
+<!-- Момент времени -->
+<!-- ====================================================================== -->
+
+<script>
+  var date = new Date(2018, 5, 15, 12, 59, 59);
+  var day = date.getDay();
+  var days = ['вс', 'пн', 'вт', 'ср', 'чт', 'пт', 'сб'];
+  console.log(days[day]);
+</script>
+
+<script>
+  var date = new Date(2018, 5, 15);
+  var day = date.getDay();
+  var days = ['вс', 'пн', 'вт', 'ср', 'чт', 'пт', 'сб'];
+  console.log(days[day]);
+</script>
+
+<!-- getTime -->
+<!-- ====================================================================== -->
+
+<!-- текущий моменте времени -->
+<script>
+  var date = new Date();
+  console.log(date.getTime());
+</script>
+
+<!-- заданный момент времени -->
+<script>
+  var date = new Date(2015, 5, 15, 12, 59, 59);
+  console.log(date.getTime());
+</script>
+
+<!-- разница между текущим моментом и заданным -->
+<script>
+  var dateNow = new Date();
+  var datePast = new Date(2015, 5, 15, 12, 59, 59);
+  var total = dateNow.getTime() - datePast.getTime();
+  console.log(total);
+</script>
+
+
+<!-- getParse -->
+<!-- ====================================================================== -->
+
+<script>
+console.log(Date.parse('2015-05-15T12:59:59'));
+</script>
+
+<!-- разница между датами -->
+<!-- ====================================================================== -->
+
+<script>
+  var dateNow = new Date();
+  var dateOld = new Date(2015, 5, 15, 12, 59, 59);
+
+  var total = dateNow - dateOld;
+  console.log(total);
+</script>
+
+</body>
+</html>

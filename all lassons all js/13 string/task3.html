@@ -1,0 +1,380 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+<body>
+<script>
+  function clog(item) {
+    console.log(item);
+  }
+  function ilog(item) {
+    console.info(item);
+  }
+  function dlog(item) { //выводит элемент в виде, удобном для исследования HTML-структуры
+    console.dir(item);
+  }
+
+  let s = "hello, world";      // Нач­нем с то­го же тек­ста.
+  s.length;                    //длинна строки
+  s.charAt(0);                 //"h": пер­вый сим­вол.
+  s.charAt(s.length-1);        //"d": по­след­ний сим­вол.
+  s.substring(1,4);            //"ell": 2-й, 3-й и 4-й сим­во­лы.
+  s.slice(1,4);                //"ell": то же са­мое
+  s.slice(-3);                 //"rld": по­след­ние 3 сим­во­ла
+  s.indexOf("l");              //2: по­зи­ция пер­во­го сим­во­ла l.
+  s.lastIndexOf("l");          //10: по­зи­ция по­след­не­го сим­во­ла l.
+  s.indexOf("l", 3);           //3: по­зи­ция пер­во­го сим­во­ла "l", сле­дую­ще­го за 3 сим­во­лом в стро­ке
+  s.split(", ");               //["hello", "world"] раз­би­ва­ет на под­стро­ки
+  s.replace("h", "H");         //"Hello, world": за­ме­ща­ет все вхо­ж­де­ния под­стро­ки
+  s.toUpperCase();             //"HELLO, WORLD"
+  //s[0];                        //"h"
+  //s[s.length-1];               //"d"
+
+  //Дана строка. Вывести ее три раза через запятую и показать количество символов в ней.
+  function threeString(str) {
+    let all = '', i = 3;
+    for (i; i--;) {
+      all += str + ', ';
+    }
+    return all + 'Символов:' + (all.length);
+  }
+  clog(threeString('Kitty')); //Kitty, Kitty, Kitty, Символов:21
+
+  //Дана строка. Вывести первый, последний и средний (если он есть)) символы.
+  function firstLast(str) {
+    let len = str.length;
+    return "First letter:" + str.charAt(0)
+      + " Middle letter: " + str.charAt(len / 2)
+      + " Last letter: " + str.charAt(len - 1);
+  }
+  clog(firstLast("Lorem Ipsum is simply dummy text of the printing and typesetting industry")); //First letter:L Middle letter: t Last letter: y
+
+  //Дана строка. Вывести первые три символа и последний три символа, если длина строки больше 5.
+  //Иначе вывести первый символ столько раз, какова длина строки.
+  function lenFive(str) {
+    str = str.trim();
+    let len = str.length, letter = '';
+    if (len > 5) {
+      return str.substr(0,3) + ' ' + str.substr(len-3,3);
+    }
+    for (len; len --;) {
+      letter += str.charAt(0);
+    }
+    return letter;
+  }
+  clog(lenFive("Where can I get some")); //Whe ome
+  clog(lenFive("Where")); //WWWWW
+
+  //Сформировать строку из 10 символов.
+  //На четных позициях должны находится четные цифры, на нечетных позициях - буквы.
+  function createWords() {
+    let len = 10, word = "", letter = "abcdefghik";
+    for (len; len --;) {
+      word += (len % 2 == 0) ?  len : letter.charAt(len);
+    }
+    return word;
+  }
+  clog(createWords()); //k8h6f4d2b0
+
+  // Дана строка. Показать третий, шестой, девятый и так далее символы.
+  function plusThreeLetter(str) {
+    if (typeof str === "string") { //проверка на строку
+      str = str.trim(); //убираем пробелы по бокам
+      let len = str.length, word = '';
+      for (len; len --;) {
+        if (len % 3 == 0) { //если номер символа в строке делится на 3 без остатка
+          word += str.charAt(len); //крепим его в строку
+        }
+      }
+      return word;
+    }
+    return "It is not string!";
+  }
+  clog(plusThreeLetter("simply random text")); //emn ps
+  clog(plusThreeLetter(55)); //It is not string!
+
+  //Дана строка. Определите общее количество символов '+' и '-' в нем.
+  //А так же сколько таких символов, после которых следует цифра ноль.
+  function strCountAdd(str) {
+    let len = str.length, zero = 0, plus = '', minus = '';
+    for (len; len --;) {
+      if (str.charAt(len) == '+') {
+        plus += str.charAt(len);
+        if (str.charAt(len + 1) == '0') {
+          zero += 1;
+        }
+      } else if (str.charAt(len) == '-') {
+        minus += str.charAt(len);
+        if (str.charAt(len + 1) == '0') {
+          zero += 1;
+        }
+      }
+    }
+    return 'Zero:' + zero + ' Plus:' + plus.length + ' Minus:' + minus.length;
+  }
+  ilog(strCountAdd("--++00xsx555-+v,l+p15++--+-+0+0-0-+")); //Zero:4 Plus:10 Minus:8
+
+  //Дана строка. Определите, какой символ в ней встречается раньше: 'x' или 'w'.
+  //Если какого-то из символов нет, вывести сообщение об этом.
+  function xFirstW(str) {
+    let len = str.length, wordW = 0, wordX = 0, usually;
+    for (len; len--;) {
+      if (str.substr(len, 2) == 'xw') {
+        wordX += 1;
+      } else if (str.substr(len, 2) == 'wx') {
+        wordW += 1;
+      }
+    }
+    usually = (wordW > wordX) ? 'XW' : 'WX';
+    return 'WX:' + wordX + ' XW:' + wordW + ' More usually:' + usually;
+  }
+  ilog(xFirstW("xxxwwwkwsxwwxxxwwwxwxwlkklmxdxdwxsxxws15wx1xw5wxwxwxw++w")); //WX:10 XW:8 More usually:WX
+
+  //Даны две строки.
+  //Вывести большую по длине строку столько раз, на сколько символов отличаются строки.
+  function biggerStr(str1, str2) {
+    str1 = str1.trim();
+    str2 = str2.trim();
+    let bigStr, len1 = str1.length, len2 = str2.length;
+    function addStr(str, count) {
+      let add = '';
+      for (count; count--;) {
+        add += str + ' ';
+      }
+      return add;
+    }
+    if (len1 > len2) {
+      bigStr = len1 - len2;
+      return addStr(str1, bigStr);
+    } else {
+      bigStr = len2 - len1;
+      return addStr(str2, bigStr);
+    }
+  }
+  clog(biggerStr(" Many desktop publishing", "Various versions have "));
+
+  //Дана строка. Если она начинается на 'abc', то заменить их на 'www', иначе добавить в конец строки 'zzz'.
+  function abcZZZ(str) {
+    str = str.trim();
+    if (str.substr(0, 3) == 'abc') {
+      return 'www' + str.substr(3);
+    }
+    return str + 'zzz';
+  }
+  clog(abcZZZ("abcPageMaker including")); //wwwPageMaker including
+  clog(abcZZZ("PageMaker including")); //PageMaker includingzzz
+
+  //Дана строка. Если ее длина больше 10, то оставить в строке только первые 6 символов,
+  //иначе дополнить строку символами 'o' до длины 12.
+  function addOOO(str) {
+    let len = str.length, addStr = '', twelve;
+    if (len > 10) {
+      return str.substr(0, 6);
+    } else {
+      twelve = 12 - len;
+      for (twelve; twelve--;) {
+        addStr += 'o';
+      }
+      return str + addStr;
+    }
+  }
+  ilog(addOOO("Lorem")); //Loremooooooo
+  ilog(addOOO("Richard McClintock")); //Richar
+
+  //Дана строка. Разделить строку на фрагменты по три подряд идущих символа.
+  //В каждом фрагменте средний символ заменить на случайный символ, не совпадающий
+  //ни с одним из символов этого фрагмента. Показать фрагменты, упорядоченные по алфавиту.
+  function threeSimbol(str) {
+    let len = str.length, words = '', letter = 'abcdefghaijklmnoprstuf', strin = str, nottes;
+
+    function randStr(str, word) { //случайная буква, если такая есть в строке то выбрать другую
+      let strMax = str.length,
+        words = word.length,
+        rand = str.charAt(Math.random() * strMax);
+      for (words; words--;) {
+        if (word.charAt(words) == rand) {
+          return randStr(str, word);
+        }
+      }
+      return rand;
+    }
+
+    Array.prototype.clean = function(deleteValue){ //удалить пустые эл массива
+      for (var i = 0; i < this.length; i++) {
+        if (this[i] == deleteValue) {
+          this.splice(i, 1);
+          i--;
+        }
+      }
+      return this;
+    };
+
+    for (var i = 1; i < len; i ++) {
+      if (strin.charAt(i) == strin.charAt(i + 1) && strin.charAt(i) == strin.charAt(i + 2) || i == 0) {
+        if (words.length < 1) {
+          words += strin.substr(0, i) + ":" ;
+        }
+        let count = i, fragmentStr = strin.substr(i, count);
+        words += fragmentStr[0] + randStr(letter, fragmentStr) + fragmentStr.substr(2) + ":";
+      }
+    }
+    nottes = words.split(':').sort((a, b) => a - b).clean("");
+    return nottes.join(' : ');
+  }
+  clog(threeSimbol("If you are goiiing to use a passsage of Lorem Ipsum, you need to be sure there isn't anythhhing embarrassing hidden in the midddle of text."));
+  //If you are go : iaing to use  : stsage of Lorem Ipsum, you nee : hphing embarrassing hidden in the midddle of text. : dcdle of text.
+
+  //Дана строка. Заменить каждый четный символ или на 'a', если символ не равен 'a' или 'b',
+  //или на 'c' в противном случае. В данной строке найти количество цифр.
+  function abcLeng(str) {
+    let len = str.length, words = "", count = 0, simbol;
+    for (len; len--;) {
+      simbol = str.charAt(len);
+      if (len % 3 == 0) {
+        if (simbol == 'a') {
+          words += 'B'
+        } else if (simbol == 'b') {
+          words += 'C'
+        } else if (simbol == 'c') {
+          words += 'A'
+        } else {
+          words += simbol;
+        }
+      } else {
+        words += simbol;
+      }
+      if (!isNaN(+simbol)) { //количество цифр в строке
+        count += 1;
+      }
+    }
+    return words + ' Length:' + words.length + ' Count:' + count;
+  }
+  ilog(abcLeng("aabbcc87878abccbaaaaaabbbccc4155cabbac478dr")); //rd874cBbbBc5514AccCbbBaaBaaCccCa87878ccCbaB Length:43 Count:12
+
+  //Замените в строке все вхождения 'word' на 'letter'.
+  function wordLetter(str) {
+    String.prototype.replaceAll = function(search, replace){
+      return this.split(search).join(replace); //разделить строку по слову, склеить в строку со вставкой слова
+    };
+    return str.replaceAll("word", "letter");
+  }
+  clog(wordLetter("Lorem ipsum dolor sit word, consectetur adipiscing word")); //Lorem ipsum dolor sit letter, consectetur adipiscing letter
+
+  //Удалить в строке все лишние пробелы, то есть серии подряд идущих пробелов заменить
+  //на одиночные пробелы. Крайние пробелы в строке удалить.
+  function trimStr(str) {
+    str = str.trim();
+    let words = str.split(" "), //рзбиваем стрку по пробелу
+      letter = [];
+    for (let i = 0; i < words.length; i++) {
+      if (words[i] != "") { //если эллемент массива не пробел
+        letter.push(words[i]); //добавить в массив
+      }
+    }
+    return letter.join(" "); //склеить массив из слов в строку через пробел
+  }
+  clog(trimStr("  All    the Lorem       Ipsum generators on    the Internet   to ")); //All the Lorem Ipsum generators on the Internet to
+
+  //Дан текст. Найдите наибольшее количество идущих подряд цифр.
+  function totalCount(str) {
+    let len = str.length, i, char, total = '', count, letter = [];
+    for (i = 0; i < len; i++) {
+      char = str.charAt(i);
+      if (!isNaN(char)) {
+        total += char;
+      } else {
+        total += " ";
+      }
+    }
+    count = total.split(" ");
+    for (i = 0; i < count.length; i++) {
+      if (count[i] != "") { //если эллемент массива не пробел
+        letter.push(count[i].length + " " + count[i]); //добавить в массив
+      }
+    }
+    return letter.sort().reverse()[0]; //сортируем массив, меняем местами (последний эл на первый), выводим первый эл массива
+  }
+  ilog(totalCount("454dcdc87dcx88899sxsx898939")); //6 898939
+
+  // Дан текст. Найти сумму имеющихся в нем цифр.
+  function countTotalString(str) {
+    str = str.trim();
+    let len = str.length, count = 0, char;
+    for (len; len--;) {
+      char = str.charAt(len); //значение эл
+      if (!isNaN(char)) { //если эл число
+        count += +char; //плюсуем к остальным превращая в число
+      }
+    }
+    return count;
+  }
+  clog(countTotalString("Lorem Ipsum comes from sections 1.10.32 and 1.10.33 ")); //15
+  clog(countTotalString("110323pd")); //10
+
+  /*Polycarpus works as a DJ in the best Berland nightclub, and he often uses dubstep music in his performance. Recently, he has decided to take a couple of old songs and make dubstep remixes from them.
+	 Let's assume that a song consists of some number of words. To make the dubstep remix of this song, Polycarpus inserts a certain number of words "WUB" before the first word of the song (the number may be zero), after the last word (the number may be zero), and between words (at least one between any pair of neighbouring words), and then the boy glues together all the words, including "WUB", in one string and plays the song at the club.
+	 For example, a song with words "I AM X" can transform into a dubstep remix as "WUBWUBIWUBAMWUBWUBX" and cannot transform into "WUBWUBIAMWUBX".
+	 Recently, Jonny has heard Polycarpus's new dubstep track, but since he isn't into modern music, he decided to find out what was the initial song that Polycarpus remixed. Help Jonny restore the original song.
+	 Input
+	 The input consists of a single non-empty string, consisting only of uppercase English letters, the string's length doesn't exceed 200 characters
+	 Output
+	 Return the words of the initial song that Polycarpus used to make a dubsteb remix. Separate the words with a space.
+	 */
+  function songDecoder(song) {
+    /*let exitStr, finish = [];
+		 exitStr = song.replace(/WUB/g, ' ');
+		 exitStr.split(' ').map(function (elem) {
+			 if (elem != '') {
+				 finish.push(elem);
+			 }
+		 });
+		 return finish.join(' ');*/
+
+    //return song.split('WUB').filter(x => !!x).join(' ');
+    return song.replace(/(WUB)+/g,' ').trim();
+  }
+  clog(songDecoder("WUBWEWUBAREWUBWUBTHEWUBCHAMPIONSWUBMYWUBFRIENDWUB")); //WE ARE THE CHAMPIONS MY FRIEND
+  clog(songDecoder("AWUBBWUBC"));//, "A B C","WUB should be replaced by 1 space");
+  clog(songDecoder("AWUBWUBWUBBWUBWUBWUBC")); //, "A B C","multiples WUB should be replaced by only 1 space");
+  clog(songDecoder("WUBAWUBBWUBCWUB")); //, "A B C","heading or trailing spaces should be removed");
+
+  /*Write a function, persistence, that takes in a positive parameter num and returns its
+	 multiplicative persistence, which is the number of times you must multiply the digits in num
+	 until you reach a single digit.*/
+  function persistence(num) {
+    let operation = 0;
+    function numOperation(item) {
+      let numToStr = item.toString(),
+        multiply = 1,
+        long = numToStr.length,
+        paint = [],
+        number;
+      while (long--) {
+        number = numToStr[long];
+        if (number != 0) {
+          multiply *= number;
+          //paint.push(number);
+        }
+      }
+      long = numToStr.length;
+      //document.write(paint.join('*') + '=' + multiply + '<br>');
+      if (long == 1) {
+        //document.write("Общее количество операций: " + operation + "<br>");
+        return operation;
+      }
+      operation += 1;
+      return numOperation(multiply);
+    }
+    return numOperation(num);
+  }
+  clog(persistence(39)); // === 3 // because 3*9 = 27, 2*7 = 14, 1*4=4 // and 4 has only one digit
+  clog(persistence(999)); // === 4 // because 9*9*9 = 729, 7*2*9 = 126, // 1*2*6 = 12, and finally 1*2 = 2
+  clog(persistence(4)); // === 0 // because 4 is already a one-digit number
+  clog(persistence(123456789)); //4
+	</script>
+</body>
+</html>

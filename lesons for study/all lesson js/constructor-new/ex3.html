@@ -1,0 +1,24 @@
+<html>
+<body>
+<script>
+'use strict';
+
+function Accumulator(startingValue) {
+
+  this.value = startingValue;
+
+  this.read = ()=> {
+    this.value += +prompt('Введите еще одно число','0');
+  };
+}
+
+let accumulator = new Accumulator(1); // начальное значение 1
+accumulator.read(); // прибавит ввод prompt к текущему значению
+accumulator.read(); // прибавит ввод prompt к текущему значению
+alert( accumulator.value ); // выведет текущее значение
+
+</script>
+
+<img src="" alt="" />
+</body>
+</html>

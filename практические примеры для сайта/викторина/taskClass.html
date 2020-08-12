@@ -7,6 +7,8 @@
 	<title>Document</title>
 </head>
 <body>
+<a href="https://repl.it/@Aleksey_Danchin/PrizeVisibleNet#script.js"></a>
+<a href="https://repl.it/@andreychernetsk/PrizeVisibleNet#script.js">викторина через класс</a>
 <style>
 .test div {
 	margin-bottom: 25px;
@@ -29,10 +31,10 @@
   //3) обвертка для викторины
   //	4) сюда помещаем вопросы
   //	5) кнопка для проверки ответов
-  //	6) количество вопросов которые будут входить в наш конструктор
+  //	6) количество вопросов. которые будут входить в наш конструктор
   //	7) будем запоминать
   //	8)помещаем div в test
-  //	9)обращаемся к кнпке для проверки ответа
+  //	9)обращаемся к кнопке для проверки ответа
   //	10) помещаем отвеченные вопросы
   //	11) создаем в html точку монтирование
 
@@ -70,8 +72,8 @@
   }
 ];
 
-const quiz = new  Quiz(questions);
-document.querySelector('#app').append(quiz.view);
+/*const quiz = new  Quiz(questions);
+document.querySelector('#app').append(quiz.view);*/
 
 
 class Quiz {//1
@@ -82,7 +84,7 @@ class Quiz {//1
       this.view.innerHTML = `<div class="test"></div><button class="btn">проверка ответа</button>`
 			
 			this.questionsPlase = this.view.querySelector('.test');//4
-      this.checkButton = this.view.querySelector('')//5
+      this.checkButton = this.view.querySelector('.btn')//5
 
       for(const question of questions) {
         const div = document.createElement('div');
@@ -100,9 +102,7 @@ class Quiz {//1
       this.checkButton.addEventListener('click',()=>this.handlerCheck());//9
 		}
     handlerCheck(){
-
-      const button = document.querySelector('#btn');
-      button.addEventListener('click',function() {
+			
         const inputs = this.questionsPlase.querySelectorAll('input');//10
 				
 				let wrongCounter = 0;
@@ -124,10 +124,10 @@ class Quiz {//1
           this.checkButton.textContent = "Вы ответли на все вопросы правильно";
           this.checkButton.disabled = true;
         }
-      })
 		}
 	}
-	
+	const quiz = new Quiz(questions);
+document.querySelector('#app').append(quiz.view);
 
 //при создании другой викторины
 //const quiz2 = new  Quiz(questions);

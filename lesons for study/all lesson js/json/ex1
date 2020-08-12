@@ -1,0 +1,22 @@
+<html>
+<body>
+<script>
+'use strict'
+
+var leader = {
+  name: "Василий Иванович",
+  age: 35
+};
+
+var newLeader = JSON.stringify(leader);
+
+alert( newLeader );
+
+var newLeader2 = JSON.parse(newLeader);
+
+// alert( newLeader2.name + ' ' + newLeader2.age );
+alert( newLeader2 );
+
+</script>
+</body>
+</html>

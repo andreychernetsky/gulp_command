@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+  <script>
+    'use strict';
+    var codes = {
+      // телефонные коды в формате "код страны": "название"
+      "+7": "Россия",
+      "+38": "Украина",
+      "+1": "США"
+    };
+
+   for (var code in codes) // {
+//      var value = codes[code];
+
+      alert( code ); // 1, 7, 38
+      //alert( code + ": " + value );
+//    }
+  </script>
+</body>
+
+</html>

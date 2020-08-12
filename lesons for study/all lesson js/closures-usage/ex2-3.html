@@ -1,0 +1,43 @@
+<html>
+<body>
+<script>
+'use strict';
+
+function makeBuffer() {
+  let text = '';
+
+
+
+// возвращаем в функцию
+  function buffer(value) {
+     if (arguments.length == 0) {
+       return text;
+     }
+     text += value;
+  }
+
+  // метод для удаления из задания 3
+    buffer.clear = ()=> {
+      text = '';
+    };
+  return buffer;
+}
+
+let buffer = makeBuffer();
+
+// добавить значения к буферу
+buffer('Замыкания');
+buffer(' Использовать');
+buffer(' Нужно!');
+
+// получить текущее значение
+alert( buffer() ); // Замыкания Использовать Нужно!
+
+////////////// задание 3
+buffer.clear();
+
+alert( buffer() ); // ""
+
+</script>
+</body>
+</html>

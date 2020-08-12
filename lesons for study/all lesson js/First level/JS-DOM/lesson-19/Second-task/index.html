@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>19. Основы работы с DOM</title>
+</head>
+<body>
+  <div class="wrapper">
+    <h2 class="title">События через атрибуты</h2>
+    <!-- 1 -->
+    <!-- =================================================================================== -->
+
+    <ol>
+      <li class="list">Одинарный клик</li>
+      <div class="border-btn">
+        <input class="btn" type="button" value="Нажми на меня!" onclick="clickBtn(this)">
+      </div>
+
+    <!-- 2 -->
+    <!-- =================================================================================== -->
+
+      <li class="list">При наведении</li>
+      <div class="border-btn">
+        <input class="btn" type="button" value="Наведи на меня!" onmouseover="overBtn(this)">
+      </div>
+
+    <!-- 3 -->
+    <!-- =================================================================================== -->
+
+      <li class="list">Двойной клик</li>
+      <div class="border-btn">
+        <input class="btn" type="button" value="Наведи на меня!" ondblclick="dblClickBtn(this)">
+      </div>
+
+    <!-- 4 -->
+    <!-- =================================================================================== -->
+
+      <li class="list">За областью контейнера</li>
+      <div class="container">
+        <div class="container-box" onmouseout="outClickBtn(this)">
+          <p>Наведи на меня мышь - а потом убери!</p>
+        </div>
+        <div class="container-box"></div>
+      </div>
+
+    <h2 class="title">Метод getElementById и работа с атрибутами</h2>
+
+    <!-- 5 -->
+    <!-- =================================================================================== -->
+
+      <li class="list">Алерт значения текста</li>
+      <div class="border-btn">
+        <input type="text" value="Ку-ку" id="text">
+        <input class="btn" type="button" value="Нажми на меня!" onclick="clickBntToText()">
+      </div>
+
+    <!-- 6 -->
+    <!-- =================================================================================== -->
+
+      <li class="list">Замена текста в текстовом поле</li>
+      <div class="border-btn">
+        <input type="text" value="Ку-ку" id="text2">
+        <input class="btn" type="button" value="Нажми на меня!" onclick="clickBntToChange()">
+      </div>
+
+    <!-- 7 -->
+    <!-- =================================================================================== -->
+
+      <li class="list">Замена фотографии</li>
+      <div class="border-btn elements-near">
+        <img class="picture" src="img/1.jpg" alt="Monkey" id="monkey">
+        <input class="btn btn-edit" type="button" value="Нажми на меня!" onclick="clickToChangePhoto()">
+      </div>
+
+    <!-- 8 -->
+    <!-- =================================================================================== -->
+
+        <li class="list">Алекрт из текста</li>
+        <div class="border-btn">
+          <input type="text" value="Нажми на меня!" onclick="clickByText(this)" id="text3">
+        </div>
+
+    <!-- 9 -->
+    <!-- =================================================================================== -->
+        <li class="list">Алекрт из текста</li>
+        <div class="border-btn">
+          <input type="text" value="Нажми на меня!" onclick="clickByText2(this)" id="text4">
+        </div>
+
+    <!-- 10 -->
+    <!-- =================================================================================== -->
+        <li class="list">Алекрт из текста</li>
+        <div class="border-btn">
+          <input class="text-edit" type="text" value="Нажми на меня!" onclick="clickByText3(this)" onblur="blurByText3(this)" id="text5">
+        </div>
+
+    <!-- 11 -->
+    <!-- =================================================================================== -->
+        <li class="list">Замена кнопки</li>
+        <div class="border-btn">
+          <p>Это input type="submit".</p>
+          <input class="btn-edit2" type="submit" value="Нажми на меня!" onclick="clickMyButton(this)" id="myButton">
+        </div>
+
+    <!-- 12 -->
+    <!-- =================================================================================== -->
+        <li class="list">Блокировка кнопки</li>
+        <div class="border-btn">
+          <p>Это input type="submit".</p>
+          <input class="btn-edit2" type="submit" value="Нажми на меня!" onclick="blockMyButton(this)" id="blockButton">
+        </div>
+
+    <!-- 13 -->
+    <!-- =================================================================================== -->
+
+      <li class="list">Замена фотографии по наведению</li>
+      <div class="border-btn">
+        <img class="picture" src="img/1.jpg" alt="Monkey" id="monkey2" onmouseover="overMyImg(this)" onmouseout="outMyImg(this)">
+      </div>
+
+    <!-- =================================================================================== -->
+    <h2 class="title">Работа с CSS</h2>
+    <!-- =================================================================================== -->
+
+    <!-- 14 -->
+    <!-- =================================================================================== -->
+      <li class="list">Повторить по данному образцу</li>
+      <div class="border-btn">
+        <input type="text" value="Ку-ку" id="redText">
+        <input type="submit" value="Нажми на меня!" onclick="clickMyBtn()">
+      </div>
+
+    <!-- 15 -->
+    <!-- =================================================================================== -->
+      <li class="list">Повторить по данному образцу</li>
+      <div class="border-btn">
+        <input type="text" value="Ку-ку" id="closeText">
+        <input type="submit" value="Нажми на меня!" onclick="closeMyBtn()">
+        <input type="submit" value="Нажми потом на меня!" onclick="openMyBtn()">
+      </div>
+
+    <!-- =================================================================================== -->
+    <h2 class="title">Задачи</h2>
+    <!-- =================================================================================== -->
+
+    <!-- 16 -->
+    <!-- =================================================================================== -->
+      <li class="list">Повторить по данному образцу</li>
+      <div class="border-btn">
+        <input class="text-edit2" type="text" value="Ку-ку" id="changeText">
+        <input type="submit" value="Нажми на меня!" onclick="changeMyText()">
+      </div>
+
+    <!-- 17 -->
+    <!-- =================================================================================== -->
+      <li class="list">Повторить по данному образцу</li>
+      <div class="border-btn">
+        <p class="text-p">Это input type="submit"</p>
+        <input class="btn-edit2" style="margin-bottom: 10px" type="submit" value="Нажми на меня!" onclick="changeMyBtn()" id="doubleBtn">
+        <input class="btn-edit2" style="display: none;" type="submit" value="Нажми на меня!" onclick="openedMyBtn()" id="openedBtn">
+      </div>
+
+    <!-- 18 -->
+    <!-- =================================================================================== -->
+      <li class="list">Повторить по данному образцу</li>
+      <div class="border-btn">
+        <p class="text-p">Кнопка считает кол-во нажатий по ней</p>
+        <input class="btn-edit2" type="submit" value="0" onclick="clickToNumber()" id="toNumber">
+      </div>
+
+    <!-- 19 -->
+    <!-- =================================================================================== -->
+      <li class="list">Повторить по данному образцу</li>
+      <div class="border-btn">
+        <input class="text-edit" type="text" value="Ку-ку" id="toLeft">
+        <input class="btn" type="submit" value="Нажми на меня!" onclick="clickButton()">
+      </div>
+
+    <!-- 20 -->
+    <!-- =================================================================================== -->
+      <li class="list">Повторить по данному образцу</li>
+      <div class="border-btn">
+        <input class="eee www ddd" style="width: 300px" type="text" value="Ку-ку" id="writeNew">
+        <input class="btn" type="submit" value="Нажми на меня!" onclick="clickButton2()">
+      </div>
+
+      <h2 class="title">Закрепление пройденного</h2>
+
+    <!-- 21 -->
+    <!-- =================================================================================== -->
+      <li class="list">Повторить по данному образцу</li>
+      <div class="border-btn">
+        <input type="text" value="Привет!" id="hello">
+        <input type="text" value="Пока!" id='buy'>
+        <input type="submit" value="Нажми на меня!" onclick="clickHelloBye()">
+      </div>
+
+    <!-- 22 -->
+    <!-- =================================================================================== -->
+      <li class="list">Повторить по данному образцу<</li>
+      <div class="border-btn">
+        <p style="margin-bottom: 20px;">По нажатию на кнопку в нижнем инпуте появиться квадрать
+          числа из верхнего инпта</p>
+        <input type="text" placeholder="Введите число!" id="numberId">
+        <input type="text" value="Здесь появиться результат" id="amountNumber" disabled>
+        <input type="submit" value="Нажми на меня!" onclick="clicktoButton()">
+      </div>
+
+    <!-- 23 -->
+    <!-- =================================================================================== -->
+      <li class="list">Повторить по данному образцу</li>
+      <div class="border-btn">
+        <p style="margin-bottom: 20px;">По нажатию на кнопку в нижнем инпуте появиться квадрать
+          числа из верхнего инпта. Если введено не число - должна показаться ошибка</p>
+        <input type="text" style="margin-bottom: 20px;" placeholder="Введите число!" id="numberId2"><br>
+        <input type="text" style="margin-bottom: 20px;" value="Здесь появиться результат" id="amountNumber2" disabled><br>
+        <input type="submit" value="Нажми на меня!" onclick="clicktoButton2()">
+      </div>
+
+    <!-- 24 -->
+    <!-- =================================================================================== -->
+      <li class="list">Повторить по данному образцу</li>
+      <div class="border-btn">
+        <p style="margin-bottom: 20px;">Обратите внимание на курсоср в различных состояниях</p>
+        <input type="submit" value="Нажми на меня!" onclick="clicktoBlock()" id="toBlock">
+      </div>
+
+    <!-- 25 -->
+    <!-- =================================================================================== -->
+      <li class="list">Повторить по данному образцу</li>
+      <div class="border-btn" style="display: flex; flex-direction: column">
+        <input type="text" style="margin-bottom: 20px;" value="" id="count">
+        <input class="btn-edit" type="submit" value="Я добавлю +" onclick="clickToAdd('+')">
+        <input class="btn-edit" type="submit" value="Я добавлю -" onclick="clickToAdd('-')">
+        <input class="btn-edit" type="submit" value="Я добавлю /" onclick="clickToAdd('/')">
+        <input class="btn-edit" style="margin-bottom: 30px;" type="submit" value="Я добавлю *" onclick="clickToAdd('*')">
+        <input class="btn-edit" type="submit" value="1" onclick="clickToAdd(1)">
+        <input class="btn-edit" type="submit" value="2" onclick="clickToAdd(2)">
+        <input class="btn-edit" type="submit" value="3" onclick="clickToAdd(3)">
+        <input class="btn-edit" type="submit" value="4" onclick="clickToAdd(4)">
+        <input class="btn-edit" type="submit" value="5" onclick="clickToAdd(5)">
+        <input class="btn-edit" type="submit" value="6" onclick="clickToAdd(6)">
+        <input class="btn-edit" type="submit" value="7" onclick="clickToAdd(7)">
+        <input class="btn-edit" type="submit" value="8" onclick="clickToAdd(8)">
+        <input class="btn-edit" type="submit" value="9" onclick="clickToAdd(9)">
+        <input class="btn-edit" type="submit" value="0" onclick="clickToAdd(0)">
+      </div>
+    </ol>
+  </div>
+  <script src="task.js"></script>
+</body>
+</html>

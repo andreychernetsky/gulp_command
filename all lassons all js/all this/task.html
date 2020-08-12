@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+<body>
+<script>
+  function hello() {
+    console.log('Hello', this);
+  }
+
+  const person = {
+    name:'Andray',
+    age:25,
+    sayhelloWindow:hello.bind(this),
+    logInfo:function() {//this работает в контексте person
+      console.group(`${this.name} info:`)
+      console.log(`name is ${this.name}`);//name is Andray
+      console.log(`age is ${this.age}`);//age is 25
+      console.groupEnd();
+    }
+  }
+
+  // добавим еще объек
+  const lena = {
+    name:'Elena',
+    age:23
+  }
+  person.logInfo.bind(lena)();
+
+  // теперь мы хотим передавать дополнительные параметры
+
+  function hello() {
+    console.log('Hello', this);
+  }
+
+  const person = {
+    name:'Andray',
+    age:25,
+    sayhelloWindow:hello.bind(this),
+    logInfo:function(job,phone) {//this работает в контексте person
+      console.group(`${this.name} info:`);
+      console.log(`name is ${this.name}`);//name is Andray
+      console.log(`age is ${this.age}`);//age is 25
+      console.log(`job is ${job}`);//age is 25
+      console.log(`phone is ${phone}`);//age is 25
+      console.groupEnd();
+    }
+  };
+
+  // добавим еще объек
+
+  const lena = {
+    name:'Elena',
+    age:23
+  };
+  const fnLenaInfoLog = person.logInfo.bind(lena,'frontend','+375')();
+
+  // теперь проработаем через call
+  const fnLenaInfoLog = person.logInfo.call(lena,'frontend','+375');
+  // теперь проработаем через apply
+  const fnLenaInfoLog = person.logInfo.call(lena,['frontend','+375']);
+</script>
+</body>
+</html>

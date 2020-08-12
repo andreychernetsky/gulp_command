@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+				content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+<body>
+<style>
+	@import url('//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css');
+	@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+	
+	
+	html{
+		margin-top: 100px;
+	}
+	body {
+		max-width: 800px;
+		margin: 0 auto;
+		height: auto;
+		color: rgba(117, 117, 117, .9);
+		font-size:100%;
+		font-family:'Open Sans', sans-serif;
+		line-height: 1.7rem;
+	}
+	a {
+		color: darkred;
+	}
+	a:hover {
+		color: rgba(178, 44, 44,.7);
+		text-decoration: none;
+	}
+	.accordion {
+		background-color: #fff;
+		color: #444444;
+		cursor: pointer;
+		padding: 1.3rem;
+		width: 100%;
+		border: none;
+		text-align: center;
+		outline: none;
+		font-size: 1.3rem;
+		transition: 0.4s;
+		border-top:1px solid #f1f1f1;
+		position: relative;
+	}
+	.accordion:hover,
+	.accordion:active {
+	background-color: #f1f1f1;
+		
+	}
+	.accordion:before {
+		content:"\002B";
+		margin-right: 10px;
+		color: #f4511e;
+		font-size: 1.5rem;
+	}
+	.accordion:active:before {
+		conten:"\2212";
+		color: #f4511e;
+	}
+	.accordion__price {
+		right: 35px;
+		top: 30%;
+		position: absolute;
+		font-weight:600;
+		
+	}
+	.accordion__price:hover {
+		color: #f4511e;
+	}
+	.accordion__penel {
+		padding: 30px 20px 40px 20px;
+		background-color: white;
+		border:1px solid #f1f1f1;
+		overflow: hidden;
+		max-height: 0;
+		transition: max-height 0.25s ease-out;
+		
+	}
+	.accordion__inner{
+		padding: 30px 20px 40px 20px;
+		
+	}
+	.panel-button {
+		background: $red;
+		color: #fff;
+		padding: 10px 20px;
+		width: 170px;
+		text-align: center;
+		margin: 20px 10px 0 0;
+		cursor: pointer;
+		font-weight: 600;
+		font-size: 14px;
+		letter-spacing: 1.5px;
+		display: inline-block;
+	}
+	.panel-button:hover {
+		background: #757575;
+		transition: all 0.6s cubic-bezier(.25,.8,.25,1);
+	}
+	
+	
+</style>
+<button class="accordion">
+	<div class="accordion__price">15$</div>
+</button>
+<div class="accordion__penel">
+	<div class="accordion__inner">
+		<p class="accordion__text">
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda deleniti excepturi laboriosam maxime minus
+			officia officiis perferendis quod ratione veritatis.
+		</p>
+		<div class="panel-button">BUY ONLINE</div>
+	</div>
+</div>
+
+<button class="accordion">
+	<div class="accordion__price">15$</div>
+</button>
+<div class="accordion__penel">
+	<div class="accordion__inner">
+		<p class="accordion__text">
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda deleniti excepturi laboriosam maxime minus
+			officia officiis perferendis quod ratione veritatis.
+		</p>
+		<div class="panel-button">BUY ONLINE</div>
+	</div>
+</div>
+
+<button class="accordion">
+	<div class="accordion__price">15$</div>
+</button>
+<div class="accordion__penel">
+	<div class="accordion__inner">
+		<p class="accordion__text">
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda deleniti excepturi laboriosam maxime minus
+			officia officiis perferendis quod ratione veritatis.
+		</p>
+		<div class="panel-button">BUY ONLINE</div>
+	</div>
+</div>
+<script>
+	
+	
+    const acc = document.getElementsByClassName("accordion");
+  let i;
+
+  for (i = 0; i < acc.length; i++) {
+    acc[i].addEventListener("click", function () {
+      this.classList.toggle("active");
+      let panel = this.nextElementSibling;
+      (panel.style.maxHeight) ? panel.style.maxHeight = null : panel.style.maxHeight = panel.scrollHeight + "px";
+    });
+  }
+	
+</script>
+</body>
+</html>

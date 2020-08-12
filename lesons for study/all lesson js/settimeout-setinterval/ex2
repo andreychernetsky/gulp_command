@@ -1,0 +1,21 @@
+<html>
+<body>
+<script>
+'use strict'
+
+function printNumbersInterval() {
+ var i = 1;
+
+  var timerId = setTimeout(function dvadcat() {
+    console.log(i);
+    timerId = setTimeout(dvadcat, 100);
+    i == 20 ? clearTimeout(timerId) : i++;
+
+  }, 100);
+}
+
+ printNumbersInterval();
+
+</script>
+</body>
+</html>

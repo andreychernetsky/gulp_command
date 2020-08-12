@@ -1,0 +1,21 @@
+<html>
+<body>
+<script>
+'use strict'
+
+function getLastDayOfMonth(year, month) {
+  var lastDate = new Date(year, month + 1, 1);
+  lastDate.setDate(lastDate.getDate() - 1);
+
+  var options = {
+        day: 'numeric'
+     };
+
+  return lastDate.toLocaleString("ru", options);;
+}
+
+alert( getLastDayOfMonth(2012, 1) ); //29
+
+</script>
+</body>
+</html>

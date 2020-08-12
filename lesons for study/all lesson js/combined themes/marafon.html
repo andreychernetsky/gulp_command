@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+<body>
+<script>
+
+  /*Найдите победителя марафона.
+	Группа людей участвует в марафоне, их имена и время за которое они пробежали марафон вы можете увидеть ниже.
+	Ваша задача найти человека, который быстрее всех пробежал дистанцию и вывести его имя и счет.
+	(Опционально) Найдите человека, который прибежал вторым.
+	*/
+
+
+  function marafon(names,times) {
+    let timeWinner;
+    let nameWinner;
+
+    let secondTimeWinner;
+    let secondNameWinner;
+
+    for(let i = 0,len =times.length; i < len; i++) {
+      if(i === 0 || timeWinner < times[i]) {
+        timeWinner = times[i];
+        nameWinner = names[i];
+      }
+    }
+    for(let j = 0,len = times.length; j < len; j++) {
+      if(j === 0 || (secondTimeWinner < times[j] && timeWinner !== times[j] )){
+        secondTimeWinner = times[j];
+        secondNameWinner = names[j];
+      }
+    }
+
+    return timeWinner + ":" + nameWinner + '\n' +  secondTimeWinner  + ":" + secondNameWinner;
+  }
+  const names = [ "Elena", "Thomas", "Hamilton" ];
+  const times = [ 341, 273, 278 ];
+  console.log(marafon(times,names));
+  
+  -----------------------------------------------------------
+  const time = [12, 12, 15];
+  const names = ["elena", "petia", "vasia"];
+
+  function marafon(time, name) {
+    let timeWinner;
+    let nameWinner;
+    for (let i = 0, len = time.length; i < len; i++) {
+      if (i === 0 || timeWinner > time[i]) {
+        timeWinner = time[i];
+        nameWinner = name[i];
+      }
+    }
+    return [
+      {[nameWinner]: timeWinner}
+    ]
+  }
+
+  console.log(marafon(time, name));
+
+
+  //---------------------------------------------------------------------------
+	const time = [12,10,15];
+	const names = ["elena","petia","vasia"];
+	
+	function marafon (name,time) {
+	const arrWinner  = time.map((elem.index) => ({[elem]:name[index]}));
+	
+	const biggerKey = (a,b) => Object.keys(a)-Object.keys(b);
+	const sortWiner = arrWiner.sort(biggerKey);
+	
+	return [sortWiner[0],sortWiner[1],sortWiner[2]];
+	}
+	console.log(marafon(name,time));
+
+
+//  1)выведем индикс значений времени
+	const time = [12,10,15];
+	const names = ["elena","petia","vasia"];
+	
+	function marafon (name,time) {
+	return time.map((elem,index) => index)
+	}
+	console.log(marafon(time,names));
+
+  // 2) создадим ключ значение ключом буде время : значением будет имя
+	
+  const time = [12,10,15];
+	const names = ["elena","petia","vasia"];
+	
+	function marafon (name,time) {
+	return time.map((elem,index) => ({[index]:name[index]}));
+	}
+	console.log(marafon(time,names));
+
+  // 3)теперь нужно отсортировать по возрастнию
+	
+  const time = [12,10,15];
+	const names = ["elena","petia","vasia"];
+	
+	function marafon (name,time) {
+	const arrWinner = time.map((elem,index) => ({[index]:name[index]}));
+	
+	const biggerKey = (a,b) => Object.keys(a) - Object.keys(b);
+	const sortWinner = arrWinner.sort(biggerKey);
+	
+	return[sortWinner[0],sortWinner[1],sortWinner[2]];
+	}
+	console.log(marafon(time,names));
+	
+	/*что такое sort ?
+	Метод sort() на месте сортирует элементы массива и возвращает отсортированный массив. Сортировка не обязательно устойчива (англ.). Порядок cортировки по умолчанию соответствует порядку кодовых точек Unicode.
+	
+	что такое map ?
+	Метод map() создаёт новый массив с результатом вызова указанной функции для каждого элемента массива.
+	
+	что такое Object.key() ?
+  Метод Object.keys() возвращает массив из собственных перечисляемых свойств переданного объекта, в том же порядке, в котором они бы обходились циклом for...in (разница между циклом и методом в том, что цикл перечисляет свойства и из цепочки прототипов).
+*/
+</script>
+</body>
+</html>

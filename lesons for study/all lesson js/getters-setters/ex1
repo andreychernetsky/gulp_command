@@ -1,0 +1,28 @@
+<html>
+<script>
+  'use strict'
+
+  function User() {
+    var firstName, surname;
+
+    this.setFirstName = function(first) {
+      firstName = first;
+    };
+
+    this.setSurname = function(sur) {
+      surname = sur;
+    };
+
+    this.getFullName = function() {
+      return firstName + ' ' + surname;
+    }
+  }
+
+  var user = new User();
+  user.setFirstName("Петя");
+  user.setSurname("Иванов");
+
+  alert( user.getFullName() ); // Петя Иванов
+
+</script>
+</html>

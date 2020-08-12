@@ -7,6 +7,503 @@
 	<title>Document</title>
 </head>
 <body>
+<p id="text"></p>
+<button id="btn">click me</button>
+<button onclick="countRabbits()">click</button>
+<input type="button" id="btn" value="считать кроликов">
+<script>
+  
+  //	Дана строка. Выведи ее три раза через запятую,но последнюю запятую  не ставить.
+  //const str = "Дана строка. Выведи ее три раза через запятую,но последнюю запятую  не ставить.";
+  //let str2 = "";
+  //
+  //	for(let i = 0; i < 3; i++) {
+  ////     str2 += str + ",";
+  //		str2 = str2.concat(str + "," );
+  //		if(i==2) {
+  //		  str2 += str;
+  //		}
+  //	}
+  //
+  //	console.log(str2);
+  //const str = "Дана строка. Выведи ее три раза через запятую,но последнюю запятую  не ставить.";
+  //let str2 = "";
+  //
+  //for(let i = 0; i < 3; i++) {
+  ////     str2 += str + ",";
+  //  str2 = str2.concat(str + "," );
+  //
+  //}
+  //
+  //console.log(str2.slice(0,-1));
+  //const str = "Дана строка. Выведи ее три раза через запятую,но последнюю запятую  не ставить.";
+  //let str2 = "";
+  //
+  //for(let i = 0; i < 3; i++) {
+  //   str2 += (i === 2) ? str : str +',';
+  ////  str2 = str2.concat(str + "," );
+  //
+  //}
+  //
+  //console.log(str2);
+  //let click = document.getElementById('btn').addEventListener('click',getStr);
+  //const str = "Дана строка.";
+  //let count= 3
+  //function getStr() {
+  //  let str2 = "";
+  //  let same = count-1;
+  //
+  //for(let i = 0; i < count; i++) {
+  //   str2 += (i === same) ? str : str +',';
+  ////  str2 = str2.concat(str + "," );
+  //
+  //}
+  //	document.getElementById('text').innerHTML = str2;
+  //}
 
+  /*
+	 let click = document.getElementById('btn');
+ //  click.addEventListener('click', function(){getStr('proba',3)});
+	 click.addEventListener('click', ()=> getStr('proba',3));
+		
+	 function getStr(str,count){
+		 let str2 = "";
+		 let same = count - 1;
+		 for (let i = 0; i < count; i++) {
+			 str2 += (i === same) ? str : str + ',';
+ //  str2 = str2.concat(str + "," );
+		 }
+		 document.getElementById('text').innerHTML = str2;
+	 };*/
+
+  /*Найдите победителя марафона.
+    Группа людей участвует в марафоне, их имена и время за которое они пробежали марафон вы можете увидеть ниже.
+    Ваша задача найти человека, который быстрее всех пробежал дистанцию и вывести его имя и счет.
+  (Опционально) Найдите человека, который прибежал вторым.
+*/
+
+
+  /*
+		function marafon(names,times) {
+		let timeWinner;
+		let nameWinner;
+		
+		let secondTimeWinner;
+		let secondNameWinner;
+		
+		for(let i = 0,len =times.length; i < len; i++) {
+			if(i === 0 || timeWinner < times[i]) {
+				timeWinner = times[i];
+				nameWinner = names[i];
+			}
+		}
+		for(let j = 0,len = times.length; j < len; j++) {
+			if(j === 0 || (secondTimeWinner < times[j] && timeWinner !== times[j] )){
+				secondTimeWinner = times[j];
+				secondNameWinner = names[j];
+			}
+		}
+		
+		return timeWinner + ":" + nameWinner + '\n' +  secondTimeWinner  + ":" + secondNameWinner;
+	}
+		const names = [ "Elena", "Thomas", "Hamilton" ];
+		const times = [ 341, 273, 278 ];
+	console.log(marafon(times,names));
+	*/
+
+
+  /*const time = [12, 12, 15];
+		const names = ["elena", "petia", "vasia"];
+		
+		function marafon (time,name){
+			let timeWinner;
+			let nameWinner;
+	
+			for(let i = 0,len = time.length; i < len; i++) {
+				if( i === 0 || timeWinner > time[i]) {
+					timeWinner = time[i];
+					nameWinner = name[i];
+				}
+			}
+		return [
+			{[nameWinner] : timeWinner}
+		]
+		}
+		console.log(marafon(time,name));*/
+
+
+  //---------------------------------------------------------------------------
+
+  /*
+	const time = [12,10,15];
+	const names = ["elena","petia","vasia"];
+	
+	function marafon (name,time) {
+		const arrWinner  = time.map((elem.index) => ({[elem]:name[index]}));
+	
+		const biggerKey = (a,b) => Object.keys(a)-Object.keys(b);
+		const sortWiner = arrWiner.sort(biggerKey);
+	
+		return [sortWiner[0],sortWiner[1],sortWiner[2]];
+	}
+	console.log(marafon(name,time));*/
+
+
+  /*1)выведем индикс значений времени
+	const time = [12,10,15];
+	const names = ["elena","petia","vasia"];
+	
+	function marafon (name,time) {
+		return time.map((elem,index) => index)
+		 }
+		 console.log(marafon(time,names));*/
+
+  // 2) создадим ключ значение ключом буде время : значением будет имя
+
+  /*const time = [12,10,15];
+	const names = ["elena","petia","vasia"];
+	
+	function marafon (name,time) {
+		return time.map((elem,index) => ({[index]:name[index]}));
+	}
+	console.log(marafon(time,names));*/
+
+  // 3)теперь нужно отсортировать по возрастнию
+
+
+  /*const time = [12,10,15];
+  const names = ["elena","petia","vasia"];
+
+  function marafon (name,time) {
+    const arrWinner = time.map((elem,index) => ({[index]:name[index]}));
+
+    const biggerKey = (a,b) => Object.keys(a) - Object.keys(b);
+    const sortWinner = arrWinner.sort(biggerKey);
+
+    return[sortWinner[0],sortWinner[1],sortWinner[2]];
+  }
+  console.log(marafon(time,names));
+
+  что такое sort ?
+    что такое map ?
+    что такое Object.key() ?*/
+
+  //  тема объекты
+  /*const newObj = {};
+  const newObj = new Obj();
+  const newObj = new Array();*/
+
+
+  /*const newObj = {};
+ let count = name;
+ /!* newObj.model = "Mustang";
+  newObj['year'] = 1969;
+  newObj.make = "Ford";*!/
+   newObj['year create'] = 1960;//{year create: 1960}
+   newObj[count] = 'My name'; //{"": "My name"}
+  console.log(newObj); //{model: "Mustang", year: 1969}
+	
+	const newObj2 = {};
+	newObj2.model = "Mustang";
+	
+	console.log(newObj2.hasOwnProperty('model'));//true
+	console.log(newObj2.hasOwnProperty('make'));//false
+	
+//	пример
+	const salary = {
+	  name:'kolia',
+		salary:400
+	};
+	
+	const salary2 = {
+	  name:'petia',
+		salary:1000
+	};
+	console.log(salary2.salary);//1000
+	
+//	теперь перезапишим объект
+	
+	salary2.salary = 500;
+	console.log(salary2.salary); //перезапишет 500
+
+//	попробуем отнять от 1000 300
+
+  salary2.salary = salary2.salary -= 300;
+  console.log(salary2.salary);//700
+	
+	//удалим name2
+	/!*delete salary2.salary;
+	console.log(salary2);//{name: "petia"}*!/
+	
+//	вывести длину salary
+  console.log(salary.length);//undefined
+	console.log(Object.keys(salary));//["name", "salary"]
+	console.log(Object.keys(salary).length);//2
+	
+//	теперь внутри объекта создадим еще объект
+  const salary3 = {
+    name:'petia',
+    salary:1000,
+		salary2:{
+      firstName:'Sveta',
+			lastName:'ivanova'
+		}
+  }
+  console.log(salary3.salary2.firstName);//Sveta
+	console.log(salary3['salary2']['firstName']);*/
+
+  //	вторая часть урока
+
+  /*
+	let name55 = 'Вася';
+	let isAdmin = true;
+	let isArr = [3,4,2,5];
+	const user55 = {
+		name55,
+		isAdmin,
+		isArr
+	}
+	console.log(user55);//{name55:'Вася',isAdmin: true,isArr :[3,4,2,5]};
+	console.log(user55['isArr']);//[3,4,2,5];
+	*/
+
+  /*
+	let propName = "firstName";
+	const user55 = {
+		[propName]:"John Dou"
+	}
+	console.log(user55);//{firstName:John Dou}*/
+  /*
+		let a = "Мой ";
+		let b = "Зеленый ";
+		let c = "Крокодил";
+		const user55 = {
+			[(a + b + c).toLowerCase()]:"Гена"
+		}
+		console.log(user55);//{'мой зеленый крокодил': 'Гена'}
+	
+		// создадим три объекта и попробуем соединить в один
+	
+		let user96 = {name:'Вася'};
+		let visitor = {isAdmin : false, visits:true};
+		let admin = {isAdmin  : true};
+		// через Object.assign()копирует значения (всех перечисляемых собственных свойств) из одного или нескольких исходных объектов в целевой объект. Он имеет подпись Object.assign(target, ...sources). Целевой объект является первым параметром и также используется в качестве возвращаемого значения. Object.assign()полезно для объединения объектов или мелкого клонирования.
+		Object.assign(user96,visitor,admin);
+		console.log(user96);//{{name:'Вася',{isAdmin : false, visits:true}}}
+	
+		const clone2 = {...user96,...visitor,...admin};
+		console.log(clone2);
+	
+		// ссылка на стаью о spred https://habr.com/ru/post/348718/
+		// ссылка на статью о деструктуризации https://habr.com/ru/post/341500/
+	
+		// ДОполнительный пример для самостоятельного разбора с описанием как это будет работать
+		// Фрагмент JavaScript
+		'use strict';
+	
+		// Merge an object
+		let first = {name: 'Tony'};
+		let last = {lastName: 'Stark'};
+		let person = Object.assign(first, last);
+		ChromeSamples.log(person);
+		// {name: 'Tony', lastName: 'Stark'}
+		ChromeSamples.log(first);
+		// first = {name: 'Tony', lastName: 'Stark'} as the target also changed
+	
+		// Merge multiple sources
+		let a = Object.assign({foo: 0}, {bar: 1}, {baz: 2});
+		ChromeSamples.log(a);
+		// {foo: 0, bar: 1, baz: 2}
+	
+		// Merge and overwrite equal keys
+		let b = Object.assign({foo: 0}, {foo: 1}, {foo: 2});
+		ChromeSamples.log(b);
+		// {foo: 2}
+	
+		// Clone an object
+		let obj = {person: 'Thor Odinson'};
+		let clone = Object.assign({}, obj);
+		ChromeSamples.log(clone);
+		// {person: 'Thor Odinson'}
+	
+		let user94 = {
+			name:'petia',
+			sayHello:function() {
+				console.log('hello ' + user94.name);//hello petia
+				console.log('hello ' + this.name)//hello petia
+				//this указывает на объект user94
+				console.log(this);//{выдаст содержимое объекта}
+				//this всегда указывает на объект до точки
+	
+			}
+		};
+		user94.sayHello();
+	
+		// деструктуризация объектов
+		const zell = {
+			firstName:'zell',
+			lastName:'liew'
+		};
+	
+		let firstName = zell.firstName;//zell
+		let lastName = zell.lastName;//liew
+	
+		let{ name:courseName } = course;
+		console.log(courseName);
+	
+		let courseName = course.name;
+	
+	
+	
+		// а теперь через дестриктуризацию
+	
+		let {firstName, lastName} = zell;
+		console.log(firstName);//zell
+		console.log(lastName);//liew
+	
+		// Поясним, что происходит под «капотом»:
+	
+	
+		// То, что вы пишите:
+		let { firstName, lastName } = Zell;
+	
+		// То, что ES6 выполняет:
+		let firstName = Zell.firstName;
+		let lastName = Zell.lastName;
+		
+		
+	//  задачи для закрепления
+		function app(flat) {
+			let text;
+			if(flat >=1 && flat <=11) {
+				text = 'first';
+			}
+			if(flat >= 12 && flat <=23) {
+				text = 'second';
+			}
+	
+			return text;
+		}
+		let apartment = 12;
+		console.log(app(apartment));
+		
+		*/
+
+  /*const newObj = {
+		name:'andrey',
+		 have:'1000',
+		 year:1988,
+			 human: {
+				name:'vasia',
+				 lastName:'petrov'
+			 }
+	};
+	console.log(newObj.human.name);
+	console.log(newObj['human']['name']);
+	console.log(newObj.name);
+	console.log(newObj.name);
+	console.log(newObj['name']);
+	console.log(newObj);
+	
+	const newObj2 =  {};
+	newObj2.name = 'andrey';
+	newObj2.model = 'bmw';
+	newObj2['year create'] = 2005;
+	
+	console.log(newObj2);
+	console.log(newObj2['year create']);
+	
+	// example
+	const salary = {
+		
+			vasia:{
+				salary:700
+			},
+			petia : {
+				salary:900
+			},
+			ura :{
+				salary:1000
+			}
+	}
+	console.log(salary);
+	console.log(salary.petia);
+	console.log(Object.keys(salary)[0]);*/
+  // const salary2 = {
+  //   colia:700,
+  //   petia:600,
+  //   marina:900
+  // }
+  // console.log(salary2);
+  // console.log(salary.petia);
+  //
+  //
+  // function salary(obj) {
+  //   let salary = 1000;
+  //   obj.forEach((elem ) =>{
+  //     if(elem.salary < salary) {
+  //       salary = elem.salary;
+  //     }
+  //   })
+  //
+  //
+  // }
+  // console.log(salary(salary2));
+  // const salary2 = {
+  //   colia:700,
+  //   petia:600,
+  //   marina:900
+  // };
+  //
+  //
+  // item - очередной элемент массива
+  // index -его номер по индексу
+  //  const arr = [1, 2, 3];
+  // // // arr -массив который переберается
+  //  let result = 0;
+  //
+  // arr.forEach(function(item,index,arr2){
+  //   result += item);
+  // }
+  // console.log(result);
+  // const arr = [1,2,3];
+  // let result = 0;
+
+  // for(let i = 0; i < arr.length; i ++) {
+  //   result += arr[i];
+  // }
+  // console.log(result);
+  // const arr = [1, 2, 3];
+  // // arr -массив который переберается
+  // let result = 0;
+  // arr.map( (item) => result += item);
+  // console.log(result);
+
+  // let result = 0;
+  // let each = function (arr,callback,arg) {
+  //
+  //   for (let i = 0; i < arr.length; i++) {
+  //     //callback.call(arg,arr[i),i,arr
+  //     result += arr[i];
+  //     callback(arr[i], i, arr)
+  //   }
+  // };
+  // each([1, 2, 3], function (num,i,nums){
+  //
+  // });
+  // console.log(result);
+
+  /* const arr = [1, 2, 3];
+	 let result = 0;
+ 
+	 arr.forEach(item) => result += item;
+	 document.write(result);
+ */
+
+
+
+
+
+</script>
 </body>
 </html>

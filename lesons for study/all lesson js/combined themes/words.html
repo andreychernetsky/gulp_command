@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+<body>
+<script>
+  const words = [
+    "программа",
+    "макака",
+    "прекрасный",
+    "оладушек"
+  ];
+  let word = words[Math.floor(Math.random() * words.length)];
+  let answerArray = [];//массив с ответом
+  for (let i = 0; i < word.length; i++) {
+    answerArray[i] = "_";
+  }
+  let remainingLetters = word.length;
+  while (remainingLetters > 0) {
+    alert(answerArray.join(" "));
+    let guess = prompt("угадай букву или нажми Отмена")
+    if (guess === null) {//если нажата отмена
+      break;//выйдем из цикла
+    } else if (guess.length !== 1) {//ввел одну букву
+      alert("введи только одну букву");
+    } else {//обновляем состояние игры
+      for(let j = 0; j < word.length; j++) {
+        if(word[j] === guess) {//равен ли текущий символ тому,который мы ввели
+          answerArray[j] = guess;//записать ответ под нужным индексом
+          remainingLetters--;//уменьшить количество оставшихся букв
+        }
+      }
+    }
+  }
+  alert(answerArray.join(" "));
+  alert("Отлично: Было загадано слово" + word);
+</script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<html>
+<script>
+"use strict";
+
+function Article() {
+  Article.count++;
+}
+
+Article.showStats = function() {
+  alert( 'Всего: ' + this.count + ', Последняя дата: ' + new Date());
+}
+
+Article.count = 0;
+
+new Article();
+new Article();
+
+Article.showStats(); // Всего: 2, Последняя: (дата)
+
+new Article();
+
+Article.showStats(); // Всего: 3, Последняя: (дата)
+
+</script>
+</html>

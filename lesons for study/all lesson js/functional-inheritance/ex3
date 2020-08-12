@@ -1,0 +1,61 @@
+<html>
+<script>
+  'use strict';
+
+  function Machine(power) {
+    this._power = power;
+    this._enabled = false;
+
+    var self = this;
+
+    this.enable = function() {
+      // используем внешнюю переменную вместо this
+      self._enabled = true;
+    };
+
+    this.disable = function() {
+      self._enabled = false;
+    };
+
+  }
+
+  function Fridge(power) {
+    Machine.apply(this, arguments);
+
+    var food = [];
+
+    this.addFood = function(item) {
+      // проверка перед добавлением еды, а включен ли холодильник?
+      if (!this._enabled) {
+        throw new Error("Холодильник выключен");
+      }
+      // достаточно ли места в холодильнике для еду:
+      // food.length - количество еды в холодильнике
+      // arguments.length - количество добавляемой еды
+      if (food.length + arguments.length >= (this._power / 100)) {
+        throw new Error("Холодильник переполнен, новую еду добавить нельзя");
+      }
+
+      for (var i = 0; i < arguments.length; i++) {
+      food.push(arguments[i]);
+    }
+    };
+
+    this.getFood = function(item) {
+      return food.slice();
+    };
+  }
+
+
+  //var fridge = new Fridge(200);
+  //fridge.addFood("котлета"); // ошибка, холодильник выключен
+
+  // создать холодильник мощностью 500 (не более 5 еды)
+  var fridge = new Fridge(500);
+  fridge.enable();
+  fridge.addFood("котлета");
+  fridge.addFood("сок", "зелень");
+  fridge.addFood("варенье", "пирог", "торт"); // ошибка, слишком много еды
+
+</script>
+</html>

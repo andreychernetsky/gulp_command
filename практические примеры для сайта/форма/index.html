@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+<body>
+<style>
+	td select,
+	td input {
+		width: 150px;
+	}
+	
+	label {
+		display: block;
+	}
+	
+	.error input,
+	.error textarea {
+		border: 1px solid red;
+	}
+	
+	.error {
+		color: red;
+	}
+</style>
+
+<form action="">
+	<table>
+		<tr>
+			<td> от кого</td>
+			<td>
+				<input name="from" type="text">
+			</td>
+		
+		</tr>
+		
+		<tr>
+			<td>ваш пароль</td>
+			<td>
+				<input name="password" type="password">
+			</td>
+		</tr>
+		
+		<tr>
+			<td>повторить пароль</td>
+			<td>
+				<input name="password2" type="password">
+			</td>
+		</tr>
+		<tr>
+			<td>куда</td>
+			<td>
+				<select name="to" id="">
+					<option value="">Гармония</option>
+					<option value="1">Импровизация</option>
+					<option value="2">Теория</option>
+					<option value="3">Солфеджио</option>
+					<option value="3">Обучение игре на гитаре</option>
+				</select>
+			</td>
+		</tr>
+	</table>
+	
+	сообщение
+	<label for="">
+			<textarea name="message" style="display:block;width:400px;height: 80px ">
+			
+			</textarea>
+	</label>
+	
+	<input type="button" onclick="validate(this.form)" value="проверить">
+</form>
+<script>
+  // 1)получаем форму function validate (form) {}
+  // 2)получаем элементы  с формы let elems = form.elements;
+  // 		3)теперь, нужно написать условие на проверку
+  // 4)пишем функцию для вывода ошибок определенного инпута function showError(container,errorMessage()
+  // 5)теперь  нужно в условии дописать то, что будет выводить ошибку рядом с инпутом showError(elems.form.parentNode);
+  // 6)пишем container.className = "error" после чего наш игпут будет красным если там ошибка
+  // 7)создадим элемент span const msgElem = document.create.Element('span');
+  // 8)расположим span в определенном месте рядом с input container.appendChild(msgElem);
+  // 9)теперь нужно чтобы этот span выводил сообщение msgElem.innerHTML = errorMessage;
+  // 10) добавим отдельный класс чтобы не произошло переопределение стилей в дальнейшем msgElem.className = "error-message";
+  // 11) теперь напишем условие для всех других инпутов
+  // if(!elems.to.value){
+  // 				showError(elems.form.parentNode,"Укажите куда");
+  // 			}
+  // 			if(!elems.message.value){
+  // 				showError(elems.form.parentNode,"Отсуствует текс");
+  // 			}
+  // 12)теперь нужно сравнить пароль с повторным паролем и если они не совпадают вывести фразу несоответствия else if (elems.password.value !=== elems.password2.value);
+  // 			showError(elems.password.parentNode,"Пароли не совпадают");
+  // 13)теперь нужно очистить т.е удалить наши span с ошибками для этого в каждом inpute прописываем resetError(elems.password.parentNode); а в функции пишем следующее function resetError(container) {
+  // 			container.className = "";
+  // 		}
+  // 14)if(container.lastChild.className === "error-message") проверяем класс ошибки в нашем container
+  // 15)container.removeChild(container.lastChild) удаляем последний элемент
+  // 16) теперь нам нужно сделать переменную которая будет отслеживать если у нас ошибке в форме или нет, даже если мы будем вводить не по порядку let isError = false;
+  // итого
+  // 1)сначала выбираем все элементы с формы
+  // 2)затем проверяем ввели ли какое то значение  или нет
+  // 3) если не ввели то получаем родителя
+  // 4)получаем td  и в вешаем на нее ошибку  error также внутри прописываем const msgElem = document.create.Element('span');
+  // 5) на span мы также вешаем класс ошибок msgElem.className = "error-message";
+  // 6)через span  мы выводим сообщение об ошибке msgElem.innerHTML = errorMessage;
+  // и затем мы этот span помещаем в td container.appendChild(msgElem);
+  // 7)создаем сброс ошибок function resetError(container) {
+  // 			container.className = "";
+  // 		}
+  // 		когда красный цет при ошибке исчезает при правильном значении
+  //parentNode Возвращает родителя определенного элемента DOM дерева
+  /*let isError = {//1 все ошибки формы(отсуствуют)
+		from :true,
+		password:true,
+		to:true,
+		message:true
+	};
+	
+	function validate(form) {
+//	  console.log(form);
+		let elems = form.elements;//2 выбираем все элементы в форме
+//    console.log(elems);
+
+		resetError('form',elems.from.parentNode);// 5 сбросить ошибки на странице формы обращаемся к родителю input
+		if(!elems.from.value){//3 проверяем заполнена ли форма
+			showError('from', elems.from.parentNode, "укажите от кого сообщение");//выдать ошибку если форма не заполнена
+		}
+
+		resetError('password',elems.password.parentNode);
+		if(!elems.password.value){
+			showError('password', elems.password.parentNode, "укажите пароль");
+		} else if (elems.password.value !== elems.password2.value){//проверяем повторность пароля
+			showError(elems.password.parentNode, "пароли не совпадают");
+		
+		}
+
+		resetError('to',elems.to.parentNode);
+		if(!elems.to.value){
+			showError('to', elems.to.parentNode, "укажите куда");
+		}
+
+		resetError('message', elems.message.parentNode);
+		if(!elems.message.value){
+			showError('message', elems.message.parentNode, "отсутствует текст");
+		}
+		if(isError.form && isError.password && isError.to && isError.message) {//6 если нет никаких ошибок в форме
+			return sendForm();//7 отправить форму
+		}
+		
+		return null;
+	}
+	
+	function showError(name, container,errorMessage) {
+		isError[name] = false;
+		
+//	console.log(container);//выбирает родителя
+		container.className = "error";//
+		
+		const msgElem = document.createElement('span');
+		msgElem.className = "error-message";//добавляем span свой класс
+		msgElem.innerHTML = errorMessage;// передаем сообщение об ошибке
+		container.appendChild(msgElem);//создали span
+		
+	}
+	
+	function resetError(name, container) {
+	 isError[name] = true;
+//	  console.log('reset', isError);
+	
+	
+	container.className = "";//удаляет содержимое и не надо делать перезагрузку
+		if(container.lastChild.className === "error-message") {
+			container.removeChild(container.lastChild);//удаляем последний элемент span
+		}
+	}
+	
+	function sendForm() {
+		console.log('ok');
+	}
+	*/
+
+  //	variant2
+  //сделаем независимыми сообщения из формы
+  //	напишем регулярное выражение для того чтобы в форме вводились только нужные обозначения
+	
+  let isError = {//1 все ошибки формы(отсуствуют)
+    from: true,
+    password: true,
+    to: true,
+    message: true
+  };
+
+  function validate(form) {
+    const template = {
+      patternName: new RegExp(/^[а-яёА-ЯЁa-zA-Z\s]+$/),
+      patternMail: new RegExp(/^[A-Za -a0-9](([\.\-]?[a-zA-Z0-9]+)*)@([A-Za-a0-9]+)(([\.\-]?[a-zA-Z0-9]+)*)\.([A-Za-z])+$/),
+      patternSpam: new RegExp(/[^\<\>[\]%\&'`]+$/),
+      errorMess: {
+        from: "Укажите от кого сообщение",
+        password: "укажите пароль",
+        passwordDuble: "пароли не совпадают",
+        to: "укажите куда",
+        message: "отсутствует текст",
+        correct: "Введите корректные данные"
+      }
+    };
+//	  console.log(form);
+    let elems = form.elements;//2 выбираем все элементы в форме
+//    console.log(elems);
+    resetError('from', elems.from.parentNode);// 5 сбросить ошибки на странице формы обращаемся к родителю input
+    if (!elems.from.value) {//3 проверяем заполнена ли форма
+      showError('from', elems.from.parentNode, template.errorMess.correct);//выдать ошибку если форма не заполнена. если тест не пройден выдаст онибку
+    } else if (!template.patternName.test(elems.from.value)) {//проверяем инпуты на корректность введенных данных
+      showError('from', elems.from.parentNode, template.errorMess.correct);
+    }
+    resetError('password', elems.password.parentNode);
+    if (!elems.password.value) {
+      showError('password', elems.password.parentNode, template.errorMess.password);
+    } else if (!template.patternSpam.test(elems.password.value)) {
+      showError('password', elems.password.parentNode, template.errorMess.correct);
+    }
+    else if (elems.password.value !== elems.password2.value) {//проверяем повторность пароля
+      showError(elems.password.parentNode, template.errorMess.passwordDuble);
+    }
+    resetError('to', elems.to.parentNode);
+    if (!elems.to.value) {
+      showError('to', elems.to.parentNode, template.errorMess.to);
+      resetError('message', elems.message.parentNode);
+      if (!elems.message.value) {
+        showError('message', elems.message.parentNode, template.errorMess.message);
+      } else if (!template.patternSpam.test(elems.message.value)) {
+        showError('message', elems.message.parentNode, template.errorMess.correct);
+      }
+      let {from, password, to, message} = isError;//декструктуризация
+//		равносильно let  form = isError.form;
+//                let  password = isError.password;
+      if (from && password && to && message) {
+        return sendForm();//7 отправить форму
+      }
+      return null;
+    }
+
+    function showError(name, container, errorMessage) {
+      isError[name] = false;
+//	console.log(container);//выбирает родителя
+      container.className = "error";//
+      const msgElem = document.createElement('span');
+      msgElem.className = "error-message";//добавляем span свой класс
+      msgElem.innerHTML = errorMessage;// передаем сообщение об ошибке
+      container.appendChild(msgElem);//создали span
+    }
+
+    function resetError(name, container) {
+      isError[name] = true;
+//	  console.log('reset', isError);
+      container.className = "";//удаляет содержимое и не надо делать перезагрузку
+      if (container.lastChild.className === "error-message") {
+        container.removeChild(container.lastChild);//удаляем последний элемент span
+      }
+    }
+
+    function sendForm() {
+      console.log('ok');
+    }
+  }
+
+</script>
+
+</body>
+</html>

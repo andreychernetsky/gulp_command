@@ -16,7 +16,7 @@
 
   console.log(person1.city);//Roma
 	
-	example
+//	example
   // Пусть объект count формируется автоматически таким образом: если такого элемента
   // в count нет, то ему следует присвоить значение 1, а если есть - просто увеличить
   // значение на единицу:
@@ -114,6 +114,56 @@
     console.log(Object.keys(obj));//['вася','петя','ира']
   }
   console.log(Object.keys(obj[key]));//выводит самое длинное число['0','1','2','3']
+	
+//	example
+  'use strict';
+  function aclean(arr) {
+    // этот объект будем использовать для уникальности
+    const obj = {};
+
+    for (let i = 0; i < arr.length; i++) {
+      // разбить строку на буквы, отсортировать и слить обратно
+      let sorted = arr[i].toLowerCase().split('').sort().join(''); // (*)
+      //  console.log(sorted);
+      obj[sorted] = arr[i]; // сохраняет только одно значение с таким ключом
+
+    }
+
+    const result = [];
+
+    // теперь в obj находится для каждого ключа ровно одно значение
+    for (let key in obj) result.push(obj[key]);
+
+    return result;
+  }
+
+  const arr = ["воз", "киборг", "корсет", "ЗОВ", "гробик", "костер", "сектор"];
+
+  console.log(aclean(arr));
+
+
+//example
+  'use strict';
+  const vasya = { name: "Вася", age: 23 };
+  const masha = { name: "Маша", age: 18 };
+  const vovochka = { name: "Вовочка", age: 6 };
+
+  const people = [ vasya , masha , vovochka ];
+
+  function compareNumeric(a, b) {
+    return a.age - b.age; //указываем при сортировке массива конкретный элимент объекта .age
+  };
+
+  people.sort(compareNumeric);
+
+  // теперь people: [vovochka, masha, vasya]
+
+  for (let i = 0; i < people.length; i++) {
+    console.log(people[i].age);
+  };
+
+
+
 </script>
 </body>
 </html>

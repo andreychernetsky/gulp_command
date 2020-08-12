@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Lesson-28. Practic</title>
+</head>
+<body>
+  <h1>Урок 28. Продвинутая рабоат с обхектом Event</h1>
+
+  <h2>Всплытие событий</h2>
+  <!-- ===================================================================== -->
+  <p>1. Сделать 3 блока и к каждому из них прязвать событие цвета на onclick</p>
+
+  <div class="green" onclick="alert('зеленый')">
+    <div class="blue" onclick="alert('голубой')">
+      <div class="red" onclick="alert('красный')"></div>
+    </div>
+  </div>
+
+  <style>
+    .red {
+      width: 50px;
+      height: 50px;
+      background: #f99;
+      display: block;
+    }
+
+    .blue {
+      width: 100px;
+      height: 100px;
+      background: #99f;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .green {
+      width: 150px;
+      height: 150px;
+      background: #9f9;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  </style>
+
+
+  <h2>event.target</h2>
+  <!-- ===================================================================== -->
+  <p>1. У нас есть div, внитри него лежит p, а внутри него - span.
+  Привящем onclick к самому верхнему элементу (диву) и кликать на разные
+  элементы: div, p, span.</p>
+
+  <div class="green" onclick="alert(event.target.tagName)">
+    <p class="blue">
+      <span class="red"></span>
+    </p>
+  </div>
+
+
+  <h2>Прекращение всплытия. Метод stopPropagation()</h2>
+  <!-- ===================================================================== -->
+  <p>1. Отменим прекращение всплытия на синем блоке</p>
+
+  <div class="green" onclick="alert('зеленый')">
+    <div class="blue" onclick="alert('голубой'); event.stopPropagation();">
+      <div class="red" onclick="alert('красный')"></div>
+    </div>
+  </div>
+
+
+  <h2>Погружение</h2>
+  <!-- ===================================================================== -->
+
+  <script>
+  var green = document.getElementById('green');
+  green.addEventListener('click', func, true);
+
+  function func(event) {
+
+}
+  </script>
+
+
+  <h2>Вступление к делегированию</h2>
+  <!-- ===================================================================== -->
+  <p> 1. Предствим ситуцию: пусть у нас есть ul с несколькими li. К каждой li
+привязано следующее собитие: по нажатию на li ей в конец добавляется '!'.</p>
+
+<ul id="ul">
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+</ul>
+
+<style>
+  #ul {
+    background: #090;
+  }
+</style>
+
+<script>
+  var li = document.querySelectorAll('#ul li');
+
+  for (var i = 0; i < li.length; i++) {
+    li[i].innerHTML = i + 1;
+    li[i].addEventListener('click', function addElem() {
+      this.innerHTML = this.innerHTML + '!';
+    });
+  }
+</script>
+
+
+<p>2. Пусть теперь у нас так же есть кнопка, по нажатию на которую в конец ul
+добавляется новая li с текстом 'пункт'. И здесь будет сюрприз, событие не
+будет рабоатать для новых li!</p>
+
+<input type="submit" value="Добавить" id="add">
+<ul id="ul1">
+  <li></li>
+  <li></li>
+  <li></li>
+</ul>
+
+<style>
+  #ul1 {
+    background: #f90;
+  }
+</style>
+
+<script>
+  var ul1 = document.querySelector('#ul1');
+  var elem = ul1.children;
+
+  for (var i = 0; i < elem.length; i++) {
+    elem[i].innerHTML = 'пункт ' + (i + 1);
+    elem[i].addEventListener('click', addElem1);
+
+    function addElem1() {
+      this.innerHTML = this.innerHTML + '!';
+    };
+  }
+
+  var add = document.getElementById('add');
+  add.addEventListener('click', function addLi() {
+    var newElem = document.createElement('li');
+    newElem.innerHTML = 'new li';
+
+    // or
+    // ul1.insertAdjacentHTML('beforeEnd', newElem.innerHTML);
+
+    newElem.addEventListener('click', addElem1);
+    ul1.appendChild(newElem);
+  });
+</script>
+
+
+<h2>Делегирование событий</h2>
+<!-- ===================================================================== -->
+<p>Навесим событие не на каждую li, а на их родителя - на ul3</p>
+
+<input type="submit" value="Добивить" id="add3">
+<ul id="ul3">
+  <li>Пункт 1</li>
+  <li>Пункт 2</li>
+  <li>Пункт 3</li>
+</ul>
+
+<style>
+  #ul3 {
+    background: #499;
+  }
+</style>
+
+<script>
+  var ul3 = document.getElementById('ul3');
+  ul3.addEventListener('click', function addElem3() {
+    var child = event.target;
+    child.innerHTML = child.innerHTML + '+';
+  });
+
+  var add3 = document.getElementById('add3');
+  add3.addEventListener('click', function addElem3() {
+    var newElem3 = document.createElement('li');
+    newElem3.innerHTML = 'new li';
+    ul3.appendChild(newElem3);
+  });
+</script>
+
+
+<h2>Универсальное делегирование событий</h2>
+
+<p>Недостаток нашего кода проявиться в том случае, когда винутри i будут
+какие-то вложенные таги. В нашем случае пусть это будут теги li</p>
+
+<ul id="ul4">
+  <li>Пункт <i>курсив</i> 1</li>
+  <li>Пункт <i>курсив</i> 2</li>
+  <li>Пункт <i>курсив</i> 3</li>
+</ul>
+
+<style>
+  #ul4 {
+    background: #069;
+  }
+</style>
+
+<script>
+  var ul4 = document.getElementById('ul4');
+  ul4.addEventListener('click', function addElem4() {
+    var child1 = event.target.closest('li');
+    child1.innerHTML = child1.innerHTML + '+';
+  });
+</script>
+
+
+
+
+
+
+
+
+
+</body>
+</html>

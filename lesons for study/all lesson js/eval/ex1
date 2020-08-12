@@ -1,0 +1,10 @@
+<html>
+<body>
+<script>
+'use strict'
+
+alert( eval(prompt('Введите выражение', '5*2+2')) );
+
+</script>
+</body>
+</html>

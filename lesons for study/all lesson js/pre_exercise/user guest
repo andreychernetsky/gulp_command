@@ -1,0 +1,42 @@
+<html>
+<body>
+
+<script>
+
+'use strict';
+
+// class User {
+//   constructor(firstName, lastName) {
+//     this.firstName = firstName;
+//     this.lastName = lastName;
+//   }
+//
+//   static createGuest() {
+//     return new User("Гость", "Сайта");
+//   }
+// };
+
+
+function User(firstName, lastName) {
+
+  //  this.sayHi = function() {
+  //    alert( firstName + lastName + '! ' + 'Кофе готово!' );
+  //  };
+
+   this.sayHi = function() {
+     alert( "Привет, я " + firstName );
+   };
+
+};
+
+
+var demid = User('Демид', 'Мирошниченко');
+
+ demid.sayHi; // Гость
+
+alert( User.createGuest ); // createGuest ... (функция)
+
+</script>
+
+</body>
+</html>

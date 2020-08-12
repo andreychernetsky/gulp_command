@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+<body>
+<script>
+  function getRandomArr(arr) {
+    const ar=[];
+    for(let i = 0; i< arr;i++) {
+      ar.push(Math.floor(Math.random()*20));
+
+    }
+    return ar
+  }
+
+
+  function findEventAndAdd(randomAr) {
+    const obj={
+      event:[],
+      add:[]
+    };
+
+    let i =0;
+
+    while(i < randomAr.length) {
+      if(+randomAr[i] %2==0) {
+        obj.event.push(randomAr[i]);
+      } else {
+        obj.add.push(randomAr[i]);
+      }
+      i++;
+    }
+    // return ' event = ' + obj.event + ' add =' + obj.add
+    return `event=${obj.event} add=${obj.add} `
+  }
+  const num = 10;
+  const funRandom = getRandomArr(num);
+  const event_add = findEventAndAdd(funRandom);
+  console.log(event_add);
+
+
+</script>
+</body>
+</html>

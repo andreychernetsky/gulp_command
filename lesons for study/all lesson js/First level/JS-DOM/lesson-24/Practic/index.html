@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Practic</title>
+</head>
+<body>
+  <h1>Урок № 24. Продвинутая работа с DOM</h1>
+  <h2>Работа с classList</h2>
+
+<!-- ======================================================================= -->
+  <h3>Метод add. Добавление класса</h3>
+  <p id="elem" class="www ggg zzz"></p>
+
+  <script>
+    var elem = document.getElementById('elem');
+    elem.classList.add('kkk');
+    console.log(elem);
+  </script>
+
+<!-- ======================================================================= -->
+  <h3>Метод remove. Удаление класса</h3>
+  <p id="elem2" class="www ggg zzz"></p>
+
+  <script>
+    var elem2 = document.getElementById('elem2');
+    elem2.classList.remove('www');
+    console.log(elem2);
+  </script>
+
+<!-- ======================================================================= -->
+  <h3>Метод contains. Проверка класс</h3>
+  <p id="elem3" class="www ggg zzz"></p>
+
+  <script>
+    var elem3 = document.getElementById('elem3');
+    var checkClass = elem3.classList.contains('www');
+    document.write(checkClass);
+  </script>
+
+<!-- ======================================================================= -->
+  <h3>Метод length. Колличество классов</h3>
+  <p id="elem4" class="www ggg zzz"></p>
+
+  <script>
+    var elem4 = document.getElementById('elem4');
+    var elem4Length = elem4.classList.length;
+    document.write(elem4Length);
+  </script>
+
+<!-- ======================================================================= -->
+ <h3>Перебор классов</h3>
+  <p id="elem5" class="www ggg zzz"></p>
+
+  <script>
+    var elem5 = document.getElementById('elem5');
+    var classList = elem5.classList;
+
+    for (var i = 0; i < classList.length; i++) {
+      document.write(classList[i] + '<br>');
+    }
+  </script>
+
+<!-- ======================================================================= -->
+<h3>Применение</h3>
+<!-- ======================================================================= -->
+
+<p>Сделать кнопку, по нажатию на которую элемент будет то показываться,
+  то скрываться. </p>
+
+<button onclick="toggle()">Нажми на меня</button>
+<div id="div"></div>
+
+<style>
+  #div {
+    width: 112px;
+    height: 20px;
+    background: #000;
+    display: none;
+  }
+
+  #div.active {
+    display: block;
+  }
+</style>
+
+
+<script>
+  function toggle() {
+    var div = document.getElementById('div');
+    div.classList.toggle('active');
+  }
+</script>
+
+<!-- ======================================================================= -->
+<h2>Свойство cssText</h2>
+<!-- ======================================================================= -->
+
+<p>Зададим элементу несколько стилей</p>
+<p id="text">Привет</p>
+
+<script>
+  var text = document.getElementById('text');
+  text.style.cssText = 'color: #f00; font-size: 20px';
+</script>
+
+<!-- ======================================================================= -->
+<p>Перезапищем существующие стили</p>
+<p id="text2">Привет</p>
+
+<style>
+  #text2 {
+    font-size: 20px;
+    font-weight: bold;
+    color: #0f0;
+  }
+</style>
+
+<script>
+  var text2 = document.getElementById('text2');
+  text2.style.cssText = 'color: #00f; font-size: 10px';
+</script>
+
+<!-- ======================================================================= -->
+<p>Добавление стилей к существующим</p>
+<p id="text3" style="background: #999;">Привет</p>
+<p id="text3" style="background: #999;">Пока</p>
+
+<script>
+  var text3 = document.querySelectorAll('#text3');
+
+  for (var i = 0; i < text3.length; i++) {
+    text3[i].style.cssText += 'color: #f00; font-size: 20px;';
+  }
+</script>
+
+
+<!-- ======================================================================= -->
+<h2>Свойство tagName</h2>
+<!-- ======================================================================= -->
+
+<div id="div"></div>
+
+<script>
+  var div = document.getElementById('div');
+  document.write(div.tagName);
+</script>
+
+<!-- ======================================================================= -->
+<p>Выведем название тега в нижнем регистре</p>
+<div id="div2"></div>
+
+<script>
+  var div2 = document.getElementById('div2');
+  document.write(div2.tagName.toLowerCase());
+</script>
+
+
+<!-- ======================================================================= -->
+<h2>Вставка элементов</h2>
+<!-- ======================================================================= -->
+
+<h3>Метод createeElement</h3>
+
+<div id="parent"></div>
+
+<script>
+  var parent = document.getElementById('parent');
+  var p = document.createElement('p');
+  p.innerHTML = 'новый созданный текст';
+
+  parent.appendChild(p);
+</script>
+
+<!-- ======================================================================= -->
+<p>Дан ul. Нужно разместить 5 li, а их текстом сделаем порядковые номера</p>
+<ul id="list"></ul>
+
+<script>
+  var list = document.getElementById('list');
+
+  for (var i = 0; i <= 5; i++) {
+    var li = document.createElement('li');
+    li.innerHTML = i;
+    list.appendChild(li);
+  }
+</script>
+
+<!-- ======================================================================= -->
+<p>Заполнить таблицу tr и td</p>
+<table id="table"></table>
+
+<script>
+  var table = document.getElementById('table');
+
+  for (var i = 0; i < 2; i++) {
+    var tr = document.createElement('tr');
+
+    for (var j = 0; j < 4; j++) {
+      var td = document.createElement('td');
+      td.innerHTML = ' Ячейка' + (j + 1);
+
+      tr.appendChild(td);
+    } table.appendChild(tr);
+  }
+</script>
+
+<!-- ======================================================================= -->
+<h2>Метод removeChild</h2>
+<!-- ======================================================================= -->
+
+<p>Удалим абзац #elem</p>
+
+<div id="parent2">
+	<p>Первый абзац</p>
+	<p id="element">Второй абзац</p>
+</div>
+
+<script>
+  var parent2 = document.getElementById('parent2');
+  var element = document.getElementById('element');
+
+  parent2.removeChild(element);
+</script>
+
+<!-- ======================================================================= -->
+<p>Удаление если нет ссылки на элемент</p>
+
+<div id="parent3">
+	<p>Первый абзац</p>
+	<p id="element3">Второй абзац</p>
+</div>
+
+<script>
+  var element3 = document.getElementById('element3');
+
+  element3.parentNode.removeChild(element3);
+</script>
+
+
+<!-- ======================================================================= -->
+<h2>Метод insertBefore</h2>
+<!-- ======================================================================= -->
+
+<p>Создадим абзац и поместим его перед вторым абзацем</p>
+<div id="parent4">
+	<p>Абзац 1</p>
+	<p id="before">Абзац 2</p>
+	<p>Абзац 3</p>
+</div>
+
+<script>
+  var parent4 = document.getElementById('parent4');
+  var before = document.getElementById('before');
+
+  var newP = document.createElement('p');
+  p.innerHTML = 'Новый абзац';
+
+  parent4.insertBefore(p, before);
+</script>
+
+<!-- ======================================================================= -->
+<p>Добавим абзац в начало элемента родителя. Для этого вставим наш абзац
+перед первым потомком родителя. Этого потомка можно найти с помощью
+firstElementChild</p>
+<div id="parent5">
+	<p>Абзац 1</p>
+	<p>Абзац 2</p>
+	<p>Абзац 3</p>
+</div>
+
+<script>
+  var parent5 = document.getElementById('parent5');
+
+  var newPar = document.createElement('p');
+  newPar.innerHTML = 'Новый абзац';
+
+  parent5.insertBefore(newPar, parent5.firstElementChild);
+</script>
+
+<!-- ======================================================================= -->
+<p>При передаче вторым параметром null метод insertBefore срабатывает как
+appendChild. В то же время, если в элементе нет дочерних элементов,
+firstElementChild возвращает null. Сделовательно, добавлять в начало элемента
+можно даже тогда, когда в нем нет дочерных элементов</p>
+
+<div id="parent6" style="border: 1px solid black;"></div>
+
+<script>
+  var parent6 = document.getElementById('parent6');
+
+  var newElem = document.createElement('p');
+  newElem.innerHTML = 'Абзац';
+
+  parent6.insertBefore(newElem, parent6.firstElementChild);
+  // or
+  parent6.insertBefore(newElem, null);
+</script>
+
+<!-- ======================================================================= -->
+<h2>Метод insertAdjacentHTML</h2>
+<!-- ======================================================================= -->
+
+<h3>Способ beforeBegin</h3>
+<p>Песть опорный элемент - это элемент #target. Вставим перед нижнем
+новый абзац</p>
+
+<div id="target" style="border: 1px solid black;">
+	<p>Абзац</p>
+</div>
+
+<script>
+  var target = document.getElementById('target');
+
+  var newElem2 = document.createElement('p');
+  newElem2.innerHTML = 'Новый элемент';
+
+  target.insertAdjacentHTML('beforeBegin', newElem2.innerHTML);
+  // or
+  target.insertAdjacentHTML('beforeBegin', '<p>Новый элемент2</p>');
+</script>
+
+<!-- ======================================================================= -->
+<h3>Способ afterEnd</h3>
+<p>Вставить новый абзац перед опорным элементом</p>
+<div id="target2" style="border: 1px solid black;">
+  <p>Абзац</p>
+</div>
+
+<script>
+  var target2 = document.getElementById('target2');
+
+  var newElem3 = document.createElement('p');
+  newElem3.innerHTML = 'Новый элемент';
+
+  target2.insertAdjacentHTML('afterEnd', newElem3.innerHTML);
+  // or
+  target2.insertAdjacentHTML('afterEnd', '<p>Новый элемент 2</p>');
+</script>
+
+<!-- ======================================================================= -->
+<h3>Способ afterBegin</h3>
+<p>Вставить новый абзац в начало опорного элемента</p>
+<div id="target3" style="border: 1px solid black;">
+  <p>Абзац</p>
+</div>
+
+<script>
+  var target3 = document.getElementById('target3');
+
+  var newElem4 = document.createElement('p');
+  newElem4.innerHTML = 'Новый элемент';
+
+  target3.insertAdjacentHTML('afterBegin', newElem4.innerHTML);
+  // or
+  target3.insertAdjacentHTML('afterBegin', '<p>Новый элемент2</p>');
+</script>
+
+<!-- ======================================================================= -->
+<h3>Способ beforeEnd</h3>
+<p>Вставить новый абзац в конец опорного элемента</p>
+<div id="target4" style="border: 1px solid black;">
+  <p>Абзац</p>
+</div>
+
+<script>
+  var target4 = document.getElementById('target4');
+
+  var newElem5 = document.createElement('p');
+  newElem5.innerHTML = 'Новый абзац';
+
+  target4.insertAdjacentHTML('beforeEnd', newElem5.innerHTML);
+  // or
+  target4.insertAdjacentHTML('beforeEnd', '<p>Новый абзац2</p>');
+</script>
+
+<!-- ======================================================================= -->
+<h2>Свойство children</h2>
+<!-- ======================================================================= -->
+<p>Выведем содержимое первого и сторого потомка блока-родителя</p>
+
+<div id="myText">
+  <p>Дочерний 1</p>
+  <p>Дочерний 2</p>
+</div>
+
+<script>
+  var myText = document.getElementById('myText');
+  document.write(myText.children[0].innerHTML);
+  document.write(myText.children[1].innerHTML);
+</script>
+
+<!-- ======================================================================= -->
+<p>Выведем всех потомков в цикле</p>
+
+<div id="myChildren">
+  <p>Ребенок 1</p>
+  <p>Ребенок 2</p>
+  <p>Ребенок 3</p>
+</div>
+
+<script>
+  var myChildren = document.getElementById('myChildren');
+  myChildren = myChildren.children;
+
+  for (var i = 0; i < myChildren.length; i++) {
+    document.write(myChildren[i].innerHTML);
+  }
+</script>
+
+<!-- ======================================================================= -->
+<h3>firstElementChild</h3>
+<p>Получить содержимое первого потомка элемента блока-родителя</p>
+
+<div id="first">
+	<p>Первый элемент</p>
+	<p>Второй элемент</p>
+</div>
+
+<script>
+  var first = document.getElementById('first');
+  document.write(first.firstElementChild.innerHTML);
+</script>
+
+<!-- ======================================================================= -->
+<p>Проверить значение родителя</p>
+<div id="howMuch"></div>
+
+<script>
+  var howMuch = document.getElementById('howMuch');
+  document.write(howMuch.firstElementChild);
+</script>
+
+
+<!-- ======================================================================= -->
+<h3>lastElementChild</h3>
+<p>Получить последний элемент родителя</p>
+
+<div id="last">
+	<p>Первый элемент</p>
+	<p>Второй элемент</p>
+</div>
+
+<script>
+  var last = document.getElementById('last');
+  document.write(last.lastElementChild.innerHTML);
+</script>
+
+
+<!-- ======================================================================= -->
+<p>Проверить родителя на дочерние элементы</p>
+
+<div id="howChildren"></div>
+
+<script>
+  var howChildren = document.getElementById('howChildren');
+  document.write(howChildren.lastElementChild);
+</script>
+
+<!-- ======================================================================= -->
+<h2>Свойство previousEleementSibling</h2>
+<!-- ======================================================================= -->
+
+<p>Даны элементы, выведем соседа сверху</p>
+
+<p>Верхний сосед</p>
+<p class="neighbor">Нижний сосед</p>
+
+<script>
+  var neighbor = document.querySelector('.neighbor');
+
+  document.write(neighbor.previousElementSibling.innerHTML);
+</script>
+
+<!-- ======================================================================= -->
+<h2>Свойство nextElementSibling</h2>
+<!-- ======================================================================= -->
+
+<p>Даны элементы, выведем соседа синзу</p>
+
+<p class="neighbor2">Верхний сосед</p>
+<p>Нижний сосед</p>
+
+<script>
+  var neighbor2 = document.querySelector('.neighbor2');
+
+  document.write(neighbor2.nextElementSibling.innerHTML);
+</script>
+
+
+<!-- ======================================================================= -->
+<h2>Свойство parentElement</h2>
+<!-- ======================================================================= -->
+
+<p>Получим родителя элемента и выведем на экран его id</p>
+
+<div id="parentDiv">
+  <p id="elemP"></p>
+</div>
+
+<script>
+  var elemP = document.getElementById('elemP');
+  var parent = elemP.parentElement;
+  document.write(parentDiv.id);
+</script>
+
+
+<!-- ======================================================================= -->
+<h2>Свойство parentNode</h2>
+<!-- ======================================================================= -->
+
+<p>Получим родителя элемента и выведем на экран его id</p>
+
+<div id="parentDiv2">
+  <p id="elemP2"></p>
+</div>
+
+<script>
+  var elemP2 = document.getElementById('elemP2');
+  var parent = elemP2.parentNode;
+  document.write(parent.id);
+</script>
+
+<!-- ======================================================================= -->
+<h2>Метод cloneNode</h2>
+<!-- ======================================================================= -->
+
+<p>Сделать копию блока с классом elem и вставим его в конец болка #parent</p>
+
+<div id="parent">
+	<div class="elem" style="border: 1px solid #000;">
+		<p>Первый абзац</p>
+		<p>Второй абзац</p>
+	</div>
+</div>
+
+<script>
+  var parent = document.getElementById('parent');
+  var elem = document.querySelector('.elem');
+  var cloneElem = elem.cloneNode(true);
+  document.write(parent.appendChild(cloneElem).innerHTML);
+</script>
+
+<!-- ======================================================================= -->
+<h2>Метод closest</h2>
+<!-- ======================================================================= -->
+
+<p>Дан элемент #elem. Нужно найти среди его родителей элемент с классом hhh
+и вывести на экран содержимое его атрибута id</p>
+
+<div id="parent" class="hhh">
+	<div id="block">
+		<p id="elems">Абзац</p>
+	</div>
+</div>
+
+<script>
+  var elems = document.getElementById('elems');
+  var search = elems.closest('.hhh');
+  document.write(search.id);
+</script>
+
+
+<!-- ======================================================================= -->
+<h2>Метод contains</h2>
+<!-- ======================================================================= -->
+
+<p>Проверить, находится ли абзац в блока-родителя</p>
+
+<div id="parent-div">
+  <p id="child"></p>
+</div>
+
+<script>
+  var parentDiv = document.getElementById('parent-div');
+  var child = document.getElementById('child');
+  document.write(parentDiv.contains(child));
+</script>
+
+<!-- ======================================================================= -->
+<h2>Метод matches</h2>
+<!-- ======================================================================= -->
+
+<p id="ele" class="ggg">Абзац</p>
+
+<script>
+  var ele = document.getElementById('ele');
+  document.write(ele.matches('p.ggg'));
+</script>
+
+
+
+</body>
+</html>

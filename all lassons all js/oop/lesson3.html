@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+<body>
+<script>
+  const obj = {
+    green:'1',
+    red:'2',
+    blue:'3'
+  };
+  for(const key in obj) {
+    console.log(key);//green,red,blue
+    console.log(obj[key]);//1,2,3
+  };
+
+  // example
+  const obj = {};
+  obj.green ='1';
+  obj.red ='2';
+  obj.blue ='3';
+  };
+
+  for(const key in obj) {
+    console.log(key);//green,red,blue
+    console.log(obj[key]);//1,2,3
+  };
+
+  // example
+
+  function summ(obj) {
+    let sum = 0;
+    for(key in obj) {
+      sum+=obj[key];
+    }
+    return sum;
+  };
+
+  const obj1 = {};
+  obj1.green =1;
+  obj1.red =2;
+  obj1.blue =3;
+
+  console.log(summ(obj1));//6
+
+  // example
+
+  function summ(obj) {
+    let sum = 0;
+    for(key in obj) {
+      sum+=obj[key];
+    }
+    return sum;
+  };
+
+  const obj1 = {
+    green:1,
+    red:2,
+    blue:3
+  };
+
+  console.log(summ(obj1));
+
+  // example
+
+  const obj = {
+    green:'1',
+    red:'2',
+    blue:'3'
+  };
+
+  for(const key in obj) {
+    let sum = 0;
+    sum+=obj[key];
+    console.log(sum);//01,02,03
+  }
+
+  // example
+
+  const obj = {
+    green:'1',
+    red:'2',
+    blue:'3'
+  };
+
+
+  const keys = Object.keys(obj);
+  let sum = 0;
+  keys.forEach((elem)=>{
+    sum += obj[elem];
+    console.log(sum);//01,012,0123
+  });
+
+  // example переписать через стрелочную функцию
+
+  function summ(obj) {
+    let sum = 0;
+    Object.getOwnPropertyNames(obj).forEach((elem)=>{
+      sum += (obj[elem])
+    });
+    return sum;
+  }
+  const obj1 = {
+    green:1,
+    red:2,
+    blue:3
+  };
+
+  console.log(summ(obj1));//6
+
+
+  // example
+  const summ = (obj) => {
+    let sum = 0;
+    Object.getOwnPropertyNames(obj).forEach((elem)=>{
+      sum += (obj[elem])
+    });
+    return sum;
+  }
+  const obj1 = {
+    green:1,
+    red:2,
+    blue:3
+  };
+
+  console.log(summ(obj1));//6
+
+
+</script>
+</body>
+</html>

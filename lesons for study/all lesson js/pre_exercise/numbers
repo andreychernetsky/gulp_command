@@ -1,0 +1,23 @@
+<html>
+<head>Числа</head>
+
+<body>
+<script>
+  'use strict';
+/*
+  var firstNumber = +prompt('Введите первое число','');
+  var secondNumber = +prompt('Введите второе число','');
+
+  alert(firstNumber + secondNumber);*/
+
+  var firstNumber = +prompt('Стоимость первого товара','');
+  var secondNumber = +prompt('Стоимость второго товара','');
+
+  var result = firstNumber + secondNumber;
+
+  alert( +result.toFixed(10) + '$' ); // 0.3
+
+
+</script>
+</body>
+</html>

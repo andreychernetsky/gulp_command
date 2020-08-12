@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+<body>
+<script>
+  /*Если выражение соответствует какому-то случаю, то выполняются инструкции этого случая. Если несколько случаев соответствуют значению, только первый случай будет использован.
+ 
+	 Сначала программа пытается найти подходящий случай, значение которого равно значению искомого выражения (используется строгое сравнение, ===) и затем выполняет инструкции, соответствующие случаю. Если подходящего случая нет, ищется случай по умолчанию (default), который не является обязательным. Если случая по умолчанию нет, выполнение продолжается на инструкции, следующей сразу после switch. По соглашению, случай default описывается последним, но это не является строгим правилом.
+ 
+	 Опциональная инструкция break выполняет выход из блока switch. Она может располагаться в каждом из случаев, но не является обязательной. Если её нет, то выполняется следующая инструкция из блока switch.*/
+
+
+  let a = 1, c=2;
+  let b = --c;
+
+  switch (++a ) {
+    case b +1:
+      console.log( 'выполнится' );
+      break;
+
+    default:
+      console.log( "Нет таких значений" );
+  }
+
+  // example
+  let foo = 1;
+  switch (true) { // Постоянное значение true вместо foo
+    case foo >= 0 && foo <= 3:
+      console.log('yes');
+      break;
+    default:
+      console.log('not');
+  }
+  // example
+  let d = new Date();
+  let theDay=d.getDay();
+  switch (theDay)
+  {
+    case 5:
+      console.log("Наконец-то Пятница");
+      break;
+    case 6:
+      console.log("Суперская Суббота");
+      break;
+    case 0:
+      console.log("Сонное Воскресенье");
+      break;
+    default:
+      console.log("Когда же наступят выходные!");
+  }
+
+  // example
+  const getNum = result => {
+    switch(result) {
+      case 3:console.log('маловато');
+        break;
+      case 4: console.log('в точку');
+        break;
+      case 5:console.log('перебор');
+        break;
+      default:console.log('нет таких значений');
+    }
+  };
+  console.log(getNum(3));
+
+  // example
+  // example
+  let opertor = '%';
+  let number1 = 10, number2 = 2;
+  switch (opertor)
+  {
+    case '+':
+      console.log("Сложение двух чисел: " + (number1 + number2));
+      break;
+    case '-':
+      console.log("Вычитание двух чисел: " + (number1 - number2));
+      break;
+    case '*':
+      console.log("Умножение двух чисел: " + (number1 * number2));
+      break;
+    case '/':
+      console.log("Деление двух чисел: " + (number1 / number2));
+      break;
+    case '%':
+      console.log("остаток от деления : " + (number1 % number2));
+      break;
+    default:
+      console.log("Вы указали неверный оператор ");
+      console.log(" Пожалуйста, укажите корректный оператор +, -, *, /, %");
+  }
+
+  /*
+ДНК и РНК это последовательности нуклеотидов.
+
+Четыре нуклеотида в ДНК это аденин (A), цитозин (C), гуанин (G) и тимин (T).
+
+Четыре нуклеотида в РНК это аденин (A), цитозин (C), гуанин (G) и урацил (U).
+
+Цепь РНК составляется на основе цепи ДНК последовательной заменой каждого нуклеотида:
+
+G -> C
+C -> G
+T -> A
+A -> U
+solution.js
+Реализуйте и экспортируйте функцию toRna, которая принимает на вход цепь ДНК и возвращает соответствующую цепь РНК (совершает транскрипцию РНК).
+
+toRna('ACGTGGTCTTAA'); // 'UGCACCAGAAUU'
+*/
+
+  const toRna = (a) => {
+
+    let line = String(a).toUpperCase();
+    let newline = '';
+
+
+    for (let i = 0; i < line.length; i++){
+
+      switch (line.substr(i, 1)) {
+        case 'G' :
+          newline = newline + "C";
+          break;
+
+        case 'C' :
+          newline = newline + "G";
+          break;
+
+        case 'T' :
+          newline = newline + "A";
+          break;
+
+        case 'A' :
+          newline = newline + "U";
+          break;
+
+        default :
+          newline = newline + "?"; // если символ не входим в четверку (GCTA), заменяем на знак вопроса
+      }
+    }
+    return newline;
+  }
+  toRna('ACGTGGTCTTAA');
+</script>
+</body>
+</html>

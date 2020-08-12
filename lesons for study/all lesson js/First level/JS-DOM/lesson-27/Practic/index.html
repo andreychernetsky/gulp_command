@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Lesson-27. Practic</title>
+</head>
+<body>
+  <h1>Урок 27. Основы работы с объектом Event</h1>
+
+<!-- ====================================================================== -->
+  <h2>Получение объект Event</h2>
+
+  <p>1. Привяжем функции событие</p>
+  <button id="elem">Элемент</button>
+
+  <script>
+    var elem = document.getElementById('elem');
+
+    elem.onclikc = func;
+
+    function func() {
+      // тут доступен любой объект event
+    }
+  </script>
+
+
+  <!-- ====================================================================== -->
+  <h2>Координаты клика</h2>
+
+  <p>1. Найдем координаты курсора</p>
+
+  <div id="block"></div>
+
+  <style>
+    #block {
+      width: 100px;
+      height: 100px;
+      border: 1px solid #000;
+    }
+  </style>
+
+  <!-- <script>
+    var block = document.getElementById('block');
+    block.onmousemove = func1;
+
+    function func1() {
+      this.innerHTML = event.clientX + ':' + event.clientY;
+    }
+  </script> -->
+
+<!-- or -->
+
+  <script>
+    var block = document.getElementById('block');
+    block.addEventListener('mousemove', function func1() {
+      block.innerHTML = event.clientX + ':' + event.clientY;
+    });
+  </script>
+
+
+  <!-- ====================================================================== -->
+  <h2>Тип события</h2>
+
+  <p>1. Получим тип события</p>
+
+<button id="elem1">Элемент</button>
+
+<script>
+  var elem1 = document.getElementById('elem1');
+  elem1.onclick = showEvent;
+
+  function showEvent() {
+    alert(event.type);
+  }
+</script>
+
+
+<!-- ====================================================================== -->
+<h2>Элемент события</h2>
+
+<p>1. Привяжем событие к диву, но клинкем по абзацу</p>
+
+<div id="getEvent">
+  <p>Абзац</p>
+</div>
+
+<script>
+  var getEvent = document.getElementById('getEvent');
+
+  getEvent.addEventListener('click', function getOn() {
+    var target = event.target;
+    alert(target.tagName);
+  });
+</script>
+
+
+<!-- ====================================================================== -->
+<h2>Метод String.fromCharCode</h2>
+
+<p>1. Преобразовать числовые значения Юникода и получить строку "Юникод"</p>
+
+<script>
+  var srt = String.fromCharCode(1070, 1085, 1080, 1082, 1086, 1076);
+  document.write(srt);
+</script>
+
+
+<!-- ====================================================================== -->
+<h2>Нажатые клавиши</h2>
+
+<p>1. Вводите текст в инпут и по мере ввода вы будут видеть код
+нажатой клавиши</p>
+
+<input type="text" id="myKeyCode">
+<div id="result"></div>
+
+<script>
+  var result = document.getElementById('result');
+  var myKeyCode = document.getElementById('myKeyCode');
+
+  myKeyCode.addEventListener('keypress', function getKey() {
+    var code = event.keyCode;
+    var key = String.fromCharCode(event.keyCode);
+    result.innerHTML = 'Код' + code + ', клавиша ' + key;
+  });
+</script>
+
+
+<!-- ====================================================================== -->
+<h2>Ctrl, Alt, Shift</h2>
+
+<p>1. При клике на кнопку бдуем выводить сообщение о том, была ли нажата
+одна из клавиш Ctrl, Alt или Shift:</p>
+
+<input type="submit" id="test">
+
+<script>
+  var test = document.getElementById('test');
+
+  test.addEventListener('click', function getKey2() {
+    if (event.ctrlKey) {
+      alert('Нажат Ctrl');
+    }
+
+    if (event.altKey) {
+      alert('Нажат Alt');
+    }
+
+    if (event.shiftKey) {
+      alert('Нажат Shift');
+    }
+  });
+</script>
+
+
+<!-- ====================================================================== -->
+<h2>Отмена действия</h2>
+<h3>return false</h3>
+
+<p>1. Попробуем перейти по ссылке или что-нибудь ввести в поле</p>
+
+<a href="https://yandex.ru" onclick="return false">ссылка</a>
+<input type="text" onkeypress="return false">
+
+
+<h3>event.preventDefault()</h3>
+
+<p>2. Попробуем перейти по ссылке</p>
+
+<a href="https://yandex.ru" id="link">ссылка</a>
+
+<script>
+  var link = document.getElementById('link');
+  link.addEventListener('click', function clickLink() {
+    event.preventDefault();
+    alert('Вы не можете перейти по ссылке');
+  });
+</script>
+
+
+
+
+
+
+</body>
+</html>

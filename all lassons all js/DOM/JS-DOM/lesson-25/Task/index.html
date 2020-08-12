@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Lesson-25. Task</title>
+</head>
+<body>
+  <h1>Урок 25. Задачи на работу с метриками</h1>
+
+  <h2>На величину границы</h2>
+
+<!-- 1 -->
+<p>1. Дан элемент #elem с границами. По нажатию на кнопку выведите толщину
+    его верхней границы.</p>
+<!-- ===================================================================== -->
+
+<div>
+  <div id="elem" class="elem">border: 5px;</div>
+  <input type="submit" class="buttonClass">
+</div>
+
+<style>
+  .elem {
+    width: 250px;
+    height: 50px;
+    border: 10px solid #000;
+    text-align: center;
+  }
+
+  .buttonClass {
+    margin: 10px 0 0 100px;
+  }
+</style>
+
+<script>
+  var buttonClass = document.querySelector('.buttonClass');
+  buttonClass.addEventListener('click', clickButton);
+
+  function clickButton() {
+    var elem = document.getElementById('elem');
+    elem.innerHTML = 'Ширина верхней границы = ' + elem.clientTop + 'px';
+  }
+</script>
+
+
+<!-- 2 -->
+<p>2. Дан элемент #elem1 с границами. По нажатию на кнопку выведите толщину
+  его левой границы.</p>
+<!-- ===================================================================== -->
+
+<div>
+  <div id="elem1" class="elem1">border: 5px;</div>
+  <input type="submit" class="buttonClass1">
+</div>
+
+<style>
+  .elem1 {
+    width: 250px;
+    height: 50px;
+    border: 5px solid #000;
+    text-align: center;
+  }
+
+  .buttonClass1 {
+    margin: 10px 0 0 100px;
+  }
+</style>
+
+<script>
+  var buttonClass1 = document.querySelector('.buttonClass1');
+  buttonClass1.addEventListener('click', clickButton1);
+
+  function clickButton1() {
+    var elem1 = document.getElementById('elem1');
+    elem1.innerHTML = 'Ширина левой границы = ' + elem1.clientTop + 'px';
+  }
+</script>
+
+
+<h2>На полный размер элемента</h2>
+
+<!-- 3 -->
+<p>3. Дан элемент #elem2 с границами. По нажатию на кнопку выведите его
+  полную ширину с учетом границы и padding.</p>
+<!-- ===================================================================== -->
+
+<div>
+  <div id="elem2" class="elem2">width: 250px; border: 10px; padding: 15px;</div>
+  <input type="submit" class="buttonClass2">
+</div>
+
+<style>
+  .elem2 {
+    width: 250px;
+    height: 50px;
+    border: 10px solid #000;
+    padding: 15px;
+    text-align: center;
+  }
+
+  .buttonClass2 {
+    margin: 10px 0 0 120px;
+  }
+</style>
+
+<script>
+  var buttonClass2 = document.querySelector('.buttonClass2');
+  buttonClass2.addEventListener('click', clickButton2);
+
+  function clickButton2() {
+    var elem2 = document.getElementById('elem2');
+    elem2.innerHTML = 'Полная ширина элемента = ' + elem2.offsetWidth + 'px';
+  }
+</script>
+
+
+<!-- 4 -->
+<p>4. Дан элемент #elem3 с границами. По нажатию на кнопку выведите его
+  полную высоту с учетом границы и padding.</p>
+<!-- ===================================================================== -->
+
+<div>
+  <div id="elem3" class="elem3">height: 50px; border: 10px; padding: 15px;</div>
+  <input type="submit" class="buttonClass3">
+</div>
+
+<style>
+  .elem3 {
+    width: 250px;
+    height: 50px;
+    border: 10px solid #000;
+    padding: 15px;
+    text-align: center;
+  }
+
+  .buttonClass3 {
+    margin: 10px 0 0 120px;
+  }
+</style>
+
+<script>
+  var buttonClass3 = document.querySelector('.buttonClass3');
+  buttonClass3.addEventListener('click', clickButton3);
+
+  function clickButton3() {
+    var elem3 = document.getElementById('elem3');
+    elem3.innerHTML = 'Полная высота элемента = ' + elem3.offsetHeight + 'px';
+  }
+</script>
+
+
+<h2>На размер элемента без, но с padding</h2>
+
+<!-- 5 -->
+<p>5. Дан элемент #elem4 с границами. По нажатию на кнопку выведите его
+  полную ширину без учета границы, но с padding.</p>
+<!-- ===================================================================== -->
+
+<div>
+  <div id="elem4" class="elem4"> width: 250px; border: 10px; padding: 10px</div>
+  <input type="submit" class="buttonClass4">
+</div>
+
+<style>
+  .elem4 {
+    width: 250px;
+    height: 50px;
+    border: 10px solid #000;
+    padding: 10px;
+    text-align: center;
+  }
+
+  .buttonClass4 {
+    margin: 10px 0 0 110px;
+  }
+</style>
+
+<script>
+  var buttonClass4 = document.querySelector('.buttonClass4');
+  buttonClass4.addEventListener('click', clickButton4);
+
+  function clickButton4() {
+    var elem4 = document.getElementById('elem4');
+    elem4.innerHTML = 'Ширина элемента без учера границ = ' + elem4.clientWidth + 'px';
+  }
+</script>
+
+
+<!-- 6 -->
+<p>6. Дан элемент #elem5 с границами. По нажатию на кнопку выведите его
+  полную высоту без учета границы, но с padding.</p>
+<!-- ===================================================================== -->
+
+<div>
+  <div id="elem5" class="elem5"> height: 50px; border: 10px; padding: 10px</div>
+  <input type="submit" class="buttonClass5">
+</div>
+
+<style>
+  .elem5 {
+    width: 250px;
+    height: 50px;
+    border: 10px solid #000;
+    padding: 10px;
+    text-align: center;
+  }
+
+  .buttonClass5 {
+    margin: 10px 0 0 110px;
+  }
+</style>
+
+<script>
+  var buttonClass5 = document.querySelector('.buttonClass5');
+  buttonClass5.addEventListener('click', clickButton5);
+
+  function clickButton5() {
+    var elem5 = document.getElementById('elem5');
+    elem5.innerHTML = 'Высота элемента без учера границ = ' + elem5.clientHeight + 'px';
+  }
+</script>
+
+
+<h2>Работа с getComputedStyle</h2>
+
+<!-- 7 -->
+<p>7. Дан элемент #elem6. Получите его ширину и высоту, без учета
+  границы и padding.</p>
+<!-- ===================================================================== -->
+
+<div id="elem6" class="elem6">width: 250px; border: 10px; padding: 15px;</div>
+
+<style>
+  .elem6 {
+    width: 250px;
+    height: 50px;
+    border: 10px solid #000;
+    padding: 15px;
+    text-align: center;
+  }
+</style>
+
+<script>
+  var elem6 = document.getElementById('elem6');
+  elem6.innerHTML += '<br>' + 'Ширина  = ' + getComputedStyle(elem6).width;
+</script>
+
+
+
+<h2>Прокрутка элемента</h2>
+
+<!-- 8 -->
+<p>8. Дан элемент #elem7 с вертикальной полосой прокрутки. По нажатию на
+  кнопку выведите на сколько элемент прокручен сверху.</p>
+<!-- ===================================================================== -->
+
+<div>
+  <div id="elem7" class="elem7">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse ipsa nesciunt
+    aliquam, vero natus assumenda facere sapiente maxime quam voluptatum minima
+    laboriosam, reiciendis architecto consequatur suscipit ipsam.
+    Vel, laboriosam illo?
+  </div>
+  <input type="submit" class="buttonClass7">
+  <input id="total7" type="text" value="">
+</div>
+
+<style>
+  .elem7 {
+    width: 100px;
+    height: 100px;
+    border: 1px solid #000;
+    text-align: justify;
+    overflow: auto;
+  }
+
+  .buttonClass7 {
+    margin-top: 10px;
+  }
+</style>
+
+<script>
+  var buttonClass7 = document.querySelector('.buttonClass7');
+  buttonClass7.addEventListener('click', clickButton7);
+
+  function clickButton7() {
+    var elem7 = document.getElementById('elem7');
+    var total7 = document.getElementById('total7');
+
+    total7.value = 'Прокручен на ' + elem7.scrollTop + 'px';
+  }
+</script>
+
+
+<!-- 9 -->
+<p>9. Дан элемент #elem8 с горизонтальной полосой прокрутки. По нажатию
+  на кнопку выведите на сколько элемент прокручен слева.</p>
+<!-- ===================================================================== -->
+
+<div>
+  <div id="elem8" class="elem8">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse ipsa nesciunt
+    aliquam, vero natus assumenda facere sapiente maxime quam voluptatum minima
+    laboriosam, reiciendis architecto consequatur suscipit ipsam.
+    Vel, laboriosam illo?
+  </div>
+  <input type="submit" class="buttonClass8">
+  <input id="total8" type="text" value="">
+</div>
+
+<style>
+  .elem8 {
+    width: 200px;
+    height: 50px;
+    border: 1px solid #000;
+    white-space: nowrap;
+    overflow-x: scroll;
+  }
+
+  .buttonClass8 {
+    margin-top: 10px;
+  }
+</style>
+
+<script>
+  var buttonClass8 = document.querySelector('.buttonClass8');
+  buttonClass8.addEventListener('click', clickButton8);
+
+  function clickButton8() {
+    var elem8 = document.getElementById('elem8');
+    var total8 = document.getElementById('total8');
+
+    total8.value = 'Прокручен на ' + elem8.scrollLeft + 'px';
+  }
+</script>
+
+
+<!-- 10 -->
+<p>10. Дан элемент #elem9 с вертикальной полосой прокрутки. По нажатию на
+  кнопку прокрутите его до позиции 100px сверху.</p>
+<!-- ===================================================================== -->
+
+<div>
+  <div id="elem9" class="elem9">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse ipsa nesciunt
+    aliquam, vero natus assumenda facere sapiente maxime quam voluptatum minima
+    laboriosam, reiciendis architecto consequatur suscipit ipsam.
+    Vel, laboriosam illo?
+  </div>
+  <input type="submit" class="buttonClass9">
+  <input id="total9" type="text" value="">
+</div>
+
+<style>
+  .elem9 {
+    width: 100px;
+    height: 100px;
+    border: 1px solid #000;
+    text-align: justify;
+    overflow: auto;
+  }
+
+  .buttonClass9 {
+    margin-top: 10px;
+  }
+</style>
+
+<script>
+  var buttonClass9 = document.querySelector('.buttonClass9');
+  buttonClass9.addEventListener('click', clickButton9);
+
+  function clickButton9() {
+    var elem9 = document.getElementById('elem9');
+    var total9 = document.getElementById('total9');
+
+    elem9.scrollTop = 100;
+
+    total9.value = 'Прокручен на ' + elem9.scrollTop + 'px';
+  }
+</script>
+
+
+<!-- 11 -->
+<p>11. Дан элемент #elem10 с вертикальной полосой прокрутки. По нажатию на
+  кнопку прокрутите его на 100px вниз от текущего положения.</p>
+<!-- ===================================================================== -->
+
+<div>
+  <div id="elem10" class="elem10">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse ipsa nesciunt
+    aliquam, vero natus assumenda facere sapiente maxime quam voluptatum minima
+    laboriosam, reiciendis architecto consequatur suscipit ipsam.
+    Vel, laboriosam illo?
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum doloribus
+    laudantium exercitationem, expedita dolor magnam assumenda repudiandae
+    corporis vitae recusandae, natus praesentium aperiam tempora, soluta
+    rerum eius illum explicabo excepturi!
+  </div>
+  <input type="submit" class="buttonClass10">
+  <input id="total10" type="text" value="">
+</div>
+
+<style>
+  .elem10 {
+    width: 100px;
+    height: 100px;
+    border: 1px solid #000;
+    text-align: justify;
+    overflow: auto;
+  }
+
+  .buttonClass10 {
+    margin-top: 10px;
+  }
+</style>
+
+<script>
+  var buttonClass10 = document.querySelector('.buttonClass10');
+  buttonClass10.addEventListener('click', clickButton10);
+
+  function clickButton10() {
+    var elem10 = document.getElementById('elem10');
+    var total10 = document.getElementById('total10');
+
+    elem10.scrollTop += 100;
+
+    total10.value = 'Прокручен на ' + elem10.scrollTop + 'px';
+  }
+</script>
+
+
+<h2>Прокрутка элемента</h2>
+
+<!-- 12 -->
+<p>12. Дан элемент #item с вертикальной полосой прокрутки. По нажатию на
+  кнопку выведите реальную высоту элемента с учетом прокрутки.</p>
+<!-- ===================================================================== -->
+
+<div>
+  <div id="item" class="item">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+    Repudiandae perferendis velit ipsa nostrum, praesentium!
+    Incidunt ut, totam ipsa optio eius nemo, temporibus natus
+    officia perferendis quas, voluptatem, quam accusamus qui.
+  </div>
+  <input type="submit" id="button">
+  <input type="text" id="input" value="">
+</div>
+
+<style>
+  .item {
+    width: 100px;
+    height: 200px;
+    border: 1px solid #000;
+    margin-bottom: 10px;
+    overflow: auto;
+  }
+</style>
+
+<script>
+  var button = document.getElementById('button');
+  button.addEventListener('click', buttonClick);
+
+  function buttonClick() {
+    var item = document.querySelector('.item');
+    var input = document.getElementById('input');
+    input.value = 'Реальная высота = ' + item.scrollHeight + 'px';
+  }
+</script>
+
+<!-- 13 -->
+<p>13. Дан элемент #item1 с горизонтальной полосой прокрутки. По нажатию на
+  кнопку выведите реальную ширину элемента с учетом прокрутки.</p>
+<!-- ===================================================================== -->
+
+<div>
+  <div id="item1" class="item1">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+    Repudiandae perferendis velit ipsa nostrum, praesentium!
+    Incidunt ut, totam ipsa optio eius nemo, temporibus natus
+    officia perferendis quas, voluptatem, quam accusamus qui.
+  </div>
+  <input type="submit" id="button1">
+  <input type="text" id="input1" value="">
+</div>
+
+<style>
+  .item1 {
+    width: 100px;
+    height: 40px;
+    border: 1px solid #000;
+    margin-bottom: 10px;
+    white-space: nowrap;
+    overflow: auto;
+  }
+</style>
+
+<script>
+  var button1 = document.getElementById('button1');
+  button1.addEventListener('click', buttonClick1);
+
+  function buttonClick1() {
+    var item1 = document.querySelector('.item1');
+    var input1 = document.getElementById('input1');
+    input1.value = 'Реальная ширина = ' + item1.scrollWidth + 'px';
+  }
+</script>
+
+
+<!-- 14 -->
+<p>14. Дан элемент #item2 с вертикальной полосой прокрутки. По нажатию на
+  кнопку прокрутите его до позиции 100px от нижнего края элемента.</p>
+<!-- ===================================================================== -->
+
+<div>
+  <div id="item2" class="item2">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+    Repudiandae perferendis velit ipsa nostrum, praesentium!
+    Incidunt ut, totam ipsa optio eius nemo, temporibus natus
+    officia perferendis quas, voluptatem, quam accusamus qui.
+  </div>
+  <input type="submit" id="button2">
+  <input type="text" id="input2" value="">
+</div>
+
+<style>
+  .item2 {
+    width: 100px;
+    height: 200px;
+    border: 1px solid #000;
+    margin-bottom: 10px;
+    overflow: auto;
+  }
+</style>
+
+<script>
+  var button2 = document.getElementById('button2');
+  button2.addEventListener('click', buttonClick2);
+
+  function buttonClick2() {
+    var item2 = document.querySelector('.item2');
+    var input2 = document.getElementById('input2');
+
+    item2.scrollTop = 100;
+
+    input2.value = 'Прокручен на ' + (item2.scrollHeight - item2.scrollTop) + 'px';
+  }
+</script>
+
+
+<h2>Прокрутка страницы</h2>
+
+
+<!-- 15 -->
+<p>15. Дана страница с вертикальной полосой прокрутки. По нажатию на кнопку
+  узнайте на сколько страница прокручена по вертикали.</p>
+<!-- ===================================================================== -->
+
+<div>
+  <input type="submit" value="Проверка" id="page">
+  <input type="text" id="infoPage" style="width: 250px">
+</div>
+
+<script>
+  var page = document.getElementById('page');
+  page.addEventListener('click', clickPage);
+
+  function clickPage() {
+    var infoPage = document.getElementById('infoPage');
+    infoPage.value = 'Прокручена на ' + window.pageYOffset + 'px по вертикали';
+  }
+</script>
+
+
+<!-- 16 -->
+<p>16. Дана страница с горизонтальной полосой прокрутки. По нажатию на
+  кнопку узнайте на сколько страница прокручена по горизонтали.</p>
+<!-- ===================================================================== -->
+
+<div>
+  <input type="submit" value="Проверка" id="page1">
+  <input type="text" id="infoPage1" style="width: 250px">
+</div>
+
+<script>
+  var page1 = document.getElementById('page1');
+  page1.addEventListener('click', clickPage1);
+
+  function clickPage1() {
+    var infoPage1 = document.getElementById('infoPage1');
+    infoPage1.value = 'Прокручена на ' + window.pageXOffset + 'px по горизонтали';
+  }
+</script>
+
+
+<h2>Прокрутка страницы</h2>
+
+<!-- 17 -->
+<p>17. Дана страница с горизонтальной и вертикальной полосами прокрутки.
+  По нажатию на кнопку прокрутите ее в точку 300px слева, 500px сверху.</p>
+<!-- ===================================================================== -->
+
+<div>
+  <input type="submit" id="page2" value="Проверка">
+</div>
+
+<script>
+  var page2 = document.getElementById('page2');
+  page2.addEventListener('click', getPage);
+
+  function getPage() {
+    window.scrollTo(300, 500);
+  }
+</script>
+
+
+<!-- 18 -->
+<p>18. Дана страница с вертикальной полосой прокрутки. По нажатию на кнопку
+  прокрутите на 50px вниз от текущего положения.</p>
+<!-- ===================================================================== -->
+
+<div>
+  <input type="submit" id="page3" value="Проверка">
+</div>
+
+<script>
+  var page3 = document.getElementById('page3');
+  page3.addEventListener('click', getPag3);
+
+  function getPag3() {
+    window.scrollBy(0, 50);
+  }
+</script>
+
+
+<h2>Практика</h2>
+
+<!-- 19 -->
+<p>19. По нажатию на кнопку прокрутите страницу до самого низа.</p>
+<!-- ===================================================================== -->
+
+<div>
+  <input type="submit" value="Прокрутить до самого низу" id="scrollDown">
+  <input type="text" id="infoPage2" style="width: 250px">
+</div>
+
+<script>
+  var scrollDown = document.getElementById('scrollDown');
+  scrollDown.addEventListener('click', getScroll);
+
+  function getScroll() {
+    var infoPage2 = document.getElementById('infoPage2');
+    window.scrollBy(0, window.pageYOffset);
+    infoPage2.value = 'Максимальня высота страницы ' + (window.pageYOffset) + 'px';
+  }
+</script>
+
+
+<!-- 20 -->
+<p>20. По нажатию на кнопку прокрутите страницу на 10px от
+  текущего положения.</p>
+<!-- ===================================================================== -->
+
+<div>
+  <input type="submit" value="Прокрутить до самого низу" id="scrollDown1">
+  <input type="text" id="infoPage3" style="width: 250px">
+</div>
+
+<script>
+  var scrollDown1 = document.getElementById('scrollDown1');
+  scrollDown1.addEventListener('click', getScroll2);
+
+  function getScroll2() {
+    var infoPage3 = document.getElementById('infoPage3');
+    window.scrollBy(0, 10);
+    infoPage3.value = 'Страница прокрчивается на ' + 10 + 'px';
+  }
+</script>
+
+
+<!-- 21 -->
+<p>21. По нажатию на кнопку проверьте, прокручена ли страница до самого низа.
+  Если это так - прокрутите ее в положение 100px от верхнего края.</p>
+<!-- ===================================================================== -->
+
+<div>
+  <input type="button" id="myButton" value="Проверка">
+</div>
+
+<script>
+  var myButton = document.getElementById('myButton');
+  myButton.addEventListener('click', testing);
+
+  function testing() {
+    var infoPage4 = document.getElementById('infoPage4');
+
+    var endPage = document.documentElement.scrollHeight -
+    document.documentElement.scrollTop;
+    var heightPage = document.documentElement.scrollHeight;
+    var topPage = document.documentElement.scrollTop;
+
+    if (topPage + endPage === heightPage) {
+      window.scrollTo(0, 100);
+    }
+  }
+</script>
+
+
+<!-- 22 -->
+<p>22. Дан элемент .element. По клику на него увеличьте его ширину и
+  высоту в 2 раза.</p>
+<!-- ===================================================================== -->
+
+<div class="element1">
+  <input type="submit" value="Проверка" id="getElement">
+</div>
+
+<style>
+  .element1 {
+    width: 100px;
+    height: 100px;
+    border: 1px solid #000;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+</style>
+
+<script>
+  var getElement = document.getElementById('getElement');
+  getElement.addEventListener('click', function got() {
+    var element1 = document.querySelector('.element1');
+    element1.style.width = element1.offsetWidth * 2 + 'px';
+    element1.style.height = element1.offsetHeight * 2 + 'px';
+  });
+</script>

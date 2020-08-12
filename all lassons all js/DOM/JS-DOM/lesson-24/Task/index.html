@@ -1,0 +1,840 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Lesson-24. Task</title>
+</head>
+<body>
+
+<h1>Урок 24. Задачи на продвинутую работу с DOM</h1>
+
+<h2>Работа с классами</h2>
+
+<!-- 1 -->
+<p>1. Дан элемент #elem. Добавьте ему класс www. </p>
+<!-- ======================================================================= -->
+
+<p id="elem"></p>
+
+<script>
+  var elem = document.getElementById('elem');
+  elem.classList.add('www');
+
+  document.write(elem.getAttribute('class'));
+</script>
+
+
+<!-- 2 -->
+<p>2. Дан элемент #elem2. Удалите у него класс www2. </p>
+<!-- ======================================================================= -->
+
+<p id="elem2" class="www2"></p>
+
+<script>
+  var elem2 = document.getElementById('elem2');
+  elem2.classList.remove('www2');
+
+  document.write(elem2.classList.contains('www2'));
+</script>
+
+
+<!-- 3 -->
+<p>3. Дан элемент #elem3. Проверьте наличие у него класса www3. </p>
+<!-- ======================================================================= -->
+
+<p id="elem3" class="www3"></p>
+
+<script>
+  var elem3 = document.getElementById('elem3');
+
+  document.write(elem3.classList.contains('www3'));
+</script>
+
+
+<!-- 4 -->
+<p>4. Дан элемент #elem4. Добавьте ему класс www4, если его нет и
+  удалите - если есть. </p>
+<!-- ======================================================================= -->
+
+<p id="elem4">Элемент</p>
+<input type="submit" value="Добавить цвет" onclick="addColor()" id="button">
+
+<style>
+  .www4 {
+    color: #f00;
+  }
+</style>
+
+<script>
+  function addColor() {
+    var elem4 = document.getElementById('elem4');
+    elem4.classList.toggle('www4');
+
+    var contains = elem4.classList.contains('www4');
+    console.log(contains);
+
+    if (contains === true) {
+      var button = document.getElementById('button');
+      button.value = 'Убрать цвет';
+    } else if (contains === false) {
+      window.button.value = 'Добавить цвет';
+    }
+  }
+</script>
+
+
+<!-- 5 -->
+<p>5. Дан элемент #elem5. Узнайте количество его классов. </p>
+<!-- ======================================================================= -->
+
+<p id="elem5"></p>
+
+<script>
+  var elem5 = document.getElementById('elem5');
+  var length = elem5.classList.length;
+  document.write(length);
+</script>
+
+
+<!-- 6 -->
+<p>6. Дан элемент #elem6. Выведите последовательно алертом его классы. </p>
+<!-- ======================================================================= -->
+
+<p id="elem6" class="first second third"></p>
+
+<script>
+  var elem6 = document.getElementById('elem6');
+  var myClass = elem6.classList;
+
+  for (var i = 0; i < myClass.length; i++) {
+    // alert(myClass[i]);
+  }
+</script>
+
+
+<h2>Работе с CSS</h2>
+
+<!-- 7 -->
+<p>7. Дан элемент #item. Сделайте его красного цвета, размером 30px, добавьте
+  ему границу. Решите задачу с помощью свойства cssText. </p>
+<!-- ======================================================================= -->
+
+
+<p id="item">Элемент</p>
+
+<script>
+  var item = document.getElementById('item');
+  item.style.cssText = 'color: #f00; font-size: 30px; border: 1px solid #000';
+</script>
+
+
+<h2>Свойство tagName</h2>
+
+<!-- 8 -->
+<p>8. Дан элемент #element. По клику на него выведите название его тега. </p>
+<!-- ======================================================================= -->
+
+<p id="element">Элемент</p>
+
+<script>
+  var element = document.getElementById('element');
+
+  element.addEventListener('click', clickElement);
+  var showName = element.tagName;
+
+  function clickElement() {
+    element.innerHTML = element.innerHTML + ' = ' + showName;
+  }
+</script>
+
+
+<!-- 9 -->
+<p>9. Дан элемент #element2. По клику на него выведите название его тега в
+  нижнем регистре. </p>
+<!-- ======================================================================= -->
+
+<p id="element2">Элемент2</p>
+
+<script>
+  var element2 = document.getElementById('element2');
+
+  element2.addEventListener('click', clickElement2);
+  var showName2 = element2.tagName.toLowerCase();
+
+  function clickElement2() {
+    element2.innerHTML = element2.innerHTML + ' = ' + showName2;
+  }
+</script>
+
+
+<!-- 10 -->
+<p>10. Даны элементы с классом ddd. Добавьте каждому элементу в конец название
+  его тега в нижнем регистре. </p>
+<!-- ======================================================================= -->
+
+<p class="ddd">Элемент1</p>
+<p class="ddd">Элемент2</p>
+<p class="ddd">Элемент3</p>
+<input id="addTag" type="button" value="Добавить название тега">
+
+<script>
+  var addTag = document.getElementById('addTag');
+  addTag.addEventListener('click', addTags);
+
+  function addTags() {
+    var ddd = document.querySelectorAll('.ddd');
+
+    for (var i = 0; i < ddd.length; i++) {
+      var myTag = ddd[i].tagName.toLowerCase();
+      ddd[i].innerHTML = ddd[i].innerHTML + ' = ' + myTag;
+    }
+  }
+</script>
+
+
+<h2>Вставка элементов через appendChild</h2>
+
+
+<!-- 11 -->
+<p>11. Дан ol. Вставьте ему в конец li с текстом 'пункт'. </p>
+<!-- ======================================================================= -->
+
+<ol id="parent-item"></ol>
+
+<script>
+  var parentItem = document.getElementById('parent-item');
+
+  var childItem = document.createElement('li');
+  childItem.innerHTML = 'пункт';
+
+  parentItem.appendChild(childItem);
+</script>
+
+
+<!-- 12 -->
+<p>12. Дан ul. Дан массив. Вставьте элементы этого массива в конец ul так,
+  чтобы каждый элемент стоял в своем li.  </p>
+<!-- ======================================================================= -->
+
+<ul id="parent-ul"></ul>
+
+<script>
+  var parentUl = document.getElementById('parent-ul');
+  var array = ['пункт-1', 'пункт-2', 'пункт-3', 'пункт-4'];
+
+  for (var i = 0; i < array.length; i++) {
+    var createLi = document.createElement('li');
+    createLi.innerHTML = array[i];
+    parentUl.appendChild(createLi);
+  }
+
+</script>
+
+
+<h2>Привязывание событий при вставке</h2>
+
+<!-- 13 -->
+<p>13. Дан ul. Дан массив. Вставьте элементы этого массива в конец ul так,
+  чтобы каждый элемент стоял в своем li. Сделайте так, чтобы к вставляемым
+  li было привязано следующее событие: по нажатию на li она должна вывести
+  на экран свой текст.  </p>
+<!-- ======================================================================= -->
+
+<ul id="parent-ul2"></ul>
+
+<script>
+  var arr = ['пункт', 'пункт', 'пункт', 'пункт'];
+  var parentUl2 = document.getElementById('parent-ul2');
+
+  for (var i = 0; i < arr.length; i++) {
+    var createLi2 = document.createElement('li');
+    createLi2.innerHTML = arr[i] + i;
+    parentUl2.appendChild(createLi2);
+    createLi2.addEventListener('click', clickItems);
+  }
+
+  function clickItems() {
+    alert(this.innerHTML);
+  }
+</script>
+
+
+<h2>Вставка элементов через insertBefore</h2>
+
+<!-- 14 -->
+<p>14. Дан элемент ul, а в нем li #item-li. Вставьте перед элементом #item
+  новую li с текстом '!!!'. </p>
+<!-- ======================================================================= -->
+
+<ul id="item-ul">
+  <li id="item-li">item</li>
+</ul>
+
+<script>
+  var itemUl = document.getElementById('item-ul');
+  var itemLi = document.getElementById('item-li');
+
+  var newItem = document.createElement('li');
+  newItem.innerHTML = '!!!';
+
+  itemUl.insertBefore(newItem, itemLi);
+</script>
+
+
+<h2>Вставка элементов через insertAdjacentHTML</h2>
+
+<!-- 15 -->
+<p>15. Дан элемент #item2. Вставьте перед ним span с текстом '!!!'.  </p>
+<!-- ======================================================================= -->
+
+<p id="item2" style="border: 1px solid #000;">Элемент item#2</p>
+
+<script>
+  var item2 = document.getElementById('item2');
+
+  var newItem2 = document.createElement('span');
+  newItem2.innerHTML = '!!!';
+
+  item2.insertAdjacentHTML('BeforeBegin', newItem2.innerHTML);
+</script>
+
+<!-- or -->
+
+<script>
+var item2 = document.getElementById('item2');
+
+item2.insertAdjacentHTML('beforeBegin', '<span><b>!!!</b></span>');
+</script>
+
+
+<!-- 16 -->
+<p>16. Дан элемент #item3. Вставьте после него span с текстом '!!!'.  </p>
+<!-- ======================================================================= -->
+
+<p id="item3" style="border: 1px solid #000;">Элемент item#3</p>
+
+<script>
+  var item3 = document.getElementById('item3');
+
+  var newItem3 = document.createElement('span');
+  newItem3.innerHTML = '!!!';
+
+  item3.insertAdjacentHTML('afterEnd', newItem3.innerHTML);
+</script>
+
+<!-- or -->
+
+<script>
+  var item3 = document.getElementById('item3');
+
+  item3.insertAdjacentHTML('afterEnd', '<span><b>!!!</b></span>');
+</script>
+
+
+<!-- 17 -->
+<p>17. Дан элемент #item4. Вставьте ему в начало span с текстом '!!!'.  </p>
+<!-- ======================================================================= -->
+
+<p id="item4" style="border: 1px solid #000;">Элемент item#4</p>
+
+<script>
+  var item4 = document.getElementById('item4');
+
+  var newItem4 = document.createElement('span');
+  newItem4.innerHTML = '!!!';
+
+  item4.insertAdjacentHTML('afterBegin', newItem4.innerHTML);
+</script>
+
+<!-- or -->
+
+<script>
+  var item4 = document.getElementById('item4');
+
+  item4.insertAdjacentHTML('afterBegin', '<span><b>!!!</b></span>');
+</script>
+
+
+<!-- 18 -->
+<p>18. Дан элемент #item5. Вставьте ему в конец span с текстом '!!!'.  </p>
+<!-- ======================================================================= -->
+
+<p id="item5" style="border: 1px solid #000;">Элемент item#5</p>
+
+<script>
+  var item5 = document.getElementById('item5');
+
+  var newItem5 = document.createElement('span');
+  newItem5.innerHTML = '!!!';
+
+  item5.insertAdjacentHTML('beforeEnd', newItem5.innerHTML);
+</script>
+
+<!-- or -->
+
+<script>
+  var item5 = document.getElementById('item5');
+
+  item5.insertAdjacentHTML('beforeEnd', '<span><b>!!!</b></span>');
+</script>
+
+
+<h2>Потомки</h2>
+
+<!-- 19 -->
+<p>19. Дан элемент #par. Найдите первого потомка этого элемента и сделайте
+  его текст красного цвета.  </p>
+<!-- ======================================================================= -->
+
+<div id="par">
+  <p>Элемент № 1</p>
+  <p>Элемент № 2</p>
+  <p>Элемент № 3</p>
+</div>
+
+<script>
+  var par = document.getElementById('par');
+  var first = par.children[0];
+  first.style.cssText = 'color: #f00';
+</script>
+
+<!-- or -->
+
+<script>
+  var par = document.getElementById('par');
+  par.firstElementChild.style.cssText = 'color: #f00';
+</script>
+
+<!-- or -->
+
+<script>
+  var par = document.getElementById('par');
+  par.firstElementChild.style.color = 'color: #f00';
+</script>
+
+
+<!-- 20 -->
+<p>20. Дан элемент #par2. Найдите последнего потомка этого элемента и сделайте
+  его текст красного цвета  </p>
+<!-- ======================================================================= -->
+
+<div id="par2">
+  <p>Элемент № 1</p>
+  <p>Элемент № 2</p>
+  <p>Элемент № 3</p>
+</div>
+
+<script>
+  var par2 = document.getElementById('par2');
+  par2.children[2].style.color = '#f00';
+</script>
+
+<!-- or -->
+
+<script>
+  var par2 = document.getElementById('par2');
+  par2.lastElementChild.style.cssText = 'color: #f00';
+</script>
+
+<!-- or -->
+
+<script>
+  var par2 = document.getElementById('par2');
+  par2.lastElementChild.style.color = '#f00';
+</script>
+
+
+<!-- 21 -->
+<p>21. Дан элемент #par3. Найдите всех потомков этого элемента и добавьте
+  им в конец текст '!'.  </p>
+<!-- ======================================================================= -->
+
+<div id="par3">
+  <p>Элемент № 1</p>
+  <p>Элемент № 2</p>
+  <p>Элемент № 3</p>
+</div>
+
+<script>
+  var par3 = document.getElementById('par3');
+
+  for (var i = 0; i < par3.children.length; i++) {
+    par3.children[i].innerHTML = par3.children[i].innerHTML + '!';
+  }
+</script>
+
+
+<h2>Соседи</h2>
+
+
+<!-- 22 -->
+<p>22. Дан элемент #neighbor. Найдите его соседа сверху и добавьте ему
+  в конец текст '!'.  </p>
+<!-- ======================================================================= -->
+
+  <p>Сосед № 1</p>
+  <p id="neighbor">Сосед № 2</p>
+  <p>Сосед № 3</p>
+
+<script>
+  var neightbor = document.getElementById('neighbor');
+  neighbor.previousElementSibling.innerHTML += '!';
+</script>
+
+
+<!-- 23 -->
+<p>23. Дан элемент #neighbor2. Найдите его соседа снизу и добавьте ему
+  в конец текст '!'.  </p>
+<!-- ======================================================================= -->
+
+  <p>Сосед № 1</p>
+  <p id="neighbor2">Сосед № 2</p>
+  <p>Сосед № 3</p>
+
+<script>
+  var neighbor2 = document.getElementById('neighbor2');
+  neighbor2.nextElementSibling.innerHTML += '!';
+</script>
+
+
+<!-- 24 -->
+<p>24. Дан элемент .neighbor. Найдите его соседа снизу его соседа снизу
+  (следующий элемент за соседним) и добавьте ему в конец текст '!'.  </p>
+<!-- ======================================================================= -->
+
+<p class="neighbor">Сосед № 1</p>
+<p>Сосед № 2</p>
+<p>Сосед № 3</p>
+<p>Сосед № 4</p>
+
+<script>
+  var neighbor = document.querySelector('.neighbor');
+  var next = neighbor.nextElementSibling;
+  next.nextElementSibling.innerHTML += '!';
+</script>
+
+
+<h2>Родители</h2>
+
+<!-- 25 -->
+<p>25. Дан элемент .elem. Найдите его родителя и покрасьте его
+  в красный цвет.  </p>
+<!-- ======================================================================= -->
+
+<div id="parentElem">
+  <p>Элемент № 1</p>
+  <p class="elem">Элемент № 2</p>
+</div>
+
+<script>
+  var elem = document.querySelector('.elem');
+  elem.parentElement.style.cssText = 'border: 1px solid #f00';
+</script>
+
+<!-- or -->
+
+<script>
+  var elem = document.querySelector('.elem');
+  elem.parentNode.style.borderColor = '#f00';
+</script>
+
+
+<!-- 26 -->
+<p>26. Дан элемент .elem2. Найдите родителя его родителя и покрасьте
+  его в красный цвет.  </p>
+<!-- ======================================================================= -->
+
+<div>
+  <div style='border: 1px solid #999; margin: 10px;'>
+    <p>Элемент 1</p>
+    <p class="elem2">Элемент 2</p>
+  </div>
+</div>
+
+<script>
+  var elem2 = document.querySelector('.elem2');
+  var nextElem = elem2.parentElement;
+  nextElem.parentElement.style.cssText = 'border: 1px solid #f00';
+</script>
+
+<!-- or -->
+
+<script>
+var elem2 = document.querySelector('.elem2');
+elem2.parentElement.parentNode.style.cssText = 'border: 1px solid #f00';
+</script>
+
+
+<h2>Удаление и клонирование</h2>
+
+<!-- 27 -->
+<p>27. Дан элемент #parent, внутри него дан элемент #child. Дана кнопка.
+  По нажатию на эту кнопку удалите элемент #child. </p>
+<!-- ======================================================================= -->
+
+<div id="parent">
+  <p id="child">Элемент</p>
+</div>
+<input type="button" value="Удалить элемент" id="button1">
+
+<script>
+  var button1 = document.getElementById('button1');
+  button1.addEventListener('click', clickButton);
+
+  function clickButton() {
+    var parent = document.getElementById('parent');
+    var child = document.getElementById('child');
+    parent.removeChild(child);
+  }
+</script>
+
+
+<!-- 28 -->
+<p>28. Дан ol. По нажатию на кнопку получите его последнего потомка и
+  удалите его. </p>
+<!-- ======================================================================= -->
+
+<ol id="ol">
+  <li>Потомок 1</li>
+  <li>Потомок 2</li>
+  <li>Потомок 3</li>
+</ol>
+<button id="button2">Удалить элемент</button>
+<script>
+  var button2 = document.getElementById('button2');
+  button2.addEventListener('click', clickButton2);
+
+  function clickButton2() {
+    var ol = document.getElementById('ol');
+    ol.removeChild(ol.lastElementChild);
+  }
+</script>
+
+
+<!-- 29 -->
+<p>29. Дан элемент. Сделайте так, чтобы по нажатию по нему этот
+  элемент удалялся.</p>
+<!-- ======================================================================= -->
+  <input type="text" value="Нажмина на меня, что бы удалить" class="myInput"
+  style="width: 220px">
+
+<script>
+  var myInput = document.querySelector('.myInput');
+  myInput.addEventListener('click', clickInput);
+
+  function clickInput() {
+    this.parentNode.removeChild(this);
+  }
+</script>
+
+
+<!-- 30 -->
+<p>30. Дан ol, а внутри него li. Сделайте так, чтобы по нажатию на любую
+  li эта li удалялась.</p>
+<!-- ======================================================================= -->
+
+<ol id="myOl">
+  <li>Элемент 1</li>
+  <li>Элемент 2</li>
+  <li>Элемент 3</li>
+</ol>
+
+<script>
+  var myOl = document.getElementById('myOl');
+
+  for (var i = 0; i < myOl.children.length; i++) {
+    myOl.children[i].addEventListener('click', clickLi);
+    console.log(myOl.children[i]);
+  }
+
+  function clickLi() {
+    myOl.removeChild(this);
+  }
+</script>
+
+
+<h2>Клонирование</h2>
+
+
+<!-- 31 -->
+<p>31. Дан инпут. Дана кнопка. По нажатию на кнопку клонируйте этот инпут.</p>
+<!-- ======================================================================= -->
+
+<input type="text" placeholder="Текст для клоирования" id="textClone">
+<input type="button" value="Кнокпка клонирования" id="buttonClone">
+
+<script>
+  var textClone = document.getElementById('textClone');
+  var buttonClone = document.getElementById('buttonClone');
+
+  buttonClone.addEventListener('click', cloneText);
+
+  function cloneText() {
+    var clone = textClone.cloneNode(true);
+    this.parentElement.appendChild(clone);
+  }
+</script>
+
+
+<h2>Практика</h2>
+
+<!-- 32 -->
+<p>32. Дан массив. Создайте ul через createElement, затем вставьте каждый
+  элемент этого массива в отдельную li внутри этой ul,
+  затем вставьте эту ul в конец body.</p>
+<!-- ======================================================================= -->
+
+<script>
+  var arr = [1, 2, 3, 4];
+  var listParent = document.createElement('ul');
+
+  for (var i = 0; i < arr.length; i++) {
+    var listItem = document.createElement('li');
+    listItem.innerHTML = arr[i];
+    listParent.appendChild(listItem);
+  }
+
+  document.body.appendChild(listParent);
+</script>
+
+
+<!-- 33 -->
+<p>33. Дан инпут. Рядом с ним находится кнопочка "+". По нажатию на эту
+  кнопку под нашим инпутом должен появится еще один пустой инпут. </p>
+<!-- ======================================================================= -->
+
+<input type="text" id="textInput">
+<input type="submit" value="+" id="plus">
+
+<script>
+  var plus = document.getElementById('plus');
+
+  plus.addEventListener('click', clickPlus);
+
+  function clickPlus() {
+    var textInput = document.getElementById('textInput');
+    var cloneInput = textInput.cloneNode(true);
+
+    this.parentElement.appendChild(cloneInput);
+    this.removeEventListener('click', clickPlus);
+  }
+</script>
+
+<!-- or -->
+
+<input type="text">
+<input type="submit" value="+" id="plus2">
+
+<script>
+  var plus2 = document.getElementById('plus2');
+
+  plus2.addEventListener('click', clickPlus2);
+
+  function clickPlus2() {
+    var newInput = document.createElement('input');
+    this.parentElement.appendChild(newInput);
+    this.removeEventListener('click', clickPlus2);
+  }
+</script>
+
+
+<!-- 34 -->
+<p>34. Дан инпут. В него вводится число. По потери фокуса сделайте так,
+  чтобы каждая цифра вставилась в новый инпут. Инпутов для цифр изначально
+  не существует, они должны создаться в процессе работы скрипта. </p>
+<!-- ======================================================================= -->
+
+<script>
+  var createInput = document.createElement('input');
+  var newParent = document.body;
+
+  var lookIt = newParent.appendChild(createInput);
+
+  lookIt.addEventListener('blur', outInput);
+
+  function outInput() {
+    lookIt.value = parseInt(lookIt.value) + 1;
+
+    var createInput2 = document.createElement('input');
+    createInput2.value = (lookIt.value - 1);
+    newParent.appendChild(createInput2);
+  }
+
+</script>
+
+<!-- or -->
+
+<input type="text" id="count">
+
+
+<script>
+  var count = document.getElementById('count');
+  count.addEventListener('blur', clickIn);
+
+  function clickIn() {
+    var clone = count.cloneNode(false);
+    count.value = parseInt(count.value) + 1;
+    count.parentElement.appendChild(clone);
+  }
+</script>
+
+
+<!-- 35 -->
+<p>35. Дана кнопка. Сделайте так, чтобы по нажатию на эту кнопку,
+  скрывался родитель этой кнопки.</p>
+<!-- ======================================================================= -->
+
+<div class="parentClass" id="parentId">
+  <input class="button" type="submit" value="Кнопка">
+</div>
+
+<style>
+  .parentClass {
+    display: inline-block;
+    border: 10px solid #000;
+    padding: 2px;
+  }
+</style>
+
+
+<script>
+  var button = document.querySelector('.button');
+  button.addEventListener('click', hideParent);
+
+  function hideParent() {
+    var parentId = document.getElementById('parentId');
+    var parentClass = document.querySelector('.parentClass');
+    parentId.classList.toggle('parentClass');
+  }
+</script>
+
+<!-- or -->
+
+<div class="parentClass2">
+  <input id="elemId" type="button" value="Кнопка2">
+</div>
+
+<style>
+  .parentClass2 {
+    display: inline-block;
+    border: 10px solid #000;
+    padding: 2px;
+  }
+</style>
+
+<script>
+  var elemId = document.getElementById('elemId');
+  elemId.addEventListener('click', removeParent);
+
+  function removeParent() {
+    var myParent = document.querySelector('div.parentClass2');
+    console.log(myParent);
+    myParent.classList.remove('parentClass2');
+  }
+</script>
+
+
+</body>
+</html>

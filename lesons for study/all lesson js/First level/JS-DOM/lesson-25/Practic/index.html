@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Lesson-25. Practic</title>
+</head>
+<body>
+  <h1>Работа с метриками на JavaScript</h1>
+
+  <h2>Текстовый блок</h2>
+  <div id="elem">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+    Architecto, in aliquid. Illum, quos necessitatibus inventore, perferendis
+    sapiente suscipit pariatur, cumque esse voluptatem commodi neque cum ipsa
+    odio quidem maxime alias?Lorem ipsum dolor sit amet, consectetur
+    adipisicing elit. Minus esse, molestias ipsam, vel saepe praesentium
+    rerum explicabo autem incidunt recusandae natus porro quidem velit
+    nemo doloremque id asperiores, culpa ut?
+  </div>
+
+  <style>
+    #elem {
+      width: 200px;
+      height: 200px;
+      padding: 20px;
+      border: 20px solid #999;
+      overflow: auto;
+    }
+  </style>
+
+<!-- ====================================================================== -->
+  <h2>Подводные камини при работе с CSS</h2>
+  <p>1. Прочитаем ширину элемента, заданную через атрибут style:</p>
+  <div id="elem2" style="width: 200px;"></div>
+
+  <script>
+    var elem2 = document.getElementById('elem2');
+    document.write(elem2.getAttribute('style'));
+
+    // or
+
+    document.write(elem2.style.width);
+  </script>
+
+
+  <p>2. Назначим ширину через JS, а потом прочитаем ее.</p>
+
+  <div id="elem3"></div>
+
+  <script>
+    var elem3 = document.getElementById('elem3');
+    elem3.classList.add('www');
+    elem3.style.cssText = 'width: 200px;';
+    document.write(elem3.getAttribute('style'));
+
+    // or
+
+    document.write(elem3.style.width);
+  </script>
+
+
+  <p>3. Попробуем прочитать ширину элемента, записанный через style</p>
+
+  <div id="elem4" class="elemStyle"></div>
+
+  <style>
+    .elemStyle {
+      width: 100px;
+      height: 100px;
+      border: 1px solid #999;
+    }
+  </style>
+
+  <script>
+    var elem4 = document.getElementById('elem4');
+    document.write(elem4.style.width); // пусто
+
+    // or
+
+    document.write(elem4.getAttribute('style')); // null
+  </script>
+
+  <h2>Функция getComputedStyle</h2>
+
+  <p>1. Положим этот обхект в переменную style.</p>
+
+  <div id="elem5" class="elem5"></div>
+
+  <style>
+    .elem5 {
+      width: 200px;
+      height: 200px;
+      border: 1px solid black;
+    }
+  </style>
+
+  <script>
+    var elem5 = document.getElementById('elem5');
+    var style = getComputedStyle(elem5);
+    document.write(style.width);
+  </script>
+
+  <p>2. ВЫведем левый padding</p>
+
+  <div id="elem5" class="elem5"></div>
+
+  <style>
+    .elem5 {
+      width: 200px;
+      height: 200px;
+      padding: 5px 10px 15px 20px;
+      border: 1px solid black;
+    }
+  </style>
+
+  <script>
+    var elem5 = document.getElementById('elem5');
+    var style1 = getComputedStyle(elem5);
+    document.write(style1.paddingLeft);
+  </script>
+
+<h2>Неточности getComputedStyle</h2>
+
+<p>1. Зададим блоку ширину, паддинг и границу и выведем ширину</p>
+
+<div id="elem6" class="elem6"></div>
+
+<style>
+  .elem6 {
+    width: 100px;
+    height: 100px;
+    padding: 15px;
+    border: 10px solid black;
+  }
+</style>
+
+<script>
+  var elem6 = document.getElementById('elem6');
+  document.write(getComputedStyle(elem6).width);
+
+  // А реальная ширина блока 150px;
+</script>
+
+<h2>Вычисленные значения</h2>
+
+<p>1. Вывести ширину элемента</p>
+<div id="elem7" class="elem7"></div>
+
+<style>
+  .elem7 {
+    width: 20%;
+    height: 50px;
+    padding: 15px;
+    border: 10px solid black;
+  }
+</style>
+
+<script>
+  var elem7 = document.getElementById('elem7');
+  document.write(getComputedStyle(elem7).width);
+</script>
+
+
+<h2>Свойства clientLeft и clientTop</h2>
+
+<p>1. Выведем эти свойства</p>
+<div id="elem8" class="elem8"></div>
+
+<style>
+  .elem8 {
+    width: 100px;
+    height: 50px;
+    padding: 15px;
+    border-left: 10px;
+    border-top: 15px;
+    border-style: solid;
+  }
+</style>
+
+<script>
+  var elem8 = document.getElementById('elem8');
+  var clientLeft = elem8.clientLeft;
+  var clientTop = elem8.clientTop;
+  document.write(clientLeft + 'px ');
+  document.write(clientTop + 'px');
+</script>
+
+<h2>Свойства offsetWidth и offsetHeight</h2>
+
+<p>1. Выведем ширину и высоту элемента</p>
+
+<div id="elem9" class="elem9"></div>
+
+<style>
+  .elem9 {
+    width: 100px;
+    height: 100px;
+    padding: 15px;
+    border: 10px solid #000;
+  }
+</style>
+
+<script>
+  var elem9 = document.getElementById('elem9');
+  var offsetWidth = elem9.offsetWidth;
+  var offsetHeight = elem9.offsetHeight;
+  document.write(offsetWidth + 'px ');
+  document.write(offsetHeight + 'px ');
+</script>
+
+
+<h2>Свойства clientWidth и clientHeight</h2>
+
+<p>1. Выведем clientWidth для нашего текстового элемнта</p>
+
+<div id="item" class="item">
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+
+</div>
+
+<style>
+  .item {
+    width: 100px;
+    height: 100px;
+    border: 1px solid #000;
+    padding: 10px;
+    overflow: auto;
+  }
+</style>
+
+<script>
+  var item = document.getElementById('item');
+  document.write(item.clientWidth + 'px Так же + padding');
+  // Если больше текста, будет полоса прокрутки. 103px;
+</script>
+
+
+<h2>Свойства scrollLeft и scrollTop</h2>
+
+<p>1. По килку на кнопку, занчение scrollTop (прокрутка сверху)</p>
+
+<div id="item2" class="item2">
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+  Eligendi recusandae eaque voluptatem expedita, pariatur dolore maiores.
+</div>
+<input type="submit" onclick="info()">
+
+<style>
+  .item2 {
+    width: 100px;
+    height: 100px;
+    border: 1px solid #000;
+    padding: 10px;
+    overflow: auto;
+  }
+</style>
+
+<script>
+  function info() {
+    var item2 = document.getElementById('item2');
+    alert('Значение прокрутки = ' + item2.scrollTop);
+  }
+</script>
+
+<p>2. Присвоим нужное значение для прокрутки элемента</p>
+
+<div id="item3" class="item3">
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+  Eligendi recusandae eaque voluptatem expedita, pariatur dolore maiores.
+</div>
+<input type="submit" onclick="info3()">
+
+<style>
+  .item3 {
+    width: 100px;
+    height: 100px;
+    border: 1px solid #000;
+    padding: 10px;
+    overflow: auto;
+  }
+</style>
+
+<script>
+  function info3() {
+    var item3 = document.getElementById('item3');
+    item3.scrollTop = 100;
+  }
+</script>
+
+<p>3. Прокрупить элемент на 10px от текущего положения</p>
+
+<div id="item4" class="item4">
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+  Eligendi recusandae eaque voluptatem expedita, pariatur dolore maiores.
+</div>
+<input type="submit" onclick="info4()">
+
+<style>
+  .item4 {
+    width: 100px;
+    height: 100px;
+    border: 1px solid #000;
+    padding: 10px;
+    overflow: auto;
+  }
+</style>
+
+<script>
+  function info4() {
+    var item4 = document.getElementById('item4');
+    item4.scrollTop += 10;
+  }
+</script>
+
+
+<h2>Свойтва scrollWidth и scrollHeight</h2>
+
+<p>1. Выведем полную высоту и ширину нашего элемента</p>
+
+<div id="item5" class="item5">
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+  Eligendi recusandae eaque voluptatem expedita, pariatur dolore maiores.
+</div>
+<input type="submit" onclick="info5()">
+
+<style>
+  .item5 {
+    width: 100px;
+    height: 100px;
+    border: 1px solid #000;
+    padding: 10px;
+    overflow: auto;
+  }
+</style>
+
+<script>
+  function info5() {
+    var item5 = document.getElementById('item5');
+    alert(item5.scrollHeight);
+    alert(item5.scrollWidth);
+  }
+</script>
+
+
+<p>2. Распахнем элемент на его полную ширину и высоту.</p>
+
+<div id="item6" class="item6">
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+  Eligendi recusandae eaque voluptatem expedita, pariatur dolore maiores.
+</div>
+<input type="submit" onclick="info6()">
+
+<style>
+  .item6 {
+    width: 100px;
+    height: 100px;
+    border: 1px solid #000;
+    padding: 10px;
+    overflow: auto;
+  }
+</style>
+
+<script>
+  function info6() {
+    var item6 = document.getElementById('item6');
+    item6.style.height = (item6.scrollHeight - 30) + 'px';
+  }
+</script>
+
+<<h2>pageXOffset и pageYOffset</h2>
+
+<p>1. Выведем прокрутку страницы по горизонтали</p>
+
+<script>
+  document.write(window.pageXOffset);
+</script>
+
+<p>2. Выведем прокрутку страницы по вертикали</p>
+
+<script>
+  document.write(window.pageYOffset);
+</script>
+
+
+<h2>Метод getBoundingClientRect</h2>
+
+<p>По клику кнопки, разместим под ней новый элемент (с position: fixed)
+и удали его через 3 секунды</p>
+
+<input type="button" value="Нажмите на кнопку" id="buttonId">
+
+<script>
+  var buttonId = document.getElementById('buttonId');
+  buttonId.addEventListener('click', openButton);
+
+  function openButton() {
+    var newEl = getNewEl();
+    document.body.appendChild(newEl);
+
+    setTimeout(function openButton() {
+      document.body.removeChild(newEl);
+    }, 3000);
+  };
+
+  function getNewEl() {
+    var xy = buttonId.getBoundingClientRect();
+    var newEl = document.createElement('div');
+    newEl.innerHTML = 'Новый элемент';
+    newEl.style.cssText = 'position: fixed;'
+      + 'border: 1px solid #000;'
+      + 'left:' + xy.left + 'px;'
+      + 'top:' + (xy.bottom + 1) + 'px';
+
+    return newEl;
+  }
+</script>
+
+
+<h2>Функция scrollTo</h2>
+
+<p>1. Прокрутить страницу в начало</p>
+
+<input type="submit" id="scrollTop">
+
+<script>
+  var scrollTop = document.getElementById('scrollTop');
+  scrollTop.addEventListener('click', scroll);
+
+  function scroll() {
+    window.scrollTo(0, 0);
+  }
+</script>
+
+<p>2. Прокрутим страницу до введенного значения</p>
+
+<input type="submit" id='scrollQ'>
+
+<script>
+  var scrollQ = document.getElementById('scrollQ');
+  scrollQ.addEventListener('click', toScroll);
+
+  function toScroll() {
+    var x = +prompt('Введите значениe горизонтали', '');
+    return window.scrollTo(0, x);
+  }
+</script>
+
+
+<h2>Функция scrollBy</h2>
+
+<p>1. Прокрутим страницу на 10px</p>
+
+<input type="submit" id="scroll10">
+
+<script>
+  var scroll10 = document.getElementById('scroll10');
+  scroll10.addEventListener('click', scrollGo);
+
+  function scrollGo() {
+    window.scrollBy(0, 10);
+  }
+</script>
+
+<p>2. Прокрутим страницу до введенного значения</p>
+
+<input type="submit" id="addValue">
+
+<script>
+  var addValue = document.getElementById('addValue');
+  addValue.addEventListener('click', writeValue);
+
+  function writeValue() {
+    var x = +prompt('Введите занчене вертикали', '');
+    return window.scrollBy(0, x);
+  }
+</script>
+
+
+<h2>Метод scrollIntoView</h2>
+
+<p>1. По клику кнопки прокрутим страницу так, что кнопка окажется сверху</p>
+
+<input type="submit" id="buttonTop">
+
+<script>
+  var buttonTop = document.getElementById('buttonTop');
+  buttonTop.addEventListener('click', clickTrue);
+
+  function clickTrue() {
+    buttonTop.scrollIntoView(true);
+  }
+</script>
+
+
+<p>2. По клику кнопки прокрутим страницу так, что кнопка окажется внизу</p>
+
+<input type="submit" id="buttonBottom">
+
+<script>
+  var buttonBottom = document.getElementById('buttonBottom');
+  buttonBottom.addEventListener('click', clickTrue);
+
+  function clickTrue() {
+    buttonBottom.scrollIntoView(false);
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

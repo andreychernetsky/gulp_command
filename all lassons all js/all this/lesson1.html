@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+<body>
+<script>
+  //example
+  function showFullName() {
+    console.log(this.firstName + " " + this.lastName);//Вася петров
+
+  }
+  const user = {
+    firstName:'Вася',
+    lastName:'петров'
+  };
+  showFullName.call(user);
+  
+//example
+	
+  const user = {
+    firstName:"Вася",
+    lastName:"петров",
+    patronym:"Иванович"
+  };
+
+  function showFullName(firstPart,lastPart) {
+    console.log(this[firstPart] + ' ' + this[lastPart]);//Вася иванович
+
+  }
+  showFullName.call(user, 'firstName','patronym');
+
+  //example
+
+  const array = [1,2,3,4,5];
+
+  Array.prototype.multBy = function(n) {
+    console.log('multBy',this)//multBy[1,2,3,4,5]
+  }
+  console.log(array.multBy(5));
+
+
+
+  //  example
+
+  const array = [1,2,3,4,5];
+
+  Array.prototype.multBy = function(n) {
+    return this.map(function(i) {
+      return i * n
+    })
+  }
+  console.log([1,2,3,4,5].multBy(3));[3,6,9,12,15]
+  console.log(array.multBy(2));//[2,4,6,8,10]
+
+</script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+				content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+<body>
+<style>
+	.wrap {
+		margin:0 auto;
+	}
+	.accordion__button {
+		background-color: #eee;
+		color: #444;
+		cursor: pointer;
+		padding: 18px;
+		width: 100%;
+		border: none;
+		text-align: left;
+		outline: none;
+		font-size: 15px;
+		transition: 0.4s;
+	}
+	.active, .accordion__button:hover {
+		background-color: #ccc;
+	}
+	
+	.accordion__panel {
+		margin: 0 auto;
+		padding: 0 18px;
+		display: none;
+		background-color: white;
+		overflow: hidden;
+	}
+</style>
+<div class="accordion ">
+	<button class="accordion__button active">section1</button>
+	<div class="accordion__panel">
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam dolore dolores doloribus dolorum eius, expedita explicabo minus nisi quia quod. </p>
+	</div>
+	<button class="accordion__button">section2</button>
+	<div class="accordion__panel">
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam dolore dolores doloribus dolorum eius, expedita explicabo minus nisi quia quod. </p>
+	</div>
+	<button class="accordion__button">section3</button>
+	<div class="accordion__panel">
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam dolore dolores doloribus dolorum eius, expedita explicabo minus nisi quia quod. </p>
+	</div>
+</div>
+
+<script src ="js.js"></script>
+</body>
+</html>

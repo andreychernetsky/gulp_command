@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+				content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+<body>
+<style>
+
+	
+	#accordion {
+		width: 100%;
+		max-width: 500px;
+		margin: 0 auto;
+	}
+	
+	.accordion-title {
+		background-color: #ccc;
+		text-align: center;
+		padding: 10px;
+		font-weight: bold;
+		font-size: 18px;
+	}
+	
+	.accordion-title.active + .accordion-cont {
+		display: block;
+	}
+	
+	.accordion-cont {
+		display: none;
+		height: 200px;
+		background: #4CAF50;
+	}
+	.fade {
+		-webkit-animation-name: fade;
+		-webkit-animation-duration: 1.5s;
+		animation-name: fade;
+		animation-duration: 1.5s;
+		z-index: 1;
+	}
+	
+	@-webkit-keyframes fade {
+		from {
+			opacity: .4
+		}
+		to {
+			opacity: 1
+		}
+	}
+
+
+</style>
+<div id="accordion" data-accordion>
+	<div class="accordion-title active ">
+		<span>Организация команды  программистов.</span>
+	</div>
+	<div class="accordion-cont ">
+	
+	</div>
+	<div class="accordion-title ">
+		<span>музыкальная минутка</span>
+	</div>
+	<div class="accordion-cont">
+		
+	
+	</div>
+	<div class="accordion-title ">
+		<span>настольная игротека</span>
+	</div>
+	<div class="accordion-cont">
+	
+	</div>
+	<div class="accordion-title ">
+		<span>проекты для города</span>
+	</div>
+	<div class="accordion-cont">
+	
+	</div>
+</div>
+
+<script>
+
+
+  (function Accordion() {
+   
+
+    //приведение в нормальный вид массива
+    const [...acсConatainer] = document.querySelectorAll('[data-accordion]');
+
+    acсConatainer.forEach((accordion) => {
+      const [...accTitles] = accordion.querySelectorAll('.accordion-title');
+
+      accTitles.forEach((title) => {
+        title.addEventListener('click', () => open(title, accTitles))
+      })
+    });
+
+    function open(title, siblings) {
+      siblings.forEach(item => item.classList.remove('active'));
+      title.classList.add('active');
+    }
+  })();
+
+
+</script>
+</body>
+</html>

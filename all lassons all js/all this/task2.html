@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+<body>
+<button id ="demo">click</button>
+<p class="test"></p>
+<script>
+
+  const person = {
+    firstName:"andrey",
+    lastName:"chernetsky",
+    if:566,
+    fullName:function() {
+      return this.firstName + " " + this.lastName;
+    }
+  };
+  console.log(person.fullname);
+  //	example
+
+  const person = {
+    name:"Maxim",
+    age:25,
+    greet:function(){
+      console.log('Greet')
+    }
+
+  }
+  console.log(person.name);
+  console.log(person["age"]);
+  console.log(person);
+
+  //	example
+
+  const person = new Object({
+    name:'Maxim',
+    age:25,
+    greet:function() {
+      console.log('Greet')
+    }
+  })
+
+  //	examle
+
+  const person = new Object({
+    name:'Maxim',
+    age:25,
+    greet:function(){
+      console.log('Greet');
+    }
+  })
+
+  Object.prototype.sayhello = function() {
+    console.log('Hello');
+  }
+  const lena = Object.create(person);
+  lena.name = 'Elena';
+  //	console.log(person.sayhello());
+  console.log(lena.name)
+
+  //	example
+
+  const animal = {
+    eats:true
+  };
+
+  const rabbit = {
+    jumps:true
+  };
+
+  rabbit.__proto__ = animal;
+
+  console.log(rabbit.jumps);//true
+  console.log(rabbit);//{jumps;true}
+
+  //	example
+
+  const animal = {
+    eats:true
+  };
+
+  const rabbit = {
+    jumps:true,
+    eats:false
+  };
+
+  rabbit.__proto__ = animal;
+
+  console.log(rabbit.eats);//false
+
+  //	example
+
+  const animal = {
+    eats:true
+  };
+
+  const rabbit = {
+    jumps:true,
+    __proto__:animal
+  };
+
+  for(let key in rabbit) {
+    console.log(key + "=" + rabbit[key]);//jump = true, eats = true
+  }
+
+  console.log(rabbit.eats);//false
+	</script>
+</body>
+</html>

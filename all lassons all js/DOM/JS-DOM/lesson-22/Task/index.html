@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Lesson-22 Task</title>
+</head>
+<body>
+
+  <h1>Работа с таймерами в JS</h1>
+
+  <!-- 1 -->
+  <p>1. Создайте отсчет от 0 до бесконечности:</p>
+  <!-- ==================================================================== -->
+
+  <h3 id="myCount">0</h3>
+  <input type="submit" value="Нажмите на меня!" onclick="upCount()">
+
+  <script>
+    function upCount() {
+      window.setInterval(count, 1000);
+    }
+
+    function count() {
+      var elem = document.getElementById('myCount');
+      elem.innerHTML = parseInt(elem.innerHTML) + 1;
+    }
+  </script>
+
+  <!-- or -->
+
+  <script>
+    function upCount() {
+      var elem = document.getElementById('myCount');
+      elem.innerHTML = parseInt(elem.innerHTML) + 1;
+
+      window.setTimeout(upCount, 1000);
+    }
+  </script>
+
+  <!-- 2 -->
+  <p>2. Создайте отсчет с кнопкой остановки:</p>
+  <!-- ==================================================================== -->
+
+  <h3 id="count">0</h3>
+  <input type="submit" id="start" value="Запусить таймер" onclick="startCount()">
+  <input type="submit" id="stop"value="Остановить таймер" onclick="stopCount()"
+  disabled>
+
+  <script>
+    function startCount() {
+      window.starts = setInterval(countInner, 1000);
+      window.start = document.getElementById('start');
+      window.stop = document.getElementById('stop');
+      stop.disabled = false;
+      start.disabled = true;
+    }
+
+    function stopCount() {
+      window.clearInterval(window.starts);
+      start.disabled = false;
+      stop.disabled = true;
+    }
+
+    function countInner() {
+      var myInner = document.getElementById('count');
+      myInner.innerHTML = parseInt(myInner.innerHTML) + 1;
+    }
+  </script>
+
+  <!-- 3 -->
+  <p>3. Создайте тикающие часы:</p>
+  <!-- ==================================================================== -->
+
+  <!-- Работа часов с 00:00:00 -->
+
+  <b id="hours" onload="hoursGo()">00</b>
+  <b>:</b>
+  <b id="minutes" onload="minutesGo()">00</b>
+  <b>:</b>
+  <b id="seconds" onload="secondsGo()">00</b>
+
+<script>
+  function hoursGo() {
+    var hours = document.getElementById('hours');
+
+    window.setTimeout(hoursGo, 3600000);
+
+    if (hours.innertHTML > '23') {
+      hours.innerHTML = '00';
+    }
+  }
+
+  function minutesGo() {
+    var minutes = document.getElementById('minutes');
+    window.setTimeout(minutesGo, 60000);
+
+    if (minutes.innertHTML > '59') {
+      minutes.innerHTML = '00';
+      window.hours.innerHTML = getNull(parseInt(hours.innerHTML) + 1);
+    }
+  }
+
+  function secondsGo() {
+    var seconds = document.getElementById('seconds');
+    seconds.innerHTML = getNull(parseInt(seconds.innerHTML) + 1);
+
+    window.setTimeout(secondsGo, 1000);
+
+    if (seconds.innerHTML > '59') {
+      seconds.innerHTML = '00';
+      window.minutes.innerHTML = getNull(parseInt(minutes.innerHTML) + 1);
+    }
+  }
+
+  hoursGo();
+  minutesGo();
+  secondsGo();
+
+  function getNull(num) {
+    if (num > 0 && num < 10) {
+      return '0' + num;
+    } return num;
+  }
+</script>
+
+<!-- Работа часов с настоящего времени -->
+
+<div onload="restart()">
+  <h2 id="myTime"></h2>
+</div>
+
+<script>
+function restart() {
+  var myTime = document.getElementById('myTime');
+  var date = new Date();
+  myTime.innerHTML = (getNull(date.getHours()) + ':' + getNull(date.getMinutes())
+  + ':' + getNull(date.getSeconds()));
+
+  window.setTimeout(restart, 1000);
+}
+
+function getNull(num) {
+  if (num >= 0 && num < 10) {
+    return '0' + num;
+  } return num;
+}
+
+restart();
+</script>
+
+<!-- or -->
+
+<div onload="restart2()">
+  <h2 id="myTime2"></h2>
+</div>
+
+<script>
+function restart2() {
+  window.timer2 = window.setInterval(timer2, 1000);
+}
+
+function timer2() {
+  var myTime2 = document.getElementById('myTime2');
+  var date = new Date();
+  myTime2.innerHTML = (getNull(date.getHours()) + ':' + getNull(date.getMinutes())
+  + ':' + getNull(date.getSeconds()));
+}
+
+function getNull(num) {
+  if (num >= 0 && num < 10) {
+    return '0' + num;
+  } return num;
+}
+
+restart2();
+</script>
+
+<!-- 4 -->
+<p>4. Создайте таймер обратного отсчета:</p>
+<!-- ==================================================================== -->
+
+<h2 id="numberDown">10</h2>
+<input type="submit" value="Запустить таймер!" onclick="buttonDown()" id="clickButton">
+
+<script>
+  function buttonDown() {
+    var clickButton = document.getElementById('clickButton');
+    clickButton.disabled = true;
+
+    var numberDown = document.getElementById('numberDown');
+    numberDown.innerHTML = parseInt(numberDown.innerHTML) - 1;
+
+    window.timerStart = window.setTimeout(buttonDown, 1000);
+
+    if (numberDown.innerHTML === '0') {
+      window.clearInterval(window.timerStart);
+      clickButton.style.display = 'none';
+      clickButton.outerHTML = '<p>' + 'Обратный отчет завершен.' + '</p>';
+    }
+  }
+</script>
+
+<!-- or -->
+
+<h2 id="numberDown2">10</h2>
+<input type="submit" value="Запустить таймер!" onclick="buttonDown2(this)" id="clickButton2">
+
+<script>
+  function buttonDown2(elem) {
+    window.timerStarting = window.setInterval(timerGo, 1000);
+
+    elem.disabled = true;
+  }
+
+  function timerGo() {
+    var clickButton2 = document.getElementById('clickButton2');
+    var counter = document.getElementById('numberDown2');
+    counter.innerHTML = parseInt(counter.innerHTML) - 1;
+
+    if (counter.innerHTML === '0') {
+      window.clearInterval(window.timerStarting);
+      clickButton2.display = 'none';
+      clickButton2.outerHTML = '<p> Обратный отчет завершен.</p>';
+    }
+  }
+</script>
+
+
+<!-- 5 -->
+<p>5. Создайте простой слайдер:</p>
+<!-- ==================================================================== -->
+
+<div onload="nextSmile()">
+  <img src="" alt="smiles" id="smiles">
+</div>
+
+<script>
+  var num = 1;
+  function nextSmile() {
+    var smiles = document.getElementById('smiles');
+
+    if (num < 4) {
+      smiles.src = 'image/' + num + '.png';
+      num++;
+      if (num === 4) {
+        num = 1;
+      }
+    }
+
+    // window.setTimeout(nextSmile, 1000);
+  }
+
+  nextSmile();
+</script>
+
+
+<!-- 6 -->
+<p>6. Создайте карусель:</p>
+<!-- ==================================================================== -->
+
+<div>
+  <img src="image/1.png" alt="smiles" id="smile1">
+  <img src="image/2.png" alt="smiles" id="smile2">
+  <img src="image/3.png" alt="smiles" id="smile3">
+</div>
+<input type="submit" value="Запустить карусель!" onclick="nextSmile2()" id="dis">
+
+<script>
+
+  var num = 1;
+  var num2 = 2;
+  var num3 = 3;
+
+  function nextSmile2() {
+    var smile1 = document.getElementById('smile1');
+    var smile2 = document.getElementById('smile2');
+    var smile3 = document.getElementById('smile3');
+    dis.disabled = true;
+
+    if (num <= 3) {
+      smile1.src = 'image/' + num + '.png';
+      num++;
+      if (num === 4) {
+        num = 1;
+      }
+    }
+
+    if (num2 <= 3) {
+      smile2.src = 'image/' + num2 + '.png';
+      num2++;
+      if (num2 === 4) {
+        num2 = num2 - 3;
+      }
+    }
+
+    if (num3 < 4) {
+      smile3.src = 'image/' + num3 + '.png';
+      num3++;
+      if (num3 === 4) {
+        num3 = 1;
+      }
+    }
+
+    window.setTimeout(nextSmile2, 1000);
+  }
+</script>
+
+<!-- or -->
+
+<script>
+function nextSmile2() {
+  var smile1 = document.getElementById('smile1');
+  var smile2 = document.getElementById('smile2');
+  var smile3 = document.getElementById('smile3');
+  dis.disabled = true;
+
+  var first = smile1.src;
+  smile1.src = smile2.src;
+  smile2.src = smile3.src;
+  smile3.src = first;
+
+  window.setTimeout(nextSmile2, 1000);
+}
+</script>
+
+
+<!-- 7 -->
+<p>7. Создайте карусель:</p>
+<!-- ==================================================================== -->
+
+<div style="width: 600px;">
+  <div style="text-align: center;" id="smiles2">
+    <img src="image/1.png" alt="smiles" id="mySmiles">
+    <img src="image/2.png" alt="smiles" id="mySmiles">
+    <img src="image/3.png" alt="smiles" id="mySmiles">
+    <img src="image/4.png" alt="smiles" id="mySmiles">
+    <img src="image/5.png" alt="smiles" id="mySmiles">
+    <img src="image/6.png" alt="smiles" id="mySmiles">
+  </div>
+  <div style="text-align: center;">
+    <input type="submit" value="Запусить каресель!" onclick="startCarousel()"
+    id="startIt">
+    <input type="submit" value="Остановить курусель!" onclick="stopCarousel()"
+     disabled id="stopThis">
+  </div>
+</div>
+
+<!-- or -->
+
+<script>
+  function startCarousel() {
+    var mySmiles = document.querySelectorAll('#mySmiles');
+    window.stopIt = document.getElementById('stopIt');
+    window.startIt = document.getElementById('startIt');
+    stopThis.disabled = false;
+    startIt.disabled = true;
+
+    var firstSmiles = mySmiles[0].src;
+    mySmiles[0].src = mySmiles[1].src;
+    mySmiles[1].src = mySmiles[2].src;
+    mySmiles[2].src = mySmiles[3].src;
+    mySmiles[3].src = mySmiles[4].src;
+    mySmiles[4].src = mySmiles[5].src;
+    mySmiles[5].src = firstSmiles;
+
+    window.stopIt = window.setTimeout(startCarousel, 1000);
+  }
+
+  function stopCarousel() {
+    window.clearInterval(window.stopIt);
+    startIt.disabled = false;
+    stopThis.disabled = true;
+  }
+</script>
+
+<!-- 8 -->
+<p>8. Создайте отсчет до полуночи:</p>
+<!-- ==================================================================== -->
+
+<table onload="myTable()">
+  <caption>До полуночи осталось:</caption>
+  <tr>
+    <th>Часы</th>
+    <th>Минуты</th>
+    <th>Секунды</th>
+  </tr>
+  <tr>
+    <td id="hoursClose"></td>
+    <td id="minutesClose"></td>
+    <td id="secondsClose"></td>
+  </tr>
+</table>
+
+<style>
+  table {
+    border-collapse: collapse;
+  }
+
+  th, td {
+    width: 100px;
+    height: 30px;
+    border: 2px solid #000;
+    text-align: center;
+  }
+</style>
+
+<script>
+  function myTable() {
+    var date = new Date();
+
+    var hoursClose = document.getElementById('hoursClose');
+    var minutesClose = document.getElementById('minutesClose');
+    var secondsClose = document.getElementById('secondsClose');
+
+    hoursClose.innerHTML = getNull(23 - date.getHours());
+    minutesClose.innerHTML = getNull(59 - date.getMinutes());
+    secondsClose.innerHTML = getNull(59 - date.getSeconds());
+
+    function getNull(num) {
+      if (num >= 0 && num < 10) {
+        return '0' + num;
+      } return num;
+    }
+
+    window.setTimeout(myTable, 1000);
+  }
+
+  myTable();
+</script>
+
+
+</body>
+</html>

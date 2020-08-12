@@ -275,6 +275,23 @@
     }
   }
 
+  
+//  example
+  function addElem(arr2) {
+    let even = [];
+    let add = [];
+
+    for(let i = 0; i < arr2.length; i++) {
+      (arr2[i] % 2 == 0) ? add.push(arr2[i]) : even.push(arr2[i])
+
+    }
+
+    /*return "add= " + add + " even= " + even ;*/
+    return `add = ${add} even = ${even}`
+  }
+  // const arr = [2,4,5,3,7];
+  console.log(addElem( [2,4,5,3,7]));
+
 </script>
 </body>
 </html>

@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+<body>
+<script>
+  //	через reduce
+
+  let array =[1,2,3];
+  let sum = array.reduce((sum,elem)=>{
+    return sum + elem;
+  },0);
+  console.log(sum);
+
+  //  черезе reduce
+
+  function sumElem(elem) {
+    let sum = elem.reduce((sum,elem) =>{
+      return sum + elem
+    },0);
+    return sum;
+  }
+  let array = [1,2,3];
+  console.log(sumElem(array));
+
+  
+//  example
+  function getSums(arr) {
+    const result = [];
+    if(!arr.length) return result;
+
+    let totalSum = arr.reduce((sum, item)=> {
+      result.push(sum);
+      return sum + item;
+    });
+    result.push(totalSum);
+
+    return result;
+  }
+
+  console.log(getSums([7, 5, 10]));
+
+  'use strict';
+
+
+  // для каждого элемента массива запустить функцию,
+  // промежуточный результат передавать первым аргументом далее
+  function getSum(arr) {
+    const result = [];
+
+    arr.reduce((sum, current)=> {
+        result.push(sum);
+        return sum + current;
+      }
+    );
+    return result;
+  }
+  const arr = [1, 2, 3, 4, 5];
+  console.log(getSum(arr)); // 15
+</script>
+</body>
+</html>

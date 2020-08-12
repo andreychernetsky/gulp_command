@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Lesson-28. Task</title>
+</head>
+<body>
+  <h1>Урок 28. Продвинутая работа с объектом Event</h1>
+
+  <h2>Трегинг "Делегирование событий"</h2>
+  <h3>Блок №1. Разминка</h3>
+
+  <!-- 1 -->
+  <p>1. Дан ul с несколькими li. По нажатию на любую li на экран должен вывестись
+    ее текст. Решить не через делегирование, а обычным способом -
+    задача разминочная.</p>
+  <!-- ===================================================================== -->
+
+    <ul id="ul">
+      <li>Item 1</li>
+      <li>Item 2</li>
+      <li>Item 3</li>
+    </ul>
+
+    <style>
+      #ul li {
+        list-style: none;
+        background: #900;
+        width: 50px;
+        margin: 2px;
+        color: #fff;
+      }
+    </style>
+
+  <script>
+    var ul = document.getElementById('ul');
+    var child = ul.children;
+
+    for (var i = 0; i < child.length; i++) {
+      child[i].addEventListener('click', function addElem() {
+        alert(this.innerHTML);
+      });
+    }
+  </script>
+
+  <!-- 2 -->
+  <p>2. Дан ul с несколькими li и кнопка. Сделайте так, чтобы по нажатию на
+    кнопку в конец ul добавлялась новая li с текстом 'пункт'.
+    Задачу решите с помощью методов createElement и appendChild.</p>
+  <!-- ===================================================================== -->
+
+  <input type="submit" value="Добавить новый элемент" id="create">
+  <ul id="ulParent">
+    <li>Пункт</li>
+    <li>Пункт</li>
+    <li>Пункт</li>
+  </ul>
+
+  <style>
+    #ulParent li {
+      width: 50px;
+      margin: 1px;
+      border: 1px solid #000;
+    }
+  </style>
+
+  <script>
+    var create = document.getElementById('create');
+
+    create.addEventListener('click', function addNewItem() {
+      var ulParent = document.getElementById('ulParent');
+
+      var newItem = document.createElement('li');
+      newItem.innerHTML = 'Пункт';
+      ulParent.appendChild(newItem);
+    });
+  </script>
+
+
+  <!-- 3 -->
+  <p>3. Дан div 200 на 200 пикселей. Сделайте так, чтобы по клику на этот div
+    на экран выводились координаты места нажатия.</p>
+  <!-- ===================================================================== -->
+
+  <div id="divParent"></div>
+
+  <style>
+    #divParent {
+      width: 200px;
+      height: 200px;
+      border: 1px solid #000;
+    }
+  </style>
+
+  <script>
+    var divParent = document.getElementById('divParent');
+
+    divParent.addEventListener('click', function showCoordinate() {
+      var x = event.clientX - divParent.offsetLeft;
+      var y = event.clientY - divParent.offsetTop +
+      document.documentElement.scrollTop;
+      alert(x + ':' + y);
+    });
+  </script>
+
+
+  <!-- 4 -->
+  <p>4. Дан ul с несколькими li. По нажатию на любую li на экран должен
+    вывестись ее текст. Дана кнопка. Сделайте так, чтобы по нажатию на эту
+    кнопку в конец ul добавлялась новая li с текстом 'пункт'. Сделайте так,
+    чтобы вновь добавленные li также реагировали на нажатие.
+    Задачу решите с помощью делегирования.</p>
+  <!-- ===================================================================== -->
+
+  <input type="submit" value="Добвить элемент" id="add2">
+  <ul id="ulParent2">
+    <li>Пункт 1</li>
+    <li>Пункт 2</li>
+    <li>Пункт 3</li>
+  </ul>
+
+  <script>
+    var add2 = document.getElementById('add2');
+    add2.addEventListener('click', function addElem2() {
+      var newElem = document.createElement('li');
+      newElem.innerHTML = 'Новый пункт';
+
+      var ulParent2 = document.getElementById('ulParent2');
+      ulParent2.appendChild(newElem);
+    });
+
+    ulParent2.addEventListener('click', function addInfo2() {
+      var child2 = event.target;
+      alert(child2.innerHTML);
+    });
+  </script>
+
+
+<!-- or -->
+
+  <input type="submit" value="Добавить элемент" id="add3">
+  <ul id="ulParent3">
+    <li>Пункт</li>
+    <li>Пункт</li>
+    <li>Пункт</li>
+  </ul>
+
+  <script>
+    var ulParent3 = document.querySelector('#ulParent3');
+    var child3 = ulParent3.children;
+
+    for (var i = 0; i < child3.length; i++) {
+      child3[i].innerHTML = child3[i].innerHTML + ' ' + (i + 1);
+      child3[i].addEventListener('click', addInfo3);
+      function addInfo3() {
+        alert(this.innerHTML);
+      }
+    };
+
+    var add3 = document.getElementById('add3');
+    add3.addEventListener('click', function addElem3() {
+      var newElem3 = document.createElement('li');
+      newElem3.innerHTML = 'Новый пункт' + ' ' + (++i);
+
+      newElem3.addEventListener('click', addInfo3);
+      ulParent3.appendChild(newElem3);
+    });
+
+  </script>
+
+
+  <!-- 5 -->
+  <p>5. Сделать предыдущую задачу, только добавть в один из li курсив.
+    Решить с помощью делигирования.</p>
+  <!-- ===================================================================== -->
+
+  <input type="submit" value="Добавить элемент" id="add4">
+  <ul id="ulParrent4">
+    <li>Пункт <i>№ </i>1</li>
+    <li>Пункт № 2</li>
+    <li>Пункт <i>№ </i>3</li>
+  </ul>
+
+  <script>
+    var ulParrent4 = document.getElementById('ulParrent4');
+    ulParrent4.addEventListener('click', addInfo4);
+    function addInfo4() {
+      var child4 = event.target.closest('li');
+      child4.innerHTML += '+';
+    }
+
+    var add4 = document.getElementById('add4');
+
+    add4.addEventListener('click', function addElem4() {
+      var newElem4 = document.createElement('li');
+      newElem4.innerHTML = 'Новый пункт';
+      ulParrent4.appendChild(newElem4);
+    });
+  </script>
+
+
+  <h3>Блок №4. Практика</h3>
+
+  <!-- 6 -->
+  <p>6. Дана таблица с колонками 'имя', 'фамилия', 'удалить'.
+    Сделайте под ней 2 инпута и кнопку. Если ввести в эти инпуты имя и
+    фамилию и нажать на кнопку - в таблицу должен добавиться новый ряд.
+    В каждом ряду должна быть кнопочка 'удалить' (третий столбец), по
+    нажатию на которую этот ряд удалится.
+    Также сделайте так, чтобы можно было поредактировать любую ячейку
+    с именем и фамилией - по клику на ячейку в ней должен появиться инпут
+    с текстом этой ячейки, этот текст можно поменять, нажать Enter - и инпут
+    исчезнет, а информация в ячейке обновится.</p>
+  <!-- ===================================================================== -->
+
+  <!-- Может и не так как нужно, но все рабоатет) -->
+
+  <table id="table">
+    <tr>
+      <th>Имя</th>
+      <th>Фамилия</th>
+      <th>Удалить</th>
+    </tr>
+  </table>
+  <div>
+    <input class="input-style" type="text" id="firstName" value="">
+    <input class="input-style" type="text" id="sureName">
+    <input class="input-style" type="submit" value="Добавить" id="addTable">
+  </div>
+
+  <style>
+    #table {
+      border-collapse: collapse;
+    }
+
+    th {
+      width: 200px;
+      border: 1px solid #000;
+    }
+
+    .input-style {
+      width: 200px;
+      margin-top: 30px;
+    }
+
+    .input-style:not(:first-child) {
+      margin-left: -3px;
+    }
+  </style>
+
+  <script>
+    var first = document.getElementById('firstName');
+    var second = document.getElementById('sureName');
+    var addTable = document.getElementById('addTable');
+
+    addTable.addEventListener('click', function addTableElem() {
+      var table = document.getElementById('table');
+
+      // Создание элементов таблицы
+      var newTable = document.createElement('tr');
+      newTable.style.cssText = 'text-align: center;';
+      var newButton = document.createElement('button');
+      newButton.style.cssText = 'width: 200px;';
+
+      // Значение создаваемых элементов
+      newButton.innerHTML = 'Удалить';
+      newTable.innerHTML = '<td>' + first.value + '</td>' +
+      '<td>' + second.value + '</td>';
+
+      // Добавление бордера для таблицы
+      var td = newTable.closest('tr');
+      var childTd = td.children;
+      childTd[0].style.cssText = 'border: 1px solid #000';
+      childTd[1].style.cssText = 'border: 1px solid #000';
+
+      // Удаление введенных значений
+      first.value = '';
+      second.value = '';
+
+      // Вывод созданных элементов таблицы и кнопки
+      table.appendChild(newTable);
+      newTable.appendChild(newButton);
+
+      // Цикл дочерних ячеек таблицы, для создания иптупа в ячейке
+      var childTable = newTable.children;
+      for (var i = 0; i < childTable.length; i++) {
+        childTable[i].addEventListener('click', function changed() {
+          var newInput = document.createElement('input');
+          newInput.value = this.innerHTML;
+          this.innerHTML = '';
+          this.appendChild(newInput);
+          this.removeEventListener('click', changed);
+
+          // Запись редактируемых значений в инпут
+          newInput.addEventListener('keypress', showResult);
+          function showResult() {
+            if (event.keyCode == 13) {
+              event.target.parentElement.innerHTML = newInput.value;
+            }
+          }
+        });
+      }
+
+      // Удаление созданного ряда
+      newButton.addEventListener('click', function removeRow() {
+        newTable.removeChild(newButton);
+        table.removeChild(newTable);
+      });
+    });
+  </script>
+
+
+  <h2>Задачи на продвинутую работу с обхектом Event</h2>
+
+
+  <h3>Задачи для решения</h3>
+
+  <!-- 1 -->
+  <p>1. Дан ul, в нем несколько li. Под ul сделайте кнопку, по нажатию на
+    которую в конец ul будет добавляться новый li с текстом 'пункт'.
+    Сделайте так, чтобы при клике на каждый li, ему в конец добавлялся '!'.
+    Это должно работать и для вновь добавленных li.Задачу решите с
+    помощью делегирования (то есть событие должно быть навешано на ul).</p>
+  <!-- ===================================================================== -->
+
+  <input type="submit" value="Добавить элемент" id="addItem">
+  <ul id="ulParent5">
+    <li>Пункт</li>
+    <li>Пункт</li>
+    <li>Пункт</li>
+  </ul>
+
+  <style>
+    #ulParent5 li {
+      list-style: none;
+    }
+  </style>
+
+  <script>
+    var ulParent5 = document.getElementById('ulParent5');
+    ulParent5.addEventListener('click', addElement);
+
+    function addElement() {
+      var li = event.target;
+      li.innerHTML += '!';
+    }
+
+    var addItem = document.getElementById('addItem');
+    addItem.addEventListener('click', function getItem() {
+      var newItem = document.createElement('li');
+      newItem.innerHTML = 'Новый пункт';
+      ulParent5.appendChild(newItem);
+    });
+  </script>
+
+
+  <!-- 2 -->
+  <p>2. Дана таблица с юзерами с двумя колонками: имя и фамилия. Под таблицей
+    сделайте форму, с помощью которой можно будет добавить нового юзера в
+    таблицу. Сделайте так, чтобы при клике на любую ячейку появлялся prompt,
+    с помощью которого можно изменить текст ячейки. Задачу решите с помощью
+    делегирования (то есть событие должно быть навешано на table).</p>
+  <!-- ===================================================================== -->
+
+  <table id="tableParent">
+    <tr>
+      <th>Имя</th>
+      <th>Фамилия</th>
+    </tr>
+    <tr>
+      <td>Денис</td>
+      <td>Каспиров</td>
+    </tr>
+  </table>
+
+  <div class="div">
+    <input type="text" placeholder="Введите имя" id="writeName">
+    <input type="text" placeholder="Введите фамилию" id="writeSureName">
+    <input type="submit" value="Добавить имя" id="add">
+  </div>
+
+  <style>
+    #tableParent {
+      border-collapse: collapse;
+    }
+
+    #tableParent th {
+      background: #ccc;
+    }
+
+    #tableParent td {
+      border: 1px solid #999;
+    }
+
+    .div {
+      width: 204px;
+      display: flex;
+      flex-direction: column;
+      margin-top: 30px;
+    }
+
+    .div input {
+      margin: 0 0 3px 2px;
+    }
+
+  </style>
+
+  <script>
+    var table = document.getElementById('tableParent');
+    table.addEventListener('click', changeRow);
+
+    function changeRow() {
+      var kids = event.target.closest('td');
+      var change = prompt('Можете внести изменения', kids.innerHTML);
+      kids.innerHTML = change;
+    }
+
+    var add = document.getElementById('add');
+    add.addEventListener('click', function addTabls() {
+      var name = document.getElementById('writeName');
+      var surename = document.getElementById('writeSureName');
+
+      var tr = document.createElement('tr');
+      tr.innerHTML = '<td>' + name.value + '</td>' +
+      '<td>' + surename.value + '</td>';
+      table.appendChild(tr);
+
+      name.value = '';
+      surename.value = '';
+    });
+  </script>
+</body>
+</html>

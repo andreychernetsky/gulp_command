@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+<body>
+  <script>
+  'use strict'
+
+  // example 1
+  const names = 'Маша, Петя, Марина, Василий';
+  let arr = names.split('',5);
+
+
+  for (let i = 0; i < arr.length; i++) {
+    console.log('Вам сообщение ' + arr[i]);
+  }
+
+  console.log(arr);//['М','а','ш','а',',']
+
+
+
+  //////////////////////////////////////////////////////////////////////////////
+  // example 2
+  const arr = ['Маша',  'Петя', 'Марина', 'Василий'];
+  let str = arr.splice(2,0, 'Варя');
+  console.log(arr);//['Маша',  'Петя','Варя', 'Марина', 'Василий']
+
+  // example 3
+  const arr = ["Почему", "надо", "учить", "JavaScript"];
+  const arr2 = arr.slice(1,3);// элементы 1, 2 (не включая 3)
+
+  console.log({arr2});//{arr2:["надо", "учить"]}
+
+
+  const arr = ["Почему", "надо", "учить", "JavaScript"];
+  const arr2 = arr.slice(2);// элементы 1, 2 (не включая 3)
+
+  console.log({arr2});//{arr2:["учить","JavaScript"]}
+
+  const arr = ["Почему", "надо", "учить", "JavaScript"];
+  const arr2 = arr.slice(1,-1);// элементы 1, 2 (не включая 3)
+
+  console.log({arr2});//{arr2:["надо учить","учить"]}
+
+  // example4
+  // добавить нужные действия, чтобы этот код работал с кодом, написанным выше
+  const arr3 = [];
+
+  let key = 0;
+  for (key in arr) {
+    arr3[key] = arr[key];
+  }
+
+  arr3.push('?');
+
+  console.log(arr3); // "Почему", "надо", "учить", "JavaScript", '?'
+
+  console.log(arr2); // надо, учить
+
+  const arr4 = arr.slice(0, 2);
+  alert( arr4 + ' учить JavaScript?' );
+
+  const arr5 = arr.concat(arr, arr3, 4, 5);
+  alert( arr5 );
+
+
+
+  // example5
+  const store = {}; // объект для коллекции
+  /////////////////////////
+
+  const items = ["div", "a", "form"];
+
+  for (let i = 0; i < items.length; i++) {
+    let key = items[i]; // для каждого элемента создаём свойство
+    store[key] = true; // значение здесь не важно
+  }
+
+  console.log(store[key]);
+
+  const user = {
+    name: "Петя",
+    age: 30
+  }
+
+  const keys = Object.keys(user);
+
+  console.log(keys); // name, age
+
+
+</script>
+</body>
+</html>

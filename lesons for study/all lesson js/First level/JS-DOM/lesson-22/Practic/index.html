@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Lesson-22</title>
+</head>
+<body>
+  <!-- setInterval -->
+  <input type="text" value="1" id="interval">
+  <button onclick="start()">Увеличить</button><br>
+
+  <script>
+  function start() {
+    window.setInterval(timer, 1000);
+  }
+
+  function timer() {
+    var elem = document.getElementById('interval');
+    elem.value = parseInt(elem.value) + 1;
+  }
+  </script>
+
+  <!-- Уникальный номер -->
+  <input type="submit" onclick="test()"><br>
+
+  <script>
+    function test() {
+      var timerId = window.setInterval(timer, 1000);
+      console.log(timerId);
+    }
+
+    function timer() {
+
+    }
+  </script>
+
+  <!-- clearInterval -->
+  <input type="text" value="1" id="myValue">
+  <input type="submit" value="start" onclick="start2()">
+  <input type="submit" value="stop" onclick="stop2()"><br>
+
+  <script>
+    function start2() {
+      window.timerId = window.setInterval(timer, 1000);
+    }
+
+    function stop2() {
+      window.clearInterval(window.timerId);
+    }
+
+    function timer() {
+      var myValue = document.getElementById('myValue');
+      myValue.value = parseInt(myValue.value) + 1;
+    }
+  </script>
+
+  <!-- setTimeout -->
+  <input type="text" id="more" value="0">
+  <input type="submit" value="start" onclick="clickButton()"><br>
+
+  <script>
+    function clickButton() {
+      window.setInterval(timeTo, 1000);
+      window.setTimeout(func, 10000);
+    }
+
+    function timeTo() {
+      var element = document.getElementById('more');
+      element.value = parseInt(element.value) + 1;
+    }
+
+    function func() {
+      alert('!');
+    }
+  </script>
+
+  <!-- setTimeout и рекурсия -->
+  <input type="text" value="1" id="inputV">
+  <input type="submit" value="start" onclick="timer3()">
+
+  <script>
+    function timer3() {
+      var inputV = document.getElementById('inputV');
+      inputV.value = parseInt(inputV.value) + 1;
+
+      if (inputV.value < 10) {
+        window.setTimeout(timer3, 1000);
+      }
+    }
+  </script>
+</body>
+</html>

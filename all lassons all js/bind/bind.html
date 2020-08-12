@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+<body>
+<script>
+  "use strict";
+
+  function ask(question, answer, ok, fail) {
+    let result = prompt(question, '');
+    if (result.toLowerCase() == answer.toLowerCase()) ok();
+    else fail();
+  }
+
+  const user = {
+    login: 'Василий',
+    password: '12345',
+
+    loginOk:()=> {
+      alert( this.login + ' вошёл в сайт' );
+    },
+
+    loginFail:()=> {
+      alert( this.login + ': ошибка входа' );
+    },
+
+    checkPassword:() =>{
+      ask("Ваш пароль?", this.password,
+        ()=> { user.loginOk(); }, ()=> { user.loginFail(); });
+    }
+  };
+
+  user.checkPassword();
+
+</script>
+</body>
+</html>

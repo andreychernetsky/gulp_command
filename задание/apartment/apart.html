@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+<body>
+<script>
+  function app(apartment) {
+    let text;
+
+    if(apartment >=1 && apartment <=11) {
+      text = "первый";
+    } else if (apartment >=12 && apartment <=23) {
+      text = "второй";
+    } else if (apartment >=24 && apartment <=35) {
+      text = "третий";
+    }
+    return text;
+  }
+  console.log(app(12));
+
+  function apart(apart,flor,entrance,flat){
+    const allpart = Math.round(apart * flor);
+    const allEntrence = Math.round(allpart * entrance);
+
+
+    function allAppEntrence(allap) {
+      const arr = [];
+      let countApart = 0;
+      while (countApart <= allEntrence) {
+        countApart += allap;
+        arr.push(countApart);
+      }
+      return arr;
+    }
+    return allAppEntrence(allpart)
+  };
+  console.log(apart(4,4,4,6));
+
+
+
+  function apart(apart,flor,entrance,flat){
+    const allpart = Math.round(apart * flor);
+    const allEntrence = Math.round(allpart * entrance);
+
+
+    function allAppEntrence(allap) {
+      const arr = [];
+      let countApart = 0;
+      while (countApart <= allEntrence) {
+        countApart += allap;
+        arr.push(countApart);
+      }
+      return arr;
+    }
+    const allApartEntrense =  allAppEntrence(allpart);
+  };
+  console.log(apart(4,4,4,6));
+
+
+  function allAppEntrence(allap) {
+    const arr = [];
+    let countApart = 0;
+    while (countApart <= allEntrence) {
+      countApart += allap;
+      arr.push(countApart);
+    }
+    return arr;
+  }
+  const allApartNumbers =  allAppEntrence(allpart);
+  let flatSearch = 0;
+
+  for(let i = 0, len = allApartNumbers.length; i < len; i++) {
+    if(flat <= allApartNumbers[0]) {
+      flatSearch = allApartNumbers[0];
+      console.log(flatSearch);//определили сколько квартир в подъезде
+      break;
+    }
+  }
+  return allApartNumbers + ":" + flatSearch;
+  };
+  console.log(apart(3,3,3,6));
+
+
+  //определяем принадлежность квартиры к нужному подъезду
+
+  function apart(apart,flor,entrance,flat){
+    const allpart = Math.round(apart * flor);
+    const allEntrence = Math.round(allpart * entrance);
+
+
+    function allAppEntrence(allap) {
+      const arr = [];
+      let countApart = 0;
+      while (countApart <= allEntrence) {
+        countApart += allap;
+        arr.push(countApart);
+      }
+      return arr;
+    }
+    const allApartNumbers =  allAppEntrence(allpart);
+    let flatSearch = 0;
+
+    for(let i = 0, len = allApartNumbers.length; i < len; i++) {
+      if(flat <= allApartNumbers[0]) {
+        flatSearch = allApartNumbers[0];
+        // console.log(flatSearch);//определили сколько квартир в подъезде
+        break;
+      } else if (allApartNumbers[i] < flat && flat < allApartNumbers[i+1]){//определили ввод квартиры в нужный подъезд
+        console.log(allApartNumbers[i]);
+      }
+      console.log(allApartNumbers[i]);
+    }
+    return allApartNumbers + ":" + flatSearch;
+  };
+  console.log(apart(3,3,3,6));
+
+
+  // условие для определения квартиры в нужный подъезд и вывод undefined если ввод квартиры больше чем их есть в последнем подъезде
+  function apart(apart,flor,entrance,flat) {
+    if(flat === 0) return 'таких квартит в доме нету';
+    const allpart = Math.round(apart * flor);
+    const allEntrence = Math.round(allpart * entrance);
+    console.log()
+
+    function allAppEntrence(allap) {
+      const arr = [];
+      let countApart = 0;
+      while (countApart <= allEntrence) {
+        countApart += allap;
+        arr.push(countApart);
+      }
+
+      return arr;
+    }
+
+    const allApartNumbers = allAppEntrence(allpart);
+    let flatSearch = 0;
+
+    for (let i = 0, len = allApartNumbers.length; i < len; i++) {
+      if (flat <= allApartNumbers[0]) {
+        flatSearch = allApartNumbers[0];
+        // console.log(flatSearch);//определили сколько квартир в подъезде
+
+        break;
+
+      } else if (allApartNumbers[i] < flat && flat < allApartNumbers[i + 1]) {
+
+        flatSearch = allApartNumbers[i + 1];
+        break;
+
+      } else if (allApartNumbers[i] < flat && allApartNumbers[i + 1] === undefined)
+        flatSearch = allApartNumbers[i];
+
+      break;
+    }
+
+    return allApartNumbers + ":" + flatSearch;
+  };
+  console.log(apart(3,3,3,28));
+
+  // определяем переход количества квартир в каждом подъезде
+
+  function apart(apart,flor,entrance,flat) {
+    if(flat === 0) return 'таких квартит в доме нету';
+    const allpart = Math.round(apart * flor);
+    const allEntrence = Math.round(allpart * entrance);
+
+    function allAppEntrence(allap) {
+      const arr = [];
+      let countApart = 0;
+      while (countApart <= allEntrence) {
+        countApart += allap;
+        arr.push(countApart);
+      }
+
+      return arr;
+    }
+
+    const allApartNumbers = allAppEntrence(allpart);
+    let flatSearch = 0;
+
+    for (let i = 0, len = allApartNumbers.length; i < len; i++) {
+      if (flat <= allApartNumbers[0]) {
+        flatSearch = allApartNumbers[0];
+        // console.log(flatSearch);//определили сколько квартир в подъезде
+
+        break;
+      } else if (allApartNumbers[i] < flat && flat < allApartNumbers[i + 1]) {
+        flatSearch = allApartNumbers[i + 1];
+        break;
+
+      } else if (allApartNumbers[i] <= flat && allApartNumbers[i + 1] === undefined)
+        flatSearch = 0;
+
+      break;
+    }
+    if(flatSearch === 0) return 'квартир в доме меньше чем вы задали.' + allEntrence;
+
+    return allApartNumbers.indexOf(flatSearch) + 1;
+  };
+  console.log(apart(3,3,3,20));
+
+  // 0-20 1
+  // 21-40 2
+  // 41-60 3
+  /*
+	console.log([20,40,60].indexOf(20) + 1)
+	console.log([20,40,60].indexOf(20) + 2)
+	console.log([20,40,60].indexOf(20) + 3)*/
+
+
+
+</script>
+</body>
+</html>

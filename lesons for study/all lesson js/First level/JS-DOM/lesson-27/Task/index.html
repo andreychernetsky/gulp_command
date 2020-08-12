@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Lesson-27. Task</title>
+</head>
+<body>
+  <h1>Урок 27. Основы работы с объектом Event</h1>
+
+
+<h2>Задачи на координаты</h2>
+
+<!-- 1 -->
+<p>1. Повторите поведение страницы по данному образцу:</p>
+<!-- ====================================================================== -->
+<html>
+  <div class="block"></div>
+</html>
+
+<style>
+  .block {
+    width: 700px;
+    height: 500px;
+    border: 2px dotted #999;
+    position: relative;
+  }
+</style>
+
+<script>
+  var block = document.querySelector('.block');
+  block.addEventListener('mousemove', function showCoordinates() {
+    var x = event.clientX - block.offsetLeft;
+    var y = (event.clientY - block.offsetTop) + document.documentElement.scrollTop;
+
+    block.innerHTML = 'X:' + x + ' Y:' + y;
+  });
+</script>
+
+
+<!-- 2 -->
+<p>2. Повторите поведение страницы по данному образцу:</p>
+<!-- ====================================================================== -->
+
+<div class="block1">
+  <p>Нажмине в любое место.</p>
+</div>
+
+<style>
+  .block1 {
+    width: 700px;
+    height: 500px;
+    border: 2px dotted #999;
+    padding-left: 10px;
+    position: relative;
+    overflow: auto;
+  }
+</style>
+
+<script>
+  var block1 = document.querySelector('.block1');
+
+  var newElement = document.createElement('div');
+  newElement.style.cssText =
+  'width: 100px; height: 100px; border: 1px solid #f00; position: absolute';
+
+  block1.addEventListener('click', function getElement() {
+    var x1 = (event.clientX - block1.offsetLeft) - block1.clientTop;
+    var y1 = (event.clientY - block1.offsetTop) +
+    (document.documentElement.scrollTop - block1.clientTop);
+
+    newElement.style.left = x1 + 'px';
+    newElement.style.top = y1 + 'px';
+    var showElement = block1.appendChild(newElement);
+  });
+</script>
+
+
+<!-- 3 -->
+<p>3. Повторите поведение страницы по данному образцу:</p>
+<!-- ====================================================================== -->
+
+<div class="block2">
+  <p>Нажмине в любое место.</p>
+</div>
+
+<style>
+  .block2 {
+    width: 700px;
+    height: 500px;
+    border: 2px dotted #999;
+    padding-left: 10px;
+    position: relative;
+    overflow: auto;
+  }
+</style>
+
+<script>
+  var block2 = document.querySelector('.block2');
+
+  var newElement2 = document.createElement('div');
+  newElement2.style.cssText =
+  'width: 100px; height: 100px; border: 1px solid #f00; position: absolute';
+
+  block2.addEventListener('click', function getElement2() {
+    var x2 = (event.clientX - block2.offsetLeft) - block2.clientTop;
+    var y2 = (event.clientY - block2.offsetTop) +
+    (document.documentElement.scrollTop - block2.clientTop);
+
+    newElement2.style.left = (x2 - 50) + 'px';
+    newElement2.style.top = (y2 - 50) + 'px';
+    var showElement2 = block2.appendChild(newElement2);
+  });
+</script>
+
+
+<h2>На клавиши</h2>
+
+<!-- 4 -->
+<p>4. Повторите поведение страницы по данному образцу:</p>
+<!-- ====================================================================== -->
+
+<input type="text" placeholder="Введите текст" id="myKey">
+<p id="info"></p>
+
+<script>
+  var myKey = document.getElementById('myKey');
+  myKey.addEventListener('keypress', function showKey() {
+    var info = document.getElementById('info');
+    info.innerHTML = 'Код нажатой клавиши: ' + event.keyCode;
+  });
+</script>
+
+
+<!-- 5 -->
+<p>5. Повторите поведение страницы по данному образцу:</p>
+<!-- ====================================================================== -->
+
+<input type="text1" placeholder="Введите текст" id="myKey1">
+<p id="info1"></p>
+
+<script>
+  var myKey1 = document.getElementById('myKey1');
+  myKey1.addEventListener('keypress', function showKey1() {
+    var info1 = document.getElementById('info1');
+    var code = event.keyCode;
+    var key = String.fromCharCode(code);
+    info1.innerHTML = 'Нажатая клавиша: ' + key;
+  });
+</script>
+
+
+<!-- 6 -->
+<p>6. Дан элемент. Сделайте так, чтобы по клику на него он красился в красный
+  цвет, но только если в момент клика нажата клавиша Ctrl.</p>
+<!-- ====================================================================== -->
+
+<div class="element"></div>
+
+<style>
+  .element {
+    width: 200px;
+    height: 200px;
+    background: #000;
+  }
+</style>
+
+<script>
+  var element = document.querySelector('.element');
+  element.addEventListener('click', function changeColor() {
+    if (event.ctrlKey) {
+      element.style.background = '#f00';
+    } else if (event.ctrlKey === false) {
+      element.style.background = '#fff';
+    }
+  });
+</script>
+
+
+<!-- 7 -->
+<p>7. Дан элемент. Сделайте так, чтобы при клике на него и нажатой
+  клавише Ctrl- в его текст записывалось '1', при нажатой клавише
+  Alt - '2', а при нажатой клавише Shift - '3'.</p>
+<!-- ====================================================================== -->
+
+<p id="anotherKey">Нажми на меня</p>
+
+<style>
+  #anotherKey {
+    width: 110px;
+    height: 25px;
+    border: 1px solid #000;
+  }
+</style>
+
+
+<script>
+  var anotherKey = document.getElementById('anotherKey');
+  anotherKey.addEventListener('click', function showAnotherKey() {
+    if (event.ctrlKey) {
+      anotherKey.innerHTML = '1';
+    }
+
+    if (event.altKey) {
+      anotherKey.innerHTML = '2';
+    }
+
+    if (event.shiftKey) {
+      anotherKey.innerHTML = '3';
+    }
+  });
+</script>
+
+
+<h2>Практика</h2>
+
+<!-- 8 -->
+<p>8. Дан инпут. В него вводится текст и нажимается клавиша Enter
+  (ее код имеет номер 13). Сделайте так, чтобы по нажатию Enter введенный
+  текст попадал в абзац под инпутом, а содержимое инпута очищалось.</p>
+<!-- ====================================================================== -->
+
+<input type="text" placeholder="Введите текст" id="getInfo">
+<p id="giveInfo"></p>
+
+<script>
+  var getInfo = document.getElementById('getInfo');
+  getInfo.addEventListener('keypress', function sendInfo() {
+    var giveInfo = document.getElementById('giveInfo');
+    if (event.keyCode === 13) {
+      giveInfo.innerHTML = getInfo.value;
+      getInfo.value = '';
+    }
+
+    // or just
+
+    // giveInfo.innerHTML = getInfo.value;
+    // getInfo.value = '';
+  });
+</script>
+
+</body>
+</html>

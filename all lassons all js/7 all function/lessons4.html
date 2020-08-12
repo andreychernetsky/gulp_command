@@ -1,0 +1,522 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+<body>
+<script>
+  //	что такое global local scope?
+  //1) есть scope образованный внешней функцией space
+  //2) есть внутренний scope образованный ф. planet
+  //т.у есть parent scope and chald scope и они наследуются
+  function space() {//1
+    let loci = 'сегодня';
+
+    function planet() {//2
+      let god = 'понедельник';
+      console.log(loci, god);//сегодня понедельник
+    }
+
+    planet()
+  }
+
+  console.log(space());
+  //example2
+  // 1) есть глобальная переменная loki
+  let loki = 'loci';//1
+  // 2) определяем функцию space()
+  function space() {//2
+    // 3) этой переменной мы перезатираем глобальную переменную
+    let loki = 'god';
+
+    function planet() {
+      // 4)эта переменная перезатираем верхнюю
+      // т.е при вызове функции planet в scope сработатет вызов human
+      // если в этом scope нету такой переменной, то интерпретатор пойдет в parent и т. д
+      let loki = 'human';
+      console.log(loki);//human
+    }
+
+    planet();
+  }
+
+  space();
+  // 1) есть функция calculate()
+  // 2) в локальной области этой функции есть две переменные let a = 3, b = 5;
+  // 3) внутри функции calculate() мы определяем еще одну функцию calculateInner()
+  // 4) переменные в calculateInner(); совпадают по названию
+  // 5) производим суммирование
+  // 6) вызываем calculateInner(); clog с выводом результата
+  // 7) вызываем ф. calculate()
+  // при вызове функции calculateInner() она находит переменную b т.e она смотрит на свой scope но переменной a нету, поэтому она поднимется на scope выше и обращается к переменной a
+  function calculate() {//1
+    let a = 3, b = 5;//2
+    function calculateInner() {//3
+      let b = 7, c = 11;
+      a += b = c;//5
+    };
+    calculateInner();//6
+    console.log('a=', a, '; b=', b);//a =14; b=5
+  }
+
+  calculate();//7
+  //	example hoisting - это всплытие переменных
+  function myFun() {
+  }//всплывает на верх к своему ближайшему scope все тело функции
+  const myFun = function () {
+  }; //всплывают только перемнные
+  console.log(space());
+
+  function space() {
+    console.log(loki);//loki is not defined
+  }
+
+  let loki = 'god';
+  console.log(space(loki));
+
+  function space() {
+    console.log(loki);//loki is not defined
+  }
+
+  let loki = 'god';//присваиваем значение переменной loki
+  // 1) переменная loki всплывает вверх своего scope но без присвоения
+  // присвоение осталось внизу
+  // 2) тело функции всплыло и вызов оказался внизу
+  function space() {
+    console.log(loki);//loki is not defined
+  }
+
+  space();
+  liki = 'god';
+  //при вызове функции до ее определения интерпретатор не выдаст нам ошибку
+  exampleText()// let loki = 'god';
+  // function planet() {
+  //   console.log(loki);//loki is not defined
+  //   let loki = 'human';
+  //   console.log(loki);
+  // }
+  // planet();//loki is not defined
+  // как это увидит интепретатор
+  let loki = 'god';
+  // в локальной области функции или другое название scope
+  // переменная loki всплывет
+  function planet() {
+    let loki;
+    console.log(loki);//undefined
+    loki = 'human';
+    console.log(loki);//human
+  }
+
+  planet();
+  //example singl var pattern
+  // дописать свою логику и если надо изменить функцию на js 6 и выше
+  function planet(population) {
+    let loki = 'human', country = 'any', person = 0;
+    if (country) {
+      country = '';
+      for (person = 0; person < population; population++) {
+      }
+    }
+    console.log(loki, country, person);
+  }
+
+  console.log(planet());
+  // 1) функция принимает параметр population
+  // 2) определяем на верхнем уровне scope переменную
+  // 3) заходим в цикл
+  // 4) в scope if определяем переменную contry
+  function planet(population) {
+    let loki = 'human'; //2
+    if (true) {//3
+      let country = 'any';//4
+      for (let person = 0; person < population; person++) {
+      }
+    }
+    console.log(loki, country, person);
+  }
+
+
+  -------------------
+  // усли нету loki в window
+  // то в loki присваиваем единицу
+  if(('loki' in window) === false) {
+    let loki = 1;
+  }
+  console.log(loki);
+
+  //example
+  // переменная let имеет блочную видимость и выше фигурных скобок(scope  в локальной области {}) эта переменная не всплывет
+  {
+    const loki = 'captive';
+    let country = 'any';
+    console.log(loki, country);//captive any
+  }
+  console.log(loki,country);//нет доступа к локальному scope
+
+
+  //	example
+  function planet (pooulation) {
+    const loki = 'human';//блочный scope функции planet
+
+    if(true) {
+      const country = 'any';//блочный scope if
+
+      for(let person =0; person < population; person++) {
+        //блочный scope for
+      }
+    }
+    // взывая в консоли переменную person мы до нее не достучимся, так как она находится в локальном scope for то же касается и переменной country единственная переменная до которой мы сможем достучаться это loki
+    console.log(loki,country,person);
+  }
+
+  //  example const vs let
+  // переменную let можно переписать в отличие от const
+  //	let = var + block scope
+  //	const = let + reference immutability
+
+  let prop = 1;
+  console.log(prop);//1
+  prop =2;
+  console.log(prop);//2
+
+  //	example
+  // переменная let может всплывать в своем локальном scope
+  function getProp() {
+    // pie;//pie is not defined
+    // console.log(pie);
+    let pie;
+
+    pie = 1;
+    console.log(pie);//1
+  }
+  getProp()
+
+  let population = 0;
+  population = 1;
+  population --;
+
+  const country = 'any';
+  country = 'different';//TypeError: Assigment to constant variable
+
+  const cage = {//ссылку на объект перебить нельзя
+    width:15,//проперти можно
+    heigh:10,
+  };
+  cage.width = 20;
+  cage = null;//TypeError: Assigment to constant variable
+
+  //	example namespace
+  //если в глобальном scope window не положено ни какого значения, то
+  if(window.space == null) {
+    window.space();
+  }
+  window.space.loki = 'god';
+  window.space.planet = function(){};
+
+  // example function as a function
+  // 1) функция принимает два параметра
+  // 2)функция имеет свой scope фигурных скобок
+  // 3) есть тело функции и мы что-то возвращаем
+
+  function ass(left,right) {
+    return left + right;
+  }
+
+  // function as a method a
+  // example функция может быть методом
+  // 1) определяем объект const obj={}
+  // 2) определяем проперти в объекте left  метод add
+  // отличие метода от функции в том, что у метода есть доступ к переменной this
+  //  в методе объекта или Экземпляра класса this ссылается на данный объект  const obj = {}
+  // что такое контекст? 'это сам объект в котором вызвана функция.
+  const obj = {
+    left:10,
+    add:function(right) {
+      this.left +=right;
+
+      return this.left
+    },
+  };
+
+  // 3) вызовим наш объект с указанием на метод или проперти add obj.add();
+  // 4) передаем аргумент в вызов функции obj.add(2);
+  const obj = {
+    left:10,
+    add:function(right) {
+      this.left +=right;
+
+      return this.left
+    },
+  };
+  console.log(obj.add(2));//12
+
+  // как это сработает наш аргумент попадет в параметр функции add
+  // this.left обращается к проперти left:10 значит left:10 прибавит аргумент 2 и будет 12
+  // затем мы через return вызываем this Экземпляр нашего объекта
+
+  //	example function as a constructor
+  // 1) this стучится к проперти radius height
+  // затем мы обращаемся к проперти Экземпляра this.radius this.heigth
+  // и передаем туда параметры, которые попали в виде аргументов при вызове функции
+
+  function Pie(radius,height) {
+    this.radius = radius;
+    this.height = height;
+  }
+  const pie = new Pie(20,5);
+  console.log(pie);//Pie{radius:20,height:5}
+
+  // function is an object(first-class function)
+  // 1) есть функция которая логирует цену function logPrice(price){}
+  //2) передаем параметр price
+  // 3) определяем function currencize(logger, currency){};
+  // 4) параметром функции модет быть и параметр функции function currencize(logger, currency) {}
+  // 5) создаем еще функции  function currencized(price) {} и передаем параметр price
+  // 6) вызываем  return logger(currency + price);
+  //7) в функцию currencized() мы записываем проперти currency которое было параметром функции logger()
+  //8 возвращаем функцию  return currencized;
+  //9) функцию currencized мы помещаем в переменную logPriceEuro
+  // 10) в функцию currencize() передаем параметром функцию logPrice()
+  // итого
+  // аргумент 42 который мы передаем logPriceEuro(42) попадает в  function currencized(price)
+  // затем мы вызываем return logger(currency + price); где функция logPrice() передаётся параметром logger в функцию  currencize(logger, currency) при сложении  return logger(currency + price) происходит конкатенация строки с числом
+
+  function logPrice(price) {//1 console.log(price)
+    console.log(price)//2 $42
+  }
+
+  function currencize(logger, currency) {//3,4
+    function currencized(price) {//5
+      return logger(currency + price);//6
+    }
+    currencized.currency = currency;//7
+
+    return currencized;//8
+  }
+  const logPriceEuro = currencize(logPrice, '$');//9,10
+  logPriceEuro(42);
+
+  //  example
+  function declaration
+  function expression
+
+  const getFibonacci = function fibonacci(n) {
+    if(n <= 1) {
+      return 1;
+    }
+    return fibonacci(n -1) + fibonacci(n -2);
+  };
+  getFibonacci(5);
+  console.log(getFibonacci(10));//89
+
+  //	example function constructor
+  // мало используемая конструкция
+  const add = new Function('left','right','return left + right');
+  console.log(add(1,41));//42
+
+  //	example
+  //	каким образом можно передать аргумент в функцию?
+  //	если передаем примитивы,то передаем по значению
+  //  если объекты , то по ссылке
+
+  //1) создаем функцию cookPie() и передаем туда три параметра function cookPie(type,radius,slice) {}
+  // 2) передаем глобальные переменные в качестве аргументов и они перезатрут все параметры передаваемые внутренним scopy(локальной областью)
+
+  //	значение передается не по ссылке, а по значению
+  function cookPie(type,radius,slice) {//1
+    console.log('#cookPie:0',type,radius,slice);//#cookPie:0 lemon 30 true
+
+    type = 'choco';
+    radius =42;
+    skice = false;
+
+    console.log('#cookPie:1', type, radius, slice);//'#cookPie:1' choco 42 true
+  }
+
+  const type = 'lemon';//передаем примитив string
+  const radius = 30;//передаем примитив number
+  const slice = true;//передаем примитив bylean type
+
+  cookPie(type,radius,slice);
+  console.log('#glabal:0', type,radius,slice);//#glabal:0: lemon 30 true
+
+  //	example object
+  //1) создаем функцию cookPie() и передаем туда три параметра function cookPie(type,radius,slice) {}
+  // 2) передаем глобальные переменные в качестве аргументов и они перезатрут все параметры передаваемые внутренним scopy(локальной областью)
+
+  function cookPie(pieOptions) {//1
+    console.log('#cookPie:0',pieOptions);//#cookPie:0 {type:'lemon', radius:30, slice:true}
+
+    // ссылка передана параметром на объект
+    pieOptions.type = 'choco';//#cookPie:1 поменялось на 'choco'
+    console.log('#cookPie:1', pieOptions);//#cookpie:1 {type:'choco', radius:30, slice:true}
+    // по ссылке обращаемся к параметру объекта
+    pieOptions = {};
+    console.log('#cookPie:2', pieOptions);//#cookPie:2{}
+  }
+
+  const options = {type:'lemon', radius:30, slice:true};
+
+  cookPie(options);
+  console.log('#glabal:0',options);//#glabal:0 {type:'choco', radius:30, slice:true}
+
+
+  //example
+  //	passing arguments  to function
+  // 1) arguments может быть использован как массив
+  // 2) может находить длинну
+  // 3)В ранних версиях javaScript отсутствовала такая фишка, как Named Function Expression и единственным спасением было свойство callee. К примеру:
+  //
+  //   var f = function test() {
+  //     alert(typeof test); //undefined
+  //     alert(typeof arguments.callee); //function
+  //   }
+  // В нынешние времена, когда мы уже можем работать с NFE, надобность в использовании свойства callee сама собой отпадает.
+  //
+  //   var f = function test(){
+  //   alert(typeof test); //function
+  // }
+
+  // Действительно незаменимым оно остается всего в одной ситуации. Когда мы создаем анонимную функцию напрямую через конструктор Function.
+
+  function cookPie() {
+    console.log('#cookPie:0',arguments[0],arguments[1], arguments[2]);//
+    console.log('#cookPie:1',arguments.length);
+    console.log('#cookPie:2',arguments.callee);
+    console.log('#cookPie:3', Array.isArray(arguments));
+  }
+  cookPie('lemon',14,true);
+
+  // тепрь можно использовать spred оператор
+  // тепрь можно использовать spred оператор
+  function cookPie(...args) {
+    console.log('#cookPie:0',args[0],arguments[1], arguments[2]);//
+    console.log('#cookPie:1',args.length);
+    console.log('#cookPie:3', Array.isArray(arguments));
+  }
+  cookPie('lemon',14,true);
+
+  //  example
+  // если мы не знаем какое количества аргументов передать в функцию,
+  // но точно знаем что первый параметр будет type и дальше некий массив элементов,
+  // то мы используем rest оператор после первого аргумента и весь масив будет помещен в первый параметр type
+  function sharePie(type,...friends) {
+    console.log('#cookPie:0', type, friends);
+  }
+  sharePie('lemon','Albert','Alan','stephen');
+
+  //  example
+  //	returning value from function
+  // 1) создаем функцию returnPietype(n)
+  // 2) если if будет равен 0 то вывести 'lemon'
+  // 3) если if равен 1 то вернем return и завершим работу функции
+  function returnPietype(n) {//1
+    if(n == 0) {//2
+      return 'lemon';
+    }
+    if(n ===1) {//3
+      return;
+    }
+    if(n===2) {}
+    if(n===3) {
+      this.type = 'choco';//на что ссылается this т.к this это не мотод,
+      // то будет ссылаться на глобальный window
+    }
+  }
+  console.log(returnPietype(0));//lemon
+  console.log(returnPietype(1));//undefined
+  console.log(returnPietype(2));//undefined
+  console.log(new returnPietype(3));//returnPietype{type:''choco}
+
+  //	example
+  //	function as data
+  // 1) создаем функцию
+  // 2) создаем переменную pieFlow в которую помещаем массив
+  // 3) обращаемся к второму параметру и помещаем туда три параметра pieFlow[1]('lemon',42,false);
+  // 4) в функцию cookPie запишем проперти cookPie.oven = 'oven#1';
+  // 5) можем делать функцию методом объекта
+  function cookPie(type, radius, slice) {
+    console.log('#cookPie:0', type,radius,slice);
+  }
+
+  const pieFlow =[mixIngredients,cookPie];//2
+  pieFlow[1]('lemon',42,false);//3
+
+  cookPie.oven = 'oven#1';
+
+  const lemonPie = {//5
+    type:'lemon',
+    cook:cookPie,
+  };
+  console.log(pieFlow)
+
+  //	example
+  function callCounter(func) {
+    func.callCounter = 0;
+
+    return function (...args) {
+      func.callCounter +=1;
+
+      return func(...args);
+    };
+  }
+
+  function cookPie(type,radius,slice) {
+    console.log('#cookpie:0', type,radius,slice);
+  }
+
+  const cuntedCoolPie = callCounter(cookPie());
+
+  //  example this
+  function cookPie() {
+    console.log(this);//ссылается на глобальный window
+
+
+  }
+  cookPie();
+
+  //  example value of this
+  function cookPie() {
+    console.log(this);//window
+  }
+
+  function cookStrictPie() {
+    'use streict';
+    console.log(this);//undefined
+  }
+
+  //  example
+  const lemonPie = {
+    type:'lemon',
+    cookPie:function() {
+      console.log(this);//{type:'lemon',cookPie:[:cookPie]}
+    },
+  };
+
+  lemonPie.cookPie();//выводит в консоль экземпляр объекта
+  const cookPie =lemonPie.cookPie();
+  cookPie();
+
+  //  example
+  function Pie(type,radius) {
+    this.type = type;
+    this.radius = radius;
+    this.cook = function () {//определяем функцию как метод класса this будет ссылаться на новосозданный экземпляр  const lemonPie = new Pie('lemon',30);
+//      lemonPie.cook();
+      console.log(this);
+    };
+  }
+
+  const lemonPie = new Pie('lemon',30);//экземпляр класса
+  lemonPie.cook();
+
+  const chocoPie = new Pie('choco',24);
+  chocoPie.cook();
+
+  //  example value of deep this
+</script>
+</body>
+</html>

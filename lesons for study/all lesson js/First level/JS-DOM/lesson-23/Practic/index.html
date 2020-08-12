@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Lesson-23</title>
+</head>
+<body>
+  <h1>23. Продвинутая работа с событиями</h1>
+  <h2>События через работу с атрибутами</h2>
+  <!-- 1 -->
+  <input type="submit" id="test">
+
+  <script>
+    var elem = document.getElementById('test');
+    elem.onclick = func;
+
+    function func() {
+      return 'Вывод';
+    }
+
+    console.log(func());
+    console.log(func);
+  </script>
+
+  <h2>Достоинства и недостатки такого сбособа</h2>
+  <!-- Достоинства -->
+  <input class="myInput" type="submit" value="1">
+  <input class="myInput" type="submit" value="2">
+  <input class="myInput" type="submit" value="3">
+  <input class="myInput" type="submit" value="4">
+  <input class="myInput" type="submit" value="5">
+  <input class="myInput" type="submit" value="6">
+
+  <script>
+    var myInput = document.getElementsByClassName('myInput');
+
+    for (var i = 0; i < myInput.length; i++) {
+      myInput[i].onclick = func;
+    }
+
+    function func() {
+      console.log('Вывод');
+    }
+  </script>
+
+  <h2>Использование this</h2>
+  <!-- Вывод инпута через this -->
+  <input type="submit" class="myInput2" value="1">
+  <input type="submit" class="myInput2" value="2">
+  <input type="submit" class="myInput2" value="3">
+  <input type="submit" class="myInput2" value="4">
+  <input type="submit" class="myInput2" value="5">
+  <input type="submit" class="myInput2" value="6">
+
+  <script>
+    var myInput2 = document.getElementsByClassName('myInput2');
+
+    for (var i = 0; i < myInput2.length; i++) {
+      myInput2[i].onclick = func;
+    }
+
+    function func() {
+      console.log(this.value);
+    }
+  </script>
+
+  <h2>Недостатки</h2>
+  <!-- Затирание второй функции -->
+  <input type="submit" id="myInput3">
+
+  <script>
+    var elem = document.getElementById('myInput3');
+    // elem.onclick = myFunc;
+    // elem.onclick = myFunc2;
+    elem.onclick = myFunc3;
+    function myFunc() {
+      console.log('Вывод');
+    }
+
+    function myFunc2() {
+      console.log('Вывод2');
+    }
+
+    // Можно создать 3 функцию для вывода 2х
+    function myFunc3() {
+      myFunc();
+      myFunc2();
+    }
+  </script>
+
+  <h2>Работа с addEventListener</h2>
+  <input type="submit" id="myInput4">
+
+  <script>
+    var myInput4 = document.getElementById('myInput4');
+    myInput4.addEventListener('click', myFunc4);
+    myInput4.addEventListener('click', myFunc5);
+
+    function myFunc4() {
+      console.log('Вывод метода addEventListener первой функции');
+    }
+
+    function myFunc5() {
+      console.log('Вывод метода addEventListener второй функции');
+    }
+  </script>
+
+  <h2>Работа в this ля addEventListener</h2>
+  <!-- Вывод по собственному id -->
+  <input type="submit" id="myInput5" value='Кнопка 1'>
+  <input type="submit" id="myInput6" value='Кнопка 2'><br><br>
+
+  <script>
+    var myInput5 = document.getElementById('myInput5');
+    myInput5.addEventListener('click', myFunc6);
+    var myInput6 = document.getElementById('myInput6');
+    myInput6.addEventListener('click', myFunc6);
+
+    function myFunc6() {
+      console.log(this.value);
+    }
+  </script>
+
+  <!-- Вывод массива из кнопок -->
+  <input type="submit" class="myButton" value="Кнопка1">
+  <input type="submit" class="myButton" value="Кнопка2">
+  <input type="submit" class="myButton" value="Кнопка3">
+
+  <script>
+    var myArrButton = document.querySelectorAll('.myButton');
+
+    for (var i = 0; i < myArrButton.length; i++) {
+      myArrButton[i].addEventListener('click', getButton);
+    }
+
+    function getButton() {
+      console.log(this.value);
+    }
+  </script>
+
+  <h2>Удаление привязки через removeEventListener</h2>
+  <input type="submit" id="myInputButton"><br><br>
+
+  <script>
+    var myInputButton = document.getElementById('myInputButton');
+    myInputButton.addEventListener('click', myFuncButton1);
+    myInputButton.addEventListener('click', myFuncButton2);
+    myInputButton.addEventListener('click', myFuncButton3);
+
+    // Отвяжем 1 и 2 функцию
+    myInputButton.removeEventListener('click', myFuncButton1);
+    myInputButton.removeEventListener('click', myFuncButton2);
+
+    function myFuncButton1() {
+      console.log('1');
+    }
+
+    function myFuncButton2() {
+      console.log('2');
+    }
+
+    function myFuncButton3() {
+      console.log('3');
+    }
+  </script>
+
+  <!-- Отвязка внитри самих функций -->
+  <input type="submit" id="myInputButton2"><br><br>
+
+  <script>
+    var myInputButton2 = document.getElementById('myInputButton2');
+    myInputButton2.addEventListener('click', myButton1);
+    myInputButton2.addEventListener('click', myButton2);
+    myInputButton2.addEventListener('click', myButton3);
+
+
+    function myButton1() {
+      console.log('1');
+      // Далее, на второй клик удаление вывода
+      this.removeEventListener('click', myButton1);
+    }
+
+    function myButton2() {
+      console.log('2');
+      // Далее, на второй клик удаление вывода
+      this.removeEventListener('click', myButton2);
+    }
+
+    function myButton3() {
+      console.log('3');
+    }
+  </script>
+
+  <!-- Отвязка КНОПОК -->
+  <input type="submit" class="buttons" value="Кнопка1">
+  <input type="submit" class="buttons" value="Кнопка2">
+  <input type="submit" class="buttons" value="Кнопка3">
+
+  <script>
+    var buttons = document.getElementsByClassName('buttons');
+
+    for (var i = 0; i < buttons.length; i++) {
+      buttons[i].addEventListener('click', myButtons);
+    }
+
+    function myButtons() {
+      console.log(this.value);
+      this.removeEventListener('click', myButtons);
+    }
+  </script>
+
+
+</body>
+</html>

@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>20. Работа с элементами страницы в JS</title>
+</head>
+<body>
+
+  <h2>№1 Изменение текста в span</h2>
+  <!-- ===================================================================== -->
+  <!-- 1. -->
+
+  <p>Повторите поведение кнопки по нажатию на нее (она меняет текст в span)</p>
+  <button onclick="clickBtn()">Нажми на меня</button>
+  <span class="text" id="texte">Это span с текстом</span>
+
+  <script>
+    function clickBtn() {
+      var myId = document.getElementById('texte');
+      myId.innerHTML = '!!!';
+
+      // or
+
+      var myClass = document.querySelector('.text');
+      myClass.innerHTML = '!!!';
+
+      // or
+
+      texte.innerHTML = '!!!';
+    }
+  </script>
+
+  <h2>№2 Замена span на тег b без изменения текста</h2>
+  <!-- ===================================================================== -->
+  <!-- 2. -->
+
+  <p>Повторите поведение кнопки по нажатию на нее (она меняет span на тег b,
+    не изменяя при этом текст внитри тега)</p>
+
+  <button onclick="clickBtn2()">Нажми на меня</button>
+  <span id="weight">Это span с текстом</span>
+
+  <script>
+    function clickBtn2() {
+      var weight = document.querySelector('#weight');
+      weight.outerHTML = '<b>' + weight.innerHTML + '</b>';
+    }
+  </script>
+
+
+  <h2>№3 На getElementsByTagName</h2>
+  <!-- ===================================================================== -->
+  <!-- 3. -->
+
+  <p>Дан HTML код (см. под задачей). Поменяйте содержимое абзацев на их
+    порядковый номер в коде.</p>
+
+  <h2>Заголовок, не поменяется.</h2>
+  <div>Абзац, поменяется.</div>
+  <div>Абзац, поменяется.</div>
+  <div>Абзац, поменяется.</div>
+  <input type="submit" onclick="onenChange()">
+  <script>
+  function onenChange() {
+    var change = document.getElementsByTagName('div');
+
+    for (var i = 0; i < change.length; i++) {
+      change[i].innerHTML = i + 1;
+    }
+  }
+  </script>
+
+  <h2>№4 На getElementsByClassName</h2>
+  <!-- 4. -->
+  <!-- ===================================================================== -->
+
+  <p>Дан HTML код (см. под задачей). Поменяйте содержимое элементов с классом
+    zzz на их порядковый номер в коде.</p>
+
+  <h5 class="zzz">Заголовок с классом zzz.</h5>
+  <h5 class="zzz">Абзац с классом zzz.</h5>
+  <h5 class="zzz">Абзац с классом zzz.</h5>
+  <h5>Просто абзац, не поменяется.</h5>
+  <input type="submit" onclick="openChange2()">
+
+  <script>
+  function openChange2() {
+    var change2 = document.getElementsByClassName('zzz');
+
+    for (var i = 0; i < change2.length; i++) {
+      change2[i].innerHTML = i + 1;
+    }
+  }
+  </script>
+
+  <h2>№5 На querySelectorAll</h2>
+  <!-- 5. -->
+  <!-- ===================================================================== -->
+
+  <p>Дан HTML код (см. под задачей). Поменяйте содержимое абзацев с классом
+    zzz на их порядковый номер в коде.</p>
+
+  <h6 class="ddd">Заголовок с классом zzz.</h6>
+  <h4 class="ddd">Абзац с классом zzz.</h4>
+  <h4 class="ddd">Абзац с классом zzz.</h4>
+  <h6>Просто абзац, не поменяется.</h6>
+  <input type="submit" onclick="openChange3()">
+  <script>
+  function openChange3() {
+    var change3 = document.querySelectorAll('.ddd');
+
+    for (var i = 0; i < change3.length; i++) {
+      change3[i].innerHTML = i + 1;
+    }
+  }
+  </script>
+
+  <h1>Задачи для решения</h1>
+  <h2>Свойства innerHTML, outerHTML</h2>
+
+  <!-- 1 -->
+  <p>1. Повторите страницу по данному по образцу: </p>
+  <!-- ===================================================================== -->
+
+  <p class="yyy">При нажатии на кнопку текст в абзацу поменяется</p>
+  <input type="submit" value="Нажмите на меня!" onclick="clickButton()">
+
+  <script>
+    function clickButton() {
+      var myText = document.querySelector('.yyy');
+      myText.innerHTML = 'Ку-ку! А я <b>жирный!</b>';
+    }
+  </script>
+
+  <!-- 2. Повторите страницу по данному по образцу: -->
+  <p>2. Повторите страницу по данному по образцу: </p>
+  <!-- ===================================================================== -->
+
+  <p class="mmm">При нажатии на кнопку текст в абзацу поменяется</p>
+  <input type="submit" value="Нажмите на меня!" onclick="clickButton2()">
+
+  <script>
+    function clickButton2() {
+      var myText2 = document.querySelector('.mmm');
+      myText2.outerHTML = '<h3>Абзац превратился в h3</h3>';
+    }
+  </script>
+
+  <!-- 3 -->
+  <p>3. Повторите страницу по данному по образцу: </p>
+  <!-- ===================================================================== -->
+
+  <p class="lll">При нажатии на кнопку абзац станет h3, но текст останется</p>
+  <input type="submit" value="Нажмите на меня!" onclick="clickButton3()"><br>
+
+  <script>
+    function clickButton3() {
+      var myText3 = document.querySelector('.lll');
+      myText3.outerHTML = '<h3>' + myText3.innerHTML + '</h3>';
+    }
+  </script>
+
+  <!-- 4 -->
+  <p>4. Повторите страницу по данному по образцу: </p>
+  <!-- ===================================================================== -->
+
+  <input type="text" style="margin-top: 20px;" class="count1" value="">
+  <span>+</span>
+  <input type="text" style="margin-bottom: 20px;" class="count2" value="">
+  <span>=</span>
+  <span id="amount"></span>
+  <div>
+    <input type="submit" value="Нажмите чтобы сложить" onclick="buttonCount()">
+  </div>
+
+  <script>
+    function buttonCount() {
+      var count1 = document.querySelector('.count1');
+      var count2 = document.querySelector('.count2');
+      var amount = document.querySelector('#amount');
+      amount.innerHTML = '<b>' + (+(count1.value) + +(count2.value)) + '</b>';
+    }
+  </script>
+
+
+<h2>Метод getElementsByTagName</h2>
+
+<!-- 5 -->
+<p>5. Повторите страницу по данному по образцу: </p>
+<!-- ===================================================================== -->
+<p>При нажатии на кнопку текст в каждом абзаце поменяется</p>
+<p>При нажатии на кнопку текст в каждом абзаце поменяется</p>
+<p>При нажатии на кнопку текст в каждом абзаце поменяется</p>
+<p>При нажатии на кнопку текст в каждом абзаце поменяется</p>
+<h2>А я h2 и не поменяюсь!</h2>
+<input type="submit" onclick="changeText()" value="Нажмите на меня">
+
+<script>
+  function changeText() {
+    var changeText = document.getElementsByTagName('p');
+
+    for (var i = 0; i < changeText.length; i++) {
+      changeText[i].innerHTML = 'Ку-ку!';
+    }
+  }
+</script>
+
+
+<h2>Метод getElementByClassName</h2>
+
+<!-- 6 -->
+<p>6. Дан HTML код (см. под задачей). Поменяйте содержимое элементов с классом
+<!-- ===================================================================== -->
+
+  uuu на их порядковый номер в коде.</p>
+
+  <h2 class="uuu">Заголовок с классом www.</h2>
+  <p class="uuu">Абзац с классом www.</p>
+  <p class="uuu">Абзац с классом www.</p>
+  <p>Просто абзац, не поменяется.</p>
+  <button onclick="changeOfNumber()">Определить порядовый номер</button>
+
+  <script>
+    function changeOfNumber() {
+      var changeNumber = document.getElementsByClassName('uuu');
+
+      for (var i = 0; i < changeNumber.length; i++) {
+        changeNumber[i].innerHTML = i + 1;
+      }
+    }
+  </script>
+
+
+  <h2>Метод querySelectorAll</h2>
+
+  <!-- 7 -->
+  <p>7. Дан HTML код (см. под задачей). Поменяйте содержимое абзацев с классом
+    www на их порядковый номер в коде.</p>
+    <!-- ===================================================================== -->
+
+  <h2 class="www">Заголовок с классом www, не поменяется.</h2>
+  <p class="www">Абзац с классом www.</p>
+  <p class="www">Абзац с классом www.</p>
+  <p class="www">Абзац с классом www.</p>
+  <p>Просто абзац, не поменяется.</p>
+  <button onclick="changeOfNumber2()">Замена содержимого <b>абзацев</b></button>
+
+  <script>
+    function changeOfNumber2() {
+      var changeNumber2 = document.querySelectorAll('p.www');
+
+      for (var i = 0; i < changeNumber2.length; i++) {
+        changeNumber2[i].innerHTML = i + 1;
+      }
+    }
+  </script>
+
+  <h2>Методы setAttribute, getAttribute, removeAttribute, hasAttribute</h2>
+
+  <!-- 8 -->
+    <p>8. Повторите страницу по данному по образцу: </p>
+  <!-- ===================================================================== -->
+
+  <p class="my-class">Абзац с class="my-class"</p>
+  <button onclick="classButton()">Нажми - и я выведу класс абзаца</button>
+
+  <script>
+    function classButton() {
+      var myClass = document.querySelector('.my-class');
+      var myGet = myClass.getAttribute('class');
+      alert(myGet);
+    }
+  </script>
+
+  <!-- 9 -->
+  <p>9. Повторите страницу по данному по образцу: </p>
+  <!-- ===================================================================== -->
+
+  <p class="my-class2">Абзац с class="my-class".
+    Класс задает красный цвет</p>
+  <input type="submit" style="margin-bottom: 10px;" onclick="getText()"
+  value="Нажми - и я выведу класс абзаца">
+  <button style="display: block;" onclick="removeText()" id="message">
+  Нажми - и я удалю атрибут class для абзаца</button>
+
+  <style>
+    .my-class2 {
+      color: #f00;
+    }
+  </style>
+
+  <script>
+    function getText() {
+      var getText = document.querySelector('.my-class2');
+      var myGet2 = getText.getAttribute('class');
+      alert(myGet2);
+    }
+  </script>
+
+  <script>
+  function removeText() {
+    var connectText = document.querySelector('.my-class2');
+    var message = document.querySelector('#message');
+    message.setAttribute('value', 'Класс удален! Нажмите на первую кнопку чтобы проверить это!');
+    alert(message.getAttribute('value'));
+    connectText.removeAttribute('class');
+  }
+  </script>
+
+
+  <!-- 10 -->
+  <p>10. Повторите страницу по данному по образцу: </p>
+  <!-- ===================================================================== -->
+
+  <p class="my-class class" id="phar">Абзац с class="my-class class".
+    Класс "my-class" задает красный цвет</p>
+  <input type="submit" value="Нажми - и я выведу класс абзаца."
+  onclick="showText()">
+  <button type="submit" style="display: block; margin-top: 10px;" onclick="changeT()"
+  value="">Нажми - и я изменю атрибут class для абзаца на 'new-class'</button>
+
+  <style>
+    .my-class {
+      color: #f00;
+    }
+
+    .new-class {
+      color: #f0f;
+      font-weight: bold;
+    }
+  </style>
+
+  <script>
+    function showText() {
+      var phar = document.getElementById('phar');
+      alert(phar.getAttribute('class'));
+    }
+  </script>
+  <script>
+    function changeT() {
+      phar.setAttribute('value', 'Класс изменен! Нажмите на первую кнопку чтобы проверить это');
+      alert(phar.getAttribute('value'));
+      phar = document.querySelector('.class');
+      phar.setAttribute('class', 'new-class');
+    }
+  </script>
+
+<h2>Задачи</h2>
+
+  <!-- 11 -->
+  <p>11. Повторите страницу по данному по образцу: </p>
+  <!-- ===================================================================== -->
+
+<input type="text" placeholder="Введи в меня текст!" value="" id="newText"
+onkeyup="copyFunc()">
+<span id="copyText"></span>
+
+<script>
+  function copyFunc() {
+    var newText = document.getElementById('newText');
+    var copyText = document.getElementById('copyText');
+    copyText.innerHTML = newText.value;
+  }
+</script>
+
+<!-- 12 -->
+<p>Повторите страницу по данному по образцу (по ссылкам не переходите,
+  нажмите на кнопку): </p>
+<!-- ===================================================================== -->
+
+<a href="https://google.ru">ссылка 1</a><br>
+<a href="https://tut.by">ссылка 2</a><br>
+<a href="https://yandex.ru">ссылка 3</a><br>
+<input type="submit" value="Нажмие на меня!" onclick="getLink()">
+
+<script>
+  function getLink() {
+    var checking = document.getElementsByTagName('a');
+
+    for (var i = 0; i < checking.length; i++) {
+      var getCopy = '(' + checking[i].getAttribute('href') + ')';
+      checking[i].innerHTML = checking[i].innerHTML + getCopy;
+    }
+  }
+</script>
+
+
+<h2>Закрепление пройденного</h2>
+
+<!-- 13 -->
+<p> 13. Повторите страницу по данному по образцу:</p>
+<!-- ===================================================================== -->
+
+<p class="newName">При нажатии на кнопку текст в абзаце поменяется.</p>
+<input type="submit" value="Нажмите на меня" onclick="changeP(this)">
+
+<script>
+  function changeP(elem) {
+    var changeP = document.querySelector('.newName');
+    changeP.style.color = '#f00';
+    changeP.innerHTML = 'Привет, мир!';
+    elem.disabled = true;
+    elem.value = 'О, на меня больше нельзя нажать';
+  }
+</script>
+
+
+<!-- 14 -->
+<p> 14. Повторите страницу по данному по образцу (при нажатии на кнопку текст в
+  каждом абзаце поменяется на порядковый номер абзаца):</p>
+<!-- ===================================================================== -->
+
+<p class="showNumber">Абзац с текстом.</p>
+<p class="showNumber">Абзац с текстом.</p>
+<p class="showNumber">Абзац с текстом.</p>
+<p class="showNumber">Абзац с текстом.</p>
+<p class="showNumber">Абзац с текстом.</p>
+<p class="showNumber">Абзац с текстом.</p>
+<p class="showNumber">Абзац с текстом.</p>
+<p class="showNumber">Абзац с текстом.</p>
+<button onclick="showingNum()">Нажми на меня!</button>
+
+<script>
+  function showingNum() {
+    var showNumber = document.querySelectorAll('.showNumber');
+
+    for (var i = 0; i < showNumber.length; i++) {
+      showNumber[i].innerHTML = i;
+    }
+  }
+</script>
+
+
+<!-- 15 -->
+<p> 15. Повторите страницу по данному по образцу (при нажатии на кнопку текст в
+  каждом абзаце поменяется на порядковый номер абзаца):</p>
+<!-- ===================================================================== -->
+
+<p class="showNumber2">Абзац с текстом.</p>
+<p class="showNumber2">Абзац с текстом.</p>
+<p class="showNumber2">Абзац с текстом.</p>
+<p class="showNumber2">Абзац с текстом.</p>
+<p class="showNumber2">Абзац с текстом.</p>
+<p class="showNumber2">Абзац с текстом.</p>
+<p class="showNumber2">Абзац с текстом.</p>
+<p class="showNumber2">Абзац с текстом.</p>
+<button onclick="showingNum2()">Нажми на меня!</button>
+
+<script>
+  function showingNum2() {
+    var showNumber2 = document.querySelectorAll('.showNumber2');
+
+    for (var i = 0; i < showNumber2.length; i++) {
+      showNumber2[i].innerHTML = i + '. ' + showNumber2[i].innerHTML;
+    }
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

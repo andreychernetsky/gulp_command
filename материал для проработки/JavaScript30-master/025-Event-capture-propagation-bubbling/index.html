@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Event Capture, Propagation, Bubbling, Once</title>
+</head>
+
+<body class="bod">
+
+  <div class="one">
+    <div class="two">
+      <div class="three">
+      </div>
+    </div>
+  </div>
+
+  <button>Clicked Me!</button>
+  <style>
+    html {
+      box-sizing: border-box;
+    }
+
+    *,
+    *:before,
+    *:after {
+      box-sizing: inherit;
+    }
+
+    div {
+      width: 100%;
+      padding: 100px;
+    }
+
+    .one {
+      background: thistle;
+    }
+
+    .two {
+      background: mistyrose;
+    }
+
+    .three {
+      background: coral;
+    }
+  </style>
+
+  <script>
+    const divs = document.querySelectorAll('div');
+    const button = document.querySelector('button');
+
+    function logText(event) {
+      console.log(this.classList.value);
+      // we need to use stopPropagation to stop bubbling 
+      // event.stopPropagation();
+    }
+    function handleClick() {
+      console.log("The button was clicked!!");
+
+    }
+
+    divs.forEach(div => div.addEventListener('click', logText, {
+      capture: false,
+      once: true
+    }));
+
+    button.addEventListener('click', handleClick, {
+      once: true
+    });
+  </script>
+</body>
+
+</html>

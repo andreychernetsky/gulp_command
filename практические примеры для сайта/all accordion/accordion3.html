@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+				content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+<body>
+<script>
+  (function Accordion() {
+    const[...accordion_containers] = document.querySelectorAl('[data-accordion]');
+    
+    acordion_containers.forEach((accordion)=>{
+      const[...accordion_titles] = accordion.querySelectorAll('.accordion_titles');
+      
+      accordion_titles.forEach((title) => {
+        title.addEventListener('click', ()=> open(title, accordion_titles))
+			})
+		});
+    function open(title, siblings) {
+      siblings.forEach(item => item.classList.remove('active'));
+      title.calssList.add('active');
+		}
+  
+  })();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+<body>
+<script>
+
+  const array = [10, 20, 30]; // инициализируем переменную, содержащую массив числовых значений
+
+  let double = array.map( // вызываем переданную функцию один раз для каждого элемента массива, формируя новый массив
+    function doubleNumber( currentValue ) {
+
+      return currentValue * 2;
+    }
+  );
+  // аналогично с использованием стрелочной функции
+  let double = array.map( currentValue => currentValue * 2 );
+  console.log( double ); // выводим значение переменной double равное [20, 40, 60]
+
+  //	example
+  let names = ["html","css","javascript"];
+
+  let nameLenfths = names.map(function(name,item,arr){
+    return name.length;
+  });
+  console.log(nameLenfths);//[4,3,10]
+
+  //	example
+
+  let names = ["html","css","javascript"];
+
+  let nameLenfths = names.map((name,item,arr)=> name.length);
+
+  console.log(nameLenfths);//[4,3,10]
+
+  //	example
+  let slice = function(str) {
+    return str.slice(0,2);
+  };
+  let frameworks = ["html","css","javascript"].map(slice);
+
+  console.log(frameworks);//['ht','cs','ja']
+
+  //	example
+  let arr = [1,2,3];
+  let result = arr.map((item,index,array)=>{
+    return item += item;
+    // возвращается новое значение вместо элемента
+  });
+  console.log(result);//[2,4,6]
+
+  //	example
+  'use strict';
+
+  let lengths = ["Bilbo", "Gandalf", "Nazgul"].map(item=>item.length);
+  console.log(lengths);//[5,7,6]
+
+  //	example
+
+  const numbers = [2,3,4];//инициализируем переменную,содержащую массив числовых
+  const myObject = {// инициализируем переменную, содержащую объект
+    square:function(currentValue) {// метод объекта, который принимает значение
+      return currentValue * currentValue// и возвращает его возведенным в квадрат
+    }
+  };
+
+  const squared = numbers.map(// вызываем переданную функцию один раз для каждого элемента массива, формируя новый массив
+    function(currentValue){
+      return this.square(currentValue);//  возвращаемое значение метода square объекта myObject
+    },myObject // объект, на который мы ссылаемся с использованием ключевого слова this
+  );
+  console.log(squared);//// выводим значение переменной squared равное [4, 9, 16]
+	
+//	example
+  const array = [1,2,3,4];
+
+  function multBy(arr,n) {
+    return arr.map(function(elem){
+      return elem * n;
+    })
+  }
+  console.log(multBy(array,15));//[15,30,45 60]
+
+  //  example
+
+  const numbers = [1,2,3];
+  const doubled = numbers.map(n => n*2);
+
+  console.log(doubled);
+
+</script>
+</body>
+</html>

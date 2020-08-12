@@ -1,0 +1,26 @@
+<html>
+<body>
+<script>
+'use strict'
+
+var leader = {
+  name: "Василий Иванович"
+};
+
+var soldier = {
+  name: "Петька"
+};
+
+// эти объекты ссылаются друг на друга!
+leader.soldier = 23;
+soldier.leader = 32;
+
+var team = [leader, soldier];
+
+var finalTeam = JSON.stringify(team, " ", 4);
+
+alert( finalTeam );
+
+</script>
+</body>
+</html>

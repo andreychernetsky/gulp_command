@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+<body>
+<script>
+  function applyForVisa(document) {
+    console.log('обработка заявления');
+    let promise = new Promise(function (resolve, reject) {
+      setTimeout(function () {
+        Math.random() > .5 ? resolve({}) : reject('в визе отказано');
+      }, 2000)
+    });
+    return promise;
+  }
+
+  function getVisa(visa) {
+    console.info('виза получена');
+    return visa;
+  }
+  function bookHotel(visa) {
+    console.log(visa);
+    console.log('бронировать отель');
+  }
+
+  function buyTickets() {
+    console.log('покупаем билет');
+  }
+
+  applyForVisa({})
+    .then(getVisa)
+    .then(bookHotel)
+    .then(buyTickets)
+    .catch(error => console.error(error));
+</script>
+</body>
+</html>

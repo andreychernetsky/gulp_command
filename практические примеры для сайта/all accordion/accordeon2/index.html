@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+				content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+<body>
+<style>
+	p {
+		margin: 0;
+	}
+	
+	#accordion {
+		width: 100%;
+		max-width: 500px;
+		margin: 0 auto;
+	}
+	
+	.accordion-title {
+		background-color: #ccc;
+		text-align: center;
+		padding: 10px;
+		font-weight: bold;
+		font-size: 18px;
+	}
+	
+	.accordion-title.active + .accordion-cont {
+		display: block;
+	}
+	
+	.accordion-cont {
+		display: none;
+	}
+
+</style>
+<div id="accordion">
+	<div class="accordion-title active test1">
+		<span>заголовок1</span>
+	</div>
+	<div class="accordion-cont">
+	
+	</div>
+	
+	<div class="accordion-title test2">
+		<span>заголовок1</span>
+	</div>
+	<div class="accordion-cont">
+	
+	</div>
+	
+	<div class="accordion-title test3">
+		<span>заголовок1</span>
+	</div>
+	<div class="accordion-cont">
+	
+	</div>
+</div>
+
+<script src="js.js"></script>
+</body>
+</html>

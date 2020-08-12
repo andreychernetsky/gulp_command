@@ -1,0 +1,315 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+				content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+<body>
+<style>
+	@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:600);
+	body {
+		font-family: Georgia, serif;
+		padding: 20px 20px 40px 20px !important;
+		color: #333;
+		background: #fff !important;
+	}
+	
+	p {
+		margin: 0 0 10px 0;
+	}
+	
+	.text-right {
+		text-align: right;
+	}
+	
+	.text-center {
+		text-align: center;
+	}
+	
+	h4 {
+		margin: 0 0 10px;
+	}
+	
+	
+	/* Remove focus ring as all screen readers tested on, add their own focus ring */
+	
+	:focus {
+		outline: 0;
+	}
+	
+	/* A C C O R D I A N */
+	
+	.accordion {
+		border-radius: 3px;
+		overflow: hidden;
+		border: 3px solid #6495ED;
+		max-width: 350px;
+	}
+	
+	.accordion-panel__heading {
+		position: relative;
+		padding: 20px;
+		display: block;
+		text-decoration: none;
+		text-transform: uppercase;
+		letter-spacing: 2px;
+		color: #6495ED;
+		background: #f5f5f5;
+		font-family: 'Source Sans Pro', sans-serif;
+		font-size: 12px;
+		font-weight: 600;
+		border-bottom: 1px solid #6495ED;
+		transition: all .2s;
+		cursor: pointer;
+	}
+	
+	.accordion-panel__heading:before {
+		transition: all .2s ease;
+		content: "";
+		border: 0px #6495ED solid;
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 0;
+		height: 100%;
+	}
+	
+	.accordion-panel__heading.active:before {
+		transition: all .2s .2s;
+		border-left: 15px #6495ED solid;
+	}
+	
+	.accordion-panel__heading:HOVER {
+		color: #333;
+		background: #f1f1f1;
+		transition: all .2s;
+	}
+	
+	.accordion-panel__heading.active:HOVER,
+	.accordion-panel__heading.active {
+		transition: all .2s;
+		color: #333;
+		background: #fff;
+		border-bottom: 0;
+		padding: 20px 20px 20px 40px;
+	}
+	
+	.accordion-panel__content {
+		transition: all .2s;
+		position: relative;
+		padding: 0 20px 0 20px;
+		background: #f1f1f1;
+		max-height: 0;
+		overflow: hidden;
+	}
+	
+	.accordion-panel__content:before {
+		transition: all .2s ease;
+		content: "";
+		border: 0px #6495ED solid;
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 0;
+		height: 100%;
+	}
+	
+	.accordion-panel__content.active:before {
+		transition: all .2s .2s;
+		border-left: 15px #6495ED solid;
+	}
+	
+	.accordion-panel__content.active {
+		transition: all .2s;
+		max-height: 500px;
+		background: #fff;
+		padding: 10px 20px 15px 40px;
+	}
+</style>
+<section class="accordion" role="tablist" aria-multiselectable="false">
+	<a class="accordion-panel__heading" href="javascript:;">Accordion Panel One</a>
+	<div class="accordion-panel__content">
+		<h4>Potenti ligula torquent</h4>
+		<p>Diam </p>
+	</div>
+	
+	<a class="accordion-panel__heading" href="javascript:;">Accordion Panel Two</a>
+	<div class="accordion-panel__content">
+		<p>Diam .</p>
+	</div>
+	
+	<a class="accordion-panel__heading" href="javascript:;">Accordion Panel Three</a>
+	<div class="accordion-panel__content">
+		<p>Lacus</p>
+	</div>
+	
+	<a class="accordion-panel__heading" href="javascript:;">Accordion Panel Four</a>
+	<div class="accordion-panel__content">
+		<p>Potenti.</p>
+	</div>
+	
+	<a class="accordion-panel__heading" href="javascript:;">Accordion Panel Five</a>
+	<div class="accordion-panel__content">
+		<h4>Potenti ligula torquent</h4>
+		<p>Diam
+			cum sem blandit a eu et vestibulum aliquet.</p>
+		<p>Potenti ligula torquent vestibulum cum sem blandit a eu et vestibulum aliquet. Lacus parturient dignissim proin
+		.</p>
+	</div>
+
+</section>
+
+<p>
+	<br>
+	<br>
+</p>
+<h4>View the Github page for this project here:</h4>
+<p>
+	<a href="https://github.com/benbowes/Accessible-Accordian-Class-Pure-JS-CSS"
+		 title="View the Github page for this project here">https://github.com/benbowes/Accessible-Accordian-Class-Pure-JS-CSS</a>
+</p>
+<script>
+  var myAPP = myAPP || {};
+
+
+  myAPP.Accordion = function(panelSelectorsObj) { // e.g. function ({ heading: <String>, content: <String>})
+
+    this.panels = []; // Master list of collapsable panels. Accessible publically e.g myAPP.accordionContainer.panels[0].select();
+    this.panelSelectors = panelSelectorsObj; // an obj containing the panel selectors - { heading: <String>, content: <String>}
+    this.accordionPanels = document.querySelectorAll(this.panelSelectors['heading']);
+
+    for (i = 0; i < this.accordionPanels.length; i++) {
+      this.makePanel(this.accordionPanels[i], i);
+    }
+  };
+
+  myAPP.Accordion.prototype = {
+
+    // resetPanels() - used for unselecting/collapsing AccordionPanels
+    resetPanels: function() {
+      this.panels.forEach(function(v) {
+        v.unselect();
+      });
+    },
+   
+    makePanel: function(panelElement, index) {
+      var panel = new myAPP.AccordionPanel(panelElement, this, index);
+      this.panels.push(panel);
+    }
+  };
+
+  myAPP.AccordionPanel = function(headingEl, panelHolder, index) {
+    // The AccordionPanel Class controls each of the collapsable panels spawned from Accordion Class
+    var self = this;
+
+    this.panelHolder = panelHolder;
+    this.index = index;
+    this.headingEl = headingEl; // this is the clickable heading
+    this.contentEl = headingEl.nextElementSibling; //headingEl.querySelector( this.panelHolder.panelSelectors['content'] );
+    this.isSelected = false;
+
+    this.setupAccessibility();
+
+    this.headingEl.addEventListener("click", function() {
+
+      if (self.isSelected) {
+        self.unselect(); // already open, presume user wants it closed
+      } else {
+        self.panelHolder.resetPanels(); // close all panels
+        self.select(); // then open desired panel
+      }
+
+    });
+
+    return this;
+  };
+
+  myAPP.AccordionPanel.prototype = {
+
+    setupAccessibility: function() {
+      this.
+		le		headingEl.setAttribute('role', 'tab');
+      this.headingEl.setAttribute('aria-selected', 'false');
+      this.headingEl.setAttribute('id', 'accordionHeading_' + this.index);
+      this.headingEl.setAttribute('aria-controls', 'accordionContent_' + this.index);
+      this.headingEl.setAttribute('tabindex', '0');
+      this.headingEl.setAttribute('aria-expanded', 'false'); // dynamic html attribute
+
+      this.contentEl.setAttribute('id', 'accordionContent_' + this.index);
+      this.contentEl.setAttribute('aria-labelledby', 'accordionHeading_' + this.index);
+      this.contentEl.setAttribute('role', 'tabpanel');
+      this.contentEl.setAttribute('tabindex', '0');
+      this.contentEl.setAttribute('aria-hidden', 'true'); // dynamic html attribute
+    },
+    select: function() {
+      var self = this;
+      this.isSelected = true;
+
+      this.headingEl.addClass('active');
+      this.headingEl.setAttribute('aria-expanded', 'true');
+      this.headingEl.setAttribute('aria-selected', 'true');
+
+      this.contentEl.addClass('active');
+      this.contentEl.setAttribute('aria-hidden', 'false');
+      setTimeout(function() {
+        self.contentEl.focus();
+      }, 1000); // wait for animation to finish before shifting focus (Don't need to - just looks nicer)
+
+    },
+    unselect: function() {
+      this.isSelected = false;
+
+      this.headingEl.removeClass('active');
+      this.headingEl.setAttribute('aria-expanded', 'false');
+      this.headingEl.setAttribute('aria-selected', 'false');
+
+      this.contentEl.removeClass('active');
+      this.contentEl.setAttribute('aria-hidden', 'true');
+    }
+  };
+
+  myAPP.init = function() {
+
+    // Create Accordian instance and turn all elements with class '.accordion-panel' into AccordianPanel Class intances.
+    this.accordionContainer = new myAPP.Accordion({
+      heading: '.accordion-panel__heading',
+      content: '.accordion-panel__content'
+    }); //  store the panel selectors in Accordian Class - Accordion( { heading: <String>, content: <String>} )
+
+    // Select second panel
+    this.accordionContainer.panels[1].select(); // or myAPP.accordionContainer.panels[0].select();
+  };
+
+  window.onload = function() {
+    myAPP.init();
+  };
+
+  /* ------------------------------------------------
+	
+			C o n v e n i e n c e    M e t h o d s
+	
+	------------------------------------------------ */
+
+  HTMLElement.prototype.addClass = function(className) {
+    // e.g. el.addClass( 'className' );
+    if (this.classList) {
+      this.classList.add(className);
+    } else {
+      this.className += ' ' + className;
+    }
+  }
+
+  HTMLElement.prototype.removeClass = function(className) {
+    // e.g. el.removeClass( 'className' );
+    if (this.classList) {
+      this.classList.remove(className);
+    } else {
+      this.className = this.className.replace(new RegExp('(^|\\b)' + className.split(' ').join('|') + '(\\b|$)', 'gi'), ' ');
+    }
+  }
+</script>
+</body>
+</html>

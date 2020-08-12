@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Third task</title>
+</head>
+<body>
+<h2>Работа с формами</h2>
+
+<!-- ======================================================================= -->
+<!-- 1 -->
+
+<p>Дана форма с id="form". В ней даны инпуты, в них числа. Дана кнопка.
+  По нажатию на эту кнопку получите форму по ее id, затем циклом переберите
+  все инпуты в ней и найдите сумму чисел из этих инпутов.</p>
+
+<form id="form">
+  <input type="text" value="10">
+  <input type="text" value="20">
+  <input type="text" value="30">
+  <input type="text" value="40">
+</form><br>
+<button onclick="clickButton()" value="0">Посчитать сумму инпутов</button>
+  <input type="text" id="amount" value="0">
+
+<script>
+  function clickButton() {
+    var form = document.getElementById('form');
+    var text = document.getElementById('amount');
+
+    for (var i = 0; i < form.length; i++) {
+      text.value = Number(text.value) + parseInt(form[i].value);
+    }
+  } text = 'text.value';
+</script>
+
+<!-- ======================================================================= -->
+<!-- 2 -->
+
+<p>На странице расположено несколько форм. В них есть инпуты, в инпутах числа.
+  Дана кнопка. По нажатию на эту кнопку циклом переберите все формы на
+  странице, затем циклом переберите все инпуты в каждой форме и найдите
+  сумму чисел из всех этих инпутов.</p>
+
+<form name="form-one" style="margin-bottom: 20px;">
+  <input type="text" value="2">
+  <input type="text" value="14">
+  <input type="text" value="19">
+</form>
+<form name="form-two" style="margin-bottom: 20px;">
+  <input type="text" value="10">
+  <input type="text" value="20">
+  <input type="text" value="35">
+</form>
+<button onclick="amountForm()">Посчитать</button>
+<input type="text" value="0" id="decide">
+
+<script>
+  function amountForm() {
+    var formOne = document.forms['form-one'].elements;
+    var formTwo = document.forms['form-two'].elements;
+    var amount = document.getElementById('decide');
+
+    for (var i = 0; i < formOne.length; i++) {
+      amount.value = +(formOne[i].value) + +(amount.value);
+    }
+    for (var k = 0; k < formTwo.length; k++) {
+      amount.value = +(formTwo[k].value) + +(amount.value);
+    } amount = amount.value;
+  }
+</script>
+
+<h4>or</h4>
+
+<form style="margin-bottom: 20px;">
+  <input type="text" value="2">
+  <input type="text" value="14">
+  <input type="text" value="19">
+</form>
+<form style="margin-bottom: 20px;">
+  <input type="text" value="10">
+  <input type="text" value="20">
+  <input type="text" value="35">
+</form>
+<button onclick="amountForm2()">Посчитать</button>
+<input type="text" value="0" id="decide2">
+
+<script>
+  function amountForm2() {
+    var forme1 = document.forms[1].elements;
+    var forme2 = document.forms[2].elements;
+    var amount = document.getElementById('decide2');
+    for (var i = 0; i < forme1.length; i++) {
+      amount.value = +(forme1[i].value) + +(amount.value);
+      if (forme1[i].value === forme1[2].value) {
+        for (var j = 0; j < forme2.length; j++) {
+          amount.value = +(forme2[j].value) + +(amount.value);
+        }
+      }
+    }
+  }
+</script>
+
+<h2>Работа с селектами</h2>
+
+<!-- ======================================================================= -->
+<!-- 3 -->
+
+<p>Дан селект. Дан инпут. По изменению селекта выведите текст выбранного
+  пункта в инпут.</p>
+
+  <select id="select" onclick="choise()">
+    <option value="Первый элемент">Первый элемент</option>
+    <option value="Второй элемент">Второй элемент</option>
+    <option value="Третий элемент">Третий элемент</option>
+  </select>
+  <input type="text" id="got" value="" placeholder="Выбранный элемент">
+
+<script>
+    function choise() {
+      got.value = select.value;
+    }
+</script>
+
+<!-- ======================================================================= -->
+<!-- 4 -->
+
+<p>Дан селект. Дан инпут. Дана кнопка. Сделайте так, чтобы в инпут можно было
+  ввести число, нажать на кнопку и в селекте становился выбранным пункт с
+  этим номером.</p>
+
+  <select id="sel">
+    <option value="1">Первый селект</option>
+    <option value="2">Второй селект</option>
+    <option value="3">Третий селект</option>
+    <option value="5">Третий селект</option>
+  </select>
+  <input type="text" placeholder="Введи число" value="" id="input">
+  <button onclick="choiseNumber()">Вывести выбранный селект</button>
+
+<script>
+  function choiseNumber() {
+    sel.value = input.value;
+    if (sel.value != input.value) {
+      input.value = 'Введите верное значение';
+    }
+  }
+</script>
+
+<!-- ======================================================================= -->
+<!-- 5 -->
+
+<p>Дан селект со списком стран. Сделайте так, чтобы при выборе страны рядом
+появлялся еще и селект со списком городов из этой страны.</p>
+
+<select id="country" onclick="openCountry()">
+  <option value="1">Россия</option>
+  <option value="2">Белорусия</option>
+  <option value="3">Украина</option>
+</select>
+<select id="russia" style="display: none;">
+  <option value="">Москва</option>
+  <option value="">Санкт-Питербург</option>
+  <option value="">Ярославль</option>
+</select>
+<select id="belarus" style="display: none;">
+  <option value="">Минск</option>
+  <option value="">Витебск</option>
+  <option value="">Могилев</option>
+</select>
+<select id="ukraine" style="display: none;">
+  <option value="">Киев</option>
+  <option value="">Харьков</option>
+  <option value="">Днепр</option>
+</select>
+
+<script>
+  function openCountry() {
+    country = document.getElementById('country');
+
+    switch (country.value) {
+      case '1':
+        russia.style.display = 'inline-block';
+        ukraine.style.display = 'none';
+        belarus.style.display = 'none';
+        break;
+      case '2':
+        belarus.style.display = 'inline-block';
+        ukraine.style.display = 'none';
+        russia.style.display = 'none';
+        break;
+      case '3':
+        ukraine.style.display = 'inline-block';
+        russia.style.display = 'none';
+        belarus.style.display = 'none';
+        break;
+    }
+  }
+</script>
+
+
+</body>
+</html>

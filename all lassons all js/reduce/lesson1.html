@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+<body>
+<script>
+  //example reduce
+  const sum = [1,2,3].reduce(add,0);
+  function add(accumulator,a) {
+    return accumulator + a;
+  }
+  console.log(sum);//6
+
+  //example
+
+  const sum = [1,2,3].reduce((partial_sum,a)=>partial_sum + a,0);
+  console.log(sum);//6
+
+  //example
+  function midlleElem(arr) {
+    let amount = arr.reduce((sum,elem)=>{
+      return sum + elem;
+
+    },0);
+
+
+    return amount/arr.length;
+  }
+  let arr = [1,2,3];
+
+  console.log(midlleElem(arr));//2
+
+  //example
+  /*
+	1) создаем функцию summAndMultiplication она будет и складывать и одновременно умножать
+	2) параметром передаем массив summAndMultiplication = (arr) =>
+		3)создаем ассоциативный массив для хранения результатов let result = {} в ввиде ключа и значения
+	4)создаем первый блок . Он считает сумму let summ = arr.reduce(function(summ, current) {
+		return summ + current;
+	}, 0);
+	5) теперь блок отвечающий за умножение
+	let Multiplication = arr.reduce(function(Multiplication, current) {
+		return Multiplication * current;
+	}, 1);
+	6)заполним наш объект свойствами и значениями result.summ = summ;
+	тоже самое делаем с умножением result.Multiplication = Multiplication*/
+
+
+  const summAndMultiplication = (arr) => {
+    let result = {};
+    let summ = arr.reduce((summ, current)=> {
+      return summ + current;
+    }, 0);
+
+    let multiplication = arr.reduce((Multiplication, current)=> {
+      return Multiplication * current;
+    }, 1);
+    console.log(multiplication);
+
+    result.summ = summ;
+    result.multiplication = multiplication;
+
+    return result;
+  };
+  let arr = [2,5,3,2,6,-5];
+  console.log(summAndMultiplication(arr));//{summ:13, multiplication:-1800}
+
+  //example
+
+  const SUMM_ODD = (arr)=>{
+    let result = arr.reduce((summ,current)=>{
+      if((current % 2 !==0) && (current <=11)){
+        summ+=current;
+      }
+      return summ;
+    },0);
+    return result;
+  };
+  console.log(SUMM_ODD([1,13,4,3]));//4
+  //	example for in
+  let student = {name:"bill", age:25, degree:"master"};
+  for(let item in student) {
+    console.log(item);//name,age,degree
+    console.log(student[item]);//bill,25,master
+  }
+
+  //  example
+
+  /* Найдите сумму чисел массива, которые стоят на четных местах.
+ 
+	 1)создаем две функции OddMin = (arr) => и вторая function(min,current)
+	 2)во второй функции передаем три параметра function(summ,current,index)
+	 3)пишем проверку на четность  if ( % 2 == 0)
+	 4)если индекс четный то число складывается и добавляется в  summ+=current;
+	 5)*/
+
+  //  let OddSumm = (arr) => {
+  //    let result = arr.reduce(function(summ,current,index){//summ-,current-текущий элемент массива,index-это indes элемента
+  // пример из нашего массива current равен числу 13 значит index=[1] а summ остается с прежней 1 так как index=[1] не четный
+
+  //в первый параметр summ попадает 1 из нашего массива,так как он первый index
+  // так как 0 index четный то срабатывает  summ+=current; и в summ лежит 1
+  // так как 13 из массва это 1 index а он не четный,то он пропускается и в summ попадаетпрежнему лежит 1 b и так далее
+
+  let oddSumm = (arr) =>{
+    let result = arr.reduce((summ,index,arr)=>{
+      if(arr % 2 == 0) {
+        summ+=index;
+        console.log(summ);//1,4,6
+        console.log(summ,index); //1 1, 4,3,6 2
+        console.log(arr); //0,2,4
+      }
+      return summ;
+    },0);
+    return result;
+  };
+  const arr = [1,2,3,2,2];
+  console.log(oddSumm(arr))//6
+
+  //	example
+  'use strict';
+
+  console.log([2,5,3,2,6,-5].reduce((previousValue, currentValue, index) => (index % 2 === 0) ? previousValue + currentValue : currentValue, 0));//-5
+
+
+
+
+
+</script>
+</body>
+</html>

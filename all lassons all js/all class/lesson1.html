@@ -8,7 +8,144 @@
 </head>
 <body>
 <script>
+  class Tank{
+    moveTo(x,y) {
 
+    }
+    fireTo(x,y){
+
+    }
+  }
+
+  let tank = new Tank;
+  tank.moveTo(10,20);
+
+  let tank1 = new Tank;//создаем первый танк
+  tank1.moveTo(10,10);//командуем перемещение 10,10
+
+  let tank2 = new Tank;
+  tank2.moveTo(20, 20);
+
+  let tank1 = new Tank; //создаем первый танк
+  tank1.moveTo(10, 10); //командуем перемещение в точку 10, 10
+
+  let tank2 = new Tank; //создаем второй танк
+  tank2.fireTo(10, 10); //командуем выстрел в местонахождение первого
+
+  //	step2
+
+  class Tank {
+    constructor(message) {
+      this.ammunition = 10;//положим 10 снарядов
+      console.log(message + '!')
+    }
+    fireTo(x,y) {
+      this.ammunition = this.ammunition -1;
+    }
+  }
+  let tank = new Tank('сздание');
+  console.log(tank.ammunition);//10 Теперь каждый созданный танк будет иметь 10 снарядов уже в момент создания.
+  // Убедимся в этом:
+
+  //	step3
+
+  class Tank {
+    constructor(ammunition) {
+      this.ammunition = ammunition;//положим 10 снарядов
+
+    }
+    fireTo(x,y) {
+      this.ammunition = this.ammunition -1;
+    }
+  }
+  let tank = new Tank(10);//создали параметр
+  console.log(tank.ammunition);//10
+
+  //	step4
+
+  class Tank {
+    constructor(ammunition) {
+      this.ammunition = ammunition;//положим 10 снарядов
+
+    }
+    fireTo(x,y) {
+      this.ammunition = this.ammunition -1;
+    }
+  }
+  let tank = new Tank(10);//создали танк
+  console.log(tank.ammunition);//10
+
+  tank.fireTo(10,10);//командуем выстрел
+  console.log(tank.ammunition);//9 потеряли один патрон
+
+  tank.fireTo(10,20);
+  console.log(tank.ammunition);//8
+
+  //  реализуем вспомогательный метод canFire(), который будет проверять, не закончились ли снаряды:
+  class Tank {
+    constructor(ammunition) {
+      this.ammunition = ammunition;//положим 10 снарядов
+
+    }
+
+    fireTo() {
+      //перед выстрелом проверяем снаряды
+      if(this.canFire()){
+        this.ammunition = this.ammunition -1;
+      }
+    }
+    //вспомогательный метод для проверки снарядов
+    canFire(ammunition) {
+      if(ammunition > 0) {
+        return true;
+      } else {
+        return false;
+      }
+    }
+  }
+  let tank = new Tank(10);//создали танк
+  console.log(tank.ammunition);//10
+
+  tank.fireTo(10,10);//командуем выстрел
+  console.log(tank.ammunition);//9 потеряли один патрон
+
+  tank.fireTo(10,20);
+  console.log(tank.ammunition);//8 потеряли один патрон
+
+  //	приватный метод
+  /* следует запретить вызывать вспомогательные методы и свойства снаружи класса. В этом случае вы легко сможете править их, не задумываясь о том, что сломаете что-то снаружи.
+	Такой подход называется инкапсуляция. Говорят, что мы инкапсулируем вспомогательные методы и свойства внутри класса.*/
+  /*Это просто соглашение - всё по-прежнему видно снаружи, но мы просто договорились сами с собой о следующем: всё, что начинается с подчеркивания - снаружи мы не используем. Можем, но не будем.*/
+
+  class Tank {
+    constructor(ammunition) {
+      this.ammunition = 10;//положим 10 снарядов
+
+    }
+
+    fireTo() {
+      //перед выстрелом проверяем снаряды
+      if(this._canFire()){
+        this.ammunition = this.ammunition -1;
+      }
+    }
+    //вспомогательный метод для проверки снарядов
+    _canFire(ammunition) {
+      if(ammunition > 0) {
+        return true;
+      } else {
+        return false;
+      }
+    }
+  }
+  let tank = new Tank();//создали танк
+  console.log(tank.ammunition);//10
+
+  tank.fireTo(10,10);//командуем выстрел
+  console.log(tank.ammunition);//9 потеряли один патрон
+
+  tank.fireTo(10,20);
+  console.log(tank.ammunition);//8 потеряли один патрон
 </script>
 </body>
 </html>

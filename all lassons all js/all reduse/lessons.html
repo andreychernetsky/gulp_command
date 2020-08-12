@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+<body>
+<script>
+  function average(arr) {
+    return arr.reduce((acc,i)=> acc += i,0) / arr.length;
+  }
+  console.log(average([10,20,30,40]));//25
+
+  // example
+  function average(arr) {
+    return Array.from(arguments).reduce((acc,i)=> acc += i,0) / arguments.length;
+  }
+  console.log(average(10,20,30,40));//25
+
+  // но с появлением rest мы можем делвть все быстрее
+
+  function average(...args) {
+    return args.reduce((acc,i)=> acc += i,0) / args.length;
+  }
+  console.log(average(10,20,30,40));//25
+
+  // если будет добавляться аргумент, то spred будет уменьшать свое количество аргументов
+  function average(a,...args) {
+    return args.reduce((acc,i)=> acc += i,0) / args.length;
+  }
+  console.log(average(10, 20,30,40));//25
+
+  // example
+  function average(a,...args) {
+    return args.reduce((acc,i)=> acc += i,0) / args.length;
+  }
+  const array = [10, 20,30,40]
+  console.log(average(... array));//30
+
+  // example
+  Text()const array = [10, 20,30,40]
+  console.log(Math.max(... array));//40
+
+  // ранее без оператора sred это работало так
+  // писали функцию которую хотели применить
+  // затем вызывали метод apply
+  // метод apple принемает массив аргументов
+  const array = [1,2,3,4];
+  console.log(Math.max.apply(null,array));//4
+
+  // example клонироварние массива
+  const array = [1,2,3,4];
+  console.log(Math.max.apply(null,array));//4
+
+  const fib = [1, ...array];
+  console.log(fib);//[1,1,2,3,4]
+
+  // example destructuring
+  /*
+	Синтаксис деструктурирующего присваивания в выражениях JavaScript позволяет извлекать данные из массивов или объектов при помощи синтаксиса, подобного объявлению массива или литералов в объекте.*/
+  /*ранее чтобы выбрать определенный индекс массива
+	мы писали следующее*/
+  const array = [1,2,3,4];
+
+  const a = array[0];
+  const b = array[0];
+  console.log( a); //1
+
+  // сейчас все можно сделать болоее красиво
+  // этот вариант индентичен превому
+  const array = [1,2,3,4];
+  const [a,b] = array;
+  console.log(a);//1
+
+  // при этом мы можем добавлять spred оператор
+  // c будет состоять из всех оставшихся элеметов массива
+
+  const array = [1,2,3,4];
+  const [a,b, ...c] = array;
+  console.log(c);//[3,4]
+
+  // при таком синтаксисе мы можем задавать значение по умолчанию
+  // если пременная b не определенв, то мы зададим ей значение двух
+  const array = [1,undefined,3,4];
+  const [a,b=2, ...c] = array;
+  console.log(a,c,b);//1[3,4]2
+
+  // можно определить только определенные параметры
+  const array = [1,undefined,3,4];
+  const [a,,c] = array;
+  console.log(a,c);//1,3
+
+  // object
+  const address = {
+    country:'Russia',
+    city:'Moscow',
+    street:'lenina',
+    concat:function() {
+      return `${this.country},${this.city}, ${this.street}`;
+    }
+  }
+  console.log(address.concat());//Russia.Moscow,Lenina
+
+  // example
+  // object
+  const address = {
+    country:'Russia',
+    city:'Moscow',
+    street:'lenina',
+    concat:function() {
+      return `${this.country},${this.city}, ${this.street}`;
+    }
+  }
+  const {city,country,street,concat} = address;
+  console.log(concat.call(address));//Russia.Moscow,Lenina
+</script>
+</body>
+</html>

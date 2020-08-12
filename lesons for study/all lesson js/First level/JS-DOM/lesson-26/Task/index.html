@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Lesson-26. Task</title>
+</head>
+<body>
+<h1>Урок 26. Работа с метриками для widnow</h1>
+
+<h2>Задачи</h2>
+
+<!-- 1 -->
+<p>1. Дана кнопка. По нажатию на эту кнопку выведите высоту окна браузера.</p>
+<!-- ======================================================================= -->
+
+<input type="submit" id="button" value="Определить высоту"><br>
+<input type="text" class="info">
+<input type="text" class="info">
+<input type="text" class="info">
+
+<style>
+  .info {
+    width: 300px;
+    margin: 5px 5px 5px 0;
+    display: block;
+  }
+</style>
+
+<script>
+  var button = document.getElementById('button');
+  button.addEventListener('click', function showHeight() {
+    var info = document.querySelectorAll('.info');
+
+    for (var i = 0; i < info.length; i++) {
+      info[0].value = 'document.documentElement.clientHeight = ' +
+      document.documentElement.clientHeight;
+
+      // or
+
+      info[1].value = 'window.innerHeight = ' + window.innerHeight;
+    }
+  });
+</script>
+
+
+<!-- 2 -->
+<p>2. Дана кнопка. По нажатию на эту кнопку прокрутите окно браузера
+  до самого низа.</p>
+<!-- ======================================================================= -->
+
+<div class="parent">
+  <input type="submit" value="Прокрути вниз" id="button2">
+</div>
+
+<style>
+  .parent {
+    border: 1px solid #000;
+    height: 700px;
+  }
+</style>
+
+<script>
+  var button2 = document.getElementById('button2');
+  button2.addEventListener('click', function showBottom() {
+    var parent = document.querySelector('.parent');
+
+    var y = parent.clientHeight;
+    scrollBy(0, y);
+  });
+</script>
+
+
+<!-- 3 -->
+<p>3. Дана кнопка. По нажатию на эту кнопку узнайте, есть ли у окна
+  браузера вертикальная прокрутка.</p>
+<!-- ======================================================================= -->
+
+<input type="submit" value="Есть ли прокрутка" id="button3">
+
+<style>
+  html {
+    /* height: 851px; */
+  }
+</style>
+
+<script>
+  var button3 = document.getElementById('button3');
+  button3.addEventListener('click', function thereIs() {
+    var heightPage = document.documentElement.clientHeight;
+    var scrollPage = document.documentElement.scrollHeight;
+
+    if (heightPage < scrollPage) {
+      alert('Прокрутка есть на ' + (scrollPage - heightPage) + 'px');
+    } else {
+      alert('Прокритки нет');
+    }
+  });
+</script>
+
+</body>
+</html>
+
+
+</body>
+</html>

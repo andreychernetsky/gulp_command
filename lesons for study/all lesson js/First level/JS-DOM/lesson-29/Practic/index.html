@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Lesson-29. Practic</title>
+</head>
+<body>
+  <h1>Урок 29. Разные полезные темы.</h1>
+
+  <h2>Работа с формами</h2>
+
+  <p>1. Обратилмя к любой форме, например к форме с номером 0</p>
+
+  <!-- <form action="">
+    <input type="text">
+    <input type="text">
+  </form>
+  <form action="">
+    <input type="text">
+    <input type="text">
+  </form>
+
+  <script>
+    var form = document.forms[0];
+    form.innerHTML = '+';
+  </script> -->
+
+  <p>2. Переберем все формы с помощью цикла</p>
+
+  <!-- <form action="">
+    <input type="text">
+    <input type="text">
+  </form>
+  <form action="">
+    <input type="text">
+    <input type="text">
+  </form>
+
+  <script>
+    var form = document.forms;
+    console.log(form);
+
+    for (var i = 0; i < form.length; i++) {
+      form[i].innerHTML = '+';
+      console.log(form[i].elements);
+    }
+  </script> -->
+
+  <p>3. Форме с именем form1 поставим текст '+', а форме form2 '-'</p>
+
+  <!-- <form name="form1" action="">
+    <input type="text">
+    <input type="text">
+  </form>
+  <form name="form2" action="">
+    <input type="text">
+    <input type="text">
+  </form>
+
+  <script>
+    document.forms['form1'].innerHTML = '+';
+    document.forms.form2.innerHTML = '-';
+  </script> -->
+
+
+<h2>Обращение к элементам форм</h2>
+
+<p>1. Обратимя к форме номер 1, а затем к ее элементу номер 0</p>
+
+
+<!-- <form action="">
+  <input type="text">
+  <input type="text">
+</form>
+<form action="">
+  <input type="text">
+  <input type="text">
+</form>
+
+<script>
+  document.forms[1].elements[0].value = '+';
+</script> -->
+
+<p>2. Перебером форму с момощью цикла и получим форму с номером 1
+и всеми элементми этой формы поставим value '+'</p>
+
+<!-- <form action="">
+  <input type="text">
+  <input type="text">
+</form>
+<form action="">
+  <input type="text">
+  <input type="text">
+</form> -->
+
+<!-- <script>
+  var form = document.forms;
+
+  for (var i = 0; i < form.length; i++) {
+    form[1].elements[i].value = '+';
+  }
+</script> -->
+
+<!-- or -->
+
+<!-- <script>
+  var elements = document.forms[1];
+
+  for (var i = 0; i < elements.length; i++) {
+    elements[i].value = '+';
+  }
+</script> -->
+
+
+<h2>Обращение к элементам форм по имени</h2>
+
+<p>1. Обратимся к элементам форм по имени</p>
+
+<form action="" name="form">
+  <input type="text" name="input1">
+  <input type="text" name="input2">
+</form>
+
+<script>
+  document.forms.form.elements.input1.value = '+';
+  document.forms[0].elements.input2.value = '-';
+</script>
+
+
+<h2>Работа с селектами</h2>
+
+<p>1. Пусть в переменной select лежит выпадающий список, тогда как - select.value
+мы можем получить value выбранного пункта списка</p>
+
+<!-- <select id="select">
+  <option value="one">one</option>
+  <option value="two" selected>two</option>
+  <option value="three">three</option>
+</select>
+
+<script>
+  var select = document.getElementById('select');
+  console.log(select.value);
+</script> -->
+
+
+<p>2. Записшем в select.value значение атрибута value определенного тего
+option - он старнет выбранным</p>
+
+<!-- <select id="select">
+  <option value="one">one</option>
+  <option value="two" selected>two</option>
+  <option value="three">three</option>
+</select>
+
+<script>
+  var select = document.getElementById('select');
+  select.value = 'three';
+
+  // or
+
+  select.selectedIndex = 2;
+</script> -->
+
+
+<p>3. Обратимя к выбранному пункту через option</p>
+
+<!-- <select>
+  <option value="one">one</option>
+  <option value="two" selected>two</option>
+  <option value="three" id="option">three</option>
+</select>
+
+<script>
+  var option = document.getElementsByTagName('option');
+  option[0].selected = true;
+  // or
+  option[0].selected = 'selected';
+
+  // or
+
+  var optionEl = document.getElementById('option');
+  optionEl.selected = true;
+  // or
+  optionEl.selected = 'selected';
+</script> -->
+
+
+<h2>Обращение к тегам option</h2>
+
+<p>1. С помощью свойства options, последовательно выведем содержимое атрибутов
+value тегов option</p>
+
+<!-- <select id="select">
+  <option value="one">one</option>
+  <option value="two" selected>two</option>
+  <option value="three">three</option>
+</select>
+
+<script>
+  var options = document.getElementById('select');
+  options = select.options;
+  console.log(options);
+
+  for (var i = 0; i < options.length; i++) {
+    alert(options[i].value);
+  }
+</script> -->
+
+
+<p>2. Запишем в текст кождого тега option '+', если хто выбранный пункт.
+А если не выбран то '-'</p>
+
+<select id="select">
+  <option value="one">one</option>
+  <option value="two" selected>two</option>
+  <option value="three">three</option>
+</select>
+
+<script>
+  var options = document.getElementById('select');
+  options = select.options;
+
+  for (var i = 0; i < options.length; i++) {
+    if (options[i].selected == true) {
+      options[i].text += '+';
+    } else {
+      options[i].text += '-';
+    }
+  }
+</script>
+
+
+
+
+
+
+
+
+
+</body>
+</html>

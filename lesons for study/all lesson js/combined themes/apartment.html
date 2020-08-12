@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+<body>
+<script>
+  /*entranceApartment - квартира подъезда
+ numberOffApartments-количество квартир подъезда
+ allApartmentsAtHome-все квартиры дома
+ porchApartments – квартиры подъезда*/
+  //  options-параметры
+
+  /*Пошаговое описание задачи.
+  1) напишем функцию entranceApartment - квартира подъезда
+  2) Находим количество квартир в подъезде
+  3) находим все квартиры дома
+  4) определяем количество квартир в каждом подъезде*/
+  //  5)напишем условие, где будем определять lbfgfpjyколичество квартир первого подъезда
+  //  6) напишем условие для определения диапазона квартир второго подъезда 20 < 35 && 35 < 45
+  //7) условие для определения количеств квартир в последнем подъезде
+
+  function entranceApartment(flours, apart, entrance, flat) {
+    if (flat === 0) return 'Нулевых квартир не бывает';
+
+    const numberOffApartments = Math.round(flours * apart); //количество квартир в первом подьезде
+    const allApartmentsAtHome = Math.round(numberOffApartments * entrance); //количество во всем доме
+
+    function porchApartments(entranceApart) {
+      const porchApartments = [];
+      let countApart = 0;
+
+      while (countApart < allApartmentsAtHome) {
+        countApart += numberOffApartments;
+
+        porchApartments.push(countApart);
+      }
+
+      return porchApartments;
+    }
+
+    const allApartNumbers = porchApartments(numberOffApartments);
+    let flatSearch = 0;
+
+    for (let i = 0, len = allApartNumbers.length; i < len; i++) {
+      if (flat <= allApartNumbers[0]) {
+        flatSearch = allApartNumbers[0];
+
+        break;
+      } else if (allApartNumbers[i] < flat && flat < allApartNumbers[i + 1]) {
+        flatSearch = allApartNumbers[i + 1];
+
+        break;
+      } else if (allApartNumbers[i] < flat && allApartNumbers[i + 1] === undefined) {
+        flatSearch = 0;
+
+        break;
+      }
+    }
+
+    if (flatSearch === 0) return 'Квартир в доме мнеьше чем вы задали. Общее число квартир в доме: ' + allApartNumbers;
+
+    return allApartNumbers.indexOf(flatSearch) + 1;
+  }
+
+  document.write(entranceApartment(3, 3, 3, 27));
+
+  //   console.log([3,4,5,19].index(20) + 1);
+  //   console.log([3,4,5,19].index(20) + 1);
+  //   console.log([3,4,5,19].index(20) + 1);
+
+</script>
+</body>
+</html>

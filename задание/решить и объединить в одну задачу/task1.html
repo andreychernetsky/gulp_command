@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>gitaramanai.by</title>
+</head>
+<body>
+<a href="https://repl.it/@andreychernetsk/ClearcutAwareOrder#script.js">черновик</a>
+<a href="https://repl.it/@andreychernetsk/WornOrchidInfinity#script.js">test</a>
+<script>
+  /*проработка функций, затем переделаю все через j6 и выше
+ 
+		 все исправление можно делать в реальном времени*/
+
+  // Функции getDigits, которая параметром будет принимать число,
+  // // а возвращать массив цифр.
+  // example1
+  function getDigits(num) {
+    return String(num).split('');
+  }
+
+  const num = getDigits(13454);
+  console.log(num);//["1", "3", "4", "5", "4"]
+
+  // Параметром принимающая массив и возвращающая сумму элементов этого массива.
+  //  Пусть эта функция работает и с массивом строк ['1', '2', '3'], и с массивом [1, 2, 3].
+
+  // example2
+  function arraySum(arr) {
+    let result = 0;
+    for(let i = 0; i < arr.length;i++) {
+      result+=Number(arr[i]);
+    }
+    return result;
+  }
+  const ar = ["1", "3", "4", "5", "4"];
+  console.log(arraySum(ar));//17
+
+  // example3
+
+  function inRamge(num) {
+    console.log(num)
+    return Boolean(1<=num && 9>=num)
+
+  }
+  const num = 1234;
+  console.log(inRamge(num));//true
+
+  //	объединить все задачи в одну
+  function getDigits(num) {
+    return String(num).split('');//массив строк
+  }
+
+  function arraySum(arr) {
+    let result = 0;
+    for(let i = 0; i < arr.length;i++) {
+      result+=Number(arr[i]);
+    }
+    return result;
+  }
+
+  function inRamge(num) {
+    return Boolean (1<=num && 9>=num)
+  }
+
+  const sum = inRamge(arraySum(getDigits(1234)));
+  console.log(sum);//true
+//	или
+  const num1 = getDigits(13454);
+  const arraySum = arraySum(num1);
+  const inRang = inRamge(arraySum);
+  console.log(inRang);//17
+
+//	теперь переделаем эту задачу
+  const inRange = n =>{
+    n = n.toString().split('').map(Number).reduce((a,b)=>a+b);
+    return 1<n && n>=9
+  }
+  console.log(inRange(13454));//false
+
+  //	example
+  function getDigits(num) {
+    return String(num).split('').map(x=>Number(x));//массив строк
+  }
+  const num = getDigits(13454);
+  console.log( num);//[1,2,3,4,5,4]
+	
+//	задача: написать как работают map и forEach?
+
+//	самостоятельно написать reduce,filter
+
+//	как работает map?
+  function map(source,func) {
+    const array = [];
+
+    for(let i = 0; i < source.length;i++) {
+      const item = func(source[i],i,source);
+      array.push(item);
+    }
+    return array;
+  }
+  const num = (13454);
+  console.log(map(num))
+	
+//	forEach
+  function map(source,func) {
+		for(let i = 0; i < source.length;i++) {
+      func(source[i],i,source);
+    }
+  }
+  const num = (13454);
+  console.log(map(num))
+
+  //example сгенерируем массив 10 натуральных чисел
+
+  const numbers = Array(10).fill().map((item,index,list)=> index+1);
+  console.log(numbers);//[1,2,3,4,5,6,7,8,9,10]
+	
+//	example суммирование через reduse
+  const num =[1,2,3,4].reduce((sum,elem)=>sum+elem)
+
+  console.log(num);//10
+</script>
+</body>
+</html>

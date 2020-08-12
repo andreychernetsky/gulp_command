@@ -1,0 +1,10 @@
+<html>
+<head> <title>мой первый js скрипт</title> </head>
+
+<body>
+
+<script>  alert ('я JS-скрипт Демида'); </script>
+<script src="insert.js"></script>
+
+</body>
+</html>

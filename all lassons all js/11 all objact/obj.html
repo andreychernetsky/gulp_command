@@ -120,6 +120,19 @@
   day = 1;
   console.log(dayOfWeek[lang][day])//вт
 	
+	
+//	example
+  const user = {
+    firstName:"Вася",
+    lastName:"петров",
+    patronym:"Иванович"
+  };
+
+  function showFullName(firstPart,lastPart) {
+    console.log(this[firstPart] + ' ' + this[lastPart]);//Вася иванович
+
+  }
+  showFullName.call(user, 'firstName','patronym');
 </script>
 </body>
 </html>

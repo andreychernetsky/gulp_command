@@ -1,0 +1,25 @@
+<html>
+<script>
+  'use strict';
+
+  function Hamster() {
+   this.food = []; // пустой "живот"
+  };
+
+  Hamster.prototype.found = (something)=> {
+    this.food.push(something);
+  };
+
+  // Создаём двух хомяков и кормим первого
+  let speedy = new Hamster();
+  let lazy = new Hamster();
+
+  speedy.found("яблоко");
+  speedy.found("орех");
+  lazy.found('хлеб');
+
+  alert( speedy.food.length ); // 2
+  alert( lazy.food.length ); // 2 (!??)
+
+</script>
+</html>

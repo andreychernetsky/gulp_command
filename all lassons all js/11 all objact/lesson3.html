@@ -1,0 +1,398 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+<body>
+<script>
+  /*Хэши – неупорядоченное множество переменных, каждая из которых не имеет собственного имени,
+		 а имеет ключ – значение строкового или числового типа, с помощью которого можно получить доступ к переменной.
+			Переменные внутри хэша называются элементами хэша.
+		 Поскольку элементы хэша собственного имени не имеют, обращаться к ним нужно, указывая имя хэша и ключ внутри хэша.
+			синтаксис объявления хэша:
+
+		 */
+  const имяХэша = {};
+
+  или
+
+  cosnt имяХэша = new Object();
+
+  выражение  new Object() представляет вызов конструктора-функции,
+    создающий новый объект. Для вызова конструктора применяется оператор new
+  второй способ это вместо new Object() написать фигурные скобки {}
+  пример
+
+  const h = {
+    aaa:5
+  }
+  console.log(h.aaa);//5
+  console.log(h['aaa']);//5
+
+  // пример 2
+
+  const h = {
+    bbb:null
+  }
+  console.log(h.bbb); //null
+
+  // пример 3
+
+  const h = {
+    'a/b/c':'привет'
+  };
+  console.log(h['a/b/c']);//привет
+
+  /*
+	пример
+	
+	создадим объект let user = {}
+	определим в нем свойства name = "Tom"
+	Чтобы определить свойства ,надо после названия объекта через точку указать
+	имя свойства и присвоить ему значение
+	*/
+
+  const user = {};
+  user.name = "Tom";
+  user.age = 26;
+
+  /*в этом примере мы объявляем два свойства name  и age
+	и каждому свойству присваиваются соответствующие значения. "Tom" и 26
+	теперь попробуем вывести их значение в консоли*/
+
+  console.log(user.name);
+  console.log(user.age);
+
+  // итого
+
+  const user = {};
+  user.name = "Tom";
+  user.age = 26;
+
+  console.log(user.name);
+  console.log(user.age);
+
+  /*есть еще вариант определение свойства внутри объекта
+	при таком варианте присвоение значения свойству используются символ :
+		и после определения свойства ставится запятая(а не точка с запято  )*/
+
+  const user = {
+    name:"Tom",
+    age:26
+  };
+  console.log(user.name);
+  console.log(user.age);
+
+  /*синтаксис обращения к элементу хэша:
+		имяХэша[ключ]
+	или
+	имяХэша.ключ
+	синтаксис добавления нового элемента в хэш
+	имяХэша[ключ] = значение
+	или
+	имяХэша.ключ = значение
+	синтаксис проверки наличия элемента в хэше
+	ключ in имяХэша
+	синтаксис удаления элемента из хэша
+	прмеры для улучшения понимания темы obj*/
+
+  const car = {
+    type:"fiat",
+    model:"500",
+    color:"white"
+  };
+
+  console.log(car.model);//500
+  console.log(car['model']);//500
+  console.log(car); //{type: "fiat", model: "500", color: "white"}
+
+  // второй вариант
+
+  const car = {};
+  car.type="fiat",
+    car.model="500";
+  car.color="white";
+  console.log(car.model);//500
+  console.log(car['model']);//500
+  console.log(car); //{type: "fiat", model: "500", color: "white"}
+
+  // еще пример
+
+  const person = {
+    firstName:"Andrey",
+    lastName:"chernetsky",
+    age:"34",
+    eyeColor:"green"
+  };
+  console.log(person.firstName);//Andrey
+  console.log(person);//{firstName: "Andrey", lastName: "chernetsky", age: "34", eyeColor: "green"}
+  console.log(person.firstName + " " + person.lastName + "=" + person.age); //Andrey chernetsky=34
+
+  // второй вариант
+
+  const person = {};
+  person.firstName = "Andrey";
+  person.lastName = "chernetsky";
+  person.age = "34";
+  person. eyeColor = "green";
+
+  console.log(person.firstName);//Andrey
+  console.log(person);//{firstName: "Andrey", lastName: "chernetsky", age: "34", eyeColor: "green"}
+  console.log(person.firstName + " " + person.lastName + "=" + person.age); //Andrey chernetsky=34
+
+  // третий вариант
+
+  const person = {};
+  person['firstName'] = "Andrey";
+  person['lastName'] = "chernetsky";
+  person['age'] = "34";
+  person['eyeColor'] = "green";
+
+  console.log(person.firstName);//Andrey
+  console.log(person);//{firstName: "Andrey", lastName: "chernetsky", age: "34", eyeColor: "green"}
+  console.log(person.firstName + " " + person.lastName + "=" + person.age); //Andrey chernetsky=34
+
+  // преимущество фигурных скобок в том, что можно передать через пробел
+
+  const newObj ={};
+  newObj['year create'] = 2018;
+
+  console.log(newObj); //{year create: 2018}
+  //
+  // можно создать переменную и этот прием хорош для работы с циклом
+
+  const newObj = {};
+  let count = 'noName';
+  newObj[count] = 'no Name';
+
+  console.log(newObj); // {noName: "no Name"}
+
+  // пример на проверку свойства
+
+  const obj1 = {};
+  obj1.body = 'рука';
+  obj1.adjective = 'большая';
+  const obj2 = {};
+  obj2.body = 'рука';
+  obj2.adjective = 'маленькая';
+
+  console.log(obj2.hasOwnProperty('body')); //true
+  console.log(obj2.body);//рука
+  console.log(obj2['body']);//рука
+
+  //	материал с lern javascript
+
+  /*
+js существуют семь типов данных.
+	шесть из них называются 'примитивами'
+	Объекты используются для хранения коллекций различных значений и более сложных сущностей.
+	
+	Свойство-это пара "ключ и значене"
+	ключ-"имя свойства"
+	*/
+
+  let user = new Object();// синтаксис "конструктор объекта"
+  let user = {}; // синтаксис "литерал объекта"
+
+  // использование фигурных скобок называют литералом объекта или литеральной нотацией
+
+  // при использовании литерального синтаксиса {} мы сразу можем поместить несколько свойсвт
+
+  const user = {//объект,хешь
+    name:"Andrey",//под ключом "name" храниться значение Andrey
+    age:30// под ключом "age" храниться значение 30
+  };
+
+  // свойство объекта иногда называют полями объекта
+
+  // для обращения к свойствам используется запись через точку
+  console.log(user.name);//Andrey
+  console.log(user.age);//30
+
+  // имя свойства может состоять из нескольких слов, но тогда оно должно браться в кавычки
+
+  const user = {
+    name:'Andrey',
+    age:30,
+    "likes bitds" : true,//висячая запятая
+  };
+
+
+  // квадратные скобки
+  let user = {};
+
+  user["likes berds"] = true;
+  console.log(user['likes berds']);//true
+  console.log({user});//{user:{'likes berds':true}}
+
+  //example
+  const user = {
+    name:'Andrey',
+    age:30,
+  };
+
+  function ag() {
+    let ageM = prompt ("Введи ваш возраст");
+    if(ageM > 18) {
+      return "доступ открыт";
+    } else {
+      return "доступ закрыт";
+    }
+    return ageM;
+  }
+  /*console.log(ag(user['age']));*/
+  alert(ag(user.age));
+
+  //  example
+
+  let fruit = prompt ("какой фрукт купить", "apple");
+  let bag = {
+    [fruit]:5,//имя свойства будет взято из переменой fruit
+  };
+
+  alert(bag.apple);//5
+
+  //	example
+  //зарезервированые имена разрешенно использовать как имена свойств
+  const obj = {
+    for:1,
+    let:2,
+    return:3,
+  };
+  console.log(obj.for + obj.let + obj.return);//6
+
+  //	example
+  const obj = {};
+  obj. __proto__= 5;
+  console.log(obj. __proto__);//{} присвоение примитивного значения игнорируется
+
+  //	example
+  function makeuser(name,age) {
+    return {
+      name,//то же что и name:name
+      age,//то же что и age:age  }
+    }
+  };
+
+  //    example
+
+  const user = {
+    age:30,
+    name:"andrey",
+    isAdmin:true
+  };
+  for(let key in user) {
+    console.log(key);//age,name,isAdmin
+    console.log(user[key]);//30,andrey,true
+    console.log(user[key]);//30,andrey,true
+    console.log({user});
+  }
+
+  const user = {
+    name:'Andrey',
+    surname:'Charnetsky',
+  };
+
+  user.age = 25;
+
+  for(let prop in user) {
+    console.log(prop);//name, surname,age
+  }
+
+  // example
+  const codes2 = {
+    "49":"германия",
+    "41":"швейцария",
+    "44":"Великобритания",
+    "1":"сша"
+  };
+  for(let code in codes2) {
+    console.log(code);//1,41,44,49
+  }
+
+  const codes = {
+    "+49":"германия",
+    "+41":"швейцария",
+    "+44":"Великобритания",
+    "+1":"сша"
+  };
+  for(let code in codes) {
+    console.log(+code);//49,41,44,1
+  }
+
+  /*одним из фундаментальных оличий объектов от примитивных данных
+	 является ,то что они хранятся и копируются по ссылке*/
+  const user = {name:'Andrey'};
+  const admin = user;
+  console.log(admin);//{name:'Andrey'}
+  admin.name = 'peta';
+  console.log(admin);//{name:'Peta'} изменнено по ссылке из переменной "admin"
+
+  //	example
+  const user = {
+    name:"Andrey",
+    age:30
+  };
+
+  let clone = {};//новый пустой объект
+
+  //скопируем все свойства в него
+  for(let key in user) {
+    clone[key] = user[key];
+  };
+  console.log(clone);//{name:'Andrey', age:30} теперь в переменной clone находитсф абсолютно независемый  клон объекта
+  clone.name = "peta";
+  console.log(user.name);//Andrey остался прежним
+  console.log(clone.name);//peta
+
+  //	example
+  // Merge an object
+
+  /*Метод Object.assign() копирует только перечисленные и собственные свойства от исходного объекта до целевого объекта*/
+
+  let first = {name: 'Tony'};
+  let last = {lastName: 'Stark'};
+  let person = Object.assign(first, last);
+  console.log(person);
+  // {name: 'Tony', lastName: 'Stark'}
+  console.log(first);
+  // first = {name: 'Tony', lastName: 'Stark'} as the target also changed
+
+  //	example
+
+  // Merge multiple sources
+  let a = Object.assign({foo: 0}, {bar: 1}, {baz: 2});
+  console.log(a);
+  // {foo: 0, bar: 1, baz: 2}
+
+  //	example
+  // Merge and overwrite equal keys
+  let b = Object.assign({foo: 0}, {foo: 1}, {foo: 2});
+  console.log(b);
+  // {foo: 2}
+
+  //	example
+  // Clone an object
+  let obj = {person: 'Thor Odinson'};
+  let clone = Object.assign({}, obj);
+  console.log(clone);
+  // {person: 'Thor Odinson'}
+
+  //	example
+  const user = {
+    name:"Andrey",
+    sizes:{
+      height:182,
+      width:50
+    }
+  };
+  let clone = Object.assign({},user);
+  console.log(user.sizes === clone.sizes);//true,один и тот же объект
+  user.sizes.width++;
+  console.log(clone.sizes.width);//51
+	</script>
+</body>
+</html>

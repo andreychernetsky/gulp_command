@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Lesson-29. Task</title>
+</head>
+<body>
+  <h1>Урок 29. Работа с формами и выпадающими списками</h1>
+
+
+  <h2>Работа с формами</h2>
+
+  <!-- 1 -->
+  <p>1. Дана форма с id="form". В ней даны инпуты, в них числа. Дана кнопка.
+    По нажатию на эту кнопку получите форму по ее id, затем циклом переберите
+    все инпуты в ней и найдите сумму чисел из этих инпутов.</p>
+  <!-- ==================================================================== -->
+
+<form id="form" style="margin-bottom: 5px;">
+  <input type="text" value="2">
+  <input type="text" value="2">
+  <input type="text" value="3">
+  <input type="text" value="4">
+</form>
+
+<div>
+  <input type="submit" value="Сумма чисел" id="toCount">
+  <input type="text" id="result">
+</div>
+
+<script>
+  var toCount = document.getElementById('toCount');
+  toCount.addEventListener('click', function count() {
+    var form = document.getElementById('form');
+    var elem = form.elements;
+
+    for (var i = 0; i < elem.length; i++) {
+      var result = document.getElementById('result');
+      result.value = +(result.value) + +(elem[i].value);
+    }
+  });
+</script>
+
+
+<!-- 2 -->
+<p>2. На странице расположено несколько форм. В них есть инпуты, в инпутах
+  числа. Дана кнопка. По нажатию на эту кнопку циклом переберите все формы
+  на странице, затем циклом переберите все инпуты в каждой форме и найдите
+  сумму чисел из всех этих инпутов.</p>
+<!-- ==================================================================== -->
+
+<form name="form1" class="form">
+  <input type="text" value="1">
+  <input type="text" value="2">
+  <input type="text" value="3">
+</form>
+<form name="form2" class="form">
+  <input type="text" value="4">
+  <input type="text" value="5">
+  <input type="text" value="6">
+</form>
+
+<div>
+  <input type="submit" value="Сумма чисел" id="toCount2">
+  <input type="text" id="result2">
+</div>
+
+<style>
+  .form {
+    margin-bottom: 5px;
+  }
+</style>
+
+<script>
+  var toCount2 = document.getElementById('toCount2');
+  toCount2.addEventListener('click', function count2() {
+    var form1 = document.forms.form1;
+    var form2 = document.forms.form2;
+    var arr = [form1, form2];
+
+    for (var i = 0; i < arr.length; i++) {
+      for (var j = 0; j < arr[i].length; j++) {
+        var result2 = document.getElementById('result2');
+        result2.value = +(result2.value) + +(arr[i][j].value);
+      }
+    }
+  });
+</script>
+
+
+<h2>Работа с селектами</h2>
+
+<!-- 3 -->
+<p>3. Дан селект. Дан инпут. По изменению селекта выведите текст выбранного
+  пункта в инпут.</p>
+<!-- ==================================================================== -->
+
+<select id="select">
+  <option value="1">Пункт № 1</option>
+  <option value="2">Пункт № 2</option>
+  <option value="3">Пункт № 3</option>
+  <option value="4" selected>Пункт № 4</option>
+</select>
+<input type="text" placeholder="Выбранный пукнт" id="resultSelected">
+
+<script>
+  var select = document.getElementById('select');
+  select.addEventListener('click', function showItem() {
+    var result = document.getElementById('resultSelected');
+    result.value = select.value;
+  });
+</script>
+
+<!-- or -->
+
+<script>
+  var select = document.querySelectorAll('#select');
+
+  for (var i = 0; i < select.length; i++) {
+    select[i].addEventListener('click', function showItem() {
+      var result = document.getElementById('resultSelected');
+      result.value = this.value;
+    });
+  }
+</script>
+
+
+<!-- 4 -->
+<p>4. Дан селект. Дан инпут. Дана кнопка. Сделайте так, чтобы в инпут можно
+  было ввести число, нажать на кнопку и в селекте становился выбранным пункт
+  с этим номером.</p>
+<!-- ==================================================================== -->
+
+<div style="margin-bottom: 5px;">
+  <input type="text" placeholder="Выбранный пункт" id="resultSelected2">
+  <input type="submit" value="Вывести число" id="addItem">
+</div>
+
+<select id="select2">
+  <option value="1" selected>Пунет № 1</option>
+  <option value="2">Пунет № 2</option>
+  <option value="3">Пунет № 3</option>
+  <option value="4">Пунет № 4</option>
+</select>
+
+<script>
+  var addItem = document.getElementById('addItem');
+  addItem.addEventListener('click', function showItem2() {
+    var result = document.getElementById('resultSelected2');
+    var select = document.getElementById('select2');
+
+    select.selectedIndex = (result.value - 1);
+  });
+</script>
+
+<!-- or -->
+
+<script>
+var addItem = document.getElementById('addItem');
+addItem.addEventListener('click', function showItem2() {
+  var result = document.getElementById('resultSelected2');
+  var select = document.getElementById('select2');
+
+  select.value = result.value;
+});
+</script>
+
+
+<!-- 5 -->
+<p>5. Дан селект со списком стран. Сделайте так, чтобы при выборе страны рядом
+  появлялся еще и селект со списком городов из этой страны.</p>
+<!-- ==================================================================== -->
+
+<select id="country">
+  <option value="1">Russia</option>
+  <option value="2">Belarus</option>
+  <option value="3">Ukraine</option>
+</select>
+
+<select id="russia">
+  <option value="">Moscow</option>
+  <option value="">Saint Petersburg</option>
+  <option value="">Volgograd</option>
+</select>
+<select id="belarus">
+  <option value="">Minsk</option>
+  <option value="">Vitebsk</option>
+  <option value="">Mogilev</option>
+</select>
+<select id="ukraine">
+  <option value="">Kiev</option>
+  <option value="">Lvov</option>
+  <option value="">Depr</option>
+</select>
+
+
+<style>
+  #russia,
+  #belarus,
+  #ukraine {
+    display: none;
+  }
+</style>
+
+<script>
+  var country = document.getElementById('country');
+  country.addEventListener('click', function addCity() {
+    var russia = document.getElementById('russia');
+    var belarus = document.getElementById('belarus');
+    var ukraine = document.getElementById('ukraine');
+    if (this.value === '1') {
+      russia.style.display = 'inline-block';
+    } else if (this.value === '2') {
+      belarus.style.display = 'inline-block';
+    } else {
+      ukraine.style.display = 'inline-block';
+    }
+  });
+</script>
+
+<!-- or -->
+
+<script>
+  var country = document.getElementById('country');
+  country.addEventListener('click', function addCity() {
+    var russia = document.getElementById('russia');
+    var belarus = document.getElementById('belarus');
+    var ukraine = document.getElementById('ukraine');
+
+    switch (this.selectedIndex) {
+      case 0:
+        russia.style.display = 'inline-block';
+        break;
+      case 1:
+        belarus.style.display = 'inline-block';
+        break;
+      case 2:
+        ukraine.style.display = 'inline-block';
+        break;
+      default:
+        alert('wrong number');
+    }
+  });
+</script>
+
+
+
+
+</body>
+</html>

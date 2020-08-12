@@ -1,0 +1,34 @@
+<html>
+<script>
+  'use strict';
+
+  function CoffeeMachine(power) {
+    this._waterAmount = 0;
+    this._power = power;
+}
+
+    // свойства и методы для всех объектов класса
+    CoffeeMachine.prototype.WATER_HEAT_CAPACITY = 4200;
+
+    CoffeeMachine.prototype._getTimeToBoil = function() {
+      return this._waterAmount * this.WATER_HEAT_CAPACITY * 80 / this._power;
+    };
+
+    CoffeeMachine.prototype.run = function() {
+      setTimeout(()=>{
+        alert( 'Кофе готов!' );
+      }, this._getTimeToBoil());
+    };
+
+    CoffeeMachine.prototype.setWaterAmount =(amount)=> {
+      this._waterAmount = amount;
+    };
+
+
+
+  let coffeeMachine = new CoffeeMachine(10000);
+  coffeeMachine.setWaterAmount(50);
+  coffeeMachine.run();
+
+</script>
+</html>

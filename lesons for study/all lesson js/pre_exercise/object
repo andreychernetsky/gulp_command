@@ -1,0 +1,44 @@
+<html>
+
+<body>
+<script>
+'use strict';
+
+/*var person = {
+  surname: 'Петров',
+  name: 'Вася',
+  wedght: 95
+  };
+
+  person.age = 25;
+
+  alert( person.name + ': ' + person.age + ' лет'  );
+
+  person.name = 'Демид';
+
+  alert ( 'Новое имя пользователя: ' + person.name);
+
+  for (var key in person) {
+  // этот код будет вызван для каждого свойства объекта
+  // ..и выведет имя свойства и его значение
+
+  alert( "Ключ: " + key + " значение: " + person[key] );
+}*/
+    var menu = {
+      width: 300,
+      height: 200,
+      title: "Menu"
+    };
+
+    var counter = 0;
+
+    for (var key in menu) {
+      counter++;
+    }
+
+    alert( "Всего свойств: " + counter );
+  </script>
+
+</body>
+
+</html>

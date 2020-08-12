@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+<body>
+<script>
+  'use stric'
+
+  /*задача. 1)Создать массив с элементами фруктов.
+		2) рандомно выводить один из них.*/
+
+  const arr = ["Яблоко", "Апельсин", "Груша", "Лимон"];
+  let min = 0;
+  let max = arr.length - 1;
+  let rand = min + Math.floor(Math.random() * (max + 1 - min));
+
+  console.log( arr[rand]);
+  
+//  через функцию
+  function getArr(arr) {
+    let min = 0;
+    const max = arr.length - 1;
+    const rand = min + Math.floor(Math.random() * (max + 1 - min));
+
+    return arr[rand];
+  }
+  const arr = ["Яблоко", "Апельсин", "Груша", "Лимон"];
+  console.log( getArr(arr));
+
+  
+//  example
+  function random() {
+
+    return Math.random() - 0.5;
+
+  }
+
+  const arr = [1, 2, 3, 4, 5];
+
+  arr.sort(random);
+
+  console.log(arr); // элементы в случайном порядке, например [3,5,1,2,4]
+</script>
+</body>
+</html>

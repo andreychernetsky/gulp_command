@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+				content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+<body>
+<style>
+	body {
+	
+	}
+	.container {
+		margin:auto;
+		width: 1200px;
+	}
+	.accordion {
+		max-width:100%;
+	}
+	.accordion__title.active + .accordion__panel {
+		height: 100px;
+		background: red;
+		display: block;
+	}
+	.accordion__panel  {
+		display: none;
+		height: 200px;
+		background: green;
+	}
+	
+</style>
+<section class="section">
+	<div class="container">
+		<div class="accordion" data-accordion>
+			<div class="accordion__title active">
+				заголовок
+			</div>
+			<div class="accordion__panel">
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. A animi asperiores cum ex excepturi exercitationem impedit, ipsam iusto natus nobis, quam quas quidem quisquam quod temporibus ut velit veritatis voluptatibus!
+			</div>
+			
+			<div class="accordion__title">
+				заголовок
+			</div>
+			<div class="accordion__panel">
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus animi distinctio doloremque expedita explicabo inventore ipsa itaque maiores necessitatibus nesciunt omnis praesentium quae sapiente sed sequi, totam vel velit voluptatibus!
+			</div>
+			
+			<div class="accordion__title">
+				заголовок
+			</div>
+			<div class="accordion__panel">
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto consectetur culpa cupiditate dolore eos est excepturi explicabo id iste itaque labore maxime modi, nesciunt placeat possimus quod recusandae reprehenderit ut.
+			</div>
+		</div>
+		
+	</div>
+</section>
+<script>
+	(function acc(){
+	const[...accContent] = document.querySelectorAll('[data-accordion');
+	accContent.forEach((accordion)=> {
+	  const[...accTitle]=accordion.querySelectorAll('.accordion__title');
+	  
+	  accTitle.forEach((title)=>{
+	    title.addEventListener('click',() => open(title,accTitle))
+		})
+	});
+	
+		function open(title,sibling) {
+	  sibling.forEach(item => item.classList.remove('active'));
+	  title.classList.add('active');
+		}
+	})();
+</script>
+</body>
+</html>

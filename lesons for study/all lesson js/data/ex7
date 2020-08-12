@@ -1,0 +1,20 @@
+<html>
+<body>
+<script>
+'use strict'
+
+function getSecondsToTomorrow() {
+  var d = new Date();
+  var today = d.getHours() * 3600 + d.getMinutes() * 60 + d.getSeconds();
+  var tomorrow = 24 * 3600;
+  var result = tomorrow - today
+//51188 - 864000
+
+  return alert (result + ' секунд до завтра ');
+};
+
+getSecondsToTomorrow();
+
+</script>
+</body>
+</html>
