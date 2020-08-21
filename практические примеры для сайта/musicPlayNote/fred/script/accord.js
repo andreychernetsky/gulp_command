@@ -1,32 +1,5 @@
 const Accourds = {};
 
-Accourds.Apos1 = [
-  null,
-  { finger: 2, fret: 2 },
-  { finger: 3, fret: 2 },
-  { finger: 4, fret: 2 },
-  null,
-  null
-];
-
-Accourds.Apos2 = [
-  {finger:1,fret:5},
-  { finger: 1, fret: 5 },
-  { finger: 2, fret: 6 },
-  { finger: 4, fret: 7 },
-  { finger: 3, fret: 7 },
-  {finger:1,fret:5},
-];
-
-Accourds.Apos3 = [
-  {finger:2,fret:9},
-  { finger: 4, fret: 10 },
-  { finger: 1, fret: 9 },
-  { finger: 4, fret: 11 },
-  null,
-  null,
-];
-
 Accourds.Cpos1 = [
   null,
   { finger: 1, fret: 1 },
@@ -83,9 +56,9 @@ Accourds.Dmpos3 = [
 ];
 
 Accourds.Empos1 = [
- null,
   null,
- null,
+  null,
+  null,
   { finger: 3, fret: 2 },
   { finger: 2, fret: 2 },
   null,
@@ -132,6 +105,93 @@ Accourds.Fpos2 = [
   { finger: 4, fret: 6 },
   { finger: 3, fret: 5 },
   { finger: 1, fret: 3 },
- null,
- null,
+  null,
+  null,
 ];
+
+// a-moll
+
+Accourds.Ampos1 = [
+  null,
+  { finger: 1, fret: 1 },
+  { finger: 3, fret: 2 },
+  { finger: 2, fret: 2 },
+  null,
+  null
+];
+
+Accourds.Ampos2 = [
+  {finger:1,fret:5},
+  { finger: 1, fret: 5 },
+  { finger: 1, fret: 5 },
+  { finger: 4, fret: 7 },
+  { finger: 3, fret: 7 },
+  {finger:1,fret:5},
+];
+
+Accourds.Ampos3 = [
+  {finger:1,fret:9},
+  { finger: 4, fret: 10 },
+  { finger: 2, fret: 9 },
+  { finger: 1, fret: 7 },
+  null,
+  null,
+];
+
+
+Accourds.B7pos1 = [
+  null,
+  { finger: 1, fret: 1 },
+  { finger: 3, fret: 2 },
+  { finger: 2, fret: 2 },
+  null,
+  null
+];
+
+Accourds.B7pos2 = [
+  {finger:1,fret:5},
+  { finger: 1, fret: 5 },
+  { finger: 1, fret: 5 },
+  { finger: 4, fret: 7 },
+  { finger: 3, fret: 7 },
+  {finger:1,fret:5},
+];
+
+Accourds.B7pos3 = [
+  {finger:1,fret:9},
+  { finger: 4, fret: 10 },
+  { finger: 2, fret: 9 },
+  { finger: 1, fret: 7 },
+  null,
+  null,
+];
+
+// A-dur
+
+Accourds.Apos1 = [
+  null,
+  { finger: 2, fret: 2 },
+  { finger: 3, fret: 2 },
+  { finger: 4, fret: 2 },
+  null,
+  null
+];
+
+Accourds.Apos2 = [
+  {finger:1,fret:5},
+  { finger: 1, fret: 5 },
+  { finger: 2, fret: 6 },
+  { finger: 4, fret: 7 },
+  { finger: 3, fret: 7 },
+  {finger:1,fret:5},
+];
+
+Accourds.Apos3 = [
+  {finger:2,fret:9},
+  { finger: 4, fret: 10 },
+  { finger: 1, fret: 9 },
+  { finger: 4, fret: 11 },
+  null,
+  null,
+];
+

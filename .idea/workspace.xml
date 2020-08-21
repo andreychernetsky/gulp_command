@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="45a0dfc1-517b-4593-bf15-a6b4e1db3073" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/практические примеры для сайта/musicPlayNote/fred/index.html" afterPath="$PROJECT_DIR$/практические примеры для сайта/musicPlayNote/fred/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/практические примеры для сайта/musicPlayNote/fred/script/accord.js" afterPath="$PROJECT_DIR$/практические примеры для сайта/musicPlayNote/fred/script/accord.js" />
     </list>
@@ -16,24 +17,24 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="vertical" split-proportion="0.5784946">
+    <splitter split-orientation="vertical" split-proportion="0.9">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="accord.js" pinned="false" current-in-tab="true">
+          <file leaf-file-name="accord.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/практические примеры для сайта/musicPlayNote/fred/script/accord.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="193">
-                  <caret line="134" column="6" lean-forward="true" selection-start-line="134" selection-start-column="6" selection-end-line="134" selection-end-column="6" />
+                <state relative-caret-position="225">
+                  <caret line="159" column="19" lean-forward="true" selection-start-line="159" selection-start-column="19" selection-end-line="159" selection-end-column="19" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+          <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/практические примеры для сайта/musicPlayNote/fred/index.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="444">
-                  <caret line="120" column="70" lean-forward="false" selection-start-line="120" selection-start-column="70" selection-end-line="120" selection-end-column="70" />
+                <state relative-caret-position="217">
+                  <caret line="39" column="2" lean-forward="true" selection-start-line="39" selection-start-column="2" selection-end-line="39" selection-end-column="2" />
                   <folding />
                 </state>
               </provider>
@@ -46,7 +47,7 @@
           <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/all lassons all js/DOM/JS-DOM/lesson-19/Second-task/index.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="555">
+                <state relative-caret-position="539">
                   <caret line="137" column="30" lean-forward="true" selection-start-line="137" selection-start-column="30" selection-end-line="137" selection-end-column="30" />
                   <folding />
                 </state>
@@ -119,8 +120,8 @@
         <option value="$PROJECT_DIR$/практические примеры для сайта/musicPlayNote/fred/script/fretboard.js" />
         <option value="$PROJECT_DIR$/практические примеры для сайта/musicPlayNote/fred/script/main.js" />
         <option value="$PROJECT_DIR$/практические примеры для сайта/musicPlayNote/task1.html" />
-        <option value="$PROJECT_DIR$/практические примеры для сайта/musicPlayNote/fred/index.html" />
         <option value="$PROJECT_DIR$/практические примеры для сайта/musicPlayNote/fred/script/accord.js" />
+        <option value="$PROJECT_DIR$/практические примеры для сайта/musicPlayNote/fred/index.html" />
       </list>
     </option>
   </component>
@@ -138,9 +139,9 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="255" />
-    <option name="y" value="102" />
-    <option name="width" value="1116" />
+    <option name="x" value="483" />
+    <option name="y" value="111" />
+    <option name="width" value="1175" />
     <option name="height" value="601" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
@@ -311,24 +312,25 @@
       <workItem from="1596965534412" duration="115000" />
       <workItem from="1597053325022" duration="38294000" />
       <workItem from="1597314816382" duration="10052000" />
-      <workItem from="1597469594760" duration="45991000" />
+      <workItem from="1597469594760" duration="48552000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="320993000" />
+    <option name="totallyTimeSpent" value="323554000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="255" y="102" width="1116" height="601" extended-state="0" />
+    <frame x="483" y="111" width="1175" height="601" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1252319" sideWeight="0.84317034" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.0" sideWeight="0.84317034" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34703946" sideWeight="0.5029762" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Quokka" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="1.0" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.15895523" sideWeight="0.15682968" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3268817" sideWeight="0.49702382" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.006451613" sideWeight="0.49702382" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.15625" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -699,7 +701,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/all lassons all js/DOM/JS-DOM/lesson-19/Second-task/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="555">
+        <state relative-caret-position="539">
           <caret line="137" column="30" lean-forward="true" selection-start-line="137" selection-start-column="30" selection-end-line="137" selection-end-column="30" />
           <folding />
         </state>
@@ -739,18 +741,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/практические примеры для сайта/musicPlayNote/fred/index.html">
+    <entry file="file://$PROJECT_DIR$/практические примеры для сайта/musicPlayNote/fred/script/accord.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="444">
-          <caret line="120" column="70" lean-forward="false" selection-start-line="120" selection-start-column="70" selection-end-line="120" selection-end-column="70" />
+        <state relative-caret-position="225">
+          <caret line="159" column="19" lean-forward="true" selection-start-line="159" selection-start-column="19" selection-end-line="159" selection-end-column="19" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/практические примеры для сайта/musicPlayNote/fred/script/accord.js">
+    <entry file="file://$PROJECT_DIR$/практические примеры для сайта/musicPlayNote/fred/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="193">
-          <caret line="134" column="6" lean-forward="true" selection-start-line="134" selection-start-column="6" selection-end-line="134" selection-end-column="6" />
+        <state relative-caret-position="217">
+          <caret line="39" column="2" lean-forward="true" selection-start-line="39" selection-start-column="2" selection-end-line="39" selection-end-column="2" />
           <folding />
         </state>
       </provider>
