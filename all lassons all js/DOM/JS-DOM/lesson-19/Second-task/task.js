@@ -1,5 +1,5 @@
 // ============================================================================
-var name = ('Задачи н основы работы с DOM в JS');
+const name = ('Задачи н основы работы с DOM в JS');
 console.log('Урок № 19 ' + name);
 // ============================================================================
 
@@ -9,7 +9,7 @@ console.log('1. Повторите страницу под анному обра
 
 function clickBtn(elem) {
   elem = 'Привет!';
-  alert(elem);
+  document.write(elem);
 }
 
 // ============================================================================
@@ -18,7 +18,7 @@ console.log('2. Повторите страницу под анному обра
 
 function overBtn(elem) {
   elem = 'Привет!';
-  alert(elem);
+  document.write(elem);
 }
 
 // ============================================================================
@@ -27,7 +27,7 @@ console.log('3. Повторите страницу под анному обра
 
 function dblClickBtn(elem) {
   elem = 'Привет!';
-  alert(elem);
+  document.write(elem);
 }
 
 // ============================================================================
@@ -36,7 +36,7 @@ console.log('4. Повторите страницу под анному обра
 
 function outClickBtn(elem) {
   elem = 'Привет!';
-  alert(elem);
+  document.write(elem);
 }
 
 // ============================================================================
@@ -44,8 +44,8 @@ console.log('5. Повторите страницу под анному обра
 // ============================================================================
 
 function clickBntToText() {
-  var elem = document.getElementById('text');
-  alert(elem.value);
+  const elem = document.getElementById('text');
+  document.write(elem.value);
 }
 
 // ============================================================================
@@ -53,8 +53,8 @@ console.log('6. Повторите страницу под анному обра
 // ============================================================================
 
 function clickBntToChange() {
-  var elem = document.getElementById('text2');
-  elem.value = 'Ой, я помнял свой текст!';
+  const elem = document.getElementById('text2');
+  elem.value = 'Ой, я поменял свой текст!';
 }
 
 // ============================================================================
@@ -62,7 +62,7 @@ console.log('7. Повторите страницу под анному обра
 // ============================================================================
 
 function clickToChangePhoto() {
-  var elem = document.getElementById('monkey');
+  const elem = document.getElementById('monkey');
   elem.src = 'img/2.jpg';
 }
 
@@ -71,8 +71,8 @@ console.log('8. Повторите страницу под анному обра
 // ============================================================================
 
 function clickByText() {
-  var text = document.getElementById('text3');
-  alert(text.value);
+  const text = document.getElementById('text3');
+  document.write(text.value);
 }
 
 // ============================================================================
@@ -80,7 +80,7 @@ console.log('9. Повторите страницу под анному обра
 // ============================================================================
 
 function clickByText2() {
-  var text = document.getElementById('text4');
+  const text = document.getElementById('text4');
   text.value = 'Ой, поменял текст';
 }
 
@@ -89,12 +89,12 @@ console.log('10. Повторите страницу под анному обр�
 // ============================================================================
 
 function clickByText3() {
-  var text = document.getElementById('text5');
+  const text = document.getElementById('text5');
   text.value = 'Ой, поменял текст!';
 }
 
 function blurByText3() {
-  var text = document.getElementById('text5');
+  const text = document.getElementById('text5');
   text.value = 'Ой, теперь еще раз поменял!';
 }
 
@@ -136,7 +136,7 @@ console.log('14. Повторите страницу по данному обр�
 // ============================================================================
 
 function clickMyBtn() {
-  var input = document.getElementById('redText');
+  const input = document.getElementById('redText');
   input.style.color = '#f00';
   input.style.width = '300px';
 }

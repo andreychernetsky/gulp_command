@@ -7,7 +7,181 @@
 	<title>Document</title>
 </head>
 <body>
-<a href="https://repl.it/@andreychernetsk/DearestFreshInterface#script.js"> </a>
+<a href="https://codepen.io/andreychernetsky/pen/zXoXYE"></a>
 
+
+<a href="https://repl.it/@andreychernetsk/DearestFreshInterface#script.js"> </a>
+<a href="https://codepen.io/andreychernetsky/pen/yLezNWq">вариант 2</a>
+<style>
+	html {
+		font-size: 16px;
+	}
+	
+	body {
+		background-color: #fff;
+		font-family: "Raleway", sans-serif;
+	}
+	
+	.wrap-container {
+		max-width: 700px;
+		margin: 0 auto;
+		background: transparent;
+		text-align: center;
+	}
+	
+	.wrap-container__notes {
+		margin: 16px 0 0 0;
+	}
+	
+	a:link, a:visited {
+		color: #009;
+	}
+	
+	a:hover {
+		color: #00f;
+	}
+	
+	.container__head {
+		color: #000;
+		text-align: center;
+		font-size: 1.4rem;
+		margin: 30px 0 30px 0;
+		letter-spacing: 2px;
+	}
+	
+	.accordion {
+		width: 100%;
+		background: #fff;
+		border: 1px solid #333;
+		text-align: left;
+	}
+	
+	.accordion__title {
+		-webkit-appearance: none;
+		font-size: 1.1rem;
+		/*   text-transform: uppercase; */
+		letter-spacing: 2px;
+		padding: 1rem 1.5rem;
+		background: #333;
+		color: white;
+		cursor: pointer;
+		transition: .3s ease;
+		border: 0 none;
+		border-bottom: 1px solid #555;
+		width: 100%;
+		text-align: left;
+		margin: 0;
+	}
+	
+	.accordion__title:hover, .accordion__title:focus {
+		background: #000;
+	}
+	
+	.accordion__copy {
+		overflow: hidden;
+		padding: 0 1.5rem 0 1.5rem;
+		color: #666;
+		line-height: 1.6;
+		font-size: 1rem;
+		font-weight: 500;
+		max-height: 0;
+		transition: padding 0.5s, max-height 0.5s;
+	}
+	
+	.accordion__copy_pic {
+		width: 100px;
+		height: auto;
+		float: right;
+		margin: 0 0 0 20px;
+	}
+	
+	@media (min-width: 540px) {
+		.wrap-container__head {
+			font-size: 2rem;
+		}
+		
+		.accordion__copy_pic {
+			width: 180px;
+		}
+	}
+</style>
+
+<div class="wrap-container">
+	<h1 class="wrap-container__head">Студия игры на гитаре </h1>
+	
+	<div class="accordion">
+		<div class="accordion__item">
+			<button type="button" class="accordion__title js-title">Основные правила</button>
+			<div class="accordion__copy">
+				<img src="https://pp.userapi.com/c630124/v630124976/2830a/mySNDxnyqGw.jpg" alt="piano accordion" class="accordion__copy_pic">Как писал ранее, что стремлюсь к максимально
+				профессиональному подходу в своем процессе обучения. Приобретаю необходимые игры, музыкальные инструменты, и обучающие пособия. Развиваю обучающий сайт. Я ценю свое время и
+				те знания, которые приобретались не только громадными усилиями воли, но финансовыми затратами.
+				Поэтому в моем процессе обучения есть свой порядок и дисциплина , нарушение которых влечет расторжение дальнейшего процесса обучения.
+			</div>
+		</div>
+		<div class="accordion__item">
+			<button type="button" class="accordion__title js-title">Основные правила</button>
+			<div class="accordion__copy">
+				<img src="https://sun1.dataix-by-minsk.userapi.com/c638819/v638819145/7339/wucSKcf4UaU.jpg" alt="button accordion" class="accordion__copy_pic">-Проявления
+				воли и характера в постоянном, систематическом выполнении музыкальных задач;
+			</div>
+		</div>
+		<div class="accordion__item">
+			<button type="button" class="accordion__title js-title">Основные правила</button>
+			<div class="accordion__copy">-своевременная оплата без напоминания; <br>
+				-посещения мероприятий, которые проводятся в студии;
+				<br>
+				-заинтересованность родителей в обеспечении необходимым для процесса обучения (гитара, нотная тетрадь);
+				<br>
+				-распечатка определенного количества страниц для пополнения нотной библиотеки.
+			</div>
+		</div>
+		<div class="accordion__item">
+			<button type="button" class="accordion__title js-title">Основное</button>
+			<div class="accordion__copy">Для того, чтобы достичь высот в любом деле, нужно вкалывать и вкладывать свое время, нарабатывая те самые заветные 10.000 часов. Только загвоздка
+				в том, что можно месяцами и годами терзать гитару, но если ваши ежедневные занятия построены неэффективно, если вы делаете “не то” или “не так”, это не приведет ни к какому
+				результату.
+			</div>
+		</div>
+		<div class="accordion__item">
+			<button type="button" class="accordion__title js-title">Основное</button>
+			<div class="accordion__copy">Игровые методы не только делают обучение увлекательным и интересным для детей делом, но и обеспечивают потрясающее качественное освоение знаний и
+				навыков. То, что ребенок вызубрил – он может забыть через несколько дней, то, что освоил в игре – он запомнит на всю жизнь.
+			</div>
+		</div>
+	</div>
+	<div class="wrap-container__notes">элементы для сайта <a href="https://andreychernetsky.github.io/finishSiteForMusic/index.html" target="_blank">gitaramania.by</a>.</div>
+</div>
+<script>
+  //	1) находим все кнопки
+  //2)повесим на нее обработчик события
+  //3)напишем функцию, которая будет открывать
+  //4)напишем функцию, которая будет закрывать
+  //5)через nextElementSibling будем открывать следующего соседа
+  //6) при открытие следующего, закрываем предыдущий
+  //7 при повторном клике на туже кнопку идет ее закрытие, если она была открыта
+  const accordionButtons = document.querySelectorAll('.js-title');//1
+  accordionButtons.forEach(btn => btn.addEventListener('click', () => {//2
+    const isOpen = btn.nextElementSibling.classList.contains('accordion__copy--open');//7
+    if (isOpen) {
+      closeAccordionItem(btn.nextElementSibling);
+    } else {
+      accordionButtons.forEach(x => closeAccordionItem(x.nextElementSibling));//6
+      openAccordionItem(btn.nextElementSibling)//5
+    }
+  }));
+
+  function openAccordionItem(item) {//3
+    item.classList.add('accordion__copy--open');
+    item.style.maxHeight = item.scrollHeight + "px";
+    item.style.padding = "1rem 1.5rem 2rem 1.5rem";
+  }
+
+  function closeAccordionItem(item) {//4
+    item.classList.remove('accordion__copy--open');
+    item.style.maxHeight = 0;
+    item.style.padding = "0 1.5rem 0 1.5rem";
+  }
+</script>
 </body>
 </html>

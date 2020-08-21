@@ -34,17 +34,17 @@ console.log('4. Квадрат содержимого инпутаа');
 // ============================================================================
 
 function powNumber() {
-  var pow = document.getElementById('pow');
-  var number = Number(pow.value);
-  var square = number * number;
+  const pow = document.getElementById('pow');
+  let number = Number(pow.value);
+  let square = number * number;
   alert(square);
 }
 
 // or
 
 function powNumber() {
-  var pow = document.getElementById('pow');
-  var square = Math.pow(pow.value, 2);
+  const pow = document.getElementById('pow');
+  let square = Math.pow(pow.value, 2);
   alert(square);
 }
 
@@ -53,10 +53,10 @@ console.log('5. Обмен содержимым между инпутами');
 // ============================================================================
 
 function receiveNumber() {
-  var left = document.getElementById('left');
-  var rigth = document.getElementById('right');
-  var rightV = rigth.value;
-  var leftV = left.value;
+  const left = document.getElementById('left');
+  const rigth = document.getElementById('right');
+  let rightV = rigth.value;
+  let leftV = left.value;
   right.value = leftV;
   left.value = rightV;
 }
@@ -67,7 +67,7 @@ console.log('6. По нажатию на кнопку меняет ее текс
 // ============================================================================
 
 function newString() {
-  var newText = document.getElementById('newText');
+  const newText = document.getElementById('newText');
   newText.value = 'New text button';
 }
 
@@ -82,7 +82,7 @@ console.log('7. Работа с CSS');
 // ============================================================================
 
 function changeColor() {
-  var colorText = document.getElementById('colorText');
+  const colorText = document.getElementById('colorText');
   colorText.style.color = 'red';
 }
 
@@ -97,11 +97,11 @@ console.log('8. Блокирование полей ввода');
 // ============================================================================
 
 function block() {
-  var block = document.getElementById('myString');
+  const block = document.getElementById('myString');
   block.disabled = true;
 }
 
 function unblock() {
-  var unblock = document.getElementById('myString');
+  const unblock = document.getElementById('myString');
   unblock.disabled = false;
 }

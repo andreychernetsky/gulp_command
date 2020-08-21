@@ -1,0 +1,319 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+<body>
+<a href="https://codepen.io/andreychernetsky/pen/wLEeov">one</a>
+<a href="https://repl.it/join/kzfygjbl-andreychernetsk">one</a>
+
+<a href="https://codepen.io/andreychernetsky/pen/bPxRBN">two</a>
+
+<a href="https://codepen.io/andreychernetsky/pen/mvaqaE">гриф гитары</a>
+<a href="https://repl.it/@andreychernetsk/SafeNavyblueOffice#index.html">гриф гитары</a>
+
+
+<style>
+	.fretboard {
+		border-left: 5px solid #afafaf;
+		border-right: 5px solid #afafaf;
+		position: relative;
+	}
+	
+	.string {
+		border-bottom: 1px solid #afafaf;
+		height: 30px;
+	}
+	
+	.string:first-child {
+		border-top: 1px solid #afafaf;
+	}
+	
+	.notes-wrap,
+	.fingers-wrap {
+		height: 150px;
+		width: 30px;
+		position: absolute;
+		top: -15px;
+		left: -35px;
+	}
+	
+	.note {
+		font-size: 25px;
+		line-height: 1;
+		height: 30px;
+	}
+	
+	.fingers-wrap {
+		left: 0;
+	}
+	
+	.finger-point {
+		position: absolute;
+		background-color: #a10000;
+		color: white;
+		border-radius: 50px;
+		height: 25px;
+		width: 25px;
+		margin-bottom: 5px;
+		opacity: 0;
+		font-size: 18px;
+		text-align: center;
+		line-height: 25px;
+	}
+	
+	.finger-point:nth-child {
+	
+	}
+	
+	.frets-wrap {
+		height: 150px;
+		position: absolute;
+		top: 0;
+		left: 0;
+		display: flex;
+		width: 100%;
+		justify-content: space-between;
+	}
+	
+	.fret {
+		height: 150px;
+		flex: 1 1 100%;
+		border-right: 2px solid #888888;
+		display: flex;
+		align-items: flex-end;
+		justify-content: center;
+	}
+	
+	.fret:last-child {
+		border-right: none;
+	}
+	
+	.fret-number {
+		font-size: 1.5rem;
+		transform: translateY(150%);
+	}
+</style>
+<div class="container-fluid">
+	<div class="row justify-content-center">
+		<div class="col-12 col-md-8">
+			<h1 class="text-center">Guitar Fretboard</h1>
+		</div>
+		<div class="col-12">
+			<hr>
+		</div>
+		<div class="col-11 col-md-10">
+			<h4 class="">Select a Chord</h4>
+			<div class="text-center">
+				<button class="btn btn-secondary chord-selector" data-chord="C">C</button>
+				<button class="btn btn-secondary chord-selector" data-chord="D">D</button>
+				<button class="btn btn-secondary chord-selector" data-chord="E">E</button>
+				<button class="btn btn-secondary chord-selector" data-chord="F">F</button>
+				<button class="btn btn-secondary chord-selector" data-chord="G">G</button>
+				<button class="btn btn-secondary chord-selector" data-chord="A">A</button>
+				<button class="btn btn-secondary chord-selector" data-chord="B">B</button>
+			</div>
+			
+			<!-- fretboar main -->
+			<div class="mt-5 fretboard">
+				
+				<!-- strings wrap -->
+				<div class="string-wrap">
+					<div class="string"></div>
+					<div class="string"></div>
+					<div class="string"></div>
+					<div class="string"></div>
+					<div class="string"></div>
+					
+					<!-- notes wrap -->
+					<div class="notes-wrap">
+						<div class="note">E</div>
+						<div class="note">B</div>
+						<div class="note">G</div>
+						<div class="note">D</div>
+						<div class="note">A</div>
+						<div class="note">E</div>
+					</div>
+				</div>
+				<!-- frets wrap -->
+				<div class="frets-wrap">
+					<div class="fingers-wrap">
+						<div class="finger-point"></div>
+						<div class="finger-point"></div>
+						<div class="finger-point"></div>
+						<div class="finger-point"></div>
+						<div class="finger-point"></div>
+						<div class="finger-point"></div>
+					</div>
+					<div class="fret">
+						<div class="fret-number">1</div>
+					</div>
+					<div class="fret">
+						<div class="fret-number">2</div>
+					</div>
+					<div class="fret">
+						<div class="fret-number">3</div>
+					</div>
+					<div class="fret">
+						<div class="fret-number">4</div>
+					</div>
+					<div class="fret">
+						<div class="fret-number">5</div>
+					</div>
+					<div class="fret">
+						<div class="fret-number">6</div>
+					</div>
+					<div class="fret">
+						<div class="fret-number">7</div>
+					</div>
+					<div class="fret">
+						<div class="fret-number">8</div>
+					</div>
+					<div class="fret">
+						<div class="fret-number">9</div>
+					</div>
+					<div class="fret">
+						<div class="fret-number">10</div>
+					</div>
+					<div class="fret">
+						<div class="fret-number">11</div>
+					</div>
+					<div class="fret">
+						<div class="fret-number">12</div>
+					</div>
+				</div>
+			
+			</div>
+		
+		</div>
+	
+	</div>
+</div>
+
+<script>
+  //1) выбираем наши точки, расположенные на струнах
+  //2) создаем функцию для создания 6 струн
+  //3) напишем цикл
+  //4) пишем переменную в которую поместим все выбранные точки на грифе гитары
+  //5)
+  //6 для fingerPoint задаем позицию position чтобы, располагался по середине лада
+  //7) массив объектов струн и пальцев
+  //8) смещаем точки по вертикальной оси
+  //9) находим один лад
+  //10) спросим какая ширина лада
+  //11 вставляем число в кружок струны
+  //12 если позиция струны отсутствует, то мы убираем
+  //13 отображаем позицию струны
+  //14 размещаем номер струны относительно цифры лада
+  //итого
+  //пишем функцию fingerPoints которая проходит циклом по количеству струн и расставляет номера пальцев внутри кружочка
+
+  //null это открытая струна
+
+const fingerPoints = document.querySelectorAll('.finger-point');//1
+//console.log(fingerPoints);
+const fretNumbers = document.querySelectorAll('.fret-number');
+
+fingerPoints.forEach((fingerPoint, index) => {
+  fingerPoint.style.top = `${index * 32}px`
+});
+//перемещение аккордов A-dur
+/*const A = [//7
+  null,
+  { finger: 2, fret: 2 },
+  { finger: 3, fret: 2 },
+  { finger: 4, fret: 2 },
+  null,
+  null
+];*/
+/*const Apos2 = [//7
+	{finger:1,fret:5},
+  { finger: 1, fret: 5 },
+  { finger: 2, fret: 6 },
+  { finger: 4, fret: 7 },
+  { finger: 3, fret: 7 },
+  {finger:1,fret:5},
+];
+
+const Apos3 = [//7
+  {finger:2,fret:9},
+  { finger: 4, fret: 10 },
+  { finger: 1, fret: 9 },
+  { finger: 4, fret: 11 },
+ null,
+  null,
+];
+
+//////////////////////////////////////////////////////////*/
+//перемещение аккордов c-dur
+
+/*
+const C = [//7
+ null,
+  { finger: 1, fret: 1 },
+  null,
+  { finger: 2, fret: 2 },
+  { finger: 4, fret: 3 },
+  null,
+];
+*/
+
+/*
+const Cpos2 = [//7
+  { finger: 1, fret: 3 },
+  { finger: 4, fret: 5 },
+  { finger: 3, fret: 5 },
+  { finger: 2, fret: 5 },
+  { finger: 1, fret: 3 },
+  { finger: 1, fret: 3 },
+];
+*/
+
+const Cpos3 = [//7
+  { finger: 1, fret: 8 },
+  { finger: 1, fret: 8 },
+  { finger: 2, fret: 9 },
+  { finger: 4, fret: 10 },
+  { finger: 3, fret: 10 },
+  { finger: 1, fret: 8 },
+];
+
+function setFingerPoints (pichTheFrets) {//2
+  const fret = document.querySelector('.fret');//9
+  const fretWidth = fret.clientWidth + 1;//10
+
+  for (let i = 0; i < 6; i++) {//3
+    const position = pichTheFrets[i];//4
+    const fingerPoint = fingerPoints[i];//5
+
+    if (!position) {//11
+      fingerPoint.style.opacity = 0//11
+    }
+
+    else {//13
+      const {finger, fret} = position;
+      const fretNumber = fretNumbers[fret - 1];//14
+
+      fingerPoint.style.opacity = 1;//6 прозрачность кружка
+      fingerPoint.style.left = `${fretNumber.offsetLeft - fretNumber.offsetWidth / 2}px`;//8
+      fingerPoint.textContent = finger;//12
+    }
+
+  }
+}
+
+//setFingerPoints(A);//2
+//	setFingerPoints(Apos2);
+//	setFingerPoints(Apos3)
+
+//setFingerPoints(C)
+//setFingerPoints(Cpos2);
+setFingerPoints(Cpos3)
+</script>
+
+
+</body>
+</html>
