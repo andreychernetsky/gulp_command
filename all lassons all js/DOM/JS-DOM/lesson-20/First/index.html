@@ -12,7 +12,7 @@
   <button onclick="clickButton()">Кнопка смены текста</button>
   <script>
     function clickButton() {
-      var button = document.getElementById('text');
+      const button = document.getElementById('text');
       button.innerHTML = 'замена';
     }
   </script>
@@ -22,65 +22,67 @@
   <button onclick="clickButtonTwo()">Кнопка смены текста</button>
   <script>
     function clickButtonTwo() {
-      var buttonTwo = document.getElementById('text__two');
+      const buttonTwo = document.getElementById('text__two');
       buttonTwo.innerHTML = '<b>Новый текст</b>';
     }
   </script>
 
   <!-- outerHTML -->
-  <!-- 1 -->
+  <!-- 3 -->
   <p id="text__three">Какой-то текст</p>
   <button onclick="clickButtonThree()">Замена тега</button>
   <script>
     function clickButtonThree() {
-      var buttonThre = document.getElementById('text__three');
+      const buttonThree = document.getElementById('text__three');
       buttonThre.outerHTML = '<h1>Новый текст</h1>';
     }
   </script>
 
-  <!-- getElementsByTagName -->
-  <!-- 1 -->
+  <!-- getElementsByTagName
+  Метод document.getElementsByTagName() возвращает массив, содержащий ссылки на все элементы указанного типа, находящиеся в HTML-документе. Ссылки на элементы в массиве будут представлены в том же порядке, в каком эти элементы расположены в исходном коде документа.
+  -->
+  <!-- 4 -->
   <h3>Массив 0</h3>
   <h3>Массив 1</h3>
   <h3>Массив 2</h3>
   <button onclick="clickButtonFor()">Кнопки изменения массива</button>
   <script>
     function clickButtonFor() {
-      var buttonFor = document.getElementsByTagName('h3');
+      const buttonFor = document.getElementsByTagName('h3');
       buttonFor[0].innerHTML = 'Новый массив 0';
       buttonFor[2].outerHTML = '<h1>Новый массив 2</h1>';
     }
   </script>
 
   <!-- for -->
-  <!-- 1 -->
+  <!-- 5 -->
   <h5>Массив 0</h5>
   <h5>Массив 1</h5>
   <h5>Массив 2</h5>
   <button onclick="clickButtonFive()">Кнопка изменения массива</button>
   <script>
     function clickButtonFive() {
-      var buttonFive = document.getElementsByTagName('h5');
+      const buttonFive = document.getElementsByTagName('h5');
 
-      for (var i = 0; i < buttonFive.length; i++) {
+      for (let i = 0; i < buttonFive.length; i++) {
         buttonFive[i].innerHTML = 'Новый массив ' + i;
       }
     }
   </script>
 
   <!-- children -->
-  <!-- 1 -->
+  <!-- 6 -->
   <div id="parent">
     <p>Первый потомок</p>
     <p>Второй потомок</p>
   </div>
   <script>
-    var myChildren = document.getElementById('parent');
+    const myChildren = document.getElementById('parent');
     document.write(myChildren.children[0].innerHTML);
     document.write(myChildren.children[1].innerHTML);
   </script>
 
-  <!-- 2 -->
+  <!-- 7 -->
   <div id="parents">
     <h4>Первый потомок</h4>
     <h4>Второй потомок</h4>
@@ -89,10 +91,10 @@
     <h4>Пятый потомок</h4>
   </div>
   <script>
-    var parents = document.getElementById('parents');
-    var elems = parents.children;
-    for (var i = 0; i < elems.length; i++) {
-      var change = elems[i].innerHTML + '-' + [i] + '<br>';
+    const parents = document.getElementById('parents');
+    const elems = parents.children;
+    for (let i = 0; i < elems.length; i++) {
+      const change = elems[i].innerHTML + '-' + [i] + '<br>';
       document.write(change);
     }
   </script>
