@@ -1,16 +1,45 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Title</title>
-	<link rel="stylesheet" href="css/style.css">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
 </head>
 <body>
- <style>
-</style>
- <input type="submit" value="Нажми на меня" id="btn">
- <div id="demo1"></div>
- 
-<script src = test.js></script>
+<!--1) отсчет таймера-->
+<!--2) создадим инпут при клике на который сработает таймер-->
+
+<h2 id="numberDown">25</h2><!--1-->
+<input type="button" value="запустить таймер" id="clickButton"><!--2-->
+
+
+<script>
+	const click = document.getElementById('clickButton');
+	click.addEventListener('click',buttonDown);
+//	3) опишем функцию
+function buttonDown() {
+  const clickButton = document.getElementById('clickButton');
+ clickButton.disabled = true;
+
+  const numberDown = document.getElementById('numberDown');
+  numberDown.innerHTML = parseInt(numberDown.innerHTML) - 1;
+
+  window.timerStart = window.setTimeout(buttonDown, 1000);
+
+  if (numberDown.innerHTML === '0') {
+    window.clearInterval(window.timerStart);
+    clickButton.style.display = 'none';
+    clickButton.outerHTML = '<p>' + 'Обратный отcчет завершен.' + '</p>';
+  }
+}
+</script>
+
+<!--Описание disabled
+Блокирует доступ и изменение поля формы. Оно в таком случае отображается серым и недоступным для активации пользователем. Кроме того, такое поле не может получить фокус путем нажатия на клавишу Tab, мышью или другим способом. Тем не менее, такое состояние поля можно менять с помощью скриптов. Заблокированное в поле значение не передается на сервер.-->
+
+<!--Функция parseInt преобразует строку в целое число.
+
+Это нужно для значений типа '12px' - когда вначале стоит число, а потом единицы измерения. Если применить функцию parseInt к '12px', то результатом получится число 12 (и это будет действительно число, а не строка).-->
 </body>
 </html>

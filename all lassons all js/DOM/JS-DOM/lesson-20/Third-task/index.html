@@ -26,13 +26,14 @@
 
 <script>
   function clickButton() {
-    var form = document.getElementById('form');
-    var text = document.getElementById('amount');
+    const form = document.getElementById('form');
+    const text = document.getElementById('amount');
 
-    for (var i = 0; i < form.length; i++) {
+    for (let i = 0; i < form.length; i++) {
       text.value = Number(text.value) + parseInt(form[i].value);
     }
-  } text = 'text.value';
+    
+  }text = 'text.value';
 </script>
 
 <!-- ======================================================================= -->
@@ -58,21 +59,22 @@
 
 <script>
   function amountForm() {
-    var formOne = document.forms['form-one'].elements;
-    var formTwo = document.forms['form-two'].elements;
-    var amount = document.getElementById('decide');
+    const formOne = document.forms['form-one'].elements;
+    const formTwo = document.forms['form-two'].elements;
+    const amount = document.getElementById('decide');
 
-    for (var i = 0; i < formOne.length; i++) {
+    for (let i = 0; i < formOne.length; i++) {
       amount.value = +(formOne[i].value) + +(amount.value);
     }
-    for (var k = 0; k < formTwo.length; k++) {
+    for (let k = 0; k < formTwo.length; k++) {
       amount.value = +(formTwo[k].value) + +(amount.value);
-    } amount = amount.value;
+    }
+    amount = amount.value;
   }
 </script>
 
 <h4>or</h4>
-
+<!--example 3-->
 <form style="margin-bottom: 20px;">
   <input type="text" value="2">
   <input type="text" value="14">
@@ -88,13 +90,13 @@
 
 <script>
   function amountForm2() {
-    var forme1 = document.forms[1].elements;
-    var forme2 = document.forms[2].elements;
-    var amount = document.getElementById('decide2');
-    for (var i = 0; i < forme1.length; i++) {
+    const forme1 = document.forms[1].elements;
+    const forme2 = document.forms[2].elements;
+    const amount = document.getElementById('decide2');
+    for (let i = 0; i < forme1.length; i++) {
       amount.value = +(forme1[i].value) + +(amount.value);
       if (forme1[i].value === forme1[2].value) {
-        for (var j = 0; j < forme2.length; j++) {
+        for (let j = 0; j < forme2.length; j++) {
           amount.value = +(forme2[j].value) + +(amount.value);
         }
       }

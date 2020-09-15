@@ -14,7 +14,8 @@
 <!-- ====================================================================== -->
 
 <script>
-  var date = new Date();
+//  example 1
+  const date = new Date();
   console.log(date.getMilliseconds());
   console.log(date.getSeconds());
   console.log(date.getMinutes());
@@ -29,11 +30,12 @@
 <!-- ====================================================================== -->
 
 <script>
-  var date = new Date();
-  var day = date.getDay();
-  var days = ['вс', 'пн', 'вт', 'ср', 'чт', 'пт', 'сб'];
+//  exemple 2
+  const date = new Date();
+  const day = date.getDay();
+  const days = ['вс', 'пн', 'вт', 'ср', 'чт', 'пт', 'сб'];
 
-  for (var i = 0; i < days.length; i++) {
+  for (let i = 0; i < days.length; i++) {
     console.log(days[day]);
   }
 </script>

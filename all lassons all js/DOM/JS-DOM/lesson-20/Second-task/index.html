@@ -13,16 +13,16 @@
 
   <p>Повторите поведение кнопки по нажатию на нее (она меняет текст в span)</p>
   <button onclick="clickBtn()">Нажми на меня</button>
-  <span class="text" id="texte">Это span с текстом</span>
+  <span class="text" id="text">Это span с текстом</span>
 
   <script>
     function clickBtn() {
-      var myId = document.getElementById('texte');
+      const myId = document.getElementById('text');
       myId.innerHTML = '!!!';
 
       // or
 
-      var myClass = document.querySelector('.text');
+      const myClass = document.querySelector('.text');
       myClass.innerHTML = '!!!';
 
       // or
@@ -43,7 +43,7 @@
 
   <script>
     function clickBtn2() {
-      var weight = document.querySelector('#weight');
+      const weight = document.querySelector('#weight');
       weight.outerHTML = '<b>' + weight.innerHTML + '</b>';
     }
   </script>
@@ -56,16 +56,16 @@
   <p>Дан HTML код (см. под задачей). Поменяйте содержимое абзацев на их
     порядковый номер в коде.</p>
 
-  <h2>Заголовок, не поменяется.</h2>
+  <h2>№3 Заголовок, не поменяется.</h2>
   <div>Абзац, поменяется.</div>
   <div>Абзац, поменяется.</div>
   <div>Абзац, поменяется.</div>
   <input type="submit" onclick="onenChange()">
   <script>
   function onenChange() {
-    var change = document.getElementsByTagName('div');
+    const change = document.getElementsByTagName('div');
 
-    for (var i = 0; i < change.length; i++) {
+    for (let i = 0; i < change.length; i++) {
       change[i].innerHTML = i + 1;
     }
   }
@@ -86,9 +86,9 @@
 
   <script>
   function openChange2() {
-    var change2 = document.getElementsByClassName('zzz');
+     change2 = document.getElementsByClassName('zzz');
 
-    for (var i = 0; i < change2.length; i++) {
+    for (let i = 0; i < change2.length; i++) {
       change2[i].innerHTML = i + 1;
     }
   }
@@ -108,9 +108,9 @@
   <input type="submit" onclick="openChange3()">
   <script>
   function openChange3() {
-    var change3 = document.querySelectorAll('.ddd');
+    const change3 = document.querySelectorAll('.ddd');
 
-    for (var i = 0; i < change3.length; i++) {
+    for (let i = 0; i < change3.length; i++) {
       change3[i].innerHTML = i + 1;
     }
   }
@@ -128,7 +128,7 @@
 
   <script>
     function clickButton() {
-      var myText = document.querySelector('.yyy');
+      const myText = document.querySelector('.yyy');
       myText.innerHTML = 'Ку-ку! А я <b>жирный!</b>';
     }
   </script>

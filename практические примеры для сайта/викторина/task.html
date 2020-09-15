@@ -36,6 +36,7 @@
 
 <script>
 const text = document.querySelector('#test');
+console.log(text);
 const questions = [
 	{
 	  text:' Сколько ступеней в До мажоре?',
@@ -89,7 +90,7 @@ button.addEventListener('click',function(){
       inp.classList.add('correct')
 		} else {
       inp.classList.add('incorrect');
-//      wrongCounter++;
+      wrongCounter++;
 		}
   
 	}

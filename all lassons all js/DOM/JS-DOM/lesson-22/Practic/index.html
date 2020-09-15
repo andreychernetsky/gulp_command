@@ -17,7 +17,7 @@
   }
 
   function timer() {
-    var elem = document.getElementById('interval');
+    const elem = document.getElementById('interval');
     elem.value = parseInt(elem.value) + 1;
   }
   </script>
@@ -27,13 +27,10 @@
 
   <script>
     function test() {
-      var timerId = window.setInterval(timer, 1000);
+      const timerId = window.setInterval(timer, 1000);
       console.log(timerId);
     }
-
-    function timer() {
-
-    }
+    
   </script>
 
   <!-- clearInterval -->
@@ -51,7 +48,7 @@
     }
 
     function timer() {
-      var myValue = document.getElementById('myValue');
+      const myValue = document.getElementById('myValue');
       myValue.value = parseInt(myValue.value) + 1;
     }
   </script>
@@ -67,7 +64,7 @@
     }
 
     function timeTo() {
-      var element = document.getElementById('more');
+      const element = document.getElementById('more');
       element.value = parseInt(element.value) + 1;
     }
 
@@ -79,14 +76,14 @@
   <!-- setTimeout и рекурсия -->
   <input type="text" value="1" id="inputV">
   <input type="submit" value="start" onclick="timer3()">
-
-  <script>
-    function timer3() {
-      var inputV = document.getElementById('inputV');
+= document.getElementById('inputV');
       inputV.value = parseInt(inputV.value) + 1;
 
       if (inputV.value < 10) {
-        window.setTimeout(timer3, 1000);
+        window.setTimeo
+        <script>
+        function timer3() {
+          const inputV ut(timer3, 1000);
       }
     }
   </script>

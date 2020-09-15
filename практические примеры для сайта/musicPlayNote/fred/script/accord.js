@@ -168,14 +168,14 @@ Accourds.B7pos3 = [
 
 Accourds.E7pos1 = [
  null,
- null,
+  { finger: 4, fret: 3 },
   { finger: 1, fret: 1 },
   { finger: 3, fret: 2 },
   { finger: 2, fret: 2 },
   null,
 ];
 
-Accourds.E7pos3 = [
+Accourds.E7pos2 = [
   { finger: 1, fret: 8 },
   { finger: 1, fret: 9 },
   { finger: 2, fret: 9 },
@@ -212,4 +212,6 @@ Accourds.Apos3 = [
   null,
   null,
 ];
+
+
 
